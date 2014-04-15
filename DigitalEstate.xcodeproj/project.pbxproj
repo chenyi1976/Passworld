@@ -22,6 +22,10 @@
 		813CCA6018FD0EF9002A98F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
 		813CCA6818FD0EF9002A98F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 813CCA6618FD0EF9002A98F2 /* InfoPlist.strings */; };
 		813CCA6A18FD0EF9002A98F2 /* DigitalEstateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA6918FD0EF9002A98F2 /* DigitalEstateTests.m */; };
+		813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7618FDDFF0002A98F2 /* DataSourceFactory.m */; };
+		813CCA7A18FDE096002A98F2 /* MockDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7918FDE096002A98F2 /* MockDataSource.m */; };
+		813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */; };
+		813CCA8218FDF193002A98F2 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA8118FDF193002A98F2 /* RegistrationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,15 @@
 		813CCA6518FD0EF9002A98F2 /* DigitalEstateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DigitalEstateTests-Info.plist"; sourceTree = "<group>"; };
 		813CCA6718FD0EF9002A98F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		813CCA6918FD0EF9002A98F2 /* DigitalEstateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalEstateTests.m; sourceTree = "<group>"; };
+		813CCA7418FDDFF0002A98F2 /* MockDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDataSource.h; path = Datasource/MockDataSource.h; sourceTree = "<group>"; };
+		813CCA7518FDDFF0002A98F2 /* DataSourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSourceFactory.h; path = Datasource/DataSourceFactory.h; sourceTree = "<group>"; };
+		813CCA7618FDDFF0002A98F2 /* DataSourceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSourceFactory.m; path = Datasource/DataSourceFactory.m; sourceTree = "<group>"; };
+		813CCA7918FDE096002A98F2 /* MockDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockDataSource.m; path = Datasource/MockDataSource.m; sourceTree = "<group>"; };
+		813CCA7B18FDE0E1002A98F2 /* EstateDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateDataSource.h; path = Datasource/EstateDataSource.h; sourceTree = "<group>"; };
+		813CCA7C18FDEF8E002A98F2 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitialViewController.h; path = ViewControllers/InitialViewController.h; sourceTree = "<group>"; };
+		813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitialViewController.m; path = ViewControllers/InitialViewController.m; sourceTree = "<group>"; };
+		813CCA8018FDF193002A98F2 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationViewController.h; path = ViewControllers/RegistrationViewController.h; sourceTree = "<group>"; };
+		813CCA8118FDF193002A98F2 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationViewController.m; path = ViewControllers/RegistrationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +128,8 @@
 		813CCA4118FD0EF9002A98F2 /* DigitalEstate */ = {
 			isa = PBXGroup;
 			children = (
+				813CCA7F18FDEF96002A98F2 /* ViewControllers */,
+				813CCA7318FDDF33002A98F2 /* DataSource */,
 				813CCA4A18FD0EF9002A98F2 /* AppDelegate.h */,
 				813CCA4B18FD0EF9002A98F2 /* AppDelegate.m */,
 				813CCA4D18FD0EF9002A98F2 /* Main.storyboard */,
@@ -155,6 +170,29 @@
 				813CCA6618FD0EF9002A98F2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		813CCA7318FDDF33002A98F2 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				813CCA7B18FDE0E1002A98F2 /* EstateDataSource.h */,
+				813CCA7418FDDFF0002A98F2 /* MockDataSource.h */,
+				813CCA7918FDE096002A98F2 /* MockDataSource.m */,
+				813CCA7518FDDFF0002A98F2 /* DataSourceFactory.h */,
+				813CCA7618FDDFF0002A98F2 /* DataSourceFactory.m */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		813CCA7F18FDEF96002A98F2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				813CCA7C18FDEF8E002A98F2 /* InitialViewController.h */,
+				813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */,
+				813CCA8018FDF193002A98F2 /* RegistrationViewController.h */,
+				813CCA8118FDF193002A98F2 /* RegistrationViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +293,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				813CCA5518FD0EF9002A98F2 /* SecondViewController.m in Sources */,
+				813CCA8218FDF193002A98F2 /* RegistrationViewController.m in Sources */,
+				813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */,
 				813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */,
 				813CCA5218FD0EF9002A98F2 /* FirstViewController.m in Sources */,
+				813CCA7A18FDE096002A98F2 /* MockDataSource.m in Sources */,
+				813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */,
 				813CCA4818FD0EF9002A98F2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
