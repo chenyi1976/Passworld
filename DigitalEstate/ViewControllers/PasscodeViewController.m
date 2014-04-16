@@ -120,27 +120,46 @@ UIImage* offImage = nil;
     {
         @try {
             [self performSegueWithIdentifier:@"PasswordVerifySegue" sender:self];
+            
+            NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+            [prefs setInteger:passcode1 forKey:@"passcode1"];
+            [prefs setInteger:passcode2 forKey:@"passcode2"];
+            [prefs setInteger:passcode3 forKey:@"passcode3"];
+            [prefs setInteger:passcode4 forKey:@"passcode4"];
+            [prefs synchronize];
+
         }
         @catch (NSException *exception) {
             NSLog(@"Segue not found: %@", exception);
-            
-            
-            
+
             //if segue not exist, it means we are the verification view
-
-            //todo: check the code matches, if yes, then jump to EstateTabView.
-            //if now, then jump back to Password view.
+            //check the code matches, if yes, then jump to EstateTabView.
+            //if not, then jump back to Password view.
             
+            NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+            int oldPass1 = [prefs integerForKey:@"passcode1"];
+            int oldPass2 = [prefs integerForKey:@"passcode2"];
+            int oldPass3 = [prefs integerForKey:@"passcode3"];
+            int oldPass4 = [prefs integerForKey:@"passcode4"];
+
+            [prefs removeObjectForKey:@"passcode1"];
+            [prefs removeObjectForKey:@"passcode2"];
+            [prefs removeObjectForKey:@"passcode3"];
+            [prefs removeObjectForKey:@"passcode4"];
+            [prefs synchronize];
+
             AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-            UINavigationController* navigationController = (UINavigationController*)[[app window] rootViewController];
-            [navigationController popViewControllerAnimated:TRUE];
             
-            //    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-            //    [prefs setBool:TRUE forKey:@"hasLogon"];
-            //    [prefs synchronize];
-
-//            UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateTabViewController"];
-//            [app.window setRootViewController:screen];
+            if (oldPass1 == passcode1 && oldPass2 == passcode2 && oldPass3 == passcode3 && oldPass4 == passcode4)
+            {
+                UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateTabViewController"];
+                [app.window setRootViewController:screen];
+            }
+            else
+            {
+                UINavigationController* navigationController = (UINavigationController*)[[app window] rootViewController];
+                [navigationController popViewControllerAnimated:TRUE];
+            }
         }
     }
 }

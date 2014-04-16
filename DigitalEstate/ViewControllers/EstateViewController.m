@@ -7,6 +7,8 @@
 //
 
 #import "EstateViewController.h"
+#import "EstateDataSource.h"
+#import "DataSourceFactory.h"
 
 @interface EstateViewController ()
 
@@ -49,14 +51,51 @@
 
 #pragma mark - UITableViewDataSource
 
+id<EstateDataSource> datasource = nil;
+
+- (id<EstateDataSource>) getDataSource
+{
+    if (datasource == nil)
+    {
+        datasource = [[DataSourceFactory sharedInstance] getDataSource:kMockKey];
+    }
+    return datasource;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [[[self getDataSource] getEstates] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    UITableViewCell* result = nil;
+    if (tableView == _tableView)
+    {
+        static NSString *MyCellIdentifier = @"EstateCell";
+        result = [tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
+        if (result == nil){
+            result = [[UITableViewCell alloc]
+                      initWithStyle:UITableViewCellStyleDefault
+                      reuseIdentifier:MyCellIdentifier];
+        }
+    NSArray* estates =[[self getDataSource] getEstates];
+    if (indexPath.row < [estates count])
+    {
+        EstateData* data = [estates objectAtIndex:indexPath.row];
+        result.textLabel.text = [NSString stringWithFormat:data.name,
+                                 (long)indexPath.section,
+                                 (long)indexPath.row];
+    }
+    else
+    {
+        result.textLabel.text = [NSString stringWithFormat:@"Section %ld, Cell %ld",
+                                 (long)indexPath.section,
+                                 (long)indexPath.row];
+    }
+        result.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    }
+    return result;
 }
 
 

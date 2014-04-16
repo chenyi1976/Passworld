@@ -10,19 +10,19 @@
 
 @implementation MockDataSource
 
-- (NSArray*)getEntriesByType:(NSString*)type
+- (NSArray*)getEstates
 {
-    return nil;
+    return [NSArray arrayWithObjects:[[EstateData alloc] initWithName:@"Estate1" Content:@"Content1"], nil];
 }
 
-- (void)loadEntriesByType:(NSString*)type usingCache:(Boolean)usingCache withCompletionHandler:(void (^)(NSError* error))completionHandler
+- (void)loadEstatesWithCompletionHandler:(void (^)(NSError* error))completionHandler
 {
-    return;
+    
 }
 
-- (void)setEntries:(NSArray*)entries ByType:(NSArray*)type
+- (void)setEstate:(EstateData*)estate ForIndex:(int)index
 {
-    return;
+    
 }
 
 @end

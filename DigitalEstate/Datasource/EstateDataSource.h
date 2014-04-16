@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EstateData.h"
 
 @protocol EstateDataSource <NSObject>
 
-- (NSArray*)getEntriesByType:(NSString*)type;
+- (NSArray*)getEstates;
 
-- (void)loadEntriesByType:(NSString*)type usingCache:(Boolean)usingCache withCompletionHandler:(void (^)(NSError* error))completionHandler;
+- (void)loadEstatesWithCompletionHandler:(void (^)(NSError* error))completionHandler;
 
-- (void)setEntries:(NSArray*)entries ByType:(NSArray*)type;
+- (void)setEstate:(EstateData*)estate ForIndex:(int)index;
 
 @end
