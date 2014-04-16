@@ -1,19 +1,18 @@
 //
-//  RegistrationViewController.m
+//  EstateViewController.m
 //  DigitalEstate
 //
 //  Created by Yi Chen on 16/04/2014.
 //  Copyright (c) 2014 Yi Chen. All rights reserved.
 //
 
-#import "RegistrationViewController.h"
-#import "AppDelegate.h"
+#import "EstateViewController.h"
 
-@interface RegistrationViewController ()
+@interface EstateViewController ()
 
 @end
 
-@implementation RegistrationViewController
+@implementation EstateViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [_phoneField becomeFirstResponder];
+    [_tableView setDataSource:self];
+    [_tableView setDelegate:self];    
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,19 +47,17 @@
 }
 */
 
-#pragma mark - IBAction
+#pragma mark - UITableViewDataSource
 
-- (IBAction)registerButtonClicked:(id)sender
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-//    [prefs setBool:TRUE forKey:@"hasLogon"];
-//    [prefs synchronize];
-//    
-//    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    
-//    UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateTabViewController"];
-//    [app.window setRootViewController:screen];
-
+    return 0;
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
 
 @end

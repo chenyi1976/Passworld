@@ -10,5 +10,8 @@
 
 @interface RegistrationViewController : UIViewController
 
+@property IBOutlet UITextField* phoneField;
+
 - (IBAction)registerButtonClicked:(id)sender;
+
 @end
