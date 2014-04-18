@@ -130,7 +130,7 @@ UIImage* offImage = nil;
 
         }
         @catch (NSException *exception) {
-            NSLog(@"Segue not found: %@", exception);
+//            NSLog(@"Segue not found: %@", exception);
 
             //if segue not exist, it means we are the verification view
             //check the code matches, if yes, then jump to EstateTabView.
@@ -152,7 +152,7 @@ UIImage* offImage = nil;
             
             if (oldPass1 == passcode1 && oldPass2 == passcode2 && oldPass3 == passcode3 && oldPass4 == passcode4)
             {
-                UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateTabViewController"];
+                UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateNavigationViewController"];
                 [app.window setRootViewController:screen];
             }
             else

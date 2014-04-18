@@ -49,7 +49,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8YX-ce-x5E" kind="modal" id="Ww9-UD-6hK"/>
+                                    <segue destination="dO1-YD-MmN" kind="modal" id="ObQ-vQ-YIi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxc-sR-n0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-229" y="591"/>
+            <point key="canvasLocation" x="-645" y="519"/>
         </scene>
         <!--View Controller - 数字密码箱-->
         <scene sceneID="zsz-Nl-tai">
@@ -446,20 +446,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="txV-h6-AwB">
-                                <rect key="frame" x="0.0" y="71" width="320" height="358"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="txV-h6-AwB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="EstateCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EstateCell" id="l1P-cK-4uc">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1P-cK-4uc" id="cE2-IM-ari">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="9By-ud-JVj" kind="push" id="sCk-WM-g7t"/>
+                                            <segue destination="aFz-IK-U30" kind="push" identifier="ModifySegue" id="746-i8-6cN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -470,9 +470,18 @@
                                 <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="9By-ud-JVj" kind="push" identifier="CreateSegue" id="HLt-YH-KPh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="txV-h6-AwB" firstAttribute="leading" secondItem="iOe-ud-onG" secondAttribute="leading" id="7lx-6F-bnQ"/>
+                            <constraint firstItem="K41-ck-fWP" firstAttribute="top" secondItem="txV-h6-AwB" secondAttribute="bottom" id="8Wa-ub-coB"/>
+                            <constraint firstAttribute="trailing" secondItem="txV-h6-AwB" secondAttribute="trailing" id="A8K-DD-xzg"/>
+                            <constraint firstItem="txV-h6-AwB" firstAttribute="top" secondItem="iOe-ud-onG" secondAttribute="top" id="pn1-XZ-cVv"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="保险箱" id="7p9-3v-o4J"/>
                     <connections>
@@ -481,12 +490,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmF-yO-TYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="771" y="932"/>
+            <point key="canvasLocation" x="781" y="1160"/>
         </scene>
-        <!--View Controller-->
+        <!--Estate Detail View Controller - Create-->
         <scene sceneID="0vc-E5-35C">
             <objects>
-                <viewController id="9By-ud-JVj" sceneMemberID="viewController">
+                <viewController id="9By-ud-JVj" customClass="EstateDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FvF-E5-CBq"/>
                         <viewControllerLayoutGuide type="bottom" id="4NB-pp-vdz"/>
@@ -495,42 +504,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z88-bo-FNO">
-                                <rect key="frame" x="20" y="481" width="110" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z88-bo-FNO">
+                                <rect key="frame" x="20" y="393" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Delete Message">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Your Message Here." translatesAutoresizingMaskIntoConstraints="NO" id="kxg-fM-kaw">
-                                <rect key="frame" x="20" y="70" width="280" height="379"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-fM-kaw">
+                                <rect key="frame" x="20" y="70" width="280" height="315"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpP-pg-AHV">
-                                <rect key="frame" x="172" y="481" width="128" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Abandon Changes">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lD1-X1-JE3">
-                                <rect key="frame" x="199" y="32" width="101" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save Message">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kxg-fM-kaw" firstAttribute="trailing" secondItem="z88-bo-FNO" secondAttribute="trailing" id="Ahd-m5-pHP"/>
+                            <constraint firstItem="z88-bo-FNO" firstAttribute="leading" secondItem="9Me-rF-SaD" secondAttribute="leading" constant="20" symbolic="YES" id="IWw-xR-A5R"/>
+                            <constraint firstAttribute="trailing" secondItem="z88-bo-FNO" secondAttribute="trailing" constant="20" symbolic="YES" id="Z7U-3c-bYz"/>
+                            <constraint firstItem="z88-bo-FNO" firstAttribute="top" secondItem="kxg-fM-kaw" secondAttribute="bottom" constant="8" id="k1F-UD-Mpa"/>
+                            <constraint firstItem="4NB-pp-vdz" firstAttribute="top" secondItem="z88-bo-FNO" secondAttribute="bottom" constant="8" id="mMa-d5-nUJ"/>
+                            <constraint firstItem="kxg-fM-kaw" firstAttribute="top" secondItem="FvF-E5-CBq" secondAttribute="bottom" constant="6" id="nd1-gc-DDS"/>
+                            <constraint firstItem="kxg-fM-kaw" firstAttribute="leading" secondItem="z88-bo-FNO" secondAttribute="leading" id="zmE-ss-Q8L"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8UY-ZG-OrP"/>
+                    <navigationItem key="navigationItem" title="Create" id="8UY-ZG-OrP"/>
+                    <connections>
+                        <outlet property="deleteButton" destination="z88-bo-FNO" id="bJ4-gb-bP0"/>
+                        <outlet property="estateTextView" destination="kxg-fM-kaw" id="tWY-Rq-6am"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nx3-L8-1xt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1258" y="900"/>
+            <point key="canvasLocation" x="1246" y="838"/>
         </scene>
         <!--View Controller - 恢复账号-->
         <scene sceneID="lXl-bk-Ser">
@@ -662,6 +670,21 @@
             </objects>
             <point key="canvasLocation" x="1246" y="180"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yq0-UL-uni">
+            <objects>
+                <navigationController storyboardIdentifier="EstateNavigationViewController" definesPresentationContext="YES" id="dO1-YD-MmN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fHe-Kv-I9g">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8YX-ce-x5E" kind="relationship" relationship="rootViewController" id="O5d-1z-ic2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4yS-J3-ZKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-115" y="1600"/>
+        </scene>
         <!--View Controller - 设置-->
         <scene sceneID="2Aw-8J-cVu">
             <objects>
@@ -679,12 +702,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YS1-es-ZyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="795" y="1799"/>
+            <point key="canvasLocation" x="805" y="2027"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
             <objects>
                 <tabBarController storyboardIdentifier="EstateTabViewController" id="8YX-ce-x5E" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cfy-9l-WO8"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JQR-rB-NYL">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
@@ -692,13 +716,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Bwp-hL-C1s" kind="relationship" relationship="viewControllers" id="P7k-fx-lDK"/>
                         <segue destination="i1S-3H-tXv" kind="relationship" relationship="viewControllers" id="1FY-wQ-GKs"/>
+                        <segue destination="Bwp-hL-C1s" kind="relationship" relationship="viewControllers" id="P7k-fx-lDK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="1372"/>
+            <point key="canvasLocation" x="281" y="1600"/>
         </scene>
         <!--Passcode View Controller - 手机密码-->
         <scene sceneID="vGo-Ug-hJc">
@@ -929,6 +953,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBK-BO-gnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2069" y="-1156"/>
+        </scene>
+        <!--Estate Detail View Controller - Modify-->
+        <scene sceneID="Nfk-iq-TJu">
+            <objects>
+                <viewController id="aFz-IK-U30" customClass="EstateDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="amq-dX-PCk"/>
+                        <viewControllerLayoutGuide type="bottom" id="ULP-V2-sCz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5xY-A2-lej">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYw-eq-6ms">
+                                <rect key="frame" x="20" y="393" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButtonTouched:" destination="aFz-IK-U30" eventType="touchUpInside" id="wuY-uD-C4S"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hE-4q-nEn">
+                                <rect key="frame" x="20" y="80" width="280" height="305"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6hE-4q-nEn" firstAttribute="trailing" secondItem="XYw-eq-6ms" secondAttribute="trailing" id="Ikg-ut-co3"/>
+                            <constraint firstItem="6hE-4q-nEn" firstAttribute="top" secondItem="amq-dX-PCk" secondAttribute="bottom" constant="16" id="fJN-uS-VPc"/>
+                            <constraint firstAttribute="trailing" secondItem="XYw-eq-6ms" secondAttribute="trailing" constant="20" symbolic="YES" id="h9u-c1-cXa"/>
+                            <constraint firstItem="XYw-eq-6ms" firstAttribute="top" secondItem="6hE-4q-nEn" secondAttribute="bottom" constant="8" symbolic="YES" id="kOe-GP-v6j"/>
+                            <constraint firstItem="ULP-V2-sCz" firstAttribute="top" secondItem="XYw-eq-6ms" secondAttribute="bottom" constant="8" id="kSc-Eq-KQL"/>
+                            <constraint firstItem="XYw-eq-6ms" firstAttribute="leading" secondItem="5xY-A2-lej" secondAttribute="leading" constant="20" symbolic="YES" id="rt4-AO-dZZ"/>
+                            <constraint firstItem="6hE-4q-nEn" firstAttribute="leading" secondItem="XYw-eq-6ms" secondAttribute="leading" id="yFi-Hq-b6E"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Modify" id="sdJ-Z3-bo0"/>
+                    <connections>
+                        <outlet property="deleteButton" destination="XYw-eq-6ms" id="n7g-jh-ATf"/>
+                        <outlet property="estateTextView" destination="6hE-4q-nEn" id="LvI-pp-9ta"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zwe-Qi-pd5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1246" y="1482"/>
         </scene>
     </scenes>
     <resources>
