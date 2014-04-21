@@ -37,6 +37,13 @@
     }
     else
     {
+        NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+        [prefs removeObjectForKey:@"temppass1"];
+        [prefs removeObjectForKey:@"temppass2"];
+        [prefs removeObjectForKey:@"temppass3"];
+        [prefs removeObjectForKey:@"temppass4"];
+        [prefs synchronize];
+
         [self gotoScreen:@"RegisterNavigationViewController"];
     }
 }

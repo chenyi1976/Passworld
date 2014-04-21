@@ -118,47 +118,82 @@ UIImage* offImage = nil;
     
     if (passcode1 != -1 && passcode2 != -1 && passcode3 != -1 && passcode4 != -1)
     {
-        @try {
-            [self performSegueWithIdentifier:@"PasswordVerifySegue" sender:self];
-            
-            NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-            [prefs setInteger:passcode1 forKey:@"passcode1"];
-            [prefs setInteger:passcode2 forKey:@"passcode2"];
-            [prefs setInteger:passcode3 forKey:@"passcode3"];
-            [prefs setInteger:passcode4 forKey:@"passcode4"];
-            [prefs synchronize];
+        NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+        int oldPass1 = [prefs integerForKey:@"temppass1"];
+        int oldPass2 = [prefs integerForKey:@"temppass2"];
+        int oldPass3 = [prefs integerForKey:@"temppass3"];
+        int oldPass4 = [prefs integerForKey:@"temppass4"];
+        
+        int pass1 = [prefs integerForKey:@"passcode1"];
+        int pass2 = [prefs integerForKey:@"passcode2"];
+        int pass3 = [prefs integerForKey:@"passcode3"];
+        int pass4 = [prefs integerForKey:@"passcode4"];
 
-        }
-        @catch (NSException *exception) {
-//            NSLog(@"Segue not found: %@", exception);
-
-            //if segue not exist, it means we are the verification view
-            //check the code matches, if yes, then jump to EstateTabView.
-            //if not, then jump back to Password view.
-            
-            NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-            int oldPass1 = [prefs integerForKey:@"passcode1"];
-            int oldPass2 = [prefs integerForKey:@"passcode2"];
-            int oldPass3 = [prefs integerForKey:@"passcode3"];
-            int oldPass4 = [prefs integerForKey:@"passcode4"];
-
-            [prefs removeObjectForKey:@"passcode1"];
-            [prefs removeObjectForKey:@"passcode2"];
-            [prefs removeObjectForKey:@"passcode3"];
-            [prefs removeObjectForKey:@"passcode4"];
-            [prefs synchronize];
-
-            AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-            
-            if (oldPass1 == passcode1 && oldPass2 == passcode2 && oldPass3 == passcode3 && oldPass4 == passcode4)
+        //if the passcode does not exist, it means configuration mode.
+        if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0)
+        {
+            //if temporary passcode does not exist, it is in the first view.
+            if (oldPass1 == 0 && oldPass2 == 0 && oldPass3 == 0 && oldPass4 ==0)
             {
+                [self performSegueWithIdentifier:@"PasswordVerifySegue" sender:self];
+                
+                NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+                [prefs setInteger:passcode1 forKey:@"temppass1"];
+                [prefs setInteger:passcode2 forKey:@"temppass2"];
+                [prefs setInteger:passcode3 forKey:@"temppass3"];
+                [prefs setInteger:passcode4 forKey:@"temppass4"];
+                [prefs synchronize];
+            }
+            else
+            {
+                //clear temporary passcode
+                [prefs removeObjectForKey:@"temppass1"];
+                [prefs removeObjectForKey:@"temppass2"];
+                [prefs removeObjectForKey:@"temppass3"];
+                [prefs removeObjectForKey:@"temppass4"];
+                [prefs synchronize];
+                
+                AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                
+                if (oldPass1 == passcode1 && oldPass2 == passcode2 && oldPass3 == passcode3 && oldPass4 == passcode4)
+                {
+                    //save passcode.
+                    [prefs setInteger:passcode1 forKey:@"passcode1"];
+                    [prefs setInteger:passcode2 forKey:@"passcode2"];
+                    [prefs setInteger:passcode3 forKey:@"passcode3"];
+                    [prefs setInteger:passcode4 forKey:@"passcode4"];
+                    [prefs synchronize];
+                    
+                    UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateNavigationViewController"];
+                    [app.window setRootViewController:screen];
+                }
+                else
+                {
+                    //todo: show the red image animation, then pop view.
+                    
+                    UINavigationController* navigationController = (UINavigationController*)[[app window] rootViewController];
+                    [navigationController popViewControllerAnimated:TRUE];
+                }
+
+            }
+        }
+        else //running mode for security passcode check
+        {
+            if (pass1 == passcode1 && pass2 == passcode2 && pass3 == passcode3 && pass4 == passcode4)
+            {
+                //the passcode is matched, then goes to
+                AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
                 UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateNavigationViewController"];
                 [app.window setRootViewController:screen];
             }
             else
             {
-                UINavigationController* navigationController = (UINavigationController*)[[app window] rootViewController];
-                [navigationController popViewControllerAnimated:TRUE];
+                //todo: show red image, then ask user to retry.
+                
+                passcode1 = -1;
+                passcode2 = -1;
+                passcode3 = -1;
+                passcode4 = -1;
             }
         }
     }

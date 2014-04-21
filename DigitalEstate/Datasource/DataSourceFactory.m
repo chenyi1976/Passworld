@@ -11,33 +11,15 @@
 
 @implementation DataSourceFactory
 
-NSMutableDictionary* datasourceDict = nil;
+static id<EstateDataSource> datasource = nil;
 
-static DataSourceFactory* instance = nil;
-
-+ (DataSourceFactory*)sharedInstance
++ (id<EstateDataSource>)getDataSource
 {
-    if (instance == nil)
+    if (datasource == nil)
     {
-        instance = [[DataSourceFactory alloc] init];
-        [instance registerDataSource:[[MockDataSource alloc] init] forName:kMockKey];
+        datasource = [[MockDataSource alloc] init];
     }
-    return instance;
-}
-
-- (void)registerDataSource:(id<EstateDataSource>)datasource forName:(NSString*)name
-{
-    if (datasourceDict == nil)
-        datasourceDict = [[NSMutableDictionary alloc] init];
-    [datasourceDict setValue:datasource forKey:name];
-}
-
-- (id<EstateDataSource>)getDataSource:(NSString*)name;
-{
-    if (datasourceDict == nil)
-        return nil;
-    
-    return [datasourceDict valueForKey:name];
+    return datasource;
 }
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "EstateViewController.h"
-#import "EstateDataSource.h"
 #import "DataSourceFactory.h"
 #import "EstateDetailViewController.h"
 
@@ -51,7 +50,7 @@
         EstateDetailViewController *vc = [segue destinationViewController];
         
         // Pass any objects to the view controller here, like...
-        NSArray* estates =[[self getDataSource] getEstates];
+        NSArray* estates =[[DataSourceFactory getDataSource] getEstates];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         EstateData* data = [estates objectAtIndex:indexPath.row];
 
@@ -61,20 +60,9 @@
 
 #pragma mark - UITableViewDataSource
 
-id<EstateDataSource> datasource = nil;
-
-- (id<EstateDataSource>) getDataSource
-{
-    if (datasource == nil)
-    {
-        datasource = [[DataSourceFactory sharedInstance] getDataSource:kMockKey];
-    }
-    return datasource;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[self getDataSource] getEstates] count];
+    return [[[DataSourceFactory getDataSource] getEstates] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,7 +77,7 @@ id<EstateDataSource> datasource = nil;
                       initWithStyle:UITableViewCellStyleDefault
                       reuseIdentifier:MyCellIdentifier];
         }
-    NSArray* estates =[[self getDataSource] getEstates];
+    NSArray* estates =[[DataSourceFactory getDataSource] getEstates];
     if (indexPath.row < [estates count])
     {
         EstateData* data = [estates objectAtIndex:indexPath.row];
@@ -107,6 +95,8 @@ id<EstateDataSource> datasource = nil;
     }
     return result;
 }
+
+#pragma mark - business logic
 
 
 @end

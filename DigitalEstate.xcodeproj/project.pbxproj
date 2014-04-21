@@ -48,6 +48,7 @@
 		8180D81718FE48340095F625 /* on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D81518FE48340095F625 /* on@2x.png */; };
 		8180D81818FE48340095F625 /* off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D81618FE48340095F625 /* off@2x.png */; };
 		81CCB89819008A010019A6E4 /* EstateDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB89719008A010019A6E4 /* EstateDetailViewController.m */; };
+		81DDE8931904980D00EA886D /* red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81DDE8921904980D00EA886D /* red@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		8180D81618FE48340095F625 /* off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "off@2x.png"; path = "Images/off@2x.png"; sourceTree = "<group>"; };
 		81CCB89619008A010019A6E4 /* EstateDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateDetailViewController.h; path = ViewControllers/EstateDetailViewController.h; sourceTree = "<group>"; };
 		81CCB89719008A010019A6E4 /* EstateDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateDetailViewController.m; path = ViewControllers/EstateDetailViewController.m; sourceTree = "<group>"; };
+		81DDE8921904980D00EA886D /* red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "red@2x.png"; path = "Images/red@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 		8180D7E218FE153F0095F625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				81DDE8921904980D00EA886D /* red@2x.png */,
 				8180D81518FE48340095F625 /* on@2x.png */,
 				8180D81618FE48340095F625 /* off@2x.png */,
 				8180D80D18FE18720095F625 /* nil@2x.png */,
@@ -381,6 +384,7 @@
 				8180D80618FE16A40095F625 /* 6@2x.png in Resources */,
 				8180D80318FE16A40095F625 /* 9@2x.png in Resources */,
 				8180D81718FE48340095F625 /* on@2x.png in Resources */,
+				81DDE8931904980D00EA886D /* red@2x.png in Resources */,
 				8180D80818FE16A40095F625 /* 4@2x.png in Resources */,
 				8180D80718FE16A40095F625 /* 5@2x.png in Resources */,
 				813CCA5718FD0EF9002A98F2 /* Images.xcassets in Resources */,

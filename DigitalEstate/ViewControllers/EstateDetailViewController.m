@@ -7,6 +7,7 @@
 //
 
 #import "EstateDetailViewController.h"
+#import "DataSourceFactory.h"
 
 @interface EstateDetailViewController ()
 
@@ -26,7 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,17 +34,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark IBAction
 
@@ -55,17 +44,28 @@
 
 - (IBAction)saveButtonTouched:(id)sender
 {
-    NSLog(@"save button");
+    EstateData* data = [[EstateData alloc] initWithName:_nameTextView.text Content:_estateTextView.text];
+    [[DataSourceFactory getDataSource] addObject:data];
 }
 
 - (IBAction)editButtonTouched:(id)sender
 {
-    NSLog(@"edit button");
+    if (data)
+    {
+        [_nameTextView setEnabled:TRUE];
+        [_estateTextView setEditable:TRUE];
+        [_nameTextView becomeFirstResponder];
+    }
 }
 
 #pragma mark business method
+
+EstateData* data;
+
 - (void)setEstateData:(EstateData*)estate
 {
+    data = estate;
+    [_nameTextView setText:estate.name];
     [_estateTextView setText:estate.content];
 }
 

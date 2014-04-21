@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "EstateData.h"
+#import "EstateDataSource.h"
 
 @interface EstateDetailViewController : UIViewController
 
 @property IBOutlet UIButton* deleteButton;
 @property IBOutlet UITextView* estateTextView;
+@property IBOutlet UITextField* nameTextView;
 
 - (void)setEstateData:(EstateData*)estate;
 

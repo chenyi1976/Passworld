@@ -15,6 +15,12 @@
 
 - (void)loadEstatesWithCompletionHandler:(void (^)(NSError* error))completionHandler;
 
-- (void)setEstate:(EstateData*)estate ForIndex:(int)index;
+- (void)replaceObjectAtIndex:(NSUInteger)index withObject:(EstateData*)estate;
+
+- (void)removeObjectAtIndex:(NSUInteger)index;
+
+- (void)addObject:(EstateData*)estate;
+
+- (void)insertObject:(EstateData*)estate atIndex:(NSUInteger)index;
 
 @end

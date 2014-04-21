@@ -13,9 +13,6 @@
 
 @interface DataSourceFactory : NSObject
 
-+ (DataSourceFactory*)sharedInstance;
-
-- (void)registerDataSource:(id<EstateDataSource>)datasource forName:(NSString*)name;
-- (id<EstateDataSource>)getDataSource:(NSString*)name;
++ (id<EstateDataSource>)getDataSource;
 
 @end

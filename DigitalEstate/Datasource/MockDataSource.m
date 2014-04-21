@@ -10,9 +10,22 @@
 
 @implementation MockDataSource
 
-- (NSArray*)getEstates
+NSMutableArray* estates = nil;
+
+- (id) init
 {
-    return [NSArray arrayWithObjects:[[EstateData alloc] initWithName:@"Estate1" Content:@"Content1"], nil];
+    if (self = [super init])
+    {
+        estates = [[NSMutableArray alloc] init];
+        [estates addObject:[[EstateData alloc] initWithName:@"Estate1" Content:@"Content1"]];
+    }
+    return self;
+}
+
+
+- (NSMutableArray*)getEstates
+{
+    return estates;
 }
 
 - (void)loadEstatesWithCompletionHandler:(void (^)(NSError* error))completionHandler
@@ -20,9 +33,25 @@
     
 }
 
-- (void)setEstate:(EstateData*)estate ForIndex:(int)index
+- (void)replaceObjectAtIndex:(NSUInteger)index withObject:(EstateData*)estate
 {
-    
+    [estates replaceObjectAtIndex:index withObject:estate];
 }
+
+- (void)removeObjectAtIndex:(NSUInteger)index
+{
+    [estates removeObjectAtIndex:index];
+}
+
+- (void)addObject:(EstateData*)estate
+{
+    [estates addObject:estate];
+}
+
+- (void)insertObject:(EstateData*)estate atIndex:(NSUInteger)index
+{
+    [estates insertObject:estate atIndex:index];
+}
+
 
 @end

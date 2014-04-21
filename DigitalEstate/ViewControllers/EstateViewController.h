@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EstateDataSource.h"
 
 @interface EstateViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
