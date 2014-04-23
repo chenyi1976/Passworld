@@ -19,8 +19,12 @@
 
 - (void)removeObjectAtIndex:(NSUInteger)index;
 
+- (void)removeObject:(EstateData*)estate;
+
 - (void)addObject:(EstateData*)estate;
 
 - (void)insertObject:(EstateData*)estate atIndex:(NSUInteger)index;
+
+- (NSUInteger)indexOfObject:(EstateData*)estate;
 
 @end

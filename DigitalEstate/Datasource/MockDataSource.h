@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "EstateDataSource.h"
+#import "Observable.h"
 
 #define kRencentKey @"recent"
 #define kCategoryListKey @"categoryList"
 #define kCategoryArticleKey @"categoryArticle"
 #define kHistoryArticleKey @"historyArticle"
 
-@interface MockDataSource : NSObject<EstateDataSource>
+@interface MockDataSource : Observable<EstateDataSource>
 
 @end

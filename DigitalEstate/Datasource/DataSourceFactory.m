@@ -11,9 +11,9 @@
 
 @implementation DataSourceFactory
 
-static id<EstateDataSource> datasource = nil;
+static Observable<EstateDataSource> *datasource = nil;
 
-+ (id<EstateDataSource>)getDataSource
++ (Observable<EstateDataSource>*)getDataSource
 {
     if (datasource == nil)
     {

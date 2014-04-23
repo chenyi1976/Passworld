@@ -36,22 +36,36 @@ NSMutableArray* estates = nil;
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(EstateData*)estate
 {
     [estates replaceObjectAtIndex:index withObject:estate];
+    [super fireDataChanged];
 }
 
 - (void)removeObjectAtIndex:(NSUInteger)index
 {
     [estates removeObjectAtIndex:index];
+    [super fireDataChanged];
+}
+
+- (void)removeObject:(EstateData*)estate
+{
+    [estates removeObject:estate];
+    [super fireDataChanged];
 }
 
 - (void)addObject:(EstateData*)estate
 {
     [estates addObject:estate];
+    [super fireDataChanged];
 }
 
 - (void)insertObject:(EstateData*)estate atIndex:(NSUInteger)index
 {
     [estates insertObject:estate atIndex:index];
+    [super fireDataChanged];
 }
 
+- (NSUInteger)indexOfObject:(EstateData*)estate
+{
+    return [estates indexOfObject:estate];
+}
 
 @end

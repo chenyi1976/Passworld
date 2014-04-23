@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		812178761907A2B4002DA71A /* Observable.m in Sources */ = {isa = PBXBuildFile; fileRef = 812178751907A2B4002DA71A /* Observable.m */; };
 		813CCA3C18FD0EF9002A98F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3B18FD0EF9002A98F2 /* Foundation.framework */; };
 		813CCA3E18FD0EF9002A98F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */; };
 		813CCA4018FD0EF9002A98F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
@@ -47,6 +48,14 @@
 		8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D81018FE19950095F625 /* PasscodeViewController.m */; };
 		8180D81718FE48340095F625 /* on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D81518FE48340095F625 /* on@2x.png */; };
 		8180D81818FE48340095F625 /* off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D81618FE48340095F625 /* off@2x.png */; };
+		81B18E471905EAB1005647AF /* Mic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E431905EAB1005647AF /* Mic@2x.png */; };
+		81B18E481905EAB1005647AF /* Video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E441905EAB1005647AF /* Video@2x.png */; };
+		81B18E491905EAB1005647AF /* Page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E451905EAB1005647AF /* Page@2x.png */; };
+		81B18E4A1905EAB1005647AF /* Camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E461905EAB1005647AF /* Camera@2x.png */; };
+		81B18E4D1905FB9F005647AF /* Back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E4B1905FB9E005647AF /* Back@2x.png */; };
+		81B18E4E1905FB9F005647AF /* Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E4C1905FB9F005647AF /* Tick@2x.png */; };
+		81B18E501905FC3A005647AF /* Delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E4F1905FC3A005647AF /* Delete@2x.png */; };
+		81B18E53190602DC005647AF /* EstateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B18E52190602DC005647AF /* EstateTableViewCell.m */; };
 		81CCB89819008A010019A6E4 /* EstateDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB89719008A010019A6E4 /* EstateDetailViewController.m */; };
 		81DDE8931904980D00EA886D /* red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81DDE8921904980D00EA886D /* red@2x.png */; };
 /* End PBXBuildFile section */
@@ -62,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		812178721907A1B5002DA71A /* Observable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Observable.h; path = Datasource/Observable.h; sourceTree = "<group>"; };
+		812178731907A1F9002DA71A /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Observer.h; path = Datasource/Observer.h; sourceTree = "<group>"; };
+		812178751907A2B4002DA71A /* Observable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Observable.m; path = Datasource/Observable.m; sourceTree = "<group>"; };
 		813CCA3818FD0EF9002A98F2 /* DigitalEstate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalEstate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813CCA3B18FD0EF9002A98F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +132,15 @@
 		8180D81018FE19950095F625 /* PasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeViewController.m; path = ViewControllers/PasscodeViewController.m; sourceTree = "<group>"; };
 		8180D81518FE48340095F625 /* on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "on@2x.png"; path = "Images/on@2x.png"; sourceTree = "<group>"; };
 		8180D81618FE48340095F625 /* off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "off@2x.png"; path = "Images/off@2x.png"; sourceTree = "<group>"; };
+		81B18E431905EAB1005647AF /* Mic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Mic@2x.png"; path = "Images/Mic@2x.png"; sourceTree = "<group>"; };
+		81B18E441905EAB1005647AF /* Video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Video@2x.png"; path = "Images/Video@2x.png"; sourceTree = "<group>"; };
+		81B18E451905EAB1005647AF /* Page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Page@2x.png"; path = "Images/Page@2x.png"; sourceTree = "<group>"; };
+		81B18E461905EAB1005647AF /* Camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Camera@2x.png"; path = "Images/Camera@2x.png"; sourceTree = "<group>"; };
+		81B18E4B1905FB9E005647AF /* Back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Back@2x.png"; path = "Images/Back@2x.png"; sourceTree = "<group>"; };
+		81B18E4C1905FB9F005647AF /* Tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tick@2x.png"; path = "Images/Tick@2x.png"; sourceTree = "<group>"; };
+		81B18E4F1905FC3A005647AF /* Delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Delete@2x.png"; path = "Images/Delete@2x.png"; sourceTree = "<group>"; };
+		81B18E51190602DC005647AF /* EstateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateTableViewCell.h; path = ViewControllers/EstateTableViewCell.h; sourceTree = "<group>"; };
+		81B18E52190602DC005647AF /* EstateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateTableViewCell.m; path = ViewControllers/EstateTableViewCell.m; sourceTree = "<group>"; };
 		81CCB89619008A010019A6E4 /* EstateDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateDetailViewController.h; path = ViewControllers/EstateDetailViewController.h; sourceTree = "<group>"; };
 		81CCB89719008A010019A6E4 /* EstateDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateDetailViewController.m; path = ViewControllers/EstateDetailViewController.m; sourceTree = "<group>"; };
 		81DDE8921904980D00EA886D /* red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "red@2x.png"; path = "Images/red@2x.png"; sourceTree = "<group>"; };
@@ -182,6 +203,7 @@
 		813CCA4118FD0EF9002A98F2 /* DigitalEstate */ = {
 			isa = PBXGroup;
 			children = (
+				81B18E54190602F8005647AF /* Views */,
 				8180D7C118FDFCE50095F625 /* Util */,
 				813CCA8318FDFC15002A98F2 /* Data */,
 				813CCA7F18FDEF96002A98F2 /* ViewControllers */,
@@ -237,6 +259,9 @@
 				813CCA7918FDE096002A98F2 /* MockDataSource.m */,
 				813CCA7518FDDFF0002A98F2 /* DataSourceFactory.h */,
 				813CCA7618FDDFF0002A98F2 /* DataSourceFactory.m */,
+				812178721907A1B5002DA71A /* Observable.h */,
+				812178751907A2B4002DA71A /* Observable.m */,
+				812178731907A1F9002DA71A /* Observer.h */,
 			);
 			name = DataSource;
 			sourceTree = "<group>";
@@ -285,6 +310,13 @@
 		8180D7E218FE153F0095F625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				81B18E4F1905FC3A005647AF /* Delete@2x.png */,
+				81B18E4B1905FB9E005647AF /* Back@2x.png */,
+				81B18E4C1905FB9F005647AF /* Tick@2x.png */,
+				81B18E431905EAB1005647AF /* Mic@2x.png */,
+				81B18E441905EAB1005647AF /* Video@2x.png */,
+				81B18E451905EAB1005647AF /* Page@2x.png */,
+				81B18E461905EAB1005647AF /* Camera@2x.png */,
 				81DDE8921904980D00EA886D /* red@2x.png */,
 				8180D81518FE48340095F625 /* on@2x.png */,
 				8180D81618FE48340095F625 /* off@2x.png */,
@@ -302,6 +334,15 @@
 				8180D7F718FE15A60095F625 /* 1@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		81B18E54190602F8005647AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				81B18E51190602DC005647AF /* EstateTableViewCell.h */,
+				81B18E52190602DC005647AF /* EstateTableViewCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,7 +424,9 @@
 				8180D80918FE16A40095F625 /* 3@2x.png in Resources */,
 				8180D80618FE16A40095F625 /* 6@2x.png in Resources */,
 				8180D80318FE16A40095F625 /* 9@2x.png in Resources */,
+				81B18E4A1905EAB1005647AF /* Camera@2x.png in Resources */,
 				8180D81718FE48340095F625 /* on@2x.png in Resources */,
+				81B18E491905EAB1005647AF /* Page@2x.png in Resources */,
 				81DDE8931904980D00EA886D /* red@2x.png in Resources */,
 				8180D80818FE16A40095F625 /* 4@2x.png in Resources */,
 				8180D80718FE16A40095F625 /* 5@2x.png in Resources */,
@@ -392,12 +435,17 @@
 				8180D80A18FE16A40095F625 /* 2@2x.png in Resources */,
 				813CCA4618FD0EF9002A98F2 /* InfoPlist.strings in Resources */,
 				8180D80218FE16A40095F625 /* 0@2x.png in Resources */,
+				81B18E501905FC3A005647AF /* Delete@2x.png in Resources */,
+				81B18E481905EAB1005647AF /* Video@2x.png in Resources */,
 				8180D80E18FE18720095F625 /* nil@2x.png in Resources */,
 				8180D80518FE16A40095F625 /* 7@2x.png in Resources */,
 				8180D81818FE48340095F625 /* off@2x.png in Resources */,
 				8180D7F818FE15A60095F625 /* 1@2x.png in Resources */,
+				81B18E4E1905FB9F005647AF /* Tick@2x.png in Resources */,
 				813CCA4F18FD0EF9002A98F2 /* Main.storyboard in Resources */,
 				8180D80418FE16A40095F625 /* 8@2x.png in Resources */,
+				81B18E4D1905FB9F005647AF /* Back@2x.png in Resources */,
+				81B18E471905EAB1005647AF /* Mic@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +468,7 @@
 				8180D7C018FDFCC30095F625 /* EstateData.m in Sources */,
 				8180D7CD18FE06C70095F625 /* EstateViewController.m in Sources */,
 				813CCA5518FD0EF9002A98F2 /* SecondViewController.m in Sources */,
+				81B18E53190602DC005647AF /* EstateTableViewCell.m in Sources */,
 				8180D7C618FDFD7E0095F625 /* DownloadManager.m in Sources */,
 				8180D7CA18FDFE0A0095F625 /* WebsiteLinkEntry.m in Sources */,
 				8180D7C718FDFD7E0095F625 /* CacheManager.m in Sources */,
@@ -432,6 +481,7 @@
 				8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */,
 				813CCA4818FD0EF9002A98F2 /* main.m in Sources */,
 				81CCB89819008A010019A6E4 /* EstateDetailViewController.m in Sources */,
+				812178761907A2B4002DA71A /* Observable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

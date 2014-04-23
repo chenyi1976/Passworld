@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "EstateDataSource.h"
+#import "Observable.h"
 
 #define kMockKey @"mockDataSource"
 
 @interface DataSourceFactory : NSObject
 
-+ (id<EstateDataSource>)getDataSource;
++ (Observable<EstateDataSource>*)getDataSource;
 
 @end

@@ -164,7 +164,7 @@ UIImage* offImage = nil;
                     [prefs setInteger:passcode4 forKey:@"passcode4"];
                     [prefs synchronize];
                     
-                    UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateNavigationViewController"];
+                    UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateViewController"];
                     [app.window setRootViewController:screen];
                 }
                 else
@@ -183,7 +183,7 @@ UIImage* offImage = nil;
             {
                 //the passcode is matched, then goes to
                 AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-                UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateNavigationViewController"];
+                UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateViewController"];
                 [app.window setRootViewController:screen];
             }
             else

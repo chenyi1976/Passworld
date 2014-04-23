@@ -29,6 +29,12 @@
     [super viewDidLoad];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [_estateTextView becomeFirstResponder];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -39,23 +45,33 @@
 
 - (IBAction)deleteButtonTouched:(id)sender
 {
-    NSLog(@"delete button");
-}
-
-- (IBAction)saveButtonTouched:(id)sender
-{
-    EstateData* data = [[EstateData alloc] initWithName:_nameTextView.text Content:_estateTextView.text];
-    [[DataSourceFactory getDataSource] addObject:data];
-}
-
-- (IBAction)editButtonTouched:(id)sender
-{
-    if (data)
+    if (data != nil)
     {
-        [_nameTextView setEnabled:TRUE];
-        [_estateTextView setEditable:TRUE];
-        [_nameTextView becomeFirstResponder];
+        [data setContent:_estateTextView.text];
+        [[DataSourceFactory getDataSource] removeObject:data];
     }
+    [self dismissViewControllerAnimated:TRUE completion:^(void){}];
+}
+
+- (IBAction)okButtonTouched:(id)sender
+{
+    if (data == nil)
+    {
+        EstateData* data = [[EstateData alloc] initWithName:@"" Content:_estateTextView.text];
+        [[DataSourceFactory getDataSource] addObject:data];
+    }
+    else
+    {
+        NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:data];
+        [data setContent:_estateTextView.text];
+        [[DataSourceFactory getDataSource] replaceObjectAtIndex:index withObject:data];
+    }
+    [self dismissViewControllerAnimated:TRUE completion:^(void){}];
+}
+
+- (IBAction)backButtonTouched:(id)sender
+{
+    [self dismissViewControllerAnimated:TRUE completion:^(void){}];
 }
 
 #pragma mark business method
@@ -65,8 +81,10 @@ EstateData* data;
 - (void)setEstateData:(EstateData*)estate
 {
     data = estate;
-    [_nameTextView setText:estate.name];
-    [_estateTextView setText:estate.content];
+    if (data)
+        [_estateTextView setText:data.content];
+    else
+        [_estateTextView setText:@""];
 }
 
 @end

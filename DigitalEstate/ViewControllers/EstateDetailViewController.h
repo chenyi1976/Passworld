@@ -14,12 +14,11 @@
 
 @property IBOutlet UIButton* deleteButton;
 @property IBOutlet UITextView* estateTextView;
-@property IBOutlet UITextField* nameTextView;
 
 - (void)setEstateData:(EstateData*)estate;
 
+- (IBAction)backButtonTouched:(id)sender;
+- (IBAction)okButtonTouched:(id)sender;
 - (IBAction)deleteButtonTouched:(id)sender;
-- (IBAction)saveButtonTouched:(id)sender;
-- (IBAction)editButtonTouched:(id)sender;
 
 @end

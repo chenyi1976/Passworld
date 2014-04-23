@@ -27,24 +27,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    BOOL hasLogon = [[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogon"];
 
-    if (hasLogon)
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+
+    int pass1 = [prefs integerForKey:@"passcode1"];
+    int pass2 = [prefs integerForKey:@"passcode2"];
+    int pass3 = [prefs integerForKey:@"passcode3"];
+    int pass4 = [prefs integerForKey:@"passcode4"];
+    
+    if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 == 0)
     {
-        [self gotoScreen:@"EstateTabViewController"];
+        [self gotoScreen:@"RegisterNavigationViewController"];
     }
     else
     {
-        NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-        [prefs removeObjectForKey:@"temppass1"];
-        [prefs removeObjectForKey:@"temppass2"];
-        [prefs removeObjectForKey:@"temppass3"];
-        [prefs removeObjectForKey:@"temppass4"];
-        [prefs synchronize];
-
-        [self gotoScreen:@"RegisterNavigationViewController"];
+        [self gotoScreen:@"EstateViewController"];
     }
 }
 
