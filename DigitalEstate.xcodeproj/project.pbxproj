@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		812178761907A2B4002DA71A /* Observable.m in Sources */ = {isa = PBXBuildFile; fileRef = 812178751907A2B4002DA71A /* Observable.m */; };
+		8121787919087B03002DA71A /* SMSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787819087B03002DA71A /* SMSService.m */; };
 		813CCA3C18FD0EF9002A98F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3B18FD0EF9002A98F2 /* Foundation.framework */; };
 		813CCA3E18FD0EF9002A98F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */; };
 		813CCA4018FD0EF9002A98F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
@@ -74,6 +75,8 @@
 		812178721907A1B5002DA71A /* Observable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Observable.h; path = Datasource/Observable.h; sourceTree = "<group>"; };
 		812178731907A1F9002DA71A /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Observer.h; path = Datasource/Observer.h; sourceTree = "<group>"; };
 		812178751907A2B4002DA71A /* Observable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Observable.m; path = Datasource/Observable.m; sourceTree = "<group>"; };
+		8121787719087B03002DA71A /* SMSService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMSService.h; path = Util/SMSService.h; sourceTree = "<group>"; };
+		8121787819087B03002DA71A /* SMSService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMSService.m; path = Util/SMSService.m; sourceTree = "<group>"; };
 		813CCA3818FD0EF9002A98F2 /* DigitalEstate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalEstate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813CCA3B18FD0EF9002A98F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -303,6 +306,8 @@
 				8180D7C318FDFD7E0095F625 /* DownloadManager.m */,
 				8180D7C418FDFD7E0095F625 /* CacheManager.h */,
 				8180D7C518FDFD7E0095F625 /* CacheManager.m */,
+				8121787719087B03002DA71A /* SMSService.h */,
+				8121787819087B03002DA71A /* SMSService.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */,
 				813CCA5218FD0EF9002A98F2 /* FirstViewController.m in Sources */,
 				813CCA7A18FDE096002A98F2 /* MockDataSource.m in Sources */,
+				8121787919087B03002DA71A /* SMSService.m in Sources */,
 				813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */,
 				8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */,
 				813CCA4818FD0EF9002A98F2 /* main.m in Sources */,

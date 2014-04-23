@@ -8,6 +8,7 @@
 
 #import "RegistrationViewController.h"
 #import "AppDelegate.h"
+#import "SMSService.h"
 
 @interface RegistrationViewController ()
 
@@ -36,30 +37,39 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark - IBAction
 
-- (IBAction)registerButtonClicked:(id)sender
+- (IBAction)requestButtonClicked:(id)sender
 {
-//    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-//    [prefs setBool:TRUE forKey:@"hasLogon"];
-//    [prefs synchronize];
-//    
-//    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    
-//    UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateTabViewController"];
-//    [app.window setRootViewController:screen];
-
+    NSString* phoneNo = _phoneField.text;
+    if (!phoneNo)
+        return;
+    if (phoneNo.length == 0)
+        return;
+    
+    [SMSService requestCodeVerficationForPhone:_phoneField.text];
+    
+    NSUserDefaults* perf = [NSUserDefaults standardUserDefaults];
+    [perf setObject:phoneNo forKey:@"phoneNo"];
+    [perf synchronize];
 }
+
+- (IBAction)verifyButtonClicked:(id)sender
+{
+    NSString* code = _codeField.text;
+    if (!code)
+        return;
+    if (code.length != 6)
+        return;
+    
+    NSString* phoneNo = [[NSUserDefaults standardUserDefaults] objectForKey:@"phoneNo"];
+    
+    bool verifyResult = [SMSService verifyCode:_codeField.text ForPhone:phoneNo];
+    if (verifyResult)
+    {
+        
+    }
+}
+
 
 @end

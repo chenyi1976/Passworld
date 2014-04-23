@@ -11,7 +11,9 @@
 @interface RegistrationViewController : UIViewController
 
 @property IBOutlet UITextField* phoneField;
+@property IBOutlet UITextField* codeField;
 
-- (IBAction)registerButtonClicked:(id)sender;
+- (IBAction)requestButtonClicked:(id)sender;
+- (IBAction)verifyButtonClicked:(id)sender;
 
 @end

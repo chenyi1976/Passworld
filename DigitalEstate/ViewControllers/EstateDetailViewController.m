@@ -27,12 +27,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (data)
+        [_estateTextView setText:data.content];
+    else
+        [_estateTextView setText:@""];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [_estateTextView becomeFirstResponder];
+//    [_estateTextView becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
