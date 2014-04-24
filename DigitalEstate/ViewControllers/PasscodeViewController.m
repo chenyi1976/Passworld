@@ -8,6 +8,7 @@
 
 #import "PasscodeViewController.h"
 #import "AppDelegate.h"
+#import "ConstantDefinition.h"
 
 @interface PasscodeViewController ()
 
@@ -119,15 +120,15 @@ UIImage* offImage = nil;
     if (passcode1 != -1 && passcode2 != -1 && passcode3 != -1 && passcode4 != -1)
     {
         NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-        int oldPass1 = [prefs integerForKey:@"temppass1"];
-        int oldPass2 = [prefs integerForKey:@"temppass2"];
-        int oldPass3 = [prefs integerForKey:@"temppass3"];
-        int oldPass4 = [prefs integerForKey:@"temppass4"];
+        int oldPass1 = [prefs integerForKey:kTemppass1];
+        int oldPass2 = [prefs integerForKey:kTemppass2];
+        int oldPass3 = [prefs integerForKey:kTemppass3];
+        int oldPass4 = [prefs integerForKey:kTemppass4];
         
-        int pass1 = [prefs integerForKey:@"passcode1"];
-        int pass2 = [prefs integerForKey:@"passcode2"];
-        int pass3 = [prefs integerForKey:@"passcode3"];
-        int pass4 = [prefs integerForKey:@"passcode4"];
+        int pass1 = [prefs integerForKey:kPassword1];
+        int pass2 = [prefs integerForKey:kPassword2];
+        int pass3 = [prefs integerForKey:kPassword3];
+        int pass4 = [prefs integerForKey:kPassword4];
 
         //if the passcode does not exist, it means configuration mode.
         if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0)
@@ -138,41 +139,38 @@ UIImage* offImage = nil;
                 [self performSegueWithIdentifier:@"PasswordVerifySegue" sender:self];
                 
                 NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-                [prefs setInteger:passcode1 forKey:@"temppass1"];
-                [prefs setInteger:passcode2 forKey:@"temppass2"];
-                [prefs setInteger:passcode3 forKey:@"temppass3"];
-                [prefs setInteger:passcode4 forKey:@"temppass4"];
+                [prefs setInteger:passcode1 forKey:kTemppass1];
+                [prefs setInteger:passcode2 forKey:kTemppass2];
+                [prefs setInteger:passcode3 forKey:kTemppass3];
+                [prefs setInteger:passcode4 forKey:kTemppass4];
                 [prefs synchronize];
             }
             else
             {
                 //clear temporary passcode
-                [prefs removeObjectForKey:@"temppass1"];
-                [prefs removeObjectForKey:@"temppass2"];
-                [prefs removeObjectForKey:@"temppass3"];
-                [prefs removeObjectForKey:@"temppass4"];
+                [prefs removeObjectForKey:kTemppass1];
+                [prefs removeObjectForKey:kTemppass2];
+                [prefs removeObjectForKey:kTemppass3];
+                [prefs removeObjectForKey:kTemppass4];
                 [prefs synchronize];
-                
-                AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
                 
                 if (oldPass1 == passcode1 && oldPass2 == passcode2 && oldPass3 == passcode3 && oldPass4 == passcode4)
                 {
                     //save passcode.
-                    [prefs setInteger:passcode1 forKey:@"passcode1"];
-                    [prefs setInteger:passcode2 forKey:@"passcode2"];
-                    [prefs setInteger:passcode3 forKey:@"passcode3"];
-                    [prefs setInteger:passcode4 forKey:@"passcode4"];
+                    [prefs setInteger:passcode1 forKey:kPassword1];
+                    [prefs setInteger:passcode2 forKey:kPassword2];
+                    [prefs setInteger:passcode3 forKey:kPassword3];
+                    [prefs setInteger:passcode4 forKey:kPassword4];
                     [prefs synchronize];
                     
                     UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateViewController"];
+                    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
                     [app.window setRootViewController:screen];
                 }
                 else
                 {
                     //todo: show the red image animation, then pop view.
-                    
-                    UINavigationController* navigationController = (UINavigationController*)[[app window] rootViewController];
-                    [navigationController popViewControllerAnimated:TRUE];
+                    [self.navigationController popViewControllerAnimated:TRUE];
                 }
 
             }

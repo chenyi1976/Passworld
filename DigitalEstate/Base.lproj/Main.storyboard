@@ -122,7 +122,7 @@
                                     <segue destination="ZV3-U4-RdZ" kind="push" id="o5T-9Y-9E7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="已有账号，需要恢复？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK6-xZ-5rm">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="换了新手机，但号码没变，需要恢复？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK6-xZ-5rm">
                                 <rect key="frame" x="20" y="198" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -175,7 +175,6 @@
                                 </state>
                                 <connections>
                                     <action selector="requestButtonClicked:" destination="f48-YS-xER" eventType="touchUpInside" id="mg1-Jc-DMg"/>
-                                    <segue destination="2ak-l4-Ktq" kind="push" id="taT-rG-r07"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+86" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alD-IT-TGt">
@@ -184,28 +183,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2J-bv-stV">
-                                <rect key="frame" x="20" y="131" width="280" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2J-bv-stV">
+                                <rect key="frame" x="20" y="131" width="226" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="China">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderCorner">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="iMC-tW-2Ou" kind="push" id="YfA-gR-GmN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yet-fb-rYN">
+                                <rect key="frame" x="254" y="131" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=">">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iMC-tW-2Ou" kind="push" id="CbX-hg-kWr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="fSm-D1-e2D"/>
                     <connections>
+                        <outlet property="countryButton" destination="U2J-bv-stV" id="63A-9u-ad3"/>
+                        <outlet property="countryField" destination="alD-IT-TGt" id="MsX-VW-IxK"/>
                         <outlet property="phoneField" destination="iS8-xt-cG0" id="2Xq-7i-Sow"/>
+                        <segue destination="2ak-l4-Ktq" kind="push" identifier="smsVerifySegue" id="cD0-Fu-ske"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rvm-n1-IIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1047,7 +1054,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="请输入文字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fS-S1-zhj">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入文字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fS-S1-zhj">
                                 <rect key="frame" x="20" y="56" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1085,17 +1092,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="XYw-eq-6ms" secondAttribute="bottom" constant="20" symbolic="YES" id="3F6-Hx-gdL"/>
-                            <constraint firstItem="7fS-S1-zhj" firstAttribute="top" secondItem="RS2-Cj-tLf" secondAttribute="bottom" constant="8" symbolic="YES" id="8Mk-TD-8yr"/>
-                            <constraint firstItem="6hE-4q-nEn" firstAttribute="top" secondItem="7fS-S1-zhj" secondAttribute="bottom" constant="3" id="Esj-6K-SqE"/>
+                            <constraint firstItem="6hE-4q-nEn" firstAttribute="top" secondItem="7fS-S1-zhj" secondAttribute="bottom" constant="3" id="9KF-CP-8kF"/>
+                            <constraint firstItem="7fS-S1-zhj" firstAttribute="leading" secondItem="RS2-Cj-tLf" secondAttribute="leading" id="FZ6-2j-t9y"/>
                             <constraint firstItem="6hE-4q-nEn" firstAttribute="centerX" secondItem="XYw-eq-6ms" secondAttribute="centerX" id="Hxf-N4-CyR"/>
                             <constraint firstItem="DxQ-uK-0mg" firstAttribute="bottom" secondItem="RS2-Cj-tLf" secondAttribute="bottom" id="Iaa-Ks-QeQ"/>
                             <constraint firstItem="RS2-Cj-tLf" firstAttribute="top" secondItem="5xY-A2-lej" secondAttribute="top" constant="20" symbolic="YES" id="Ncp-T3-ZuF"/>
                             <constraint firstItem="XYw-eq-6ms" firstAttribute="top" secondItem="6hE-4q-nEn" secondAttribute="bottom" constant="10" id="Rgu-aS-KmW"/>
-                            <constraint firstItem="RS2-Cj-tLf" firstAttribute="leading" secondItem="7fS-S1-zhj" secondAttribute="leading" id="T0n-3K-Mc1"/>
+                            <constraint firstItem="7fS-S1-zhj" firstAttribute="trailing" secondItem="DxQ-uK-0mg" secondAttribute="trailing" id="dUS-2a-QjI"/>
                             <constraint firstItem="RS2-Cj-tLf" firstAttribute="leading" secondItem="5xY-A2-lej" secondAttribute="leading" constant="20" symbolic="YES" id="gmJ-Cu-1oh"/>
                             <constraint firstItem="DxQ-uK-0mg" firstAttribute="top" secondItem="RS2-Cj-tLf" secondAttribute="top" id="kJI-rq-KvS"/>
+                            <constraint firstItem="7fS-S1-zhj" firstAttribute="leading" secondItem="6hE-4q-nEn" secondAttribute="leading" id="mW1-k8-59R"/>
+                            <constraint firstItem="7fS-S1-zhj" firstAttribute="top" secondItem="RS2-Cj-tLf" secondAttribute="bottom" constant="8" symbolic="YES" id="nhS-ZM-VY9"/>
                             <constraint firstAttribute="trailing" secondItem="DxQ-uK-0mg" secondAttribute="trailing" constant="20" symbolic="YES" id="o0c-RY-FcW"/>
-                            <constraint firstItem="6hE-4q-nEn" firstAttribute="leading" secondItem="7fS-S1-zhj" secondAttribute="leading" id="wXY-xF-BLM"/>
                             <constraint firstItem="DxQ-uK-0mg" firstAttribute="trailing" secondItem="6hE-4q-nEn" secondAttribute="trailing" id="wqK-in-iDs"/>
                         </constraints>
                     </view>
@@ -1360,7 +1368,6 @@
                                 </state>
                                 <connections>
                                     <action selector="verifyButtonClicked:" destination="2ak-l4-Ktq" eventType="touchUpInside" id="1Ae-5N-1Zv"/>
-                                    <segue destination="WTH-dR-UcE" kind="push" id="QF1-YK-FuU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Phone Number: 13075158980" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFM-lE-Y4L">
@@ -1392,11 +1399,57 @@
                     <navigationItem key="navigationItem" title="注册" id="YV8-vr-9CZ"/>
                     <connections>
                         <outlet property="codeField" destination="JbK-by-cao" id="6Ap-Q5-mwi"/>
+                        <segue destination="WTH-dR-UcE" kind="push" identifier="pinSetupSegue" id="Tf7-cD-7mB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2r-AQ-YZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1629" y="-1156"/>
+        </scene>
+        <!--Country View Controller - Country-->
+        <scene sceneID="TmI-VG-Ps9">
+            <objects>
+                <tableViewController id="iMC-tW-2Ou" customClass="CountryViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Yo1-6o-zbV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CountryCell" textLabel="cGC-Hq-3Qz" detailTextLabel="aUY-Hc-ByA" style="IBUITableViewCellStyleSubtitle" id="7Ef-kh-dON">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Ef-kh-dON" id="Gkd-DN-YaL">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cGC-Hq-3Qz">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aUY-Hc-ByA">
+                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iMC-tW-2Ou" id="QMS-0j-g0I"/>
+                            <outlet property="delegate" destination="iMC-tW-2Ou" id="EAT-xj-wAx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Country" id="F6A-If-YeM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YMs-Be-Xwl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629" y="-606"/>
         </scene>
     </scenes>
     <resources>
@@ -1428,5 +1481,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="x7X-Ac-65F"/>
+        <segue reference="YfA-gR-GmN"/>
     </inferredMetricsTieBreakers>
 </document>

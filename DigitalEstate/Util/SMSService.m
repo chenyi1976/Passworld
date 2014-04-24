@@ -12,12 +12,13 @@
 
 +(void)requestCodeVerficationForPhone:(NSString*)phoneNumber
 {
-    
+    NSLog(@"requestCodeVerficationForPhone");
 };
 
 
 +(bool)verifyCode:(NSString*)code ForPhone:(NSString*)phoneNumber
 {
+    NSLog(@"verifyCode");
     return TRUE;
 };
 

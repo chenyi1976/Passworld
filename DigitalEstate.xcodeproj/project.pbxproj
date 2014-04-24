@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		812178761907A2B4002DA71A /* Observable.m in Sources */ = {isa = PBXBuildFile; fileRef = 812178751907A2B4002DA71A /* Observable.m */; };
 		8121787919087B03002DA71A /* SMSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787819087B03002DA71A /* SMSService.m */; };
+		8121787F19089686002DA71A /* CountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787E19089686002DA71A /* CountryViewController.m */; };
+		812178831908ABD5002DA71A /* DiallingCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 812178801908ABD5002DA71A /* DiallingCodes.plist */; };
+		812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 812178821908ABD5002DA71A /* DiallingCodesUtil.m */; };
 		813CCA3C18FD0EF9002A98F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3B18FD0EF9002A98F2 /* Foundation.framework */; };
 		813CCA3E18FD0EF9002A98F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */; };
 		813CCA4018FD0EF9002A98F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
@@ -77,6 +80,12 @@
 		812178751907A2B4002DA71A /* Observable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Observable.m; path = Datasource/Observable.m; sourceTree = "<group>"; };
 		8121787719087B03002DA71A /* SMSService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMSService.h; path = Util/SMSService.h; sourceTree = "<group>"; };
 		8121787819087B03002DA71A /* SMSService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMSService.m; path = Util/SMSService.m; sourceTree = "<group>"; };
+		8121787D19089686002DA71A /* CountryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryViewController.h; path = ViewControllers/CountryViewController.h; sourceTree = "<group>"; };
+		8121787E19089686002DA71A /* CountryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryViewController.m; path = ViewControllers/CountryViewController.m; sourceTree = "<group>"; };
+		812178801908ABD5002DA71A /* DiallingCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = DiallingCodes.plist; path = Util/DiallingCodes.plist; sourceTree = "<group>"; };
+		812178811908ABD5002DA71A /* DiallingCodesUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiallingCodesUtil.h; path = Util/DiallingCodesUtil.h; sourceTree = "<group>"; };
+		812178821908ABD5002DA71A /* DiallingCodesUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiallingCodesUtil.m; path = Util/DiallingCodesUtil.m; sourceTree = "<group>"; };
+		812178851908FD22002DA71A /* ConstantDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantDefinition.h; sourceTree = "<group>"; };
 		813CCA3818FD0EF9002A98F2 /* DigitalEstate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalEstate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813CCA3B18FD0EF9002A98F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -282,6 +291,8 @@
 				8180D7CC18FE06C70095F625 /* EstateViewController.m */,
 				81CCB89619008A010019A6E4 /* EstateDetailViewController.h */,
 				81CCB89719008A010019A6E4 /* EstateDetailViewController.m */,
+				8121787D19089686002DA71A /* CountryViewController.h */,
+				8121787E19089686002DA71A /* CountryViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -302,12 +313,16 @@
 		8180D7C118FDFCE50095F625 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				812178801908ABD5002DA71A /* DiallingCodes.plist */,
+				812178811908ABD5002DA71A /* DiallingCodesUtil.h */,
+				812178821908ABD5002DA71A /* DiallingCodesUtil.m */,
 				8180D7C218FDFD7E0095F625 /* DownloadManager.h */,
 				8180D7C318FDFD7E0095F625 /* DownloadManager.m */,
 				8180D7C418FDFD7E0095F625 /* CacheManager.h */,
 				8180D7C518FDFD7E0095F625 /* CacheManager.m */,
 				8121787719087B03002DA71A /* SMSService.h */,
 				8121787819087B03002DA71A /* SMSService.m */,
+				812178851908FD22002DA71A /* ConstantDefinition.h */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -443,6 +458,7 @@
 				81B18E501905FC3A005647AF /* Delete@2x.png in Resources */,
 				81B18E481905EAB1005647AF /* Video@2x.png in Resources */,
 				8180D80E18FE18720095F625 /* nil@2x.png in Resources */,
+				812178831908ABD5002DA71A /* DiallingCodes.plist in Resources */,
 				8180D80518FE16A40095F625 /* 7@2x.png in Resources */,
 				8180D81818FE48340095F625 /* off@2x.png in Resources */,
 				8180D7F818FE15A60095F625 /* 1@2x.png in Resources */,
@@ -470,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				813CCA8918FDFC6B002A98F2 /* PersonData.m in Sources */,
+				8121787F19089686002DA71A /* CountryViewController.m in Sources */,
 				8180D7C018FDFCC30095F625 /* EstateData.m in Sources */,
 				8180D7CD18FE06C70095F625 /* EstateViewController.m in Sources */,
 				813CCA5518FD0EF9002A98F2 /* SecondViewController.m in Sources */,
@@ -487,6 +504,7 @@
 				8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */,
 				813CCA4818FD0EF9002A98F2 /* main.m in Sources */,
 				81CCB89819008A010019A6E4 /* EstateDetailViewController.m in Sources */,
+				812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */,
 				812178761907A2B4002DA71A /* Observable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,8 @@
 
 @interface RegistrationViewController : UIViewController
 
+@property IBOutlet UIButton* countryButton;
+@property IBOutlet UITextField* countryField;
 @property IBOutlet UITextField* phoneField;
 @property IBOutlet UITextField* codeField;
 

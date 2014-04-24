@@ -8,6 +8,7 @@
 
 #import "InitialViewController.h"
 #import "AppDelegate.h"
+#import "ConstantDefinition.h"
 
 @interface InitialViewController ()
 
@@ -30,13 +31,17 @@
 
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 
-    int pass1 = [prefs integerForKey:@"passcode1"];
-    int pass2 = [prefs integerForKey:@"passcode2"];
-    int pass3 = [prefs integerForKey:@"passcode3"];
-    int pass4 = [prefs integerForKey:@"passcode4"];
+    int pass1 = [prefs integerForKey:kPassword1];
+    int pass2 = [prefs integerForKey:kPassword2];
+    int pass3 = [prefs integerForKey:kPassword3];
+    int pass4 = [prefs integerForKey:kPassword4];
     
     if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 == 0)
     {
+        //clear all setting before configuration
+        [prefs removeObjectForKey:kPhoneNo];
+        [prefs synchronize];
+        
         [self gotoScreen:@"RegisterNavigationViewController"];
     }
     else

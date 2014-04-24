@@ -7,6 +7,7 @@
 //
 
 #import "MockDataSource.h"
+#import "CacheManager.h"
 
 @implementation MockDataSource
 
@@ -16,8 +17,7 @@ NSMutableArray* estates = nil;
 {
     if (self = [super init])
     {
-        estates = [[NSMutableArray alloc] init];
-        [estates addObject:[[EstateData alloc] initWithName:@"Estate1" Content:@"Content1"]];
+        [self loadEstatesWithCompletionHandler:nil];
     }
     return self;
 }
@@ -30,7 +30,7 @@ NSMutableArray* estates = nil;
 
 - (void)loadEstatesWithCompletionHandler:(void (^)(NSError* error))completionHandler
 {
-    
+    estates = [NSMutableArray arrayWithArray:[CacheManager loadFromCache:[NSArray arrayWithObject:@"estate"] WithExpireTime:0]];
 }
 
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(EstateData*)estate
@@ -42,24 +42,29 @@ NSMutableArray* estates = nil;
 - (void)removeObjectAtIndex:(NSUInteger)index
 {
     [estates removeObjectAtIndex:index];
+    [CacheManager saveToCache:estates withKey:[NSArray arrayWithObject:@"estate"]];
     [super fireDataChanged];
+    
 }
 
 - (void)removeObject:(EstateData*)estate
 {
     [estates removeObject:estate];
+    [CacheManager saveToCache:estates withKey:[NSArray arrayWithObject:@"estate"]];
     [super fireDataChanged];
 }
 
 - (void)addObject:(EstateData*)estate
 {
     [estates addObject:estate];
+    [CacheManager saveToCache:estates withKey:[NSArray arrayWithObject:@"estate"]];
     [super fireDataChanged];
 }
 
 - (void)insertObject:(EstateData*)estate atIndex:(NSUInteger)index
 {
     [estates insertObject:estate atIndex:index];
+    [CacheManager saveToCache:estates withKey:[NSArray arrayWithObject:@"estate"]];
     [super fireDataChanged];
 }
 
