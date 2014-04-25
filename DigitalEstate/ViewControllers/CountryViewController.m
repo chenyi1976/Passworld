@@ -45,11 +45,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section == 0) {
+        return [[[DiallingCodesUtil sharedInstance] getMostPopularCountryNames] count];
+    }
     return [[DiallingCodesUtil sharedInstance] getCountryNames].count;
 }
 
@@ -60,7 +63,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CountryCell" forIndexPath:indexPath];
     
     DiallingCodesUtil* diallingCodesUtil = [DiallingCodesUtil sharedInstance];
-    NSArray* countries = [diallingCodesUtil getCountryNames];
+    NSArray* countries;
+    if (indexPath.section == 0)
+    {
+        countries = [diallingCodesUtil getMostPopularCountryNames];
+    }
+    else
+    {
+        countries = [diallingCodesUtil getCountryNames];
+    }
     if (indexPath.row >= 0 && indexPath.row < countries.count)
     {
         NSString* countryName = [countries objectAtIndex:indexPath.row];
@@ -77,9 +88,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     NSUInteger row = [self.tableView indexPathForSelectedRow].row;
+
+    DiallingCodesUtil* diallingCodesUtil = [DiallingCodesUtil sharedInstance];
+    NSArray* countryCodes;
+    if (indexPath.section == 0)
+    {
+        countryCodes = [diallingCodesUtil getMostPopularCountryNames];
+    }
+    else
+    {
+        countryCodes = [diallingCodesUtil getCountryNames];
+    }
     
+    if (indexPath.row < 0 || indexPath.row >= countryCodes.count)
+    {
+        return;
+    }
+
     NSUserDefaults* perf = [NSUserDefaults standardUserDefaults];
-    NSArray* countryCodes = [[DiallingCodesUtil sharedInstance] getCountryCodes];
     [perf setObject:[countryCodes objectAtIndex:row] forKey:kCountryCode];
     [perf synchronize];
     

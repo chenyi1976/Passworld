@@ -15,6 +15,9 @@
 - (NSArray*)getCountryCodes;
 - (NSArray*)getCountryNames;
 
+- (NSArray*)getMostPopularCountryCodes;
+- (NSArray*)getMostPopularCountryNames;
+
 - (NSString*)getCountryCodeForName:(NSString*)name;
 - (NSString*)getCountryNameForCode:(NSString*)code;
 

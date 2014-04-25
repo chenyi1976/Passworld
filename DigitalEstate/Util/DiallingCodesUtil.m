@@ -88,6 +88,28 @@ NSDictionary* countryNameCodeDict = nil;
     return countryNames;
 }
 
+NSArray* popularCountryNames = nil;
+NSArray* popularCountryCodes = nil;
+
+- (NSArray*)getMostPopularCountryCodes
+{
+    if (!popularCountryCodes)
+    {
+        popularCountryCodes = [NSArray arrayWithObjects:@"au", @"cn", @"uk", @"us", nil];
+    }
+    return popularCountryCodes;
+}
+
+- (NSArray*)getMostPopularCountryNames
+{
+    if (!popularCountryNames)
+    {
+        popularCountryNames = [NSArray arrayWithObjects:@"Australia", @"China", @"United Kingdom", @"United States", nil];
+    }
+    return popularCountryNames;
+}
+
+
 - (NSString*)getCountryCodeForName:(NSString*)name
 {
     if (!countryNameCodeDict)

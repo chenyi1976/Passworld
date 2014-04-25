@@ -36,6 +36,9 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    UIViewController* rootViewController = [[self window] rootViewController];
+    UIViewController *screen = [rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SecurityPassViewController"];
+    [rootViewController presentViewController:screen animated:TRUE completion:nil];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

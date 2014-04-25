@@ -40,13 +40,15 @@
     {
         //clear all setting before configuration
         [prefs removeObjectForKey:kPhoneNo];
+        [prefs removeObjectForKey:kCountryCode];
         [prefs synchronize];
         
         [self gotoScreen:@"RegisterNavigationViewController"];
     }
     else
     {
-        [self gotoScreen:@"EstateViewController"];
+//        [self gotoScreen:@"EstateViewController"];
+        [self gotoScreen:@"SecurityPassViewController"];
     }
 }
 
