@@ -10,13 +10,16 @@
 #import "EstateDataSource.h"
 #import "Observer.h"
 
-@interface EstateViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, Observer>
+@interface EstateViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, Observer>
 
 @property IBOutlet UITableView * tableView;
+@property IBOutlet UIView * buttonView;
 
 - (IBAction)audioButtonTouched:(id)sender;
 - (IBAction)cameraButtonTouched:(id)sender;
 - (IBAction)videoButtonTouched:(id)sender;
 - (IBAction)textButtonTouched:(id)sender;
+
+- (IBAction)switchButtonTouched:(id)sender;
 
 @end

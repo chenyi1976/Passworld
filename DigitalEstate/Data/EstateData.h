@@ -10,12 +10,14 @@
 
 #define kNameKey @"Name"
 #define kContentKey @"Content"
+#define kLastUpdate @"lastUpdate"
 
-@interface EstateData : NSObject<NSCoding>
+@interface EstateData : NSObject<NSCoding, NSCopying>
 
 @property NSString* name;
 @property NSString* content;
+@property NSDate* lastUpdate;
 
-- (id) initWithName:(NSString*)name Content:(NSString*)content;
+- (id) initWithName:(NSString*)name withContent:(NSString*)content withLastUpdate:(NSDate*)lastUpdate;
 
 @end

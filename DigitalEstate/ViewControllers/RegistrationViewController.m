@@ -30,7 +30,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [_phoneField becomeFirstResponder];
+    if (_phoneField)
+    {
+        [_phoneField becomeFirstResponder];
+    }
+    else
+    {
+        [_codeField becomeFirstResponder];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated

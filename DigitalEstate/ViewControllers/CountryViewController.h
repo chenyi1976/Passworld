@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CountryViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
+@interface CountryViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate>
 
 
 @end

@@ -11,7 +11,7 @@
 #import "ConstantDefinition.h"
 
 @interface CountryViewController ()
-
+    @property NSArray* searchResults;
 @end
 
 @implementation CountryViewController
@@ -50,29 +50,53 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return [[[DiallingCodesUtil sharedInstance] getMostPopularCountryNames] count];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        if (section == 0) {
+            return 0;
+        }
+        if (!_searchResults)
+            return 0;
+        return [_searchResults count];
     }
-    return [[DiallingCodesUtil sharedInstance] getCountryNames].count;
+    else
+    {
+        if (section == 0) {
+            return [[[DiallingCodesUtil sharedInstance] getMostPopularCountryNames] count];
+        }
+        return [[DiallingCodesUtil sharedInstance] getCountryNames].count;
+    }
 }
 
 #pragma mark - Overwrite
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CountryCell" forIndexPath:indexPath];
-    
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CountryCell" forIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"CountryCell"];
+    }
     DiallingCodesUtil* diallingCodesUtil = [DiallingCodesUtil sharedInstance];
     NSArray* countries;
-    if (indexPath.section == 0)
+    if (tableView == self.searchDisplayController.searchResultsTableView)
     {
-        countries = [diallingCodesUtil getMostPopularCountryNames];
+        if (indexPath.section != 0)
+        {
+            countries = _searchResults;
+        }
     }
     else
     {
-        countries = [diallingCodesUtil getCountryNames];
+        if (indexPath.section == 0)
+        {
+            countries = [diallingCodesUtil getMostPopularCountryNames];
+        }
+        else
+        {
+            countries = [diallingCodesUtil getCountryNames];
+        }
     }
-    if (indexPath.row >= 0 && indexPath.row < countries.count)
+    
+    if (countries && indexPath.row >= 0 && indexPath.row < countries.count)
     {
         NSString* countryName = [countries objectAtIndex:indexPath.row];
         NSString* dialCode = [[DiallingCodesUtil sharedInstance] getDiallingCodeForCountryName:countryName];
@@ -87,29 +111,63 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    NSUInteger row = [self.tableView indexPathForSelectedRow].row;
-
     DiallingCodesUtil* diallingCodesUtil = [DiallingCodesUtil sharedInstance];
-    NSArray* countryCodes;
-    if (indexPath.section == 0)
+    NSArray* countryNames;
+    if (tableView == self.searchDisplayController.searchResultsTableView)
     {
-        countryCodes = [diallingCodesUtil getMostPopularCountryNames];
+        countryNames = _searchResults;
     }
     else
     {
-        countryCodes = [diallingCodesUtil getCountryNames];
+        if (indexPath.section == 0)
+        {
+            countryNames = [diallingCodesUtil getMostPopularCountryNames];
+        }
+        else
+        {
+            countryNames = [diallingCodesUtil getCountryNames];
+        }
     }
     
-    if (indexPath.row < 0 || indexPath.row >= countryCodes.count)
+    if (indexPath.row < 0 || indexPath.row >= countryNames.count)
     {
         return;
     }
 
+    NSString* countryCode = [diallingCodesUtil getCountryCodeForName:[countryNames objectAtIndex:indexPath.row]];
+    
     NSUserDefaults* perf = [NSUserDefaults standardUserDefaults];
-    [perf setObject:[countryCodes objectAtIndex:row] forKey:kCountryCode];
+    [perf setObject:countryCode forKey:kCountryCode];
     [perf synchronize];
     
     [self.navigationController popViewControllerAnimated:TRUE];
 }
+
+#pragma mark - Search
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"self contains[c] %@", searchText];
+    _searchResults = [[[DiallingCodesUtil sharedInstance] getCountryNames] filteredArrayUsingPredicate:resultPredicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
+}
+
+#pragma mark - search display delegate
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller didShowSearchResultsTableView:(UITableView *)tableView
+{
+//    tableView.frame = _tableView.frame;
+}
+
+
 
 @end

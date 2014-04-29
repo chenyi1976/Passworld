@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ConstantDefinition.h"
 
 @implementation AppDelegate
 
@@ -36,9 +37,20 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    UIViewController* rootViewController = [[self window] rootViewController];
-    UIViewController *screen = [rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SecurityPassViewController"];
-    [rootViewController presentViewController:screen animated:TRUE completion:nil];
+    
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    
+    int pass1 = [prefs integerForKey:kPassword1];
+    int pass2 = [prefs integerForKey:kPassword2];
+    int pass3 = [prefs integerForKey:kPassword3];
+    int pass4 = [prefs integerForKey:kPassword4];
+    
+    if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
+    {
+        UIViewController* rootViewController = [[self window] rootViewController];
+        UIViewController *screen = [rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SecurityPassViewController"];
+        [rootViewController presentViewController:screen animated:TRUE completion:nil];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

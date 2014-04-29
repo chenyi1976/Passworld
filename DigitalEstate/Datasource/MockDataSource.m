@@ -8,10 +8,14 @@
 
 #import "MockDataSource.h"
 #import "CacheManager.h"
+#import "AESCrypt.h"
+
+@interface MockDataSource()
+    @property NSMutableArray* estates;
+@end
 
 @implementation MockDataSource
 
-NSMutableArray* estates = nil;
 
 - (id) init
 {
@@ -25,52 +29,73 @@ NSMutableArray* estates = nil;
 
 - (NSMutableArray*)getEstates
 {
-    return estates;
+    return _estates;
 }
 
 - (void)loadEstatesWithCompletionHandler:(void (^)(NSError* error))completionHandler
 {
-    estates = [NSMutableArray arrayWithArray:[CacheManager loadFromCache:[NSArray arrayWithObject:@"estate"] WithExpireTime:0]];
+    NSArray* encryptEstates = [CacheManager loadFromCache:[NSArray arrayWithObject:@"estate"] WithExpireTime:0];
+    NSArray* deepCopyArray = [[NSArray alloc] initWithArray:encryptEstates copyItems:TRUE];
+    _estates = [NSMutableArray arrayWithArray:deepCopyArray];
+    for (EstateData* data in _estates)
+    {
+        NSString *decryptedData = [AESCrypt decrypt:data.content password:@"password"];
+        data.content = decryptedData;
+    }
 }
 
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(EstateData*)estate
 {
-    [estates replaceObjectAtIndex:index withObject:estate];
+    [_estates replaceObjectAtIndex:index withObject:estate];
+    [self saveToCache];
     [super fireDataChanged];
 }
 
 - (void)removeObjectAtIndex:(NSUInteger)index
 {
-    [estates removeObjectAtIndex:index];
-    [CacheManager saveToCache:estates withKey:[NSArray arrayWithObject:@"estate"]];
+    [_estates removeObjectAtIndex:index];
+    [self saveToCache];
     [super fireDataChanged];
     
 }
 
 - (void)removeObject:(EstateData*)estate
 {
-    [estates removeObject:estate];
-    [CacheManager saveToCache:estates withKey:[NSArray arrayWithObject:@"estate"]];
+    [_estates removeObject:estate];
+    [self saveToCache];
     [super fireDataChanged];
 }
 
 - (void)addObject:(EstateData*)estate
 {
-    [estates addObject:estate];
-    [CacheManager saveToCache:estates withKey:[NSArray arrayWithObject:@"estate"]];
+    [_estates addObject:estate];
+    [self saveToCache];
     [super fireDataChanged];
 }
 
 - (void)insertObject:(EstateData*)estate atIndex:(NSUInteger)index
 {
-    [estates insertObject:estate atIndex:index];
-    [CacheManager saveToCache:estates withKey:[NSArray arrayWithObject:@"estate"]];
+    [_estates insertObject:estate atIndex:index];
+    [self saveToCache];
     [super fireDataChanged];
 }
 
 - (NSUInteger)indexOfObject:(EstateData*)estate
 {
-    return [estates indexOfObject:estate];
+    return [_estates indexOfObject:estate];
+}
+
+#pragma mark private method
+
+- (void)saveToCache
+{
+    NSArray* encryptEstates = [[NSArray alloc] initWithArray:_estates copyItems:TRUE];
+    for (EstateData* data in encryptEstates)
+    {
+        NSString *encryptedData = [AESCrypt encrypt:data.content password:@"password"];
+        data.content = encryptedData;
+    }
+    [CacheManager saveToCache:encryptEstates withKey:[NSArray arrayWithObject:@"estate"]];
 }
 
 @end

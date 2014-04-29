@@ -12,7 +12,7 @@
 #import "EstateTableViewCell.h"
 
 @interface EstateViewController ()
-
+    @property NSArray* searchResults;
 @end
 
 @implementation EstateViewController
@@ -21,6 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        [self setEdgesForExtendedLayout:UIRectEdgeNone];
         // Custom initialization
     }
     return self;
@@ -69,36 +70,70 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        if (!_searchResults)
+            return 0;
+        return [_searchResults count];
+    }
     return [[[DataSourceFactory getDataSource] getEstates] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    EstateTableViewCell* result = nil;
-    if (tableView == _tableView)
-    {
-        static NSString *MyCellIdentifier = @"EstateCell";
-        result = [tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
-        if (result == nil){
-            result = [[EstateTableViewCell alloc]
-                      initWithStyle:UITableViewCellStyleDefault
-                      reuseIdentifier:MyCellIdentifier];
-        }
-        NSArray* estates =[[DataSourceFactory getDataSource] getEstates];
-        if (indexPath.row < [estates count])
-        {
-            EstateData* data = [estates objectAtIndex:indexPath.row];
-            result.contentLabel.text = data.content;
-        }
-        else
-        {
-            result.contentLabel.text = [NSString stringWithFormat:@"Section %ld, Cell %ld",
-                                     (long)indexPath.section,
-                                     (long)indexPath.row];
-        }
-        result.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    static NSString *MyCellIdentifier = @"EstateCell";
+    EstateTableViewCell* result = [self.tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
+    
+    if (result == nil){
+        result = [[EstateTableViewCell alloc]
+                  initWithStyle:UITableViewCellStyleDefault
+                  reuseIdentifier:MyCellIdentifier];
     }
+    
+    NSArray* estates;
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        estates = _searchResults;
+    }
+    else
+    {
+        estates =[[DataSourceFactory getDataSource] getEstates];
+    }
+    
+    if (estates && indexPath.row < [estates count])
+    {
+        EstateData* data = [estates objectAtIndex:indexPath.row];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
+        NSString *strDate = [dateFormatter stringFromDate:data.lastUpdate];
+        
+        result.dateLabel.text = strDate;
+        result.contentLabel.text = data.content;
+    }
+    else
+    {
+        result.contentLabel.text = [NSString stringWithFormat:@"Section %ld, Cell %ld",
+                                    (long)indexPath.section,
+                                    (long)indexPath.row];
+    }
+    result.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+
     return result;
+}
+
+#pragma mark - table delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.0f;
+}
+
+#pragma mark - search display delegate
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller didShowSearchResultsTableView:(UITableView *)tableView
+{
+    tableView.frame = _tableView.frame;    
 }
 
 #pragma mark - Observer
@@ -130,6 +165,42 @@
     
 }
 
+- (IBAction)switchButtonTouched:(id)sender
+{
+    CGFloat y = _buttonView.frame.origin.y;
+    NSLog(@"y: %f", y);
+    if (y < 50)//y location after expanded
+        y = y + _buttonView.frame.size.height;
+    else
+        y = y - _buttonView.frame.size.height;
+    [UIView animateWithDuration:0.5f animations:^(void){
+        NSLog(@"animation!!");
+        NSLog(@"new value y: %f", y);
+        [_buttonView setFrame:CGRectMake(_buttonView.frame.origin.x, y, _buttonView.frame.size.width, _buttonView.frame.size.height)];
+        [_tableView setFrame:CGRectMake(_buttonView.frame.origin.x, y + _buttonView.frame.size.height, _buttonView.frame.size.width, self.view.frame.size.height -  y - _buttonView.frame.size.height)];
+    }];
+}
+
+
+#pragma mark - Search
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"content contains[c] %@", searchText];
+    
+    NSArray* estates =[[DataSourceFactory getDataSource] getEstates];
+    _searchResults = [estates filteredArrayUsingPredicate:resultPredicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
+}
 
 
 @end

@@ -12,6 +12,13 @@
 		8121787F19089686002DA71A /* CountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787E19089686002DA71A /* CountryViewController.m */; };
 		812178831908ABD5002DA71A /* DiallingCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 812178801908ABD5002DA71A /* DiallingCodes.plist */; };
 		812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 812178821908ABD5002DA71A /* DiallingCodesUtil.m */; };
+		8121788B190A114F002DA71A /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81217888190A114F002DA71A /* edit@2x.png */; };
+		8121788C190A114F002DA71A /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81217889190A114F002DA71A /* search@2x.png */; };
+		8121788D190A114F002DA71A /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8121788A190A114F002DA71A /* setting@2x.png */; };
+		813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664A9190F4DC600C0B76E /* AESCrypt.m */; };
+		813664B1190F4DC600C0B76E /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664AB190F4DC600C0B76E /* NSData+Base64.m */; };
+		813664B2190F4DC600C0B76E /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664AD190F4DC600C0B76E /* NSData+CommonCrypto.m */; };
+		813664B3190F4DC600C0B76E /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664AF190F4DC600C0B76E /* NSString+Base64.m */; };
 		813CCA3C18FD0EF9002A98F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3B18FD0EF9002A98F2 /* Foundation.framework */; };
 		813CCA3E18FD0EF9002A98F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */; };
 		813CCA4018FD0EF9002A98F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
@@ -86,6 +93,17 @@
 		812178811908ABD5002DA71A /* DiallingCodesUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiallingCodesUtil.h; path = Util/DiallingCodesUtil.h; sourceTree = "<group>"; };
 		812178821908ABD5002DA71A /* DiallingCodesUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiallingCodesUtil.m; path = Util/DiallingCodesUtil.m; sourceTree = "<group>"; };
 		812178851908FD22002DA71A /* ConstantDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantDefinition.h; sourceTree = "<group>"; };
+		81217888190A114F002DA71A /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "edit@2x.png"; path = "Images/edit@2x.png"; sourceTree = "<group>"; };
+		81217889190A114F002DA71A /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search@2x.png"; path = "Images/search@2x.png"; sourceTree = "<group>"; };
+		8121788A190A114F002DA71A /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "Images/setting@2x.png"; sourceTree = "<group>"; };
+		813664A8190F4DC600C0B76E /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AESCrypt.h; path = AES/AESCrypt.h; sourceTree = "<group>"; };
+		813664A9190F4DC600C0B76E /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AESCrypt.m; path = AES/AESCrypt.m; sourceTree = "<group>"; };
+		813664AA190F4DC600C0B76E /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "AES/NSData+Base64.h"; sourceTree = "<group>"; };
+		813664AB190F4DC600C0B76E /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "AES/NSData+Base64.m"; sourceTree = "<group>"; };
+		813664AC190F4DC600C0B76E /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+CommonCrypto.h"; path = "AES/NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		813664AD190F4DC600C0B76E /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+CommonCrypto.m"; path = "AES/NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		813664AE190F4DC600C0B76E /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Base64.h"; path = "AES/NSString+Base64.h"; sourceTree = "<group>"; };
+		813664AF190F4DC600C0B76E /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Base64.m"; path = "AES/NSString+Base64.m"; sourceTree = "<group>"; };
 		813CCA3818FD0EF9002A98F2 /* DigitalEstate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalEstate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813CCA3B18FD0EF9002A98F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -182,6 +200,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		813664A7190F4DB900C0B76E /* AES */ = {
+			isa = PBXGroup;
+			children = (
+				813664A8190F4DC600C0B76E /* AESCrypt.h */,
+				813664A9190F4DC600C0B76E /* AESCrypt.m */,
+				813664AA190F4DC600C0B76E /* NSData+Base64.h */,
+				813664AB190F4DC600C0B76E /* NSData+Base64.m */,
+				813664AC190F4DC600C0B76E /* NSData+CommonCrypto.h */,
+				813664AD190F4DC600C0B76E /* NSData+CommonCrypto.m */,
+				813664AE190F4DC600C0B76E /* NSString+Base64.h */,
+				813664AF190F4DC600C0B76E /* NSString+Base64.m */,
+			);
+			name = AES;
+			sourceTree = "<group>";
+		};
 		813CCA2F18FD0EF8002A98F2 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +248,7 @@
 		813CCA4118FD0EF9002A98F2 /* DigitalEstate */ = {
 			isa = PBXGroup;
 			children = (
+				813664A7190F4DB900C0B76E /* AES */,
 				81B18E54190602F8005647AF /* Views */,
 				8180D7C118FDFCE50095F625 /* Util */,
 				813CCA8318FDFC15002A98F2 /* Data */,
@@ -330,6 +364,9 @@
 		8180D7E218FE153F0095F625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				81217888190A114F002DA71A /* edit@2x.png */,
+				81217889190A114F002DA71A /* search@2x.png */,
+				8121788A190A114F002DA71A /* setting@2x.png */,
 				81B18E4F1905FC3A005647AF /* Delete@2x.png */,
 				81B18E4B1905FB9E005647AF /* Back@2x.png */,
 				81B18E4C1905FB9F005647AF /* Tick@2x.png */,
@@ -443,7 +480,9 @@
 			files = (
 				8180D80918FE16A40095F625 /* 3@2x.png in Resources */,
 				8180D80618FE16A40095F625 /* 6@2x.png in Resources */,
+				8121788D190A114F002DA71A /* setting@2x.png in Resources */,
 				8180D80318FE16A40095F625 /* 9@2x.png in Resources */,
+				8121788B190A114F002DA71A /* edit@2x.png in Resources */,
 				81B18E4A1905EAB1005647AF /* Camera@2x.png in Resources */,
 				8180D81718FE48340095F625 /* on@2x.png in Resources */,
 				81B18E491905EAB1005647AF /* Page@2x.png in Resources */,
@@ -464,6 +503,7 @@
 				8180D7F818FE15A60095F625 /* 1@2x.png in Resources */,
 				81B18E4E1905FB9F005647AF /* Tick@2x.png in Resources */,
 				813CCA4F18FD0EF9002A98F2 /* Main.storyboard in Resources */,
+				8121788C190A114F002DA71A /* search@2x.png in Resources */,
 				8180D80418FE16A40095F625 /* 8@2x.png in Resources */,
 				81B18E4D1905FB9F005647AF /* Back@2x.png in Resources */,
 				81B18E471905EAB1005647AF /* Mic@2x.png in Resources */,
@@ -493,15 +533,19 @@
 				81B18E53190602DC005647AF /* EstateTableViewCell.m in Sources */,
 				8180D7C618FDFD7E0095F625 /* DownloadManager.m in Sources */,
 				8180D7CA18FDFE0A0095F625 /* WebsiteLinkEntry.m in Sources */,
+				813664B2190F4DC600C0B76E /* NSData+CommonCrypto.m in Sources */,
+				813664B3190F4DC600C0B76E /* NSString+Base64.m in Sources */,
 				8180D7C718FDFD7E0095F625 /* CacheManager.m in Sources */,
 				813CCA8218FDF193002A98F2 /* RegistrationViewController.m in Sources */,
 				813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */,
 				813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */,
 				813CCA5218FD0EF9002A98F2 /* FirstViewController.m in Sources */,
 				813CCA7A18FDE096002A98F2 /* MockDataSource.m in Sources */,
+				813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */,
 				8121787919087B03002DA71A /* SMSService.m in Sources */,
 				813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */,
 				8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */,
+				813664B1190F4DC600C0B76E /* NSData+Base64.m in Sources */,
 				813CCA4818FD0EF9002A98F2 /* main.m in Sources */,
 				81CCB89819008A010019A6E4 /* EstateDetailViewController.m in Sources */,
 				812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */,
