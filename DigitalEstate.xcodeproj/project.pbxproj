@@ -19,6 +19,9 @@
 		813664B1190F4DC600C0B76E /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664AB190F4DC600C0B76E /* NSData+Base64.m */; };
 		813664B2190F4DC600C0B76E /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664AD190F4DC600C0B76E /* NSData+CommonCrypto.m */; };
 		813664B3190F4DC600C0B76E /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664AF190F4DC600C0B76E /* NSString+Base64.m */; };
+		813664B5190F850400C0B76E /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 813664B4190F850400C0B76E /* Add@2x.png */; };
+		813664B8190F870D00C0B76E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664B7190F870D00C0B76E /* SettingViewController.m */; };
+		813664BB191075B600C0B76E /* HistoryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664BA191075B600C0B76E /* HistoryData.m */; };
 		813CCA3C18FD0EF9002A98F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3B18FD0EF9002A98F2 /* Foundation.framework */; };
 		813CCA3E18FD0EF9002A98F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */; };
 		813CCA4018FD0EF9002A98F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
@@ -26,8 +29,6 @@
 		813CCA4818FD0EF9002A98F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA4718FD0EF9002A98F2 /* main.m */; };
 		813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA4B18FD0EF9002A98F2 /* AppDelegate.m */; };
 		813CCA4F18FD0EF9002A98F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813CCA4D18FD0EF9002A98F2 /* Main.storyboard */; };
-		813CCA5218FD0EF9002A98F2 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA5118FD0EF9002A98F2 /* FirstViewController.m */; };
-		813CCA5518FD0EF9002A98F2 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA5418FD0EF9002A98F2 /* SecondViewController.m */; };
 		813CCA5718FD0EF9002A98F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 813CCA5618FD0EF9002A98F2 /* Images.xcassets */; };
 		813CCA5E18FD0EF9002A98F2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA5D18FD0EF9002A98F2 /* XCTest.framework */; };
 		813CCA5F18FD0EF9002A98F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3B18FD0EF9002A98F2 /* Foundation.framework */; };
@@ -104,6 +105,11 @@
 		813664AD190F4DC600C0B76E /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+CommonCrypto.m"; path = "AES/NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		813664AE190F4DC600C0B76E /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Base64.h"; path = "AES/NSString+Base64.h"; sourceTree = "<group>"; };
 		813664AF190F4DC600C0B76E /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Base64.m"; path = "AES/NSString+Base64.m"; sourceTree = "<group>"; };
+		813664B4190F850400C0B76E /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Add@2x.png"; path = "Images/Add@2x.png"; sourceTree = "<group>"; };
+		813664B6190F870D00C0B76E /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = ViewControllers/SettingViewController.h; sourceTree = "<group>"; };
+		813664B7190F870D00C0B76E /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = ViewControllers/SettingViewController.m; sourceTree = "<group>"; };
+		813664B9191075B600C0B76E /* HistoryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryData.h; path = Data/HistoryData.h; sourceTree = "<group>"; };
+		813664BA191075B600C0B76E /* HistoryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryData.m; path = Data/HistoryData.m; sourceTree = "<group>"; };
 		813CCA3818FD0EF9002A98F2 /* DigitalEstate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalEstate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813CCA3B18FD0EF9002A98F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,10 +121,6 @@
 		813CCA4A18FD0EF9002A98F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		813CCA4B18FD0EF9002A98F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		813CCA4E18FD0EF9002A98F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		813CCA5018FD0EF9002A98F2 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		813CCA5118FD0EF9002A98F2 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		813CCA5318FD0EF9002A98F2 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		813CCA5418FD0EF9002A98F2 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		813CCA5618FD0EF9002A98F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		813CCA5C18FD0EF9002A98F2 /* DigitalEstateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigitalEstateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		813CCA5D18FD0EF9002A98F2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -257,10 +259,6 @@
 				813CCA4A18FD0EF9002A98F2 /* AppDelegate.h */,
 				813CCA4B18FD0EF9002A98F2 /* AppDelegate.m */,
 				813CCA4D18FD0EF9002A98F2 /* Main.storyboard */,
-				813CCA5018FD0EF9002A98F2 /* FirstViewController.h */,
-				813CCA5118FD0EF9002A98F2 /* FirstViewController.m */,
-				813CCA5318FD0EF9002A98F2 /* SecondViewController.h */,
-				813CCA5418FD0EF9002A98F2 /* SecondViewController.m */,
 				813CCA5618FD0EF9002A98F2 /* Images.xcassets */,
 				8180D7E218FE153F0095F625 /* Images */,
 				813CCA4218FD0EF9002A98F2 /* Supporting Files */,
@@ -327,6 +325,8 @@
 				81CCB89719008A010019A6E4 /* EstateDetailViewController.m */,
 				8121787D19089686002DA71A /* CountryViewController.h */,
 				8121787E19089686002DA71A /* CountryViewController.m */,
+				813664B6190F870D00C0B76E /* SettingViewController.h */,
+				813664B7190F870D00C0B76E /* SettingViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -340,6 +340,8 @@
 				8180D7BF18FDFCC30095F625 /* EstateData.m */,
 				813CCA8718FDFC6B002A98F2 /* PersonData.h */,
 				813CCA8818FDFC6B002A98F2 /* PersonData.m */,
+				813664B9191075B600C0B76E /* HistoryData.h */,
+				813664BA191075B600C0B76E /* HistoryData.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -364,6 +366,7 @@
 		8180D7E218FE153F0095F625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				813664B4190F850400C0B76E /* Add@2x.png */,
 				81217888190A114F002DA71A /* edit@2x.png */,
 				81217889190A114F002DA71A /* search@2x.png */,
 				8121788A190A114F002DA71A /* setting@2x.png */,
@@ -492,6 +495,7 @@
 				813CCA5718FD0EF9002A98F2 /* Images.xcassets in Resources */,
 				8180D80C18FE17FA0095F625 /* del@2x.png in Resources */,
 				8180D80A18FE16A40095F625 /* 2@2x.png in Resources */,
+				813664B5190F850400C0B76E /* Add@2x.png in Resources */,
 				813CCA4618FD0EF9002A98F2 /* InfoPlist.strings in Resources */,
 				8180D80218FE16A40095F625 /* 0@2x.png in Resources */,
 				81B18E501905FC3A005647AF /* Delete@2x.png in Resources */,
@@ -529,17 +533,16 @@
 				8121787F19089686002DA71A /* CountryViewController.m in Sources */,
 				8180D7C018FDFCC30095F625 /* EstateData.m in Sources */,
 				8180D7CD18FE06C70095F625 /* EstateViewController.m in Sources */,
-				813CCA5518FD0EF9002A98F2 /* SecondViewController.m in Sources */,
 				81B18E53190602DC005647AF /* EstateTableViewCell.m in Sources */,
 				8180D7C618FDFD7E0095F625 /* DownloadManager.m in Sources */,
 				8180D7CA18FDFE0A0095F625 /* WebsiteLinkEntry.m in Sources */,
 				813664B2190F4DC600C0B76E /* NSData+CommonCrypto.m in Sources */,
 				813664B3190F4DC600C0B76E /* NSString+Base64.m in Sources */,
 				8180D7C718FDFD7E0095F625 /* CacheManager.m in Sources */,
+				813664BB191075B600C0B76E /* HistoryData.m in Sources */,
 				813CCA8218FDF193002A98F2 /* RegistrationViewController.m in Sources */,
 				813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */,
 				813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */,
-				813CCA5218FD0EF9002A98F2 /* FirstViewController.m in Sources */,
 				813CCA7A18FDE096002A98F2 /* MockDataSource.m in Sources */,
 				813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */,
 				8121787919087B03002DA71A /* SMSService.m in Sources */,
@@ -550,6 +553,7 @@
 				81CCB89819008A010019A6E4 /* EstateDetailViewController.m in Sources */,
 				812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */,
 				812178761907A2B4002DA71A /* Observable.m in Sources */,
+				813664B8190F870D00C0B76E /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +619,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -653,7 +658,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

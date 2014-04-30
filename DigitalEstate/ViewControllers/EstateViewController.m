@@ -117,9 +117,19 @@
                                     (long)indexPath.section,
                                     (long)indexPath.row];
     }
-    result.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    result.accessoryType = UITableViewCellAccessoryNone;
 
     return result;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[DataSourceFactory getDataSource] removeObjectAtIndex:indexPath.row];
+    }
 }
 
 #pragma mark - table delegate

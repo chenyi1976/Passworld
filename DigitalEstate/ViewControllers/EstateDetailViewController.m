@@ -61,14 +61,13 @@
 {
     if (data == nil)
     {
-        EstateData* data = [[EstateData alloc] initWithName:@"" withContent:_estateTextView.text withLastUpdate:[NSDate date]];
+        EstateData* data = [[EstateData alloc] initWithName:@"" withContent:_estateTextView.text withAttributeValues:nil  withLastUpdate:[NSDate date] withHistory:nil];
         [[DataSourceFactory getDataSource] addObject:data];
     }
     else
     {
         NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:data];
         [data setContent:_estateTextView.text];
-        [data setLastUpdate:[NSDate date]];
         [[DataSourceFactory getDataSource] replaceObjectAtIndex:index withObject:data];
     }
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];

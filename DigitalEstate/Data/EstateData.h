@@ -8,16 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-#define kNameKey @"Name"
-#define kContentKey @"Content"
+#define kName @"name"
+#define kContent @"content"
+#define kAttributeValues @"attributeValues"
 #define kLastUpdate @"lastUpdate"
+#define kHistory @"history"
+
+#define historyCount 10
 
 @interface EstateData : NSObject<NSCoding, NSCopying>
 
-@property NSString* name;
-@property NSString* content;
-@property NSDate* lastUpdate;
+@property(nonatomic) NSString* name;
+@property(nonatomic) NSString* content;
+@property(nonatomic) NSMutableDictionary* attributeValues;
+@property(readonly) NSDate* lastUpdate;
+@property(readonly) NSMutableArray* history;
 
-- (id) initWithName:(NSString*)name withContent:(NSString*)content withLastUpdate:(NSDate*)lastUpdate;
+- (id) initWithName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableDictionary*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history;
 
 @end

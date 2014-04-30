@@ -120,15 +120,15 @@ UIImage* offImage = nil;
     if (passcode1 != -1 && passcode2 != -1 && passcode3 != -1 && passcode4 != -1)
     {
         NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-        int oldPass1 = [prefs integerForKey:kTemppass1];
-        int oldPass2 = [prefs integerForKey:kTemppass2];
-        int oldPass3 = [prefs integerForKey:kTemppass3];
-        int oldPass4 = [prefs integerForKey:kTemppass4];
+        long oldPass1 = [prefs integerForKey:kTemppass1];
+        long oldPass2 = [prefs integerForKey:kTemppass2];
+        long oldPass3 = [prefs integerForKey:kTemppass3];
+        long oldPass4 = [prefs integerForKey:kTemppass4];
         
-        int pass1 = [prefs integerForKey:kPassword1];
-        int pass2 = [prefs integerForKey:kPassword2];
-        int pass3 = [prefs integerForKey:kPassword3];
-        int pass4 = [prefs integerForKey:kPassword4];
+        long pass1 = [prefs integerForKey:kPassword1];
+        long pass2 = [prefs integerForKey:kPassword2];
+        long pass3 = [prefs integerForKey:kPassword3];
+        long pass4 = [prefs integerForKey:kPassword4];
 
         //if the passcode does not exist, it means configuration mode.
         if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0)
