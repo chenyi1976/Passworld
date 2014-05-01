@@ -36,20 +36,23 @@
     long pass3 = [prefs integerForKey:kPassword3];
     long pass4 = [prefs integerForKey:kPassword4];
     
-    if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 == 0)
+    NSString* encryptKey = [prefs objectForKey:kEncryptKey];
+    
+    if (encryptKey != nil)
     {
-        //clear all setting before configuration
-        [prefs removeObjectForKey:kPhoneNo];
-        [prefs removeObjectForKey:kCountryCode];
-        [prefs synchronize];
-        
-        [self gotoScreen:@"RegisterNavigationViewController"];
+        if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
+        {
+            [self gotoScreen:@"SecurityPassViewController"];
+            return;
+        }
     }
-    else
-    {
-//        [self gotoScreen:@"EstateViewController"];
-        [self gotoScreen:@"SecurityPassViewController"];
-    }
+
+    //clear all setting before configuration
+    [prefs removeObjectForKey:kPhoneNo];
+    [prefs removeObjectForKey:kCountryCode];
+    [prefs synchronize];
+    
+    [self gotoScreen:@"RegisterNavigationViewController"];
 }
 
 - (void)didReceiveMemoryWarning

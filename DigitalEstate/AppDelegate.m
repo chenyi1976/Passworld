@@ -44,12 +44,16 @@
     long pass2 = [prefs integerForKey:kPassword2];
     long pass3 = [prefs integerForKey:kPassword3];
     long pass4 = [prefs integerForKey:kPassword4];
+    NSString* encryptKey = [prefs objectForKey:kEncryptKey];
     
-    if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
+    if (encryptKey != nil)
     {
-        UIViewController* rootViewController = [[self window] rootViewController];
-        UIViewController *screen = [rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SecurityPassViewController"];
-        [rootViewController presentViewController:screen animated:TRUE completion:nil];
+        if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
+        {
+            UIViewController* rootViewController = [[self window] rootViewController];
+            UIViewController *screen = [rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SecurityPassViewController"];
+            [rootViewController presentViewController:screen animated:TRUE completion:nil];
+        }
     }
 }
 

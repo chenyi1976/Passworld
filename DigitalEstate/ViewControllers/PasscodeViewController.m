@@ -53,17 +53,6 @@ UIImage* offImage = nil;
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark - IBAction
 
 - (IBAction)codeButtonTouched:(id)sender
@@ -129,9 +118,11 @@ UIImage* offImage = nil;
         long pass2 = [prefs integerForKey:kPassword2];
         long pass3 = [prefs integerForKey:kPassword3];
         long pass4 = [prefs integerForKey:kPassword4];
+        
+        NSString* encryptKey = [prefs objectForKey:kEncryptKey];
 
-        //if the passcode does not exist, it means configuration mode.
-        if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0)
+        //if the passcode does not exist, or encrypt key does not exist, it means configuration mode.
+        if (encryptKey == nil || (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0))
         {
             //if temporary passcode does not exist, it is in the first view.
             if (oldPass1 == 0 && oldPass2 == 0 && oldPass3 == 0 && oldPass4 ==0)
@@ -147,6 +138,8 @@ UIImage* offImage = nil;
             }
             else
             {
+                //we are "password confirm view"
+                
                 //clear temporary passcode
                 [prefs removeObjectForKey:kTemppass1];
                 [prefs removeObjectForKey:kTemppass2];
@@ -163,10 +156,8 @@ UIImage* offImage = nil;
                     [prefs setInteger:passcode4 forKey:kPassword4];
                     [prefs synchronize];
                     
-                    UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateViewController"];
-                    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-                    [app.window setRootViewController:screen];
-                }
+                    [self performSegueWithIdentifier:@"EncryptPasswordSegue" sender:self];
+                                    }
                 else
                 {
                     //todo: show the red image animation, then pop view.

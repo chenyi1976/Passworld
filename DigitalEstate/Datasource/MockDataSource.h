@@ -17,4 +17,6 @@
 
 @interface MockDataSource : Observable<EstateDataSource>
 
+@property bool sortByLastUpdated;
+
 @end

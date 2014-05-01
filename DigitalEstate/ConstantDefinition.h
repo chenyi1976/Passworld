@@ -18,6 +18,7 @@
 #define kTemppass3 @"temppass3"
 #define kTemppass4 @"temppass4"
 #define kCountryCode @"countryCode"
+#define kEncryptKey @"encryptKey"
 
 @interface ConstantDefinition : NSObject
 

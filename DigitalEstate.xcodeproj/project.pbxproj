@@ -22,6 +22,7 @@
 		813664B5190F850400C0B76E /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 813664B4190F850400C0B76E /* Add@2x.png */; };
 		813664B8190F870D00C0B76E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664B7190F870D00C0B76E /* SettingViewController.m */; };
 		813664BB191075B600C0B76E /* HistoryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664BA191075B600C0B76E /* HistoryData.m */; };
+		813664BE191200B900C0B76E /* EncryptPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664BD191200B900C0B76E /* EncryptPasswordViewController.m */; };
 		813CCA3C18FD0EF9002A98F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3B18FD0EF9002A98F2 /* Foundation.framework */; };
 		813CCA3E18FD0EF9002A98F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */; };
 		813CCA4018FD0EF9002A98F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
@@ -110,6 +111,8 @@
 		813664B7190F870D00C0B76E /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = ViewControllers/SettingViewController.m; sourceTree = "<group>"; };
 		813664B9191075B600C0B76E /* HistoryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryData.h; path = Data/HistoryData.h; sourceTree = "<group>"; };
 		813664BA191075B600C0B76E /* HistoryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryData.m; path = Data/HistoryData.m; sourceTree = "<group>"; };
+		813664BC191200B900C0B76E /* EncryptPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EncryptPasswordViewController.h; path = ViewControllers/EncryptPasswordViewController.h; sourceTree = "<group>"; };
+		813664BD191200B900C0B76E /* EncryptPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EncryptPasswordViewController.m; path = ViewControllers/EncryptPasswordViewController.m; sourceTree = "<group>"; };
 		813CCA3818FD0EF9002A98F2 /* DigitalEstate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalEstate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813CCA3B18FD0EF9002A98F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -327,6 +330,8 @@
 				8121787E19089686002DA71A /* CountryViewController.m */,
 				813664B6190F870D00C0B76E /* SettingViewController.h */,
 				813664B7190F870D00C0B76E /* SettingViewController.m */,
+				813664BC191200B900C0B76E /* EncryptPasswordViewController.h */,
+				813664BD191200B900C0B76E /* EncryptPasswordViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -534,6 +539,7 @@
 				8180D7C018FDFCC30095F625 /* EstateData.m in Sources */,
 				8180D7CD18FE06C70095F625 /* EstateViewController.m in Sources */,
 				81B18E53190602DC005647AF /* EstateTableViewCell.m in Sources */,
+				813664BE191200B900C0B76E /* EncryptPasswordViewController.m in Sources */,
 				8180D7C618FDFD7E0095F625 /* DownloadManager.m in Sources */,
 				8180D7CA18FDFE0A0095F625 /* WebsiteLinkEntry.m in Sources */,
 				813664B2190F4DC600C0B76E /* NSData+CommonCrypto.m in Sources */,

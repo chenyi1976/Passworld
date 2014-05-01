@@ -9,6 +9,7 @@
 #import "MockDataSource.h"
 #import "CacheManager.h"
 #import "AESCrypt.h"
+#import "ConstantDefinition.h"
 
 @interface MockDataSource()
     @property NSMutableArray* estates;
@@ -21,6 +22,7 @@
 {
     if (self = [super init])
     {
+        _sortByLastUpdated = true;
         [self loadEstatesWithCompletionHandler:nil];
     }
     return self;
@@ -36,17 +38,36 @@
 {
     NSArray* encryptEstates = [CacheManager loadFromCache:[NSArray arrayWithObject:@"estate"] WithExpireTime:0];
     NSArray* deepCopyArray = [[NSArray alloc] initWithArray:encryptEstates copyItems:TRUE];
-    _estates = [NSMutableArray arrayWithArray:deepCopyArray];
-    for (EstateData* data in _estates)
+    
+    for (EstateData* data in deepCopyArray)
     {
-        NSString *decryptedData = [AESCrypt decrypt:data.content password:@"password"];
+        NSString *decryptedData = [AESCrypt decrypt:data.content password:kEncryptKey];
         data.content = decryptedData;
+    }
+    
+    if (_sortByLastUpdated)
+    {
+        _estates = [NSMutableArray arrayWithArray:[deepCopyArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            NSDate *first = [(EstateData*)a lastUpdate];
+            NSDate *second = [(EstateData*)b lastUpdate];
+            return [first compare:second];
+        }]];
+    }
+    else
+    {
+        _estates = [NSMutableArray arrayWithArray:deepCopyArray];
     }
 }
 
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(EstateData*)estate
 {
-    [_estates replaceObjectAtIndex:index withObject:estate];
+    if (!_sortByLastUpdated)
+        [_estates replaceObjectAtIndex:index withObject:estate];
+    else
+    {
+        [_estates removeObjectAtIndex:index];
+        [_estates addObject:estate];
+    }
     [self saveToCache];
     [super fireDataChanged];
 }
@@ -75,7 +96,10 @@
 
 - (void)insertObject:(EstateData*)estate atIndex:(NSUInteger)index
 {
-    [_estates insertObject:estate atIndex:index];
+    if (!_sortByLastUpdated)
+        [_estates insertObject:estate atIndex:index];
+    else
+        [_estates addObject:estate];
     [self saveToCache];
     [super fireDataChanged];
 }
@@ -92,10 +116,10 @@
     NSArray* encryptEstates = [[NSArray alloc] initWithArray:_estates copyItems:TRUE];
     for (EstateData* data in encryptEstates)
     {
-        NSString *encryptedData = [AESCrypt encrypt:data.content password:@"password"];
+        NSString *encryptedData = [AESCrypt encrypt:data.content password:kEncryptKey];
         data.content = encryptedData;
     }
-    [CacheManager saveToCache:encryptEstates withKey:[NSArray arrayWithObject:@"estate"]];
+    [CacheManager saveToCache:encryptEstates withKey:[NSArray arrayWithObject:kEncryptKey]];
 }
 
 @end

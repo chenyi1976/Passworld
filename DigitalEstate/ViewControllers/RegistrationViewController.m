@@ -109,7 +109,7 @@
 - (IBAction)verifyButtonClicked:(id)sender
 {
     NSString* code = _codeField.text;
-    if (code.length != 6)
+    if (code.length == 0)
     {
         UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入6位验证数字" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil,nil];
         alert.alertViewStyle=UIAlertViewStyleDefault;
