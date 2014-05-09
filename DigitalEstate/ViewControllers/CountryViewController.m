@@ -134,9 +134,12 @@
         return;
     }
 
-    NSString* countryCode = [diallingCodesUtil getCountryCodeForName:[countryNames objectAtIndex:indexPath.row]];
+    NSString* countryName = [countryNames objectAtIndex:indexPath.row];
+    NSString* diallingCode = [diallingCodesUtil getDiallingCodeForCountryName:countryName];
+    NSString* countryCode = [diallingCodesUtil getCountryCodeForName:countryName];
     
     NSUserDefaults* perf = [NSUserDefaults standardUserDefaults];
+    [perf setObject:diallingCode forKey:kDiallingCode];
     [perf setObject:countryCode forKey:kCountryCode];
     [perf synchronize];
     

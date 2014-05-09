@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define kCountryCode @"countryCode"
+#define kDiallingCode @"diallingCode"
 #define kPhoneNo @"phoneNo"
 #define kPassword1 @"password1"
 #define kPassword2 @"password2"
@@ -17,7 +19,6 @@
 #define kTemppass2 @"temppass2"
 #define kTemppass3 @"temppass3"
 #define kTemppass4 @"temppass4"
-#define kCountryCode @"countryCode"
 #define kEncryptKey @"encryptKey"
 
 @interface ConstantDefinition : NSObject

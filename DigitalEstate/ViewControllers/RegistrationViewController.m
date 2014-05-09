@@ -30,37 +30,56 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (_phoneField)
-    {
-        [_phoneField becomeFirstResponder];
-    }
-    else
-    {
-        [_codeField becomeFirstResponder];
-    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    NSString* countryCode = [[NSUserDefaults standardUserDefaults] objectForKey:kCountryCode];
-//    NSLog(@"%@", countryCode);
-    if (countryCode)
+    
+    if (_countryButton && _countryField)
     {
-        NSString* countryName = [[DiallingCodesUtil sharedInstance] getCountryNameForCode:countryCode];
-        [_countryButton setTitle:countryName forState:UIControlStateNormal];
-        NSString* dialingCode = [[DiallingCodesUtil sharedInstance] getDiallingCodeForCountryCode:countryCode];
-        [_countryField setText:[NSString stringWithFormat:@"+%@", dialingCode]];
+        NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+        NSString* diallingCode = [prefs objectForKey:kDiallingCode];
+        NSString* countryCode = [prefs objectForKey:kCountryCode];
+        if (countryCode && diallingCode)
+        {
+            NSString* countryName = [[DiallingCodesUtil sharedInstance] getCountryNameForCode:countryCode];
+            [_countryButton setTitle:countryName forState:UIControlStateNormal];
+            
+            [_countryField setText:[NSString stringWithFormat:@"+%@", diallingCode]];
+        }
+        else
+        {
+            NSLocale *locale = [NSLocale autoupdatingCurrentLocale];
+            NSString *countryCode = [locale objectForKey: NSLocaleCountryCode];
+            NSString *countryName = [locale displayNameForKey: NSLocaleCountryCode value:countryCode];
+            [_countryButton setTitle:countryName forState:UIControlStateNormal];
+            
+            diallingCode = [[DiallingCodesUtil sharedInstance] getDiallingCodeForCountryCode:countryCode];
+            
+            [prefs setObject:diallingCode forKey:kDiallingCode];
+            [prefs setObject:countryCode forKey:kCountryCode];
+            [prefs synchronize];
+            
+            [_countryField setText:[NSString stringWithFormat:@"+%@", diallingCode]];
+        }
     }
-    else
+    
+    if (_phoneField)
     {
-        NSLocale *locale = [NSLocale autoupdatingCurrentLocale];
-        NSString *countryCode = [locale objectForKey: NSLocaleCountryCode];
-        NSString *countryName = [locale displayNameForKey: NSLocaleCountryCode value:countryCode];
-        [_countryButton setTitle:countryName forState:UIControlStateNormal];
+        [_phoneField becomeFirstResponder];
+    }
+    else if (_codeField)
+    {
+        [_codeField becomeFirstResponder];
+    }
+    
+    if (_phoneNoLabel)
+    {
+        NSString* phoneNo = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneNo];
+        NSString* diallingCode = [[NSUserDefaults standardUserDefaults] objectForKey:kDiallingCode];
 
-        NSString* dialingCode = [[DiallingCodesUtil sharedInstance] getDiallingCodeForCountryCode:countryCode];
-        [_countryField setText:[NSString stringWithFormat:@"+%@", dialingCode]];
+        [_phoneNoLabel setText:[NSString stringWithFormat:@"Your phone number is : +%@ %@", diallingCode, phoneNo]];
     }
 }
 
@@ -74,29 +93,30 @@
 
 - (IBAction)requestButtonClicked:(id)sender
 {
-    NSString* phoneNo = nil;
     if (_phoneField)
     {
-        phoneNo = _phoneField.text;
-    }
-    if (phoneNo == nil || phoneNo.length == 0)
-    {
-        phoneNo = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneNo];
+        if (_phoneField.text.length == 0)
+        {
+            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入手机号码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil,nil];
+            alert.alertViewStyle=UIAlertViewStyleDefault;
+            [alert show];
+            return;
+        }
     }
     
-    if (phoneNo == nil || phoneNo.length == 0)
-    {
-        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入手机号码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil,nil];
-        alert.alertViewStyle=UIAlertViewStyleDefault;
-        [alert show];
-        return;
-    }
-
-    [SMSService requestCodeVerficationForPhone:_phoneField.text];
+    NSString* phoneNo = _phoneField.text;
+    if ([phoneNo hasPrefix:@"0"])
+        phoneNo = [phoneNo substringFromIndex:1];
     
     NSUserDefaults* perf = [NSUserDefaults standardUserDefaults];
     [perf setObject:phoneNo forKey:kPhoneNo];
     [perf synchronize];
+    
+    NSString* fullPhoneNo = [NSString stringWithFormat:@"%@%@", _countryField.text, phoneNo];
+    if ([fullPhoneNo hasPrefix:@"+"])
+        fullPhoneNo = [fullPhoneNo substringFromIndex:1];
+    
+    [SMSService requestCodeVerficationForPhone:fullPhoneNo];
     
     @try {
         [self performSegueWithIdentifier:@"smsVerifySegue" sender:nil];
@@ -118,12 +138,20 @@
     }
     
     NSString* phoneNo = [[NSUserDefaults standardUserDefaults] objectForKey:kPhoneNo];
+    NSString* diallingCode = [[NSUserDefaults standardUserDefaults] objectForKey:kDiallingCode];
+    NSString* fullPhoneNo = [NSString stringWithFormat:@"%@%@", diallingCode, phoneNo];
     
-    bool verifyResult = [SMSService verifyCode:_codeField.text ForPhone:phoneNo];
-    if (verifyResult)
-    {
-        [self performSegueWithIdentifier:@"pinSetupSegue" sender:nil];
-    }
+    [SMSService verifyCode:_codeField.text ForPhone:fullPhoneNo completionHandler:^(NSError* error){
+        if (error == nil)
+            [self performSegueWithIdentifier:@"pinSetupSegue" sender:nil];
+        else
+        {
+            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"提示" message:@"验证失败" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil,nil];
+            alert.alertViewStyle=UIAlertViewStyleDefault;
+            [alert show];
+            return;
+        }
+    }];
 }
 
 

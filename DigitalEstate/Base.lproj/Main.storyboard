@@ -983,7 +983,6 @@
         <!--Encrypt Password View Controller - 加密密匙-->
         <scene sceneID="x4w-4e-H21">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RLh-TZ-jWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="LbI-Gx-8EE" customClass="EncryptPasswordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Iro-Jv-1JY"/>
@@ -1042,6 +1041,7 @@
                         <outlet property="passwordField2" destination="lln-Xd-zfP" id="yaI-vN-15x"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RLh-TZ-jWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2840" y="-1156"/>
         </scene>
@@ -1590,6 +1590,7 @@
                     <navigationItem key="navigationItem" title="注册" id="YV8-vr-9CZ"/>
                     <connections>
                         <outlet property="codeField" destination="JbK-by-cao" id="6Ap-Q5-mwi"/>
+                        <outlet property="phoneNoLabel" destination="YFM-lE-Y4L" id="qlD-2N-6Vs"/>
                         <segue destination="WTH-dR-UcE" kind="push" identifier="pinSetupSegue" id="Tf7-cD-7mB"/>
                     </connections>
                 </viewController>

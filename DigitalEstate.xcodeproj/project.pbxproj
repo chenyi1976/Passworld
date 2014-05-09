@@ -23,6 +23,7 @@
 		813664B8190F870D00C0B76E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664B7190F870D00C0B76E /* SettingViewController.m */; };
 		813664BB191075B600C0B76E /* HistoryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664BA191075B600C0B76E /* HistoryData.m */; };
 		813664BE191200B900C0B76E /* EncryptPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664BD191200B900C0B76E /* EncryptPasswordViewController.m */; };
+		813664C119132F0700C0B76E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664C019132F0700C0B76E /* KeychainItemWrapper.m */; };
 		813CCA3C18FD0EF9002A98F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3B18FD0EF9002A98F2 /* Foundation.framework */; };
 		813CCA3E18FD0EF9002A98F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */; };
 		813CCA4018FD0EF9002A98F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
@@ -113,6 +114,8 @@
 		813664BA191075B600C0B76E /* HistoryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryData.m; path = Data/HistoryData.m; sourceTree = "<group>"; };
 		813664BC191200B900C0B76E /* EncryptPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EncryptPasswordViewController.h; path = ViewControllers/EncryptPasswordViewController.h; sourceTree = "<group>"; };
 		813664BD191200B900C0B76E /* EncryptPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EncryptPasswordViewController.m; path = ViewControllers/EncryptPasswordViewController.m; sourceTree = "<group>"; };
+		813664BF19132F0700C0B76E /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = Util/KeychainItemWrapper.h; sourceTree = "<group>"; };
+		813664C019132F0700C0B76E /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = Util/KeychainItemWrapper.m; sourceTree = "<group>"; };
 		813CCA3818FD0EF9002A98F2 /* DigitalEstate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalEstate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813CCA3B18FD0EF9002A98F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -364,6 +367,8 @@
 				8121787719087B03002DA71A /* SMSService.h */,
 				8121787819087B03002DA71A /* SMSService.m */,
 				812178851908FD22002DA71A /* ConstantDefinition.h */,
+				813664BF19132F0700C0B76E /* KeychainItemWrapper.h */,
+				813664C019132F0700C0B76E /* KeychainItemWrapper.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -551,6 +556,7 @@
 				813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */,
 				813CCA7A18FDE096002A98F2 /* MockDataSource.m in Sources */,
 				813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */,
+				813664C119132F0700C0B76E /* KeychainItemWrapper.m in Sources */,
 				8121787919087B03002DA71A /* SMSService.m in Sources */,
 				813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */,
 				8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */,

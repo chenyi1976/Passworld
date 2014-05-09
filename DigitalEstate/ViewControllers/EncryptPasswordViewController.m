@@ -9,6 +9,7 @@
 #import "EncryptPasswordViewController.h"
 #import "AppDelegate.h"
 #import "ConstantDefinition.h"
+#import "KeychainItemWrapper.h"
 
 @interface EncryptPasswordViewController ()
 
@@ -67,6 +68,9 @@
         [alert show];
         return;
     }
+    
+//    KeychainItemWrapper* keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"TestUDID" accessGroup:nil];
+//    [keychain setObject:udid forKey:(__bridge id)(kSecAttrAccount)];
     
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     [prefs setObject:pass1 forKey:kEncryptKey];

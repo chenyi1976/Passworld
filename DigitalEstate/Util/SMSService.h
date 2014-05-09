@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SMSService : NSObject
+@interface SMSService : NSObject<NSURLSessionDelegate>
 
 +(void)requestCodeVerficationForPhone:(NSString*)phoneNumber;
 
-+(bool)verifyCode:(NSString*)code ForPhone:(NSString*)phoneNumber;
++(void)verifyCode:(NSString*)code ForPhone:(NSString*)phoneNumber completionHandler:(void (^)(NSError* error)) handler;
 
 @end

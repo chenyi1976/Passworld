@@ -48,9 +48,10 @@
     }
 
     //clear all setting before configuration
-    [prefs removeObjectForKey:kPhoneNo];
-    [prefs removeObjectForKey:kCountryCode];
-    [prefs synchronize];
+//    [prefs removeObjectForKey:kPhoneNo];
+//    [prefs removeObjectForKey:kDiallingCode];
+//    [prefs removeObjectForKey:kCountryCode];
+//    [prefs synchronize];
     
     [self gotoScreen:@"RegisterNavigationViewController"];
 }

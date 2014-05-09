@@ -14,6 +14,7 @@
 @property IBOutlet UITextField* countryField;
 @property IBOutlet UITextField* phoneField;
 @property IBOutlet UITextField* codeField;
+@property IBOutlet UILabel* phoneNoLabel;
 
 - (IBAction)requestButtonClicked:(id)sender;
 - (IBAction)verifyButtonClicked:(id)sender;
