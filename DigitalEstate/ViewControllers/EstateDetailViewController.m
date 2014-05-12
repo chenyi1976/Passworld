@@ -8,6 +8,7 @@
 
 #import "EstateDetailViewController.h"
 #import "DataSourceFactory.h"
+#import "HistoryViewController.h"
 
 @interface EstateDetailViewController ()
 
@@ -57,6 +58,14 @@
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];
 }
 
+- (IBAction)historyButtonTouched:(id)sender
+{
+    if (data != nil)
+    {
+        [self performSegueWithIdentifier:@"historySegue" sender:nil];
+    }
+}
+
 - (IBAction)okButtonTouched:(id)sender
 {
     if (data == nil)
@@ -76,6 +85,20 @@
 - (IBAction)backButtonTouched:(id)sender
 {
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];
+}
+
+#pragma mark segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"historySegue"])
+    {
+        // Get reference to the destination view controller
+        HistoryViewController *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        [vc setEstateData:data];
+    }
 }
 
 #pragma mark business method

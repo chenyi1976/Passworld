@@ -11,6 +11,7 @@
 #define kCountryCode @"countryCode"
 #define kDiallingCode @"diallingCode"
 #define kPhoneNo @"phoneNo"
+
 #define kPassword1 @"password1"
 #define kPassword2 @"password2"
 #define kPassword3 @"password3"
@@ -19,7 +20,10 @@
 #define kTemppass2 @"temppass2"
 #define kTemppass3 @"temppass3"
 #define kTemppass4 @"temppass4"
+
 #define kEncryptKey @"encryptKey"
+
+#define kEstate @"estate"
 
 @interface ConstantDefinition : NSObject
 

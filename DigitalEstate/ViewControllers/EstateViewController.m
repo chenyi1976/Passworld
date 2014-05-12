@@ -191,7 +191,6 @@
     }];
 }
 
-
 #pragma mark - Search
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope

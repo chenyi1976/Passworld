@@ -42,6 +42,10 @@
 		813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */; };
 		813CCA8218FDF193002A98F2 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA8118FDF193002A98F2 /* RegistrationViewController.m */; };
 		813CCA8918FDFC6B002A98F2 /* PersonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA8818FDFC6B002A98F2 /* PersonData.m */; };
+		8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81594119192045F200D6EB14 /* KeyChainUtil.m */; };
+		8159411C19206D1000D6EB14 /* history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8159411B19206D1000D6EB14 /* history@2x.png */; };
+		8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159411E1920736E00D6EB14 /* HistoryViewController.m */; };
+		815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815941211920762700D6EB14 /* HistoryTableViewCell.m */; };
 		8180D7C018FDFCC30095F625 /* EstateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7BF18FDFCC30095F625 /* EstateData.m */; };
 		8180D7C618FDFD7E0095F625 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7C318FDFD7E0095F625 /* DownloadManager.m */; };
 		8180D7C718FDFD7E0095F625 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7C518FDFD7E0095F625 /* CacheManager.m */; };
@@ -144,6 +148,13 @@
 		813CCA8118FDF193002A98F2 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationViewController.m; path = ViewControllers/RegistrationViewController.m; sourceTree = "<group>"; };
 		813CCA8718FDFC6B002A98F2 /* PersonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonData.h; path = Data/PersonData.h; sourceTree = "<group>"; };
 		813CCA8818FDFC6B002A98F2 /* PersonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonData.m; path = Data/PersonData.m; sourceTree = "<group>"; };
+		81594118192045F200D6EB14 /* KeyChainUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyChainUtil.h; path = Util/KeyChainUtil.h; sourceTree = "<group>"; };
+		81594119192045F200D6EB14 /* KeyChainUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyChainUtil.m; path = Util/KeyChainUtil.m; sourceTree = "<group>"; };
+		8159411B19206D1000D6EB14 /* history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "history@2x.png"; path = "Images/history@2x.png"; sourceTree = "<group>"; };
+		8159411D1920736E00D6EB14 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = ViewControllers/HistoryViewController.h; sourceTree = "<group>"; };
+		8159411E1920736E00D6EB14 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = ViewControllers/HistoryViewController.m; sourceTree = "<group>"; };
+		815941201920762700D6EB14 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryTableViewCell.h; path = ViewControllers/HistoryTableViewCell.h; sourceTree = "<group>"; };
+		815941211920762700D6EB14 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryTableViewCell.m; path = ViewControllers/HistoryTableViewCell.m; sourceTree = "<group>"; };
 		8180D7BE18FDFCC30095F625 /* EstateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateData.h; path = Data/EstateData.h; sourceTree = "<group>"; };
 		8180D7BF18FDFCC30095F625 /* EstateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateData.m; path = Data/EstateData.m; sourceTree = "<group>"; };
 		8180D7C218FDFD7E0095F625 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DownloadManager.h; path = Util/DownloadManager.h; sourceTree = "<group>"; };
@@ -335,6 +346,8 @@
 				813664B7190F870D00C0B76E /* SettingViewController.m */,
 				813664BC191200B900C0B76E /* EncryptPasswordViewController.h */,
 				813664BD191200B900C0B76E /* EncryptPasswordViewController.m */,
+				8159411D1920736E00D6EB14 /* HistoryViewController.h */,
+				8159411E1920736E00D6EB14 /* HistoryViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -369,6 +382,8 @@
 				812178851908FD22002DA71A /* ConstantDefinition.h */,
 				813664BF19132F0700C0B76E /* KeychainItemWrapper.h */,
 				813664C019132F0700C0B76E /* KeychainItemWrapper.m */,
+				81594118192045F200D6EB14 /* KeyChainUtil.h */,
+				81594119192045F200D6EB14 /* KeyChainUtil.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -376,6 +391,7 @@
 		8180D7E218FE153F0095F625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8159411B19206D1000D6EB14 /* history@2x.png */,
 				813664B4190F850400C0B76E /* Add@2x.png */,
 				81217888190A114F002DA71A /* edit@2x.png */,
 				81217889190A114F002DA71A /* search@2x.png */,
@@ -411,6 +427,8 @@
 			children = (
 				81B18E51190602DC005647AF /* EstateTableViewCell.h */,
 				81B18E52190602DC005647AF /* EstateTableViewCell.m */,
+				815941201920762700D6EB14 /* HistoryTableViewCell.h */,
+				815941211920762700D6EB14 /* HistoryTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -496,6 +514,7 @@
 				8121788D190A114F002DA71A /* setting@2x.png in Resources */,
 				8180D80318FE16A40095F625 /* 9@2x.png in Resources */,
 				8121788B190A114F002DA71A /* edit@2x.png in Resources */,
+				8159411C19206D1000D6EB14 /* history@2x.png in Resources */,
 				81B18E4A1905EAB1005647AF /* Camera@2x.png in Resources */,
 				8180D81718FE48340095F625 /* on@2x.png in Resources */,
 				81B18E491905EAB1005647AF /* Page@2x.png in Resources */,
@@ -554,10 +573,12 @@
 				813CCA8218FDF193002A98F2 /* RegistrationViewController.m in Sources */,
 				813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */,
 				813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */,
+				8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */,
 				813CCA7A18FDE096002A98F2 /* MockDataSource.m in Sources */,
 				813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */,
 				813664C119132F0700C0B76E /* KeychainItemWrapper.m in Sources */,
 				8121787919087B03002DA71A /* SMSService.m in Sources */,
+				815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */,
 				813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */,
 				8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */,
 				813664B1190F4DC600C0B76E /* NSData+Base64.m in Sources */,
@@ -565,6 +586,7 @@
 				81CCB89819008A010019A6E4 /* EstateDetailViewController.m in Sources */,
 				812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */,
 				812178761907A2B4002DA71A /* Observable.m in Sources */,
+				8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */,
 				813664B8190F870D00C0B76E /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

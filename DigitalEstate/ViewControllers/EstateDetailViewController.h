@@ -20,5 +20,6 @@
 - (IBAction)backButtonTouched:(id)sender;
 - (IBAction)okButtonTouched:(id)sender;
 - (IBAction)deleteButtonTouched:(id)sender;
+- (IBAction)historyButtonTouched:(id)sender;
 
 @end

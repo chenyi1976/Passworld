@@ -10,6 +10,7 @@
 #import "CacheManager.h"
 #import "AESCrypt.h"
 #import "ConstantDefinition.h"
+#import "KeyChainUtil.h"
 
 @interface MockDataSource()
     @property NSMutableArray* estates;
@@ -36,12 +37,13 @@
 
 - (void)loadEstatesWithCompletionHandler:(void (^)(NSError* error))completionHandler
 {
-    NSArray* encryptEstates = [CacheManager loadFromCache:[NSArray arrayWithObject:@"estate"] WithExpireTime:0];
+    NSArray* encryptEstates = [CacheManager loadFromCache:[NSArray arrayWithObject:kEstate] WithExpireTime:0];
     NSArray* deepCopyArray = [[NSArray alloc] initWithArray:encryptEstates copyItems:TRUE];
     
+    NSString* encryptKey = [self getEncryptKey];
     for (EstateData* data in deepCopyArray)
     {
-        NSString *decryptedData = [AESCrypt decrypt:data.content password:kEncryptKey];
+        NSString *decryptedData = [AESCrypt decrypt:data.content password:encryptKey];
         data.content = decryptedData;
     }
     
@@ -114,12 +116,18 @@
 - (void)saveToCache
 {
     NSArray* encryptEstates = [[NSArray alloc] initWithArray:_estates copyItems:TRUE];
+    NSString* encryptKey = [self getEncryptKey];
     for (EstateData* data in encryptEstates)
     {
-        NSString *encryptedData = [AESCrypt encrypt:data.content password:kEncryptKey];
+        NSString *encryptedData = [AESCrypt encrypt:data.content password:encryptKey];
         data.content = encryptedData;
     }
-    [CacheManager saveToCache:encryptEstates withKey:[NSArray arrayWithObject:kEncryptKey]];
+    [CacheManager saveToCache:encryptEstates withKey:[NSArray arrayWithObject:kEstate]];
+}
+
+- (NSString*)getEncryptKey
+{
+    return [KeyChainUtil loadFromKeyChainForKey:kEncryptKey];
 }
 
 @end

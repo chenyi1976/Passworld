@@ -9,7 +9,7 @@
 #import "EncryptPasswordViewController.h"
 #import "AppDelegate.h"
 #import "ConstantDefinition.h"
-#import "KeychainItemWrapper.h"
+#import "KeyChainUtil.h"
 
 @interface EncryptPasswordViewController ()
 
@@ -69,17 +69,27 @@
         return;
     }
     
-//    KeychainItemWrapper* keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"TestUDID" accessGroup:nil];
-//    [keychain setObject:udid forKey:(__bridge id)(kSecAttrAccount)];
+    bool saved = [KeyChainUtil saveToKeyChainForKey:kEncryptKey withValue:pass1];
     
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setObject:pass1 forKey:kEncryptKey];
-    [prefs synchronize];
+    if (saved)
+    {
+        //this is just an indicator says
+        NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setObject:@"encryptedKeyConfigued" forKey:kEncryptKey];
+        [prefs synchronize];
 
-    
-    UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateViewController"];
-    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [app.window setRootViewController:screen];
+        UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateViewController"];
+        AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [app.window setRootViewController:screen];
+    }
+    else
+    {
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"提示" message:@"密码保存失败" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil,nil];
+        alert.alertViewStyle=UIAlertViewStyleDefault;
+        [alert show];
+        return;
+    }
 }
+
 
 @end
