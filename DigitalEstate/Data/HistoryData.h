@@ -15,7 +15,7 @@
 @interface HistoryData : NSObject<NSCoding, NSCopying>
 
 @property(readonly) NSString* attribute;
-@property(readonly) id value;
+@property(readonly) NSString* value;
 @property(readonly) NSDate* date;
 
 - (id) initWithAttribute:(NSString*)attribute withValue:(NSString*)value withDate:(NSDate*)date;

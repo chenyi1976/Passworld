@@ -46,6 +46,8 @@
 		8159411C19206D1000D6EB14 /* history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8159411B19206D1000D6EB14 /* history@2x.png */; };
 		8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159411E1920736E00D6EB14 /* HistoryViewController.m */; };
 		815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815941211920762700D6EB14 /* HistoryTableViewCell.m */; };
+		815941241921905900D6EB14 /* infodeck@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 815941231921905900D6EB14 /* infodeck@2x.jpg */; };
+		81594126192192F000D6EB14 /* next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81594125192192F000D6EB14 /* next@2x.png */; };
 		8180D7C018FDFCC30095F625 /* EstateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7BF18FDFCC30095F625 /* EstateData.m */; };
 		8180D7C618FDFD7E0095F625 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7C318FDFD7E0095F625 /* DownloadManager.m */; };
 		8180D7C718FDFD7E0095F625 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7C518FDFD7E0095F625 /* CacheManager.m */; };
@@ -66,6 +68,14 @@
 		8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D81018FE19950095F625 /* PasscodeViewController.m */; };
 		8180D81718FE48340095F625 /* on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D81518FE48340095F625 /* on@2x.png */; };
 		8180D81818FE48340095F625 /* off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D81618FE48340095F625 /* off@2x.png */; };
+		81AB97331921951100B0C917 /* passcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB97321921951100B0C917 /* passcode@2x.png */; };
+		81AB973619219B5000B0C917 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB973519219B5000B0C917 /* WelcomeViewController.m */; };
+		81AB97391921B76400B0C917 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB97381921B76400B0C917 /* AccountViewController.m */; };
+		81AB973C1922054900B0C917 /* Down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB973A1922054900B0C917 /* Down@2x.png */; };
+		81AB973D1922054900B0C917 /* Up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB973B1922054900B0C917 /* Up@2x.png */; };
+		81AB973F1922465800B0C917 /* Card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB973E1922465800B0C917 /* Card@2x.png */; };
+		81AB97411922493700B0C917 /* password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB97401922493700B0C917 /* password@2x.png */; };
+		81AB9745192378B200B0C917 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB9744192378B200B0C917 /* AccountTableViewCell.m */; };
 		81B18E471905EAB1005647AF /* Mic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E431905EAB1005647AF /* Mic@2x.png */; };
 		81B18E481905EAB1005647AF /* Video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E441905EAB1005647AF /* Video@2x.png */; };
 		81B18E491905EAB1005647AF /* Page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E451905EAB1005647AF /* Page@2x.png */; };
@@ -155,6 +165,8 @@
 		8159411E1920736E00D6EB14 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = ViewControllers/HistoryViewController.m; sourceTree = "<group>"; };
 		815941201920762700D6EB14 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryTableViewCell.h; path = ViewControllers/HistoryTableViewCell.h; sourceTree = "<group>"; };
 		815941211920762700D6EB14 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryTableViewCell.m; path = ViewControllers/HistoryTableViewCell.m; sourceTree = "<group>"; };
+		815941231921905900D6EB14 /* infodeck@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "infodeck@2x.jpg"; path = "Images/infodeck@2x.jpg"; sourceTree = "<group>"; };
+		81594125192192F000D6EB14 /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "next@2x.png"; path = "Images/next@2x.png"; sourceTree = "<group>"; };
 		8180D7BE18FDFCC30095F625 /* EstateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateData.h; path = Data/EstateData.h; sourceTree = "<group>"; };
 		8180D7BF18FDFCC30095F625 /* EstateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateData.m; path = Data/EstateData.m; sourceTree = "<group>"; };
 		8180D7C218FDFD7E0095F625 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DownloadManager.h; path = Util/DownloadManager.h; sourceTree = "<group>"; };
@@ -181,6 +193,18 @@
 		8180D81018FE19950095F625 /* PasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeViewController.m; path = ViewControllers/PasscodeViewController.m; sourceTree = "<group>"; };
 		8180D81518FE48340095F625 /* on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "on@2x.png"; path = "Images/on@2x.png"; sourceTree = "<group>"; };
 		8180D81618FE48340095F625 /* off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "off@2x.png"; path = "Images/off@2x.png"; sourceTree = "<group>"; };
+		81AB97321921951100B0C917 /* passcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "passcode@2x.png"; path = "Images/passcode@2x.png"; sourceTree = "<group>"; };
+		81AB973419219B5000B0C917 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeViewController.h; path = ViewControllers/WelcomeViewController.h; sourceTree = "<group>"; };
+		81AB973519219B5000B0C917 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeViewController.m; path = ViewControllers/WelcomeViewController.m; sourceTree = "<group>"; };
+		81AB97371921B76400B0C917 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountViewController.h; path = ViewControllers/AccountViewController.h; sourceTree = "<group>"; };
+		81AB97381921B76400B0C917 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountViewController.m; path = ViewControllers/AccountViewController.m; sourceTree = "<group>"; };
+		81AB973A1922054900B0C917 /* Down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Down@2x.png"; path = "Images/Down@2x.png"; sourceTree = "<group>"; };
+		81AB973B1922054900B0C917 /* Up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Up@2x.png"; path = "Images/Up@2x.png"; sourceTree = "<group>"; };
+		81AB973E1922465800B0C917 /* Card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Card@2x.png"; path = "Images/Card@2x.png"; sourceTree = "<group>"; };
+		81AB97401922493700B0C917 /* password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "password@2x.png"; path = "Images/password@2x.png"; sourceTree = "<group>"; };
+		81AB974219231E2400B0C917 /* DigitalEstate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DigitalEstate.entitlements; sourceTree = "<group>"; };
+		81AB9743192378B200B0C917 /* AccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountTableViewCell.h; path = ViewControllers/AccountTableViewCell.h; sourceTree = "<group>"; };
+		81AB9744192378B200B0C917 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountTableViewCell.m; path = ViewControllers/AccountTableViewCell.m; sourceTree = "<group>"; };
 		81B18E431905EAB1005647AF /* Mic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Mic@2x.png"; path = "Images/Mic@2x.png"; sourceTree = "<group>"; };
 		81B18E441905EAB1005647AF /* Video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Video@2x.png"; path = "Images/Video@2x.png"; sourceTree = "<group>"; };
 		81B18E451905EAB1005647AF /* Page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Page@2x.png"; path = "Images/Page@2x.png"; sourceTree = "<group>"; };
@@ -267,6 +291,7 @@
 		813CCA4118FD0EF9002A98F2 /* DigitalEstate */ = {
 			isa = PBXGroup;
 			children = (
+				81AB974219231E2400B0C917 /* DigitalEstate.entitlements */,
 				813664A7190F4DB900C0B76E /* AES */,
 				81B18E54190602F8005647AF /* Views */,
 				8180D7C118FDFCE50095F625 /* Util */,
@@ -330,8 +355,8 @@
 		813CCA7F18FDEF96002A98F2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				813CCA7C18FDEF8E002A98F2 /* InitialViewController.h */,
 				813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */,
+				813CCA7C18FDEF8E002A98F2 /* InitialViewController.h */,
 				813CCA8018FDF193002A98F2 /* RegistrationViewController.h */,
 				813CCA8118FDF193002A98F2 /* RegistrationViewController.m */,
 				8180D80F18FE19950095F625 /* PasscodeViewController.h */,
@@ -348,6 +373,10 @@
 				813664BD191200B900C0B76E /* EncryptPasswordViewController.m */,
 				8159411D1920736E00D6EB14 /* HistoryViewController.h */,
 				8159411E1920736E00D6EB14 /* HistoryViewController.m */,
+				81AB973419219B5000B0C917 /* WelcomeViewController.h */,
+				81AB973519219B5000B0C917 /* WelcomeViewController.m */,
+				81AB97371921B76400B0C917 /* AccountViewController.h */,
+				81AB97381921B76400B0C917 /* AccountViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -391,6 +420,13 @@
 		8180D7E218FE153F0095F625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				81AB97401922493700B0C917 /* password@2x.png */,
+				81AB973E1922465800B0C917 /* Card@2x.png */,
+				81AB973A1922054900B0C917 /* Down@2x.png */,
+				81AB973B1922054900B0C917 /* Up@2x.png */,
+				81AB97321921951100B0C917 /* passcode@2x.png */,
+				81594125192192F000D6EB14 /* next@2x.png */,
+				815941231921905900D6EB14 /* infodeck@2x.jpg */,
 				8159411B19206D1000D6EB14 /* history@2x.png */,
 				813664B4190F850400C0B76E /* Add@2x.png */,
 				81217888190A114F002DA71A /* edit@2x.png */,
@@ -429,6 +465,8 @@
 				81B18E52190602DC005647AF /* EstateTableViewCell.m */,
 				815941201920762700D6EB14 /* HistoryTableViewCell.h */,
 				815941211920762700D6EB14 /* HistoryTableViewCell.m */,
+				81AB9743192378B200B0C917 /* AccountTableViewCell.h */,
+				81AB9744192378B200B0C917 /* AccountTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -480,6 +518,14 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Yi Chen";
 				TargetAttributes = {
+					813CCA3718FD0EF9002A98F2 = {
+						DevelopmentTeam = V7WW63YU8C;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
 					813CCA5B18FD0EF9002A98F2 = {
 						TestTargetID = 813CCA3718FD0EF9002A98F2;
 					};
@@ -517,9 +563,13 @@
 				8159411C19206D1000D6EB14 /* history@2x.png in Resources */,
 				81B18E4A1905EAB1005647AF /* Camera@2x.png in Resources */,
 				8180D81718FE48340095F625 /* on@2x.png in Resources */,
+				81AB973C1922054900B0C917 /* Down@2x.png in Resources */,
+				81AB973F1922465800B0C917 /* Card@2x.png in Resources */,
 				81B18E491905EAB1005647AF /* Page@2x.png in Resources */,
 				81DDE8931904980D00EA886D /* red@2x.png in Resources */,
 				8180D80818FE16A40095F625 /* 4@2x.png in Resources */,
+				81AB97411922493700B0C917 /* password@2x.png in Resources */,
+				815941241921905900D6EB14 /* infodeck@2x.jpg in Resources */,
 				8180D80718FE16A40095F625 /* 5@2x.png in Resources */,
 				813CCA5718FD0EF9002A98F2 /* Images.xcassets in Resources */,
 				8180D80C18FE17FA0095F625 /* del@2x.png in Resources */,
@@ -538,8 +588,11 @@
 				813CCA4F18FD0EF9002A98F2 /* Main.storyboard in Resources */,
 				8121788C190A114F002DA71A /* search@2x.png in Resources */,
 				8180D80418FE16A40095F625 /* 8@2x.png in Resources */,
+				81AB973D1922054900B0C917 /* Up@2x.png in Resources */,
+				81AB97331921951100B0C917 /* passcode@2x.png in Resources */,
 				81B18E4D1905FB9F005647AF /* Back@2x.png in Resources */,
 				81B18E471905EAB1005647AF /* Mic@2x.png in Resources */,
+				81594126192192F000D6EB14 /* next@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,9 +623,12 @@
 				813664B3190F4DC600C0B76E /* NSString+Base64.m in Sources */,
 				8180D7C718FDFD7E0095F625 /* CacheManager.m in Sources */,
 				813664BB191075B600C0B76E /* HistoryData.m in Sources */,
+				81AB973619219B5000B0C917 /* WelcomeViewController.m in Sources */,
 				813CCA8218FDF193002A98F2 /* RegistrationViewController.m in Sources */,
 				813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */,
+				81AB97391921B76400B0C917 /* AccountViewController.m in Sources */,
 				813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */,
+				81AB9745192378B200B0C917 /* AccountTableViewCell.m in Sources */,
 				8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */,
 				813CCA7A18FDE096002A98F2 /* MockDataSource.m in Sources */,
 				813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */,
@@ -714,6 +770,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = DigitalEstate/DigitalEstate.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitalEstate/DigitalEstate-Prefix.pch";
 				INFOPLIST_FILE = "DigitalEstate/DigitalEstate-Info.plist";
@@ -727,6 +784,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = DigitalEstate/DigitalEstate.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitalEstate/DigitalEstate-Prefix.pch";
 				INFOPLIST_FILE = "DigitalEstate/DigitalEstate-Info.plist";

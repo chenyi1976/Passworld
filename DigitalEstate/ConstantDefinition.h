@@ -25,6 +25,8 @@
 
 #define kEstate @"estate"
 
+#define kWelcomed @"welcomed"
+
 @interface ConstantDefinition : NSObject
 
 @end

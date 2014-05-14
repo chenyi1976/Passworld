@@ -14,6 +14,9 @@
 
 @property IBOutlet UITableView * tableView;
 @property IBOutlet UIView * buttonView;
+@property IBOutlet UIBarButtonItem * switchButton;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 
 - (IBAction)audioButtonTouched:(id)sender;
 - (IBAction)cameraButtonTouched:(id)sender;

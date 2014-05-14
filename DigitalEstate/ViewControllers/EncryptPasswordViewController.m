@@ -78,7 +78,7 @@
         [prefs setObject:@"encryptedKeyConfigued" forKey:kEncryptKey];
         [prefs synchronize];
 
-        UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateViewController"];
+        UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateNavigationController"];
         AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         [app.window setRootViewController:screen];
     }
@@ -88,6 +88,26 @@
         alert.alertViewStyle=UIAlertViewStyleDefault;
         [alert show];
         return;
+    }
+}
+
+- (IBAction)skipButtonTouched:(id)sender
+{
+    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Confirm" message:@"Data without encryption, people will steal data." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"No Encrytion",nil];
+    alert.alertViewStyle=UIAlertViewStyleDefault;
+    [alert show];
+    
+}
+
+#pragma mark UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateNavigationController"];
+        AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [app.window setRootViewController:screen];
     }
 }
 

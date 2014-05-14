@@ -41,10 +41,13 @@
     NSArray* deepCopyArray = [[NSArray alloc] initWithArray:encryptEstates copyItems:TRUE];
     
     NSString* encryptKey = [self getEncryptKey];
-    for (EstateData* data in deepCopyArray)
+    if (encryptKey)
     {
-        NSString *decryptedData = [AESCrypt decrypt:data.content password:encryptKey];
-        data.content = decryptedData;
+        for (EstateData* data in deepCopyArray)
+        {
+            NSString *decryptedData = [AESCrypt decrypt:data.content password:encryptKey];
+            data.content = decryptedData;
+        }
     }
     
     if (_sortByLastUpdated)
@@ -117,17 +120,23 @@
 {
     NSArray* encryptEstates = [[NSArray alloc] initWithArray:_estates copyItems:TRUE];
     NSString* encryptKey = [self getEncryptKey];
-    for (EstateData* data in encryptEstates)
+    if (encryptKey)
     {
-        NSString *encryptedData = [AESCrypt encrypt:data.content password:encryptKey];
-        data.content = encryptedData;
+        for (EstateData* data in encryptEstates)
+        {
+            NSString *encryptedData = [AESCrypt encrypt:data.content password:encryptKey];
+            data.content = encryptedData;
+        }
     }
     [CacheManager saveToCache:encryptEstates withKey:[NSArray arrayWithObject:kEstate]];
 }
 
 - (NSString*)getEncryptKey
 {
-    return [KeyChainUtil loadFromKeyChainForKey:kEncryptKey];
+    NSString* key = [KeyChainUtil loadFromKeyChainForKey:kEncryptKey];
+//    if (!key)
+//        key = @"password";
+    return key;
 }
 
 @end

@@ -170,10 +170,8 @@ UIImage* offImage = nil;
         {
             if (pass1 == passcode1 && pass2 == passcode2 && pass3 == passcode3 && pass4 == passcode4)
             {
-                //the passcode is matched, then goes to
-                AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-                UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateViewController"];
-                [app.window setRootViewController:screen];
+                //the passcode is matched, then goes to estate view
+                [self performSegueWithIdentifier:@"SeurityEstateSegue" sender:self];
             }
             else
             {

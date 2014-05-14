@@ -7,9 +7,11 @@
 //
 
 #import "HistoryViewController.h"
+#import "HistoryData.h"
 
 @interface HistoryViewController ()
     @property NSArray* searchResults;
+    @property EstateData* estate;
 @end
 
 @implementation HistoryViewController
@@ -18,8 +20,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [_tableView setDataSource:self];
-        [_tableView setDelegate:self];
     }
     return self;
 }
@@ -27,7 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [_tableView setDataSource:self];
+    [_tableView setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,52 +47,50 @@
 //            return 0;
 //        return [_searchResults count];
 //    }
-//    return [[[DataSourceFactory getDataSource] getEstates] count];
-    return 0;
+    return [[_estate history] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    static NSString *MyCellIdentifier = @"EstateCell";
-//    EstateTableViewCell* result = [self.tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
-//    
-//    if (result == nil){
-//        result = [[EstateTableViewCell alloc]
-//                  initWithStyle:UITableViewCellStyleDefault
-//                  reuseIdentifier:MyCellIdentifier];
-//    }
-//    
-//    NSArray* estates;
+    static NSString *MyCellIdentifier = @"HistoryCell";
+    UITableViewCell* result = [self.tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
+
+    if (result == nil){
+        result = [[UITableViewCell alloc]
+                  initWithStyle:UITableViewCellStyleDefault
+                  reuseIdentifier:MyCellIdentifier];
+    }
+
+    NSArray* estates;
 //    if (tableView == self.searchDisplayController.searchResultsTableView)
 //    {
 //        estates = _searchResults;
 //    }
 //    else
-//    {
-//        estates =[[DataSourceFactory getDataSource] getEstates];
-//    }
-//    
-//    if (estates && indexPath.row < [estates count])
-//    {
-//        EstateData* data = [estates objectAtIndex:indexPath.row];
-//        
-//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//        [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
-//        NSString *strDate = [dateFormatter stringFromDate:data.lastUpdate];
-//        
-//        result.dateLabel.text = strDate;
-//        result.contentLabel.text = data.content;
-//    }
+    {
+        estates = [_estate history];
+    }
+    
+    if (estates && indexPath.row < [estates count])
+    {
+        HistoryData* data = [estates objectAtIndex:indexPath.row];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
+        NSString *strDate = [dateFormatter stringFromDate:[data date]];
+        
+        result.textLabel.text = strDate;
+        result.detailTextLabel.text = [data value];
+    }
 //    else
 //    {
 //        result.contentLabel.text = [NSString stringWithFormat:@"Section %ld, Cell %ld",
 //                                    (long)indexPath.section,
 //                                    (long)indexPath.row];
 //    }
-//    result.accessoryType = UITableViewCellAccessoryNone;
-//    
-//    return result;
-    return nil;
+    result.accessoryType = UITableViewCellAccessoryNone;
+    
+    return result;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -140,15 +139,11 @@
 
 #pragma mark business logic
 
-EstateData* data;
 
 - (void)setEstateData:(EstateData*)estate
 {
-    data = estate;
-//    if (data)
-//        [_estateTextView setText:data.content];
-//    else
-//        [_estateTextView setText:@""];
+    _estate = estate;
+    [_tableView reloadData];
 }
 
 

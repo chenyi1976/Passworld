@@ -10,6 +10,7 @@
 #import "DataSourceFactory.h"
 #import "EstateDetailViewController.h"
 #import "EstateTableViewCell.h"
+#import "ConstantDefinition.h"
 
 @interface EstateViewController ()
     @property NSArray* searchResults;
@@ -33,6 +34,19 @@
     [_tableView setDataSource:self];
     [_tableView setDelegate:self];
     [[DataSourceFactory getDataSource] registerObserver:self];
+    
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setBool:true forKey:kWelcomed];
+    [prefs synchronize];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _topConstraint.constant = 0;
+    
+    [_tableView setNeedsUpdateConstraints];
+    [_tableView layoutIfNeeded];
 }
 
 - (void)didReceiveMemoryWarning
@@ -157,17 +171,23 @@
 
 - (IBAction)audioButtonTouched:(id)sender
 {
-    
+    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Audio NOT implemented." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
+    alert.alertViewStyle=UIAlertViewStyleDefault;
+    [alert show];
 }
 
 - (IBAction)cameraButtonTouched:(id)sender
 {
-    
+    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Photo NOT implemented." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
+    alert.alertViewStyle=UIAlertViewStyleDefault;
+    [alert show];
 }
 
 - (IBAction)videoButtonTouched:(id)sender
 {
-    
+    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Video NOT implemented." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
+    alert.alertViewStyle=UIAlertViewStyleDefault;
+    [alert show];
 }
 
 - (IBAction)textButtonTouched:(id)sender
@@ -177,17 +197,15 @@
 
 - (IBAction)switchButtonTouched:(id)sender
 {
-    CGFloat y = _buttonView.frame.origin.y;
-    NSLog(@"y: %f", y);
-    if (y < 50)//y location after expanded
-        y = y + _buttonView.frame.size.height;
+    if (_topConstraint.constant <= 0)
+        _topConstraint.constant = _buttonView.frame.size.height;
     else
-        y = y - _buttonView.frame.size.height;
+        _topConstraint.constant = 0;
+    
+    [_tableView setNeedsUpdateConstraints];
     [UIView animateWithDuration:0.5f animations:^(void){
-        NSLog(@"animation!!");
-        NSLog(@"new value y: %f", y);
-        [_buttonView setFrame:CGRectMake(_buttonView.frame.origin.x, y, _buttonView.frame.size.width, _buttonView.frame.size.height)];
-        [_tableView setFrame:CGRectMake(_buttonView.frame.origin.x, y + _buttonView.frame.size.height, _buttonView.frame.size.width, self.view.frame.size.height -  y - _buttonView.frame.size.height)];
+        [_tableView layoutIfNeeded];
+    } completion:^(BOOL finished){
     }];
 }
 

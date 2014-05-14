@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EncryptPasswordViewController : UIViewController<UITextFieldDelegate>
+@interface EncryptPasswordViewController : UIViewController<UITextFieldDelegate, UIAlertViewDelegate>
 
 @property IBOutlet UITextField* passwordField1;
 @property IBOutlet UITextField* passwordField2;
 
 - (IBAction)confirmButtonTouched:(id)sender;
+- (IBAction)skipButtonTouched:(id)sender;
 
 @end

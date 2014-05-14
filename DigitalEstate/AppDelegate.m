@@ -39,7 +39,7 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    
+
     long pass1 = [prefs integerForKey:kPassword1];
     long pass2 = [prefs integerForKey:kPassword2];
     long pass3 = [prefs integerForKey:kPassword3];
