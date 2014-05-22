@@ -10,7 +10,7 @@ I have tried several iPhone apps, they help me to manage my personal password, i
 
 As a programmer, I understand how dangerous to put these sensitive information into an iPhone App. What if they upload my data to somewhere then hack my bank account?
 
-To trust an App to manage my account, the only way is that I can see its source code, then I am make sure there is NO backdoor or Trojan. 
+**To trust an App to manage my account, the only way is that I can see its source code, then I am make sure there is NO backdoor or Trojan.** 
 
 So I made this app, it is open sourced, focused on data security. 
 
