@@ -23,3 +23,12 @@ Firstly, when you open this app or activate this app from background, you must g
 Secondly, the data is encrypted with AES ( http://en.wikipedia.org/wiki/Advanced_Encryption_Standard ).
 
 Later, I will add more security features. For example, the mobile sms verification, so that only your iPhone can access your data.
+
+### Screenshot ###
+
+![iOS Simulator Screen shot 22 May 2014 4.52.51 pm.png](https://bitbucket.org/repo/K5gRyM/images/1515628137-iOS%20Simulator%20Screen%20shot%2022%20May%202014%204.52.51%20pm.png)
+
+![iOS Simulator Screen shot 22 May 2014 4.53.08 pm.png](https://bitbucket.org/repo/K5gRyM/images/668118503-iOS%20Simulator%20Screen%20shot%2022%20May%202014%204.53.08%20pm.png)
+
+![iOS Simulator Screen shot 22 May 2014 4.49.53 pm.png](https://bitbucket.org/repo/K5gRyM/images/2590479594-iOS%20Simulator%20Screen%20shot%2022%20May%202014%204.49.53%20pm.png)
+
