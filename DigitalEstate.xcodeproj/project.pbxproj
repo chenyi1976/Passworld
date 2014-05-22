@@ -12,6 +12,9 @@
 		810149721925EF1000765486 /* circle_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149711925EF1000765486 /* circle_text@2x.png */; };
 		810149771925F95F00765486 /* circle_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149751925F95F00765486 /* circle_back@2x.png */; };
 		810149781925F95F00765486 /* circle_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149761925F95F00765486 /* circle_close@2x.png */; };
+		811F6831192E026F00F27955 /* circle_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F6830192E026F00F27955 /* circle_ok@2x.png */; };
+		811F6833192E048E00F27955 /* circle_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F6832192E048E00F27955 /* circle_delete@2x.png */; };
+		811F6835192E13F300F27955 /* OPPS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F6834192E13F300F27955 /* OPPS@2x.png */; };
 		812178761907A2B4002DA71A /* Observable.m in Sources */ = {isa = PBXBuildFile; fileRef = 812178751907A2B4002DA71A /* Observable.m */; };
 		8121787919087B03002DA71A /* SMSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787819087B03002DA71A /* SMSService.m */; };
 		8121787F19089686002DA71A /* CountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787E19089686002DA71A /* CountryViewController.m */; };
@@ -51,7 +54,6 @@
 		8159411C19206D1000D6EB14 /* history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8159411B19206D1000D6EB14 /* history@2x.png */; };
 		8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159411E1920736E00D6EB14 /* HistoryViewController.m */; };
 		815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815941211920762700D6EB14 /* HistoryTableViewCell.m */; };
-		815941241921905900D6EB14 /* infodeck@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 815941231921905900D6EB14 /* infodeck@2x.jpg */; };
 		81594126192192F000D6EB14 /* next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81594125192192F000D6EB14 /* next@2x.png */; };
 		8180D7C018FDFCC30095F625 /* EstateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7BF18FDFCC30095F625 /* EstateData.m */; };
 		8180D7C618FDFD7E0095F625 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7C318FDFD7E0095F625 /* DownloadManager.m */; };
@@ -117,6 +119,9 @@
 		810149711925EF1000765486 /* circle_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_text@2x.png"; path = "Images/circle_text@2x.png"; sourceTree = "<group>"; };
 		810149751925F95F00765486 /* circle_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_back@2x.png"; path = "Images/circle_back@2x.png"; sourceTree = "<group>"; };
 		810149761925F95F00765486 /* circle_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_close@2x.png"; path = "Images/circle_close@2x.png"; sourceTree = "<group>"; };
+		811F6830192E026F00F27955 /* circle_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_ok@2x.png"; path = "Images/circle_ok@2x.png"; sourceTree = "<group>"; };
+		811F6832192E048E00F27955 /* circle_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_delete@2x.png"; path = "Images/circle_delete@2x.png"; sourceTree = "<group>"; };
+		811F6834192E13F300F27955 /* OPPS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OPPS@2x.png"; path = "Images/OPPS@2x.png"; sourceTree = "<group>"; };
 		812178721907A1B5002DA71A /* Observable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Observable.h; path = Datasource/Observable.h; sourceTree = "<group>"; };
 		812178731907A1F9002DA71A /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Observer.h; path = Datasource/Observer.h; sourceTree = "<group>"; };
 		812178751907A2B4002DA71A /* Observable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Observable.m; path = Datasource/Observable.m; sourceTree = "<group>"; };
@@ -183,7 +188,6 @@
 		8159411E1920736E00D6EB14 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = ViewControllers/HistoryViewController.m; sourceTree = "<group>"; };
 		815941201920762700D6EB14 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryTableViewCell.h; path = ViewControllers/HistoryTableViewCell.h; sourceTree = "<group>"; };
 		815941211920762700D6EB14 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryTableViewCell.m; path = ViewControllers/HistoryTableViewCell.m; sourceTree = "<group>"; };
-		815941231921905900D6EB14 /* infodeck@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "infodeck@2x.jpg"; path = "Images/infodeck@2x.jpg"; sourceTree = "<group>"; };
 		81594125192192F000D6EB14 /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "next@2x.png"; path = "Images/next@2x.png"; sourceTree = "<group>"; };
 		8180D7BE18FDFCC30095F625 /* EstateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateData.h; path = Data/EstateData.h; sourceTree = "<group>"; };
 		8180D7BF18FDFCC30095F625 /* EstateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateData.m; path = Data/EstateData.m; sourceTree = "<group>"; };
@@ -464,6 +468,9 @@
 		8180D7E218FE153F0095F625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				811F6834192E13F300F27955 /* OPPS@2x.png */,
+				811F6832192E048E00F27955 /* circle_delete@2x.png */,
+				811F6830192E026F00F27955 /* circle_ok@2x.png */,
 				810149751925F95F00765486 /* circle_back@2x.png */,
 				810149761925F95F00765486 /* circle_close@2x.png */,
 				810149711925EF1000765486 /* circle_text@2x.png */,
@@ -473,7 +480,6 @@
 				81AB973B1922054900B0C917 /* Up@2x.png */,
 				81AB97321921951100B0C917 /* passcode@2x.png */,
 				81594125192192F000D6EB14 /* next@2x.png */,
-				815941231921905900D6EB14 /* infodeck@2x.jpg */,
 				8159411B19206D1000D6EB14 /* history@2x.png */,
 				813664B4190F850400C0B76E /* Add@2x.png */,
 				81217888190A114F002DA71A /* edit@2x.png */,
@@ -604,10 +610,13 @@
 			files = (
 				8180D80918FE16A40095F625 /* 3@2x.png in Resources */,
 				8180D80618FE16A40095F625 /* 6@2x.png in Resources */,
+				811F6835192E13F300F27955 /* OPPS@2x.png in Resources */,
 				8121788D190A114F002DA71A /* setting@2x.png in Resources */,
 				8180D80318FE16A40095F625 /* 9@2x.png in Resources */,
 				8121788B190A114F002DA71A /* edit@2x.png in Resources */,
+				811F6833192E048E00F27955 /* circle_delete@2x.png in Resources */,
 				8159411C19206D1000D6EB14 /* history@2x.png in Resources */,
+				811F6831192E026F00F27955 /* circle_ok@2x.png in Resources */,
 				81B18E4A1905EAB1005647AF /* Camera@2x.png in Resources */,
 				8180D81718FE48340095F625 /* on@2x.png in Resources */,
 				81AB973C1922054900B0C917 /* Down@2x.png in Resources */,
@@ -616,7 +625,6 @@
 				81DDE8931904980D00EA886D /* red@2x.png in Resources */,
 				8180D80818FE16A40095F625 /* 4@2x.png in Resources */,
 				81AB97411922493700B0C917 /* password@2x.png in Resources */,
-				815941241921905900D6EB14 /* infodeck@2x.jpg in Resources */,
 				810149781925F95F00765486 /* circle_close@2x.png in Resources */,
 				8180D80718FE16A40095F625 /* 5@2x.png in Resources */,
 				813CCA5718FD0EF9002A98F2 /* Images.xcassets in Resources */,

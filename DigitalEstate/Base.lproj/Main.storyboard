@@ -47,35 +47,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="infodeck.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7a0-S1-y8n">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OPPS.png" translatesAutoresizingMaskIntoConstraints="NO" id="7a0-S1-y8n">
                                 <rect key="frame" x="120" y="81" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Digital Safe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wA5-fs-djw">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Open Source Password Safe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wA5-fs-djw">
                                 <rect key="frame" x="20" y="169" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Organise all your accounts," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uH2-iA-dpv">
-                                <rect key="frame" x="20" y="203" width="280" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Organise all your account," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uH2-iA-dpv">
+                                <rect key="frame" x="20" y="208" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="numbers &amp; sensitive information." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0H-4q-zV3">
-                                <rect key="frame" x="20" y="232" width="280" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="passwords, numbers &amp; notes." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0H-4q-zV3">
+                                <rect key="frame" x="20" y="237" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Encrypted securely and syncd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxb-Xw-Khz">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Security is our topmost concern," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxb-Xw-Khz">
                                 <rect key="frame" x="20" y="297" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="to all of your devices" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vi8-8c-cnA">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="so we make it open source." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vi8-8c-cnA">
                                 <rect key="frame" x="20" y="326" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1113,13 +1113,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYw-eq-6ms">
-                                <rect key="frame" x="80" y="432" width="28" height="28"/>
+                                <rect key="frame" x="146" y="432" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="N1s-eG-8gb"/>
-                                    <constraint firstAttribute="width" constant="28" id="YKE-bK-8Lt"/>
+                                    <constraint firstAttribute="width" constant="28" id="BDb-IJ-WAb"/>
+                                    <constraint firstAttribute="height" constant="28" id="ojm-Tw-FHg"/>
                                 </constraints>
-                                <state key="normal" title="Delete" image="Delete.png">
+                                <state key="normal" title="Delete" image="circle_delete.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1149,21 +1149,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxQ-uK-0mg">
                                 <rect key="frame" x="272" y="20" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OK" image="Tick.png">
+                                <state key="normal" title="OK" image="circle_ok.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="okButtonTouched:" destination="aFz-IK-U30" eventType="touchUpInside" id="egJ-fN-ckT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai7-01-UEu">
-                                <rect key="frame" x="201" y="430" width="28" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="History" image="history.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="historyButtonTouched:" destination="aFz-IK-U30" eventType="touchUpInside" id="GnL-Bs-ZdN"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJ5-Lf-pzI">
@@ -1186,26 +1176,22 @@
                         <constraints>
                             <constraint firstItem="6hE-4q-nEn" firstAttribute="leading" secondItem="HJ5-Lf-pzI" secondAttribute="leading" id="3BJ-e8-Ook"/>
                             <constraint firstItem="DxQ-uK-0mg" firstAttribute="leading" secondItem="F9V-AE-YU0" secondAttribute="trailing" constant="14" id="5O9-mP-oX5"/>
-                            <constraint firstAttribute="bottom" secondItem="XYw-eq-6ms" secondAttribute="bottom" constant="20" symbolic="YES" id="7B6-is-LXC"/>
                             <constraint firstItem="6hE-4q-nEn" firstAttribute="top" secondItem="HJ5-Lf-pzI" secondAttribute="bottom" constant="8" symbolic="YES" id="7R8-AN-YcR"/>
                             <constraint firstItem="F9V-AE-YU0" firstAttribute="leading" secondItem="RS2-Cj-tLf" secondAttribute="trailing" constant="14" id="8o5-1w-5rq"/>
-                            <constraint firstItem="ai7-01-UEu" firstAttribute="leading" secondItem="XYw-eq-6ms" secondAttribute="trailing" constant="93" id="Azb-1H-DkW"/>
+                            <constraint firstAttribute="bottom" secondItem="XYw-eq-6ms" secondAttribute="bottom" constant="20" symbolic="YES" id="GXe-Xr-YQy"/>
                             <constraint firstItem="F9V-AE-YU0" firstAttribute="top" secondItem="dvd-RX-cMb" secondAttribute="bottom" constant="3" id="HwE-6A-MXj"/>
                             <constraint firstItem="RS2-Cj-tLf" firstAttribute="leading" secondItem="5xY-A2-lej" secondAttribute="leading" constant="20" symbolic="YES" id="IJk-t2-Oaj"/>
-                            <constraint firstItem="XYw-eq-6ms" firstAttribute="leading" secondItem="5xY-A2-lej" secondAttribute="leading" constant="80" id="Jp4-vq-zgV"/>
-                            <constraint firstAttribute="trailing" secondItem="ai7-01-UEu" secondAttribute="trailing" constant="91" id="KPQ-jS-oOJ"/>
                             <constraint firstItem="6hE-4q-nEn" firstAttribute="trailing" secondItem="HJ5-Lf-pzI" secondAttribute="trailing" id="KV9-k1-YfO"/>
                             <constraint firstItem="DxQ-uK-0mg" firstAttribute="top" secondItem="RS2-Cj-tLf" secondAttribute="top" id="Q7D-26-p48"/>
-                            <constraint firstItem="XYw-eq-6ms" firstAttribute="top" secondItem="6hE-4q-nEn" secondAttribute="bottom" constant="10" id="VqM-Uo-Do6"/>
                             <constraint firstItem="HJ5-Lf-pzI" firstAttribute="top" secondItem="RS2-Cj-tLf" secondAttribute="bottom" constant="8" symbolic="YES" id="WMN-NU-YGk"/>
                             <constraint firstItem="HJ5-Lf-pzI" firstAttribute="centerX" secondItem="F9V-AE-YU0" secondAttribute="centerX" id="WqO-og-ABt"/>
                             <constraint firstItem="HJ5-Lf-pzI" firstAttribute="trailing" secondItem="DxQ-uK-0mg" secondAttribute="trailing" id="cmn-SM-G7y"/>
                             <constraint firstItem="HJ5-Lf-pzI" firstAttribute="top" secondItem="F9V-AE-YU0" secondAttribute="bottom" constant="12" id="eTe-Fi-Pic"/>
                             <constraint firstItem="HJ5-Lf-pzI" firstAttribute="top" secondItem="DxQ-uK-0mg" secondAttribute="bottom" constant="8" symbolic="YES" id="eWu-wF-KAH"/>
                             <constraint firstAttribute="trailing" secondItem="DxQ-uK-0mg" secondAttribute="trailing" constant="20" symbolic="YES" id="fD5-LB-Mzc"/>
-                            <constraint firstItem="ai7-01-UEu" firstAttribute="top" secondItem="6hE-4q-nEn" secondAttribute="bottom" constant="8" symbolic="YES" id="lxY-fb-JpN"/>
+                            <constraint firstItem="XYw-eq-6ms" firstAttribute="top" secondItem="6hE-4q-nEn" secondAttribute="bottom" constant="10" id="jK7-jN-XWV"/>
                             <constraint firstItem="RS2-Cj-tLf" firstAttribute="top" secondItem="5xY-A2-lej" secondAttribute="top" constant="20" symbolic="YES" id="nOP-c4-5Og"/>
-                            <constraint firstItem="Qhz-ei-2qb" firstAttribute="top" secondItem="ai7-01-UEu" secondAttribute="bottom" constant="22" id="qVS-ZB-Bc5"/>
+                            <constraint firstItem="XYw-eq-6ms" firstAttribute="centerX" secondItem="6hE-4q-nEn" secondAttribute="centerX" id="rTO-hd-e1z"/>
                             <constraint firstItem="HJ5-Lf-pzI" firstAttribute="leading" secondItem="RS2-Cj-tLf" secondAttribute="leading" id="wzn-aG-Dkt"/>
                         </constraints>
                     </view>
@@ -1765,7 +1751,7 @@
             </objects>
             <point key="canvasLocation" x="2059" y="-481"/>
         </scene>
-        <!--View Controller - Passcode Setup-->
+        <!--View Controller - Security PIN Setup-->
         <scene sceneID="4Lj-4W-3qx">
             <objects>
                 <viewController id="Sv9-Xs-jaE" sceneMemberID="viewController">
@@ -1777,7 +1763,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="passcode.png" translatesAutoresizingMaskIntoConstraints="NO" id="LMt-Oo-Im4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OPPS.png" translatesAutoresizingMaskIntoConstraints="NO" id="LMt-Oo-Im4">
                                 <rect key="frame" x="120" y="81" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -1835,7 +1821,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Passcode Setup" id="A3m-cy-7zr"/>
+                    <navigationItem key="navigationItem" title="Security PIN Setup" id="A3m-cy-7zr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkK-JM-rWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2307,7 +2293,7 @@
                                     <constraint firstAttribute="width" constant="28" id="Yka-zY-ctv"/>
                                     <constraint firstAttribute="height" constant="28" id="cny-cr-J2X"/>
                                 </constraints>
-                                <state key="normal" title="Delete" image="Delete.png">
+                                <state key="normal" title="Delete" image="circle_delete.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2320,7 +2306,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="28" id="17a-qV-4nb"/>
                                 </constraints>
-                                <state key="normal" title="Back" image="Back.png">
+                                <state key="normal" title="Back" image="circle_close.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2330,7 +2316,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaX-dv-XHL">
                                 <rect key="frame" x="272" y="20" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OK" image="Tick.png">
+                                <state key="normal" title="OK" image="circle_ok.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -3709,16 +3695,16 @@
         <image name="Delete.png" width="150" height="146"/>
         <image name="Down.png" width="24" height="25"/>
         <image name="Mic.png" width="150" height="146"/>
+        <image name="OPPS.png" width="80" height="80"/>
         <image name="Page.png" width="150" height="146"/>
         <image name="Tick.png" width="173" height="146"/>
         <image name="circle_close.png" width="64" height="64"/>
+        <image name="circle_delete.png" width="64" height="64"/>
+        <image name="circle_ok.png" width="64" height="64"/>
         <image name="circle_text.png" width="64" height="64"/>
         <image name="del.png" width="66" height="49"/>
-        <image name="history.png" width="150" height="146"/>
-        <image name="infodeck.jpg" width="87" height="87"/>
         <image name="nil.png" width="66" height="49"/>
         <image name="off.png" width="59" height="59"/>
-        <image name="passcode.png" width="133" height="130"/>
         <image name="password.png" width="128" height="128"/>
         <image name="setting.png" width="25" height="25"/>
     </resources>
@@ -3728,9 +3714,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="95e-iz-nfd"/>
+        <segue reference="zRb-3c-Otg"/>
+        <segue reference="CbX-hg-kWr"/>
         <segue reference="wE8-dt-zFM"/>
         <segue reference="x7X-Ac-65F"/>
-        <segue reference="CbX-hg-kWr"/>
     </inferredMetricsTieBreakers>
 </document>

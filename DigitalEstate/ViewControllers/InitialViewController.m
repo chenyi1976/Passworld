@@ -31,21 +31,21 @@
 
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 
-//    long pass1 = [prefs integerForKey:kPassword1];
-//    long pass2 = [prefs integerForKey:kPassword2];
-//    long pass3 = [prefs integerForKey:kPassword3];
-//    long pass4 = [prefs integerForKey:kPassword4];
-//    
-//    NSString* encryptKey = [prefs objectForKey:kEncryptKey];
-//    
-//    if (encryptKey != nil)
-//    {
-//        if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
-//        {
-//            [self gotoScreen:@"SecurityPassViewController"];
-//            return;
-//        }
-//    }
+    long pass1 = [prefs integerForKey:kPassword1];
+    long pass2 = [prefs integerForKey:kPassword2];
+    long pass3 = [prefs integerForKey:kPassword3];
+    long pass4 = [prefs integerForKey:kPassword4];
+    
+    NSString* encryptKey = [prefs objectForKey:kEncryptKey];
+    
+    if (encryptKey != nil)
+    {
+        if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
+        {
+            [self gotoScreen:@"SecurityPassViewController"];
+            return;
+        }
+    }
     
     bool welcomed = [prefs boolForKey:kWelcomed];
     
