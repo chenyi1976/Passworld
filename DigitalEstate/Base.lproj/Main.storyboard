@@ -1841,10 +1841,10 @@
             </objects>
             <point key="canvasLocation" x="1246" y="157"/>
         </scene>
-        <!--Passcode View Controller - Security Pin-->
+        <!--Passcode Creation View Controller - Security Pin-->
         <scene sceneID="ipY-iT-qor">
             <objects>
-                <viewController id="md5-Sq-qYn" customClass="PasscodeViewController" sceneMemberID="viewController">
+                <viewController id="md5-Sq-qYn" customClass="PasscodeCreationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SWu-e8-7Ru"/>
                         <viewControllerLayoutGuide type="bottom" id="qRE-EW-KHx"/>
@@ -2030,10 +2030,10 @@
             </objects>
             <point key="canvasLocation" x="1645" y="157"/>
         </scene>
-        <!--Passcode View Controller - Security Pin Confirm-->
+        <!--Passcode Creation View Controller - Security Pin Confirm-->
         <scene sceneID="DJX-8g-vXh">
             <objects>
-                <viewController id="Xo7-hN-eH2" customClass="PasscodeViewController" sceneMemberID="viewController">
+                <viewController id="Xo7-hN-eH2" customClass="PasscodeCreationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hML-cF-Au6"/>
                         <viewControllerLayoutGuide type="bottom" id="Fgz-Z5-1kL"/>
