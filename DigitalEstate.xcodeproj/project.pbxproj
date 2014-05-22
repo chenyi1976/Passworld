@@ -95,6 +95,7 @@
 		81CD2A15192CD81C00785134 /* PasscodeCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A13192CD81C00785134 /* PasscodeCreationViewController.m */; };
 		81CD2A18192CD95500785134 /* PasscodeRemoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A16192CD95500785134 /* PasscodeRemoveViewController.m */; };
 		81CD2A1B192D568900785134 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A1A192D568900785134 /* ViewUtil.m */; };
+		81CD2A1D192DD9C800785134 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 81CD2A1C192DD9C800785134 /* README.md */; };
 		81DDE8931904980D00EA886D /* red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81DDE8921904980D00EA886D /* red@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -243,6 +244,7 @@
 		81CD2A17192CD95500785134 /* PasscodeRemoveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasscodeRemoveViewController.h; path = ViewControllers/PasscodeRemoveViewController.h; sourceTree = "<group>"; };
 		81CD2A19192D568900785134 /* ViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewUtil.h; path = Util/ViewUtil.h; sourceTree = "<group>"; };
 		81CD2A1A192D568900785134 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewUtil.m; path = Util/ViewUtil.m; sourceTree = "<group>"; };
+		81CD2A1C192DD9C800785134 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		81DDE8921904980D00EA886D /* red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "red@2x.png"; path = "Images/red@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -318,6 +320,7 @@
 		813CCA4118FD0EF9002A98F2 /* DigitalEstate */ = {
 			isa = PBXGroup;
 			children = (
+				81CD2A1C192DD9C800785134 /* README.md */,
 				81AB974219231E2400B0C917 /* DigitalEstate.entitlements */,
 				813664A7190F4DB900C0B76E /* AES */,
 				81B18E54190602F8005647AF /* Views */,
@@ -623,6 +626,7 @@
 				813664B5190F850400C0B76E /* Add@2x.png in Resources */,
 				813CCA4618FD0EF9002A98F2 /* InfoPlist.strings in Resources */,
 				8180D80218FE16A40095F625 /* 0@2x.png in Resources */,
+				81CD2A1D192DD9C800785134 /* README.md in Resources */,
 				81B18E501905FC3A005647AF /* Delete@2x.png in Resources */,
 				81B18E481905EAB1005647AF /* Video@2x.png in Resources */,
 				8180D80E18FE18720095F625 /* nil@2x.png in Resources */,
