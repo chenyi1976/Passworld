@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EstateData.h"
+#import "DetailViewController.h"
 
-@interface AccountViewController : UIViewController<UITableViewDataSource>
+@interface AccountViewController : DetailViewController<UITableViewDataSource, UITextFieldDelegate>
 
 @property IBOutlet UITextField* nameTextField;
 @property IBOutlet UITableView* tableView;
 @property IBOutlet UIButton* deleteButton;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableBottomConstraint;
 
 - (IBAction)backButtonTouched:(id)sender;
 - (IBAction)okButtonTouched:(id)sender;

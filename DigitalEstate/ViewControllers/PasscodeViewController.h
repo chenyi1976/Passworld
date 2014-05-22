@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface PasscodeViewController : UIViewController
+{
+    int passcode1;
+    int passcode2;
+    int passcode3;
+    int passcode4;
+}
 
 @property IBOutlet UIButton* button0;
 @property IBOutlet UIButton* button1;
@@ -30,5 +36,8 @@
 
 
 - (IBAction)codeButtonTouched:(id)sender;
+
+- (void)reset;
+- (void)passcodeDidEndEditing;
 
 @end

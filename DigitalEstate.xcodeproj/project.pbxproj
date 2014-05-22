@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8101496A192417A900765486 /* AttributeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 81014969192417A900765486 /* AttributeData.m */; };
+		8101497019249CED00765486 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8101496F19249CED00765486 /* DetailViewController.m */; };
+		810149721925EF1000765486 /* circle_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149711925EF1000765486 /* circle_text@2x.png */; };
+		810149771925F95F00765486 /* circle_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149751925F95F00765486 /* circle_back@2x.png */; };
+		810149781925F95F00765486 /* circle_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149761925F95F00765486 /* circle_close@2x.png */; };
 		812178761907A2B4002DA71A /* Observable.m in Sources */ = {isa = PBXBuildFile; fileRef = 812178751907A2B4002DA71A /* Observable.m */; };
 		8121787919087B03002DA71A /* SMSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787819087B03002DA71A /* SMSService.m */; };
 		8121787F19089686002DA71A /* CountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787E19089686002DA71A /* CountryViewController.m */; };
@@ -84,7 +89,12 @@
 		81B18E4E1905FB9F005647AF /* Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E4C1905FB9F005647AF /* Tick@2x.png */; };
 		81B18E501905FC3A005647AF /* Delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E4F1905FC3A005647AF /* Delete@2x.png */; };
 		81B18E53190602DC005647AF /* EstateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B18E52190602DC005647AF /* EstateTableViewCell.m */; };
-		81CCB89819008A010019A6E4 /* EstateDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB89719008A010019A6E4 /* EstateDetailViewController.m */; };
+		81CCB89819008A010019A6E4 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB89719008A010019A6E4 /* NoteViewController.m */; };
+		81CD2A09192C4DDB00785134 /* PasscodeUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A08192C4DDB00785134 /* PasscodeUpdateViewController.m */; };
+		81CD2A0D192C52BE00785134 /* PasscodeSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A0C192C52BE00785134 /* PasscodeSecurityViewController.m */; };
+		81CD2A15192CD81C00785134 /* PasscodeCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A13192CD81C00785134 /* PasscodeCreationViewController.m */; };
+		81CD2A18192CD95500785134 /* PasscodeRemoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A16192CD95500785134 /* PasscodeRemoveViewController.m */; };
+		81CD2A1B192D568900785134 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A1A192D568900785134 /* ViewUtil.m */; };
 		81DDE8931904980D00EA886D /* red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81DDE8921904980D00EA886D /* red@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +109,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		81014968192417A900765486 /* AttributeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttributeData.h; path = Data/AttributeData.h; sourceTree = "<group>"; };
+		81014969192417A900765486 /* AttributeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AttributeData.m; path = Data/AttributeData.m; sourceTree = "<group>"; };
+		8101496E19249CED00765486 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ViewControllers/DetailViewController.h; sourceTree = "<group>"; };
+		8101496F19249CED00765486 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ViewControllers/DetailViewController.m; sourceTree = "<group>"; };
+		810149711925EF1000765486 /* circle_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_text@2x.png"; path = "Images/circle_text@2x.png"; sourceTree = "<group>"; };
+		810149751925F95F00765486 /* circle_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_back@2x.png"; path = "Images/circle_back@2x.png"; sourceTree = "<group>"; };
+		810149761925F95F00765486 /* circle_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_close@2x.png"; path = "Images/circle_close@2x.png"; sourceTree = "<group>"; };
 		812178721907A1B5002DA71A /* Observable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Observable.h; path = Datasource/Observable.h; sourceTree = "<group>"; };
 		812178731907A1F9002DA71A /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Observer.h; path = Datasource/Observer.h; sourceTree = "<group>"; };
 		812178751907A2B4002DA71A /* Observable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Observable.m; path = Datasource/Observable.m; sourceTree = "<group>"; };
@@ -214,8 +231,18 @@
 		81B18E4F1905FC3A005647AF /* Delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Delete@2x.png"; path = "Images/Delete@2x.png"; sourceTree = "<group>"; };
 		81B18E51190602DC005647AF /* EstateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateTableViewCell.h; path = ViewControllers/EstateTableViewCell.h; sourceTree = "<group>"; };
 		81B18E52190602DC005647AF /* EstateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateTableViewCell.m; path = ViewControllers/EstateTableViewCell.m; sourceTree = "<group>"; };
-		81CCB89619008A010019A6E4 /* EstateDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateDetailViewController.h; path = ViewControllers/EstateDetailViewController.h; sourceTree = "<group>"; };
-		81CCB89719008A010019A6E4 /* EstateDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateDetailViewController.m; path = ViewControllers/EstateDetailViewController.m; sourceTree = "<group>"; };
+		81CCB89619008A010019A6E4 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteViewController.h; path = ViewControllers/NoteViewController.h; sourceTree = "<group>"; };
+		81CCB89719008A010019A6E4 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteViewController.m; path = ViewControllers/NoteViewController.m; sourceTree = "<group>"; };
+		81CD2A08192C4DDB00785134 /* PasscodeUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeUpdateViewController.m; path = ViewControllers/PasscodeUpdateViewController.m; sourceTree = "<group>"; };
+		81CD2A0A192C4DE700785134 /* PasscodeUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasscodeUpdateViewController.h; path = ViewControllers/PasscodeUpdateViewController.h; sourceTree = "<group>"; };
+		81CD2A0B192C52BE00785134 /* PasscodeSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasscodeSecurityViewController.h; path = ViewControllers/PasscodeSecurityViewController.h; sourceTree = "<group>"; };
+		81CD2A0C192C52BE00785134 /* PasscodeSecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeSecurityViewController.m; path = ViewControllers/PasscodeSecurityViewController.m; sourceTree = "<group>"; };
+		81CD2A13192CD81C00785134 /* PasscodeCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeCreationViewController.m; path = ViewControllers/PasscodeCreationViewController.m; sourceTree = "<group>"; };
+		81CD2A14192CD81C00785134 /* PasscodeCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasscodeCreationViewController.h; path = ViewControllers/PasscodeCreationViewController.h; sourceTree = "<group>"; };
+		81CD2A16192CD95500785134 /* PasscodeRemoveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeRemoveViewController.m; path = ViewControllers/PasscodeRemoveViewController.m; sourceTree = "<group>"; };
+		81CD2A17192CD95500785134 /* PasscodeRemoveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasscodeRemoveViewController.h; path = ViewControllers/PasscodeRemoveViewController.h; sourceTree = "<group>"; };
+		81CD2A19192D568900785134 /* ViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewUtil.h; path = Util/ViewUtil.h; sourceTree = "<group>"; };
+		81CD2A1A192D568900785134 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewUtil.m; path = Util/ViewUtil.m; sourceTree = "<group>"; };
 		81DDE8921904980D00EA886D /* red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "red@2x.png"; path = "Images/red@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -355,16 +382,28 @@
 		813CCA7F18FDEF96002A98F2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */,
 				813CCA7C18FDEF8E002A98F2 /* InitialViewController.h */,
+				813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */,
 				813CCA8018FDF193002A98F2 /* RegistrationViewController.h */,
 				813CCA8118FDF193002A98F2 /* RegistrationViewController.m */,
 				8180D80F18FE19950095F625 /* PasscodeViewController.h */,
 				8180D81018FE19950095F625 /* PasscodeViewController.m */,
+				81CD2A14192CD81C00785134 /* PasscodeCreationViewController.h */,
+				81CD2A13192CD81C00785134 /* PasscodeCreationViewController.m */,
+				81CD2A0A192C4DE700785134 /* PasscodeUpdateViewController.h */,
+				81CD2A08192C4DDB00785134 /* PasscodeUpdateViewController.m */,
+				81CD2A17192CD95500785134 /* PasscodeRemoveViewController.h */,
+				81CD2A16192CD95500785134 /* PasscodeRemoveViewController.m */,
+				81CD2A0B192C52BE00785134 /* PasscodeSecurityViewController.h */,
+				81CD2A0C192C52BE00785134 /* PasscodeSecurityViewController.m */,
 				8180D7CB18FE06C70095F625 /* EstateViewController.h */,
 				8180D7CC18FE06C70095F625 /* EstateViewController.m */,
-				81CCB89619008A010019A6E4 /* EstateDetailViewController.h */,
-				81CCB89719008A010019A6E4 /* EstateDetailViewController.m */,
+				8101496E19249CED00765486 /* DetailViewController.h */,
+				8101496F19249CED00765486 /* DetailViewController.m */,
+				81AB97371921B76400B0C917 /* AccountViewController.h */,
+				81AB97381921B76400B0C917 /* AccountViewController.m */,
+				81CCB89619008A010019A6E4 /* NoteViewController.h */,
+				81CCB89719008A010019A6E4 /* NoteViewController.m */,
 				8121787D19089686002DA71A /* CountryViewController.h */,
 				8121787E19089686002DA71A /* CountryViewController.m */,
 				813664B6190F870D00C0B76E /* SettingViewController.h */,
@@ -375,8 +414,6 @@
 				8159411E1920736E00D6EB14 /* HistoryViewController.m */,
 				81AB973419219B5000B0C917 /* WelcomeViewController.h */,
 				81AB973519219B5000B0C917 /* WelcomeViewController.m */,
-				81AB97371921B76400B0C917 /* AccountViewController.h */,
-				81AB97381921B76400B0C917 /* AccountViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -392,6 +429,8 @@
 				813CCA8818FDFC6B002A98F2 /* PersonData.m */,
 				813664B9191075B600C0B76E /* HistoryData.h */,
 				813664BA191075B600C0B76E /* HistoryData.m */,
+				81014968192417A900765486 /* AttributeData.h */,
+				81014969192417A900765486 /* AttributeData.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -413,6 +452,8 @@
 				813664C019132F0700C0B76E /* KeychainItemWrapper.m */,
 				81594118192045F200D6EB14 /* KeyChainUtil.h */,
 				81594119192045F200D6EB14 /* KeyChainUtil.m */,
+				81CD2A19192D568900785134 /* ViewUtil.h */,
+				81CD2A1A192D568900785134 /* ViewUtil.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -420,6 +461,9 @@
 		8180D7E218FE153F0095F625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				810149751925F95F00765486 /* circle_back@2x.png */,
+				810149761925F95F00765486 /* circle_close@2x.png */,
+				810149711925EF1000765486 /* circle_text@2x.png */,
 				81AB97401922493700B0C917 /* password@2x.png */,
 				81AB973E1922465800B0C917 /* Card@2x.png */,
 				81AB973A1922054900B0C917 /* Down@2x.png */,
@@ -570,10 +614,12 @@
 				8180D80818FE16A40095F625 /* 4@2x.png in Resources */,
 				81AB97411922493700B0C917 /* password@2x.png in Resources */,
 				815941241921905900D6EB14 /* infodeck@2x.jpg in Resources */,
+				810149781925F95F00765486 /* circle_close@2x.png in Resources */,
 				8180D80718FE16A40095F625 /* 5@2x.png in Resources */,
 				813CCA5718FD0EF9002A98F2 /* Images.xcassets in Resources */,
 				8180D80C18FE17FA0095F625 /* del@2x.png in Resources */,
 				8180D80A18FE16A40095F625 /* 2@2x.png in Resources */,
+				810149721925EF1000765486 /* circle_text@2x.png in Resources */,
 				813664B5190F850400C0B76E /* Add@2x.png in Resources */,
 				813CCA4618FD0EF9002A98F2 /* InfoPlist.strings in Resources */,
 				8180D80218FE16A40095F625 /* 0@2x.png in Resources */,
@@ -593,6 +639,7 @@
 				81B18E4D1905FB9F005647AF /* Back@2x.png in Resources */,
 				81B18E471905EAB1005647AF /* Mic@2x.png in Resources */,
 				81594126192192F000D6EB14 /* next@2x.png in Resources */,
+				810149771925F95F00765486 /* circle_back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +659,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				813CCA8918FDFC6B002A98F2 /* PersonData.m in Sources */,
+				81CD2A09192C4DDB00785134 /* PasscodeUpdateViewController.m in Sources */,
 				8121787F19089686002DA71A /* CountryViewController.m in Sources */,
 				8180D7C018FDFCC30095F625 /* EstateData.m in Sources */,
 				8180D7CD18FE06C70095F625 /* EstateViewController.m in Sources */,
@@ -622,6 +670,7 @@
 				813664B2190F4DC600C0B76E /* NSData+CommonCrypto.m in Sources */,
 				813664B3190F4DC600C0B76E /* NSString+Base64.m in Sources */,
 				8180D7C718FDFD7E0095F625 /* CacheManager.m in Sources */,
+				81CD2A0D192C52BE00785134 /* PasscodeSecurityViewController.m in Sources */,
 				813664BB191075B600C0B76E /* HistoryData.m in Sources */,
 				81AB973619219B5000B0C917 /* WelcomeViewController.m in Sources */,
 				813CCA8218FDF193002A98F2 /* RegistrationViewController.m in Sources */,
@@ -631,15 +680,20 @@
 				81AB9745192378B200B0C917 /* AccountTableViewCell.m in Sources */,
 				8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */,
 				813CCA7A18FDE096002A98F2 /* MockDataSource.m in Sources */,
+				81CD2A1B192D568900785134 /* ViewUtil.m in Sources */,
+				8101497019249CED00765486 /* DetailViewController.m in Sources */,
 				813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */,
 				813664C119132F0700C0B76E /* KeychainItemWrapper.m in Sources */,
 				8121787919087B03002DA71A /* SMSService.m in Sources */,
 				815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */,
 				813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */,
+				81CD2A15192CD81C00785134 /* PasscodeCreationViewController.m in Sources */,
 				8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */,
 				813664B1190F4DC600C0B76E /* NSData+Base64.m in Sources */,
 				813CCA4818FD0EF9002A98F2 /* main.m in Sources */,
-				81CCB89819008A010019A6E4 /* EstateDetailViewController.m in Sources */,
+				8101496A192417A900765486 /* AttributeData.m in Sources */,
+				81CD2A18192CD95500785134 /* PasscodeRemoveViewController.m in Sources */,
+				81CCB89819008A010019A6E4 /* NoteViewController.m in Sources */,
 				812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */,
 				812178761907A2B4002DA71A /* Observable.m in Sources */,
 				8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */,

@@ -78,9 +78,16 @@
         [prefs setObject:@"encryptedKeyConfigued" forKey:kEncryptKey];
         [prefs synchronize];
 
-        UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateNavigationController"];
-        AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        [app.window setRootViewController:screen];
+        if (self.presentingViewController != nil)
+        {
+            [self dismissViewControllerAnimated:TRUE completion:nil];
+        }
+        else
+        {
+            UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateNavigationController"];
+            AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [app.window setRootViewController:screen];
+        }
     }
     else
     {
@@ -98,6 +105,12 @@
     [alert show];
     
 }
+
+- (IBAction)cancelButtonTouched:(id)sender
+{
+    [self dismissViewControllerAnimated:TRUE completion:nil];    
+}
+
 
 #pragma mark UIAlertViewDelegate
 

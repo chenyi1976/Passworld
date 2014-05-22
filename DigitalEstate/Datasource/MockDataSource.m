@@ -23,7 +23,7 @@
 {
     if (self = [super init])
     {
-        _sortByLastUpdated = true;
+        _sortByLastUpdated = false;
         [self loadEstatesWithCompletionHandler:nil];
     }
     return self;

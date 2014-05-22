@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AttributeData.h"
 
-@interface AccountTableViewCell : UITableViewCell
+@interface AccountTableViewCell : UITableViewCell<UITextFieldDelegate>
 
 @property IBOutlet UITextField* nameTextField;
 @property IBOutlet UITextField* valueTextField;
+
+- (IBAction)deleteButtonClicked:(id)sender;
+
 
 @end

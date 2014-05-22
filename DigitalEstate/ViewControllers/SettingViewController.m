@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "ConstantDefinition.h"
 
 @interface SettingViewController ()
 
@@ -35,6 +36,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    long pass1 = [prefs integerForKey:kPassword1];
+    long pass2 = [prefs integerForKey:kPassword2];
+    long pass3 = [prefs integerForKey:kPassword3];
+    long pass4 = [prefs integerForKey:kPassword4];
+
+    if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0)
+    {
+        _switchPasswordButton.titleLabel.text = @"Turn Security PIN On";
+        _updatePasswordButton.enabled = FALSE;
+    }
+    else
+    {
+        _switchPasswordButton.titleLabel.text = @"Turn Security PIN Off";
+        _updatePasswordButton.enabled = TRUE;
+    }
+}
+
+
 /*
 #pragma mark - Navigation
 
@@ -48,22 +71,23 @@
 
 #pragma mark IBAction
 
-- (IBAction)closeButtonTouched:(id)sender
+- (IBAction)switchPasscodeButtonTouched:(id)sender
 {
-    [self dismissViewControllerAnimated:TRUE completion:nil];
-}
-
-#pragma mark Table Delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == 1)
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    long pass1 = [prefs integerForKey:kPassword1];
+    long pass2 = [prefs integerForKey:kPassword2];
+    long pass3 = [prefs integerForKey:kPassword3];
+    long pass4 = [prefs integerForKey:kPassword4];
+    
+    if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0)
     {
-        NSLog(@"row 1 touched");
-        //jump to pin setting view
+        [self performSegueWithIdentifier:@"TurnOnPasscodeSegue" sender:self];
     }
+    else
+    {
+        [self performSegueWithIdentifier:@"TurnOffPasscodeSegue" sender:self];
+    }
+
 }
-
-
 
 @end

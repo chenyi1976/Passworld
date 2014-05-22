@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingViewController : UIViewController<UITableViewDelegate>
+@interface SettingViewController : UITableViewController<UITableViewDelegate>
 
-@property IBOutlet UITableView* tableView;
+@property IBOutlet UIButton* switchPasswordButton;
+@property IBOutlet UIButton* updatePasswordButton;
 
-- (IBAction)closeButtonTouched:(id)sender;
+- (IBAction)switchPasscodeButtonTouched:(id)sender;
 
 @end

@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "EstateData.h"
 #import "EstateDataSource.h"
+#import "DetailViewController.h"
 
-@interface EstateDetailViewController : UIViewController
+@interface NoteViewController : DetailViewController
 
 @property IBOutlet UIButton* deleteButton;
+@property IBOutlet UITextField* nameTextView;
 @property IBOutlet UITextView* estateTextView;
-
-- (void)setEstateData:(EstateData*)estate;
 
 - (IBAction)backButtonTouched:(id)sender;
 - (IBAction)okButtonTouched:(id)sender;

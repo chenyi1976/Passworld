@@ -9,9 +9,15 @@
 #import "AccountViewController.h"
 #import "AccountTableViewCell.h"
 #import "EstateData.h"
+#import "ConstantDefinition.h"
+#import "AttributeData.h"
+#import "DataSourceFactory.h"
 
 @interface AccountViewController ()
-    @property NSMutableDictionary* tableData;
+
+@property NSMutableArray* tableData;
+//@property(nonatomic) EstateData* estateData;
+
 @end
 
 @implementation AccountViewController
@@ -28,14 +34,40 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _tableData = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"", @"Account Name", @"", @"Password", nil];
-    [_tableView setDataSource:self];
+    if (estateData)
+    {
+        [_nameTextField setText:estateData.name];
+        _tableData = [[NSMutableArray alloc] initWithArray:estateData.attributeValues copyItems:TRUE];
+    }
+    else
+    {
+        [_nameTextField setText:@""];
+        AttributeData* accountNameData = [[AttributeData alloc] initWithId:kAttributeAccountName name:@"Account Name" value:@""];
+        AttributeData* accountValueData = [[AttributeData alloc] initWithId:kAttributeAccountValue name:@"Account Value" value:@""];
+        
+        _tableData = [NSMutableArray arrayWithObjects:accountNameData, accountValueData, nil];
+    }
+    [_tableView reloadData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark Keyboard Observer
+
+-(void) keyboardWillShow:(NSNotification *)notification
+{
+    _tableBottomConstraint.constant = 170;
+}
+
+- (void) keyboardWillHide:(NSNotification *)notification
+{
+    _tableBottomConstraint.constant = 8;
 }
 
 #pragma mark UITableViewDataSource
@@ -56,14 +88,75 @@
                   reuseIdentifier:MyCellIdentifier];
     }
     
+    AttributeData* data = [_tableData objectAtIndex:indexPath.row];
+    if (data)
+    {
+        result.nameTextField.text = data.attrName;
+        result.valueTextField.text = data.attrValue;
+    }
+    
     return result;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [_tableData removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleNone) {
+        AccountTableViewCell* cell = (AccountTableViewCell*)[_tableView cellForRowAtIndexPath:indexPath];
+        
+        AttributeData* data = [[AttributeData alloc] initWithId:kAttributeAccountName name:cell.nameTextField.text value:cell.valueTextField.text];
+        [_tableData replaceObjectAtIndex:indexPath.row withObject:data];
+        [_tableView reloadData];
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    {
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+- (void) textFieldDidBeginEditing:(UITextField *)textField {
+    UITableViewCell *cell;
+    
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        // Load resources for iOS 6.1 or earlier
+        cell = (UITableViewCell *) textField.superview.superview;
+        
+    } else {
+        // Load resources for iOS 7 or later
+        cell = (UITableViewCell *) textField.superview.superview.superview;
+        // TextField -> UITableVieCellContentView -> (in iOS 7!)ScrollView -> Cell!
+    }
+    [_tableView scrollToRowAtIndexPath:[_tableView indexPathForCell:cell] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
 
 #pragma mark IBAction
 
 - (IBAction)okButtonTouched:(id)sender
 {
+    if (estateData)
+    {
+        NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:estateData];
+        [estateData setAttributeValues:_tableData];
+        [estateData setName:_nameTextField.text];
+        [[DataSourceFactory getDataSource] replaceObjectAtIndex:index withObject:estateData];
+    }
+    else
+    {
+        EstateData* data = [[EstateData alloc] initWithName:_nameTextField.text withContent:@"" withAttributeValues:_tableData withLastUpdate:[NSDate date] withHistory:nil];
+        [[DataSourceFactory getDataSource] addObject:data];
+    }
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];
 }
 
@@ -74,12 +167,28 @@
 
 - (IBAction)addLineButtonTouched:(id)sender
 {
-    NSLog(@"addLineButtonTouched");
+    NSDate* date = [NSDate date];
+    NSString* attrId = [NSString stringWithFormat:@"%@", date];
+    AttributeData* newAttributeData = [[AttributeData alloc] initWithId:attrId name:@"Account Name" value:@""];
+
+    [_tableData addObject:newAttributeData];
+    [_tableView reloadData];
 }
 
 - (IBAction)deleteButtonTouched:(id)sender
 {
-    NSLog(@"deleteButtonTouched");
+    if (estateData != nil)
+    {
+        [[DataSourceFactory getDataSource] removeObject:estateData];
+    }
+    [self dismissViewControllerAnimated:TRUE completion:^(void){}];
+}
+
+#pragma mark business logic
+
+- (void)setEstateData:(EstateData*)data
+{
+    [super setEstateData:data];
 }
 
 @end

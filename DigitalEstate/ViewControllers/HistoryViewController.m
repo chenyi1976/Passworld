@@ -80,7 +80,7 @@
         NSString *strDate = [dateFormatter stringFromDate:[data date]];
         
         result.textLabel.text = strDate;
-        result.detailTextLabel.text = [data value];
+        result.detailTextLabel.text = [data data].attrValue;
     }
 //    else
 //    {

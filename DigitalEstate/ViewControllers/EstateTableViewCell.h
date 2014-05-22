@@ -10,8 +10,9 @@
 
 @interface EstateTableViewCell : UITableViewCell
 
-@property IBOutlet UILabel * dateLabel;
+@property IBOutlet UILabel * nameLabel;
 @property IBOutlet UILabel * contentLabel;
+@property IBOutlet UIImageView * iconView;
 
 
 @end

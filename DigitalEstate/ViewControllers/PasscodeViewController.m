@@ -108,82 +108,22 @@ UIImage* offImage = nil;
     
     if (passcode1 != -1 && passcode2 != -1 && passcode3 != -1 && passcode4 != -1)
     {
-        NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-        long oldPass1 = [prefs integerForKey:kTemppass1];
-        long oldPass2 = [prefs integerForKey:kTemppass2];
-        long oldPass3 = [prefs integerForKey:kTemppass3];
-        long oldPass4 = [prefs integerForKey:kTemppass4];
-        
-        long pass1 = [prefs integerForKey:kPassword1];
-        long pass2 = [prefs integerForKey:kPassword2];
-        long pass3 = [prefs integerForKey:kPassword3];
-        long pass4 = [prefs integerForKey:kPassword4];
-        
-        NSString* encryptKey = [prefs objectForKey:kEncryptKey];
-
-        //if the passcode does not exist, or encrypt key does not exist, it means configuration mode.
-        if (encryptKey == nil || (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0))
-        {
-            //if temporary passcode does not exist, it is in the first view.
-            if (oldPass1 == 0 && oldPass2 == 0 && oldPass3 == 0 && oldPass4 ==0)
-            {
-                [self performSegueWithIdentifier:@"PasswordVerifySegue" sender:self];
-                
-                NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-                [prefs setInteger:passcode1 forKey:kTemppass1];
-                [prefs setInteger:passcode2 forKey:kTemppass2];
-                [prefs setInteger:passcode3 forKey:kTemppass3];
-                [prefs setInteger:passcode4 forKey:kTemppass4];
-                [prefs synchronize];
-            }
-            else
-            {
-                //we are "password confirm view"
-                
-                //clear temporary passcode
-                [prefs removeObjectForKey:kTemppass1];
-                [prefs removeObjectForKey:kTemppass2];
-                [prefs removeObjectForKey:kTemppass3];
-                [prefs removeObjectForKey:kTemppass4];
-                [prefs synchronize];
-                
-                if (oldPass1 == passcode1 && oldPass2 == passcode2 && oldPass3 == passcode3 && oldPass4 == passcode4)
-                {
-                    //save passcode.
-                    [prefs setInteger:passcode1 forKey:kPassword1];
-                    [prefs setInteger:passcode2 forKey:kPassword2];
-                    [prefs setInteger:passcode3 forKey:kPassword3];
-                    [prefs setInteger:passcode4 forKey:kPassword4];
-                    [prefs synchronize];
-                    
-                    [self performSegueWithIdentifier:@"EncryptPasswordSegue" sender:self];
-                                    }
-                else
-                {
-                    //todo: show the red image animation, then pop view.
-                    [self.navigationController popViewControllerAnimated:TRUE];
-                }
-
-            }
-        }
-        else //running mode for security passcode check
-        {
-            if (pass1 == passcode1 && pass2 == passcode2 && pass3 == passcode3 && pass4 == passcode4)
-            {
-                //the passcode is matched, then goes to estate view
-                [self performSegueWithIdentifier:@"SeurityEstateSegue" sender:self];
-            }
-            else
-            {
-                //todo: show red image, then ask user to retry.
-                
-                passcode1 = -1;
-                passcode2 = -1;
-                passcode3 = -1;
-                passcode4 = -1;
-            }
-        }
+        [self passcodeDidEndEditing];
     }
+}
+
+- (void)passcodeDidEndEditing
+{
+}
+
+- (void)reset
+{
+    passcode1 = -1;
+    passcode2 = -1;
+    passcode3 = -1;
+    passcode4 = -1;
+    
+    [self updateLightImage];
 }
 
 - (int)getCodeButton:(id)sender
@@ -217,10 +157,10 @@ UIImage* offImage = nil;
 
 - (void)updateLightImage
 {
-    [_light1 setImage:(passcode1 == -1 ? offImage: onImage)];
-    [_light2 setImage:(passcode2 == -1 ? offImage: onImage)];
-    [_light3 setImage:(passcode3 == -1 ? offImage: onImage)];
-    [_light4 setImage:(passcode4 == -1 ? offImage: onImage)];
+    [_light1 setImage:(passcode1 == -1 ? [UIImage imageNamed:@"off.png"]: [UIImage imageNamed:@"on.png"])];
+    [_light2 setImage:(passcode2 == -1 ? [UIImage imageNamed:@"off.png"]: [UIImage imageNamed:@"on.png"])];
+    [_light3 setImage:(passcode3 == -1 ? [UIImage imageNamed:@"off.png"]: [UIImage imageNamed:@"on.png"])];
+    [_light4 setImage:(passcode4 == -1 ? [UIImage imageNamed:@"off.png"]: [UIImage imageNamed:@"on.png"])];
 }
 
 @end

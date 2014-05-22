@@ -15,5 +15,6 @@
 
 - (IBAction)confirmButtonTouched:(id)sender;
 - (IBAction)skipButtonTouched:(id)sender;
+- (IBAction)cancelButtonTouched:(id)sender;
 
 @end

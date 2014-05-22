@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Yi Chen. All rights reserved.
 //
 
-#import "EstateDetailViewController.h"
+#import "NoteViewController.h"
 #import "DataSourceFactory.h"
 #import "HistoryViewController.h"
 
-@interface EstateDetailViewController ()
+@interface NoteViewController ()
 
 @end
 
-@implementation EstateDetailViewController
+@implementation NoteViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,10 +28,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (data)
-        [_estateTextView setText:data.content];
+    if (estateData)
+    {
+        [_nameTextView setText:estateData.name];
+        [_estateTextView setText:estateData.content];
+    }
     else
+    {
+        [_nameTextView setText:@""];
         [_estateTextView setText:@""];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -50,17 +56,17 @@
 
 - (IBAction)deleteButtonTouched:(id)sender
 {
-    if (data != nil)
+    if (estateData != nil)
     {
-        [data setContent:_estateTextView.text];
-        [[DataSourceFactory getDataSource] removeObject:data];
+        [estateData setContent:_estateTextView.text];
+        [[DataSourceFactory getDataSource] removeObject:estateData];
     }
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];
 }
 
 - (IBAction)historyButtonTouched:(id)sender
 {
-    if (data != nil)
+    if (estateData != nil)
     {
         [self performSegueWithIdentifier:@"historySegue" sender:nil];
     }
@@ -68,16 +74,17 @@
 
 - (IBAction)okButtonTouched:(id)sender
 {
-    if (data == nil)
+    if (estateData == nil)
     {
-        EstateData* data = [[EstateData alloc] initWithName:@"" withContent:_estateTextView.text withAttributeValues:nil  withLastUpdate:[NSDate date] withHistory:nil];
+        EstateData* data = [[EstateData alloc] initWithName:_nameTextView.text withContent:_estateTextView.text withAttributeValues:nil  withLastUpdate:[NSDate date] withHistory:nil];
         [[DataSourceFactory getDataSource] addObject:data];
     }
     else
     {
-        NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:data];
-        [data setContent:_estateTextView.text];
-        [[DataSourceFactory getDataSource] replaceObjectAtIndex:index withObject:data];
+        NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:estateData];
+        [estateData setName:_nameTextView.text];
+        [estateData setContent:_estateTextView.text];
+        [[DataSourceFactory getDataSource] replaceObjectAtIndex:index withObject:estateData];
     }
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];
 }
@@ -97,21 +104,8 @@
         HistoryViewController *vc = [segue destinationViewController];
         
         // Pass any objects to the view controller here, like...
-        [vc setEstateData:data];
+        [vc setEstateData:estateData];
     }
-}
-
-#pragma mark business method
-
-EstateData* data;
-
-- (void)setEstateData:(EstateData*)estate
-{
-    data = estate;
-    if (data)
-        [_estateTextView setText:data.content];
-    else
-        [_estateTextView setText:@""];
 }
 
 @end

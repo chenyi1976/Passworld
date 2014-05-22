@@ -7,17 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AttributeData.h"
 
 #define kAttribute @"attribute"
-#define kValue @"value"
 #define kDate @"date"
 
 @interface HistoryData : NSObject<NSCoding, NSCopying>
 
-@property(readonly) NSString* attribute;
-@property(readonly) NSString* value;
+@property(readonly) AttributeData* data;
 @property(readonly) NSDate* date;
 
-- (id) initWithAttribute:(NSString*)attribute withValue:(NSString*)value withDate:(NSDate*)date;
+- (id) initWithAttributeData:(AttributeData*)data withDate:(NSDate*)date;
 
 @end

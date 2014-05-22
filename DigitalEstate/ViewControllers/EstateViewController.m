@@ -8,9 +8,10 @@
 
 #import "EstateViewController.h"
 #import "DataSourceFactory.h"
-#import "EstateDetailViewController.h"
+#import "NoteViewController.h"
 #import "EstateTableViewCell.h"
 #import "ConstantDefinition.h"
+#import "AttributeData.h"
 
 @interface EstateViewController ()
     @property NSArray* searchResults;
@@ -31,8 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [_tableView setDataSource:self];
-    [_tableView setDelegate:self];
+
     [[DataSourceFactory getDataSource] registerObserver:self];
     
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
@@ -59,22 +59,32 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"ModifySegue"])
+    if ([[segue identifier] isEqualToString:@"ModifyNoteSegue"]
+        || [[segue identifier] isEqualToString:@"ModifyAccountSegue"])
     {
         // Get reference to the destination view controller
-        EstateDetailViewController *vc = [segue destinationViewController];
+        DetailViewController *vc = [segue destinationViewController];
         
-        // Pass any objects to the view controller here, like...
-        NSArray* estates =[[DataSourceFactory getDataSource] getEstates];
+        NSArray* estates;
+        if (sender == self.searchDisplayController.searchResultsTableView)
+        {
+            estates = _searchResults;
+        }
+        else
+        {
+            estates =[[DataSourceFactory getDataSource] getEstates];
+        }
+        
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         EstateData* data = [estates objectAtIndex:indexPath.row];
 
         [vc setEstateData:data];
     }
-    else if ([[segue identifier] isEqualToString:@"CreateSegue"])
+    else if ([[segue identifier] isEqualToString:@"CreateAccountSegue"]
+             || [[segue identifier] isEqualToString:@"CreateNoteSegue"])
     {
         // Get reference to the destination view controller
-        EstateDetailViewController *vc = [segue destinationViewController];
+        NoteViewController *vc = [segue destinationViewController];
         
         [vc setEstateData:nil];
     }
@@ -118,12 +128,42 @@
     {
         EstateData* data = [estates objectAtIndex:indexPath.row];
         
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
-        NSString *strDate = [dateFormatter stringFromDate:data.lastUpdate];
+//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//        [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
+//        NSString *strDate = [dateFormatter stringFromDate:data.lastUpdate];
         
-        result.dateLabel.text = strDate;
-        result.contentLabel.text = data.content;
+        if (data.name == nil || [data.name length] == 0)
+        {
+            if ([data.attributeValues count] > 0)
+            {
+                result.nameLabel.text = @"Account";
+            }
+            else
+            {
+                result.nameLabel.text = @"Note";
+            }
+        }
+        else
+        {
+            result.nameLabel.text = data.name;
+        }
+        if (data.content == nil || [data.content length] == 0)
+        {
+            if ([data.attributeValues count] > 0)
+            {
+                AttributeData* attributeData = [data.attributeValues objectAtIndex:0];
+                result.contentLabel.text = [NSString stringWithFormat:@"%@: %@", [attributeData attrName], [attributeData attrValue]];
+            }
+            else
+            {
+                result.contentLabel.text =  @"";
+            }
+        }
+        else
+        {
+            result.contentLabel.text =  data.content;
+        }
+        [result.iconView setImage: [data.attributeValues count] == 0 ? [UIImage imageNamed:@"circle_text.png"]: [UIImage imageNamed:@"password.png"] ];
     }
     else
     {
@@ -152,6 +192,33 @@
 {
     return 60.0f;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray* estates;
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        estates = _searchResults;
+    }
+    else
+    {
+        estates =[[DataSourceFactory getDataSource] getEstates];
+    }
+
+    EstateData* data = [estates objectAtIndex:indexPath.row];
+    if (data)
+    {
+        NSMutableArray* attributeValues = [data attributeValues];
+        if (attributeValues)
+            if ([attributeValues count] > 0)
+            {
+                [self performSegueWithIdentifier:@"ModifyAccountSegue" sender:tableView];
+                return;
+            }
+        [self performSegueWithIdentifier:@"ModifyNoteSegue" sender:tableView];
+    }
+}
+
 
 #pragma mark - search display delegate
 
@@ -213,7 +280,7 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"content contains[c] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"ANY %K.attrValue contains[c] %@ OR ANY %K.attrName contains[c] %@ OR content contains[c] %@ ", @"attributeValues", searchText, @"attributeValues", searchText, searchText];
     
     NSArray* estates =[[DataSourceFactory getDataSource] getEstates];
     _searchResults = [estates filteredArrayUsingPredicate:resultPredicate];

@@ -11,12 +11,11 @@
 
 @implementation HistoryData
 
-- (id) initWithAttribute:(NSString*)attribute withValue:(NSString*)value withDate:(NSDate*)date
+- (id) initWithAttributeData:(AttributeData*)data withDate:(NSDate*)date
 {
     if (self = [super init])
     {
-        _attribute = attribute;
-        _value = value;
+        _data = data;
         _date = date;
     }
     return self;
@@ -26,26 +25,24 @@
 
 - (void) encodeWithCoder:(NSCoder *)encoder
 {
-    [encoder encodeObject:_attribute forKey:kAttribute];
-    [encoder encodeObject:_value forKey:kValue];
+    [encoder encodeObject:_data forKey:kAttribute];
     [encoder encodeObject:_date forKey:kDate];
 }
 
 
 - (id) initWithCoder:(NSCoder*)decoder
 {
-    NSString* attribute = [decoder decodeObjectForKey:kAttribute];
-    id value = [decoder decodeObjectForKey:kValue];
+    AttributeData* data = [decoder decodeObjectForKey:kAttribute];
     NSDate* date = [decoder decodeObjectForKey:kDate];
     
-    return [self initWithAttribute:attribute withValue:value withDate:date];
+    return [self initWithAttributeData:data withDate:date];
 }
 
 #pragma mark NSCopying
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    return [[HistoryData alloc] initWithAttribute:self.attribute withValue:self.value withDate:self.date];
+    return [[HistoryData alloc] initWithAttributeData:_data withDate:_date];
 }
 
 @end

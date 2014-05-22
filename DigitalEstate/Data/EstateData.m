@@ -8,10 +8,12 @@
 
 #import "EstateData.h"
 #import "HistoryData.h"
+#import "AttributeData.h"
+#import "ConstantDefinition.h"
 
 @implementation EstateData
 
-- (id) initWithName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableDictionary*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history
+- (id) initWithName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableArray*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history
 {
     if (self = [super init])
     {
@@ -25,7 +27,7 @@
         if (attributeValues)
             _attributeValues = attributeValues;
         else
-            _attributeValues = [[NSMutableDictionary alloc] init];
+            _attributeValues = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -46,7 +48,7 @@
 {
     NSString* name = [decoder decodeObjectForKey:kName];
     NSString* content = [decoder decodeObjectForKey:kContent];
-    NSMutableDictionary* attributeValues = [decoder decodeObjectForKey:kAttributeValues];
+    NSMutableArray* attributeValues = [decoder decodeObjectForKey:kAttributeValues];
     NSDate* lastUpdate = [decoder decodeObjectForKey:kLastUpdate];
     NSMutableArray* history = [decoder decodeObjectForKey:kHistory];
     
@@ -86,25 +88,24 @@
 
     if (_history.count >= historyCount)
         [_history removeObjectAtIndex:0];
-    [_history addObject:[[HistoryData alloc] initWithAttribute:kContent withValue:content withDate:[NSDate date]]];
+    
+    AttributeData* data = [[AttributeData alloc] initWithId:kAttrContent name:@"content" value:_content];
+    [_history addObject:[[HistoryData alloc] initWithAttributeData:data withDate:[NSDate date]]];
     _content = content;
     _lastUpdate = [NSDate date];
 }
 
-- (void)setAttributeValue:(id)value forKey:(NSString *)attribute
+- (void)addAttributeData:(AttributeData*)data
 {
-    if (attribute == nil)
+    if (data == nil)
         return;
     
     _lastUpdate = [NSDate date];
 
     if (_history.count >= historyCount)
         [_history removeObjectAtIndex:0];
-    [_history addObject:[[HistoryData alloc] initWithAttribute:attribute withValue:value withDate:_lastUpdate]];
-    if (value == nil)
-        [_attributeValues removeObjectForKey:attribute];
-    else
-        [_attributeValues setObject:value forKey:attribute];
+    [_history addObject:[[HistoryData alloc] initWithAttributeData:data withDate:_lastUpdate]];
+    [_attributeValues addObject:data];
     
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "AccountTableViewCell.h"
+#import "AccountViewController.h"
 
 @implementation AccountTableViewCell
 
@@ -14,14 +15,12 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
     }
     return self;
 }
 
 - (void)awakeFromNib
 {
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -30,5 +29,38 @@
 
     // Configure the view for the selected state
 }
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    {
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (_nameTextField == textField || _valueTextField == textField)
+    {
+        UITableView* tableView = (UITableView*)self.superview.superview;
+        AccountViewController* controller = (AccountViewController*)tableView.dataSource;
+        NSIndexPath* indexPath = [controller.tableView indexPathForCell:self];
+        [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleNone forRowAtIndexPath:indexPath];
+    }
+}
+
+#pragma mark - IBAction
+
+- (IBAction)deleteButtonClicked:(id)sender
+{
+    UITableView* tableView = (UITableView*)self.superview.superview;
+    AccountViewController* controller = (AccountViewController*)tableView.dataSource;
+    NSIndexPath* indexPath = [controller.tableView indexPathForCell:self];
+    [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
+}
+
+
 
 @end

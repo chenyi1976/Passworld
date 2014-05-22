@@ -20,10 +20,10 @@
 
 @property(nonatomic) NSString* name;
 @property(nonatomic) NSString* content;
-@property(nonatomic) NSMutableDictionary* attributeValues;
+@property(nonatomic) NSMutableArray* attributeValues;
 @property(readonly) NSDate* lastUpdate;
 @property(readonly) NSMutableArray* history;
 
-- (id) initWithName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableDictionary*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history;
+- (id) initWithName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableArray*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history;
 
 @end

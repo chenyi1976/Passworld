@@ -27,6 +27,10 @@
 
 #define kWelcomed @"welcomed"
 
+#define kAttrContent @"attrContent"
+#define kAttributeAccountName @"attrAccountName"
+#define kAttributeAccountValue @"attrAccountValue"
+
 @interface ConstantDefinition : NSObject
 
 @end
