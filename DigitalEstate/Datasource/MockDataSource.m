@@ -148,8 +148,8 @@
                 {
                     if (attributeData)
                     {
-                        NSString *encryptedAttrName = [AESCrypt decrypt:attributeData.attrName password:encryptKey];
-                        NSString *encryptedAttrValue = [AESCrypt decrypt:attributeData.attrValue password:encryptKey];
+                        NSString *encryptedAttrName = [AESCrypt encrypt:attributeData.attrName password:encryptKey];
+                        NSString *encryptedAttrValue = [AESCrypt encrypt:attributeData.attrValue password:encryptKey];
                         [newAttributeValues addObject:[[AttributeData alloc] initWithId:attributeData.attrId name:encryptedAttrName value:encryptedAttrValue]];
                     }
                 }
