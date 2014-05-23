@@ -156,8 +156,15 @@
                 NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] init];
                 UIFont* smallFont = [UIFont boldSystemFontOfSize:10.f];
                 
+                bool isFirst = TRUE;
+                
                 for (AttributeData* attributeData in data.attributeValues)
                 {
+                    if (!isFirst)
+                    {
+                        [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
+                    }
+                    isFirst = FALSE;
                     NSString * attrName = attributeData.attrName;
                     if (attrName.length > 23)
                     {
@@ -175,8 +182,6 @@
                     }
                     NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attributeData.attrValue attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
                     [attributedText appendAttributedString:attrValueStr];
-
-                    [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
                 }
                 result.contentLabel.attributedText = attributedText;
             }
