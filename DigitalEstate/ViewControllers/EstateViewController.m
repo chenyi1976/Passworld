@@ -151,16 +151,45 @@
         {
             if ([data.attributeValues count] > 0)
             {
-                AttributeData* attributeData = [data.attributeValues objectAtIndex:0];
-                result.contentLabel.text = [NSString stringWithFormat:@"%@: %@", [attributeData attrName], [attributeData attrValue]];
+                result.contentLabel.numberOfLines = [data.attributeValues count] * 2;
+
+                NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] init];
+                UIFont* smallFont = [UIFont boldSystemFontOfSize:10.f];
+                
+                for (AttributeData* attributeData in data.attributeValues)
+                {
+                    NSString * attrName = attributeData.attrName;
+                    if (attrName.length > 23)
+                    {
+                        attrName = [NSString stringWithFormat:@"%@...", [attrName substringToIndex:20]];
+                    }
+                    NSAttributedString* attrNameStr = [[NSAttributedString alloc] initWithString:attrName attributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:smallFont}];
+                    [attributedText appendAttributedString:attrNameStr];
+
+                    [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
+                    
+                    NSString * attrValue = attributeData.attrValue;
+                    if (attrValue.length > 23)
+                    {
+                        attrValue = [NSString stringWithFormat:@"%@...", [attrValue substringToIndex:20]];
+                    }
+                    NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attributeData.attrValue attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
+                    [attributedText appendAttributedString:attrValueStr];
+
+                    [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
+                }
+                result.contentLabel.attributedText = attributedText;
             }
             else
             {
+                result.contentLabel.numberOfLines = 1;
                 result.contentLabel.text =  @"";
             }
         }
         else
         {
+            int lineCount = data.content.length / 22;
+            result.contentLabel.numberOfLines = lineCount > 4? 4 : lineCount;
             result.contentLabel.text =  data.content;
         }
         [result.iconView setImage: [data.attributeValues count] == 0 ? [UIImage imageNamed:@"circle_text.png"]: [UIImage imageNamed:@"password.png"] ];
@@ -190,6 +219,28 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSArray* estates;
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        estates = _searchResults;
+    }
+    else
+    {
+        estates =[[DataSourceFactory getDataSource] getEstates];
+    }
+    
+    if (estates && indexPath.row < [estates count])
+    {
+        EstateData* data = [estates objectAtIndex:indexPath.row];
+        int lineCount = data.attributeValues.count;
+        if (data.content != nil && data.content.length > 0)
+        {
+            lineCount = data.content.length / 22;
+            if (lineCount > 4)
+                lineCount = 4;
+        }
+        return lineCount * 32.0f + 48.0f;
+    }
     return 60.0f;
 }
 

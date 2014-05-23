@@ -154,7 +154,7 @@
     }
     else
     {
-        EstateData* data = [[EstateData alloc] initWithName:_nameTextField.text withContent:@"" withAttributeValues:_tableData withLastUpdate:[NSDate date] withHistory:nil];
+        EstateData* data = [[EstateData alloc] initWithName:_nameTextField.text withContent:nil withAttributeValues:_tableData withLastUpdate:[NSDate date] withHistory:nil];
         [[DataSourceFactory getDataSource] addObject:data];
     }
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];
