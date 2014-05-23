@@ -564,22 +564,22 @@
                                                     <rect key="frame" x="63" y="6" width="224" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="Bbz-ut-gol"/>
-                                                        <constraint firstAttribute="width" constant="224" id="Tsv-RL-k0S"/>
+                                                        <constraint firstAttribute="height" constant="22" id="L5s-F4-UXj"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-kU-T9k">
                                                     <rect key="frame" x="15" y="12" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="z2W-Km-Tle"/>
+                                                        <constraint firstAttribute="width" constant="40" id="OaX-U9-Mfi"/>
+                                                        <constraint firstAttribute="height" constant="40" id="X5R-zk-abO"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="224" translatesAutoresizingMaskIntoConstraints="NO" id="hzY-1R-Oxo">
-                                                    <rect key="frame" x="63" y="36" width="224" height="90"/>
+                                                    <rect key="frame" x="63" y="28" width="224" height="98"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Content">
@@ -594,15 +594,15 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="vKg-kU-T9k" firstAttribute="top" secondItem="cE2-IM-ari" secondAttribute="top" constant="12" id="0kA-ru-2on"/>
-                                                <constraint firstAttribute="trailing" secondItem="sLk-Dy-x0a" secondAttribute="trailing" id="4iH-vQ-i10"/>
-                                                <constraint firstAttribute="bottom" secondItem="hzY-1R-Oxo" secondAttribute="bottom" constant="12" id="9Ae-Go-KNY"/>
-                                                <constraint firstItem="hzY-1R-Oxo" firstAttribute="top" secondItem="sLk-Dy-x0a" secondAttribute="bottom" constant="8" symbolic="YES" id="CSY-IC-Kfd"/>
-                                                <constraint firstItem="vKg-kU-T9k" firstAttribute="leading" secondItem="cE2-IM-ari" secondAttribute="leading" constant="15" id="Lnb-yd-913"/>
-                                                <constraint firstItem="hzY-1R-Oxo" firstAttribute="trailing" secondItem="sLk-Dy-x0a" secondAttribute="trailing" id="MAa-Y1-rt3"/>
-                                                <constraint firstItem="sLk-Dy-x0a" firstAttribute="top" secondItem="cE2-IM-ari" secondAttribute="top" constant="6" id="rGC-rc-BUU"/>
-                                                <constraint firstItem="sLk-Dy-x0a" firstAttribute="leading" secondItem="vKg-kU-T9k" secondAttribute="trailing" constant="8" symbolic="YES" id="tnv-PY-4G1"/>
-                                                <constraint firstItem="hzY-1R-Oxo" firstAttribute="leading" secondItem="vKg-kU-T9k" secondAttribute="trailing" constant="8" symbolic="YES" id="xgn-n5-TbB"/>
+                                                <constraint firstItem="sLk-Dy-x0a" firstAttribute="leading" secondItem="vKg-kU-T9k" secondAttribute="trailing" constant="8" symbolic="YES" id="8RS-Qv-0Z0"/>
+                                                <constraint firstItem="hzY-1R-Oxo" firstAttribute="trailing" secondItem="sLk-Dy-x0a" secondAttribute="trailing" id="H4O-4Q-q5I"/>
+                                                <constraint firstItem="vKg-kU-T9k" firstAttribute="top" secondItem="cE2-IM-ari" secondAttribute="top" constant="12" id="U1L-7n-UwK"/>
+                                                <constraint firstItem="hzY-1R-Oxo" firstAttribute="leading" secondItem="vKg-kU-T9k" secondAttribute="trailing" constant="8" symbolic="YES" id="c7I-KG-xYp"/>
+                                                <constraint firstItem="hzY-1R-Oxo" firstAttribute="top" secondItem="sLk-Dy-x0a" secondAttribute="bottom" id="gq0-YK-vc3"/>
+                                                <constraint firstAttribute="bottom" secondItem="hzY-1R-Oxo" secondAttribute="bottom" constant="12" id="h0T-dA-iTm"/>
+                                                <constraint firstAttribute="trailing" secondItem="hzY-1R-Oxo" secondAttribute="trailing" id="lSB-1n-Hzx"/>
+                                                <constraint firstItem="sLk-Dy-x0a" firstAttribute="top" secondItem="cE2-IM-ari" secondAttribute="top" constant="6" id="tCh-u4-mAx"/>
+                                                <constraint firstItem="vKg-kU-T9k" firstAttribute="leading" secondItem="cE2-IM-ari" secondAttribute="leading" constant="15" id="wbS-Vu-Oty"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

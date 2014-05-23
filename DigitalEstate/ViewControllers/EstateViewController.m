@@ -154,7 +154,8 @@
                 result.contentLabel.numberOfLines = [data.attributeValues count] * 2;
 
                 NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] init];
-                UIFont* smallFont = [UIFont boldSystemFontOfSize:10.f];
+                UIFont* smallFont = [UIFont systemFontOfSize:12.f];
+                UIColor* lightBlueColor = [UIColor colorWithRed:0x22/255.0f green:0x22/255.0f blue:0x99/255.0f alpha:1];
                 
                 bool isFirst = TRUE;
                 
@@ -180,7 +181,7 @@
                     {
                         attrValue = [NSString stringWithFormat:@"%@...", [attrValue substringToIndex:20]];
                     }
-                    NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attributeData.attrValue attributes:@{NSForegroundColorAttributeName:[UIColor blueColor]}];
+                    NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attributeData.attrValue attributes:@{NSForegroundColorAttributeName:lightBlueColor}];
                     [attributedText appendAttributedString:attrValueStr];
                 }
                 result.contentLabel.attributedText = attributedText;
@@ -244,7 +245,7 @@
             if (lineCount > 4)
                 lineCount = 4;
         }
-        return lineCount * 32.0f + 48.0f;
+        return lineCount * 34.0f + 48.0f;
     }
     return 60.0f;
 }

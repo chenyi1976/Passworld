@@ -11,6 +11,7 @@
 #import "AESCrypt.h"
 #import "ConstantDefinition.h"
 #import "KeyChainUtil.h"
+#import "AttributeData.h"
 
 @interface MockDataSource()
     @property NSMutableArray* estates;
@@ -47,6 +48,20 @@
         {
             NSString *decryptedData = [AESCrypt decrypt:data.content password:encryptKey];
             data.content = decryptedData;
+            if (data.attributeValues)
+            {
+                NSMutableArray* newAttributeValues = [[NSMutableArray alloc] init];
+                for (AttributeData* attributeData in data.attributeValues)
+                {
+                    if (attributeData)
+                    {
+                        NSString *decryptedAttrName = [AESCrypt decrypt:attributeData.attrName password:encryptKey];
+                        NSString *decryptedAttrValue = [AESCrypt decrypt:attributeData.attrValue password:encryptKey];
+                        [newAttributeValues addObject:[[AttributeData alloc] initWithId:attributeData.attrId name:decryptedAttrName value:decryptedAttrValue]];
+                    }
+                }
+                data.attributeValues = newAttributeValues;
+            }
         }
     }
     
@@ -126,6 +141,21 @@
         {
             NSString *encryptedData = [AESCrypt encrypt:data.content password:encryptKey];
             data.content = encryptedData;
+            if (data.attributeValues)
+            {
+                NSMutableArray* newAttributeValues = [[NSMutableArray alloc] init];
+                for (AttributeData* attributeData in data.attributeValues)
+                {
+                    if (attributeData)
+                    {
+                        NSString *encryptedAttrName = [AESCrypt decrypt:attributeData.attrName password:encryptKey];
+                        NSString *encryptedAttrValue = [AESCrypt decrypt:attributeData.attrValue password:encryptKey];
+                        [newAttributeValues addObject:[[AttributeData alloc] initWithId:attributeData.attrId name:encryptedAttrName value:encryptedAttrValue]];
+                    }
+                }
+                data.attributeValues = newAttributeValues;
+            }
+
         }
     }
     [CacheManager saveToCache:encryptEstates withKey:[NSArray arrayWithObject:kEstate]];
