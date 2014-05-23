@@ -127,78 +127,7 @@
     if (estates && indexPath.row < [estates count])
     {
         EstateData* data = [estates objectAtIndex:indexPath.row];
-        
-//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//        [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
-//        NSString *strDate = [dateFormatter stringFromDate:data.lastUpdate];
-        
-        if (data.name == nil || [data.name length] == 0)
-        {
-            if ([data.attributeValues count] > 0)
-            {
-                result.nameLabel.text = @"Account";
-            }
-            else
-            {
-                result.nameLabel.text = @"Note";
-            }
-        }
-        else
-        {
-            result.nameLabel.text = data.name;
-        }
-        if (data.content == nil || [data.content length] == 0)
-        {
-            if ([data.attributeValues count] > 0)
-            {
-                result.contentLabel.numberOfLines = [data.attributeValues count] * 2;
-
-                NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] init];
-                UIFont* smallFont = [UIFont systemFontOfSize:12.f];
-                UIColor* lightBlueColor = [UIColor colorWithRed:0x22/255.0f green:0x22/255.0f blue:0x99/255.0f alpha:1];
-                
-                bool isFirst = TRUE;
-                
-                for (AttributeData* attributeData in data.attributeValues)
-                {
-                    if (!isFirst)
-                    {
-                        [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
-                    }
-                    isFirst = FALSE;
-                    NSString * attrName = attributeData.attrName;
-                    if (attrName.length > 23)
-                    {
-                        attrName = [NSString stringWithFormat:@"%@...", [attrName substringToIndex:20]];
-                    }
-                    NSAttributedString* attrNameStr = [[NSAttributedString alloc] initWithString:attrName attributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:smallFont}];
-                    [attributedText appendAttributedString:attrNameStr];
-
-                    [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
-                    
-                    NSString * attrValue = attributeData.attrValue;
-                    if (attrValue.length > 23)
-                    {
-                        attrValue = [NSString stringWithFormat:@"%@...", [attrValue substringToIndex:20]];
-                    }
-                    NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attributeData.attrValue attributes:@{NSForegroundColorAttributeName:lightBlueColor}];
-                    [attributedText appendAttributedString:attrValueStr];
-                }
-                result.contentLabel.attributedText = attributedText;
-            }
-            else
-            {
-                result.contentLabel.numberOfLines = 1;
-                result.contentLabel.text =  @"";
-            }
-        }
-        else
-        {
-            int lineCount = data.content.length / 22;
-            result.contentLabel.numberOfLines = lineCount > 4? 4 : lineCount;
-            result.contentLabel.text =  data.content;
-        }
-        [result.iconView setImage: [data.attributeValues count] == 0 ? [UIImage imageNamed:@"circle_text.png"]: [UIImage imageNamed:@"password.png"] ];
+        [result configureForEstateData:data];
     }
     else
     {

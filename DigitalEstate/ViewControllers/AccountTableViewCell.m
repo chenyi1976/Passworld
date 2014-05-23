@@ -61,6 +61,14 @@
     [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
 }
 
+- (void)configureAttributeData:(AttributeData*)data
+{
+    if (data)
+    {
+        _nameTextField.text = data.attrName;
+        _valueTextField.text = data.attrValue;
+    }
+}
 
 
 @end

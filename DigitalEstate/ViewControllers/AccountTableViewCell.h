@@ -16,5 +16,6 @@
 
 - (IBAction)deleteButtonClicked:(id)sender;
 
+- (void)configureAttributeData:(AttributeData*)data;
 
 @end

@@ -91,8 +91,7 @@
     AttributeData* data = [_tableData objectAtIndex:indexPath.row];
     if (data)
     {
-        result.nameTextField.text = data.attrName;
-        result.valueTextField.text = data.attrValue;
+        [result configureAttributeData:data];
     }
     
     return result;

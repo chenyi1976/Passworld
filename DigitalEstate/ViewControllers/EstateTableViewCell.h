@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EstateData.h"
 
 @interface EstateTableViewCell : UITableViewCell
 
@@ -14,5 +15,6 @@
 @property IBOutlet UILabel * contentLabel;
 @property IBOutlet UIImageView * iconView;
 
+- (void)configureForEstateData:(EstateData*)data;
 
 @end
