@@ -6,18 +6,18 @@
 //  Copyright (c) 2014 Yi Chen. All rights reserved.
 //
 
-#import "MockDataSource.h"
+#import "LocalDataSource.h"
 #import "CacheManager.h"
 #import "AESCrypt.h"
 #import "ConstantDefinition.h"
 #import "KeyChainUtil.h"
 #import "AttributeData.h"
 
-@interface MockDataSource()
+@interface LocalDataSource()
     @property NSMutableArray* estates;
 @end
 
-@implementation MockDataSource
+@implementation LocalDataSource
 
 
 - (id) init

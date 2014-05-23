@@ -15,7 +15,7 @@
 #define kCategoryArticleKey @"categoryArticle"
 #define kHistoryArticleKey @"historyArticle"
 
-@interface MockDataSource : Observable<EstateDataSource>
+@interface LocalDataSource : Observable<EstateDataSource>
 
 @property bool sortByLastUpdated;
 

@@ -7,7 +7,9 @@
 //
 
 #import "DataSourceFactory.h"
-#import "MockDataSource.h"
+#import "LocalDataSource.h"
+#import "DropboxDataSource.h"
+#import "ConstantDefinition.h"
 
 @implementation DataSourceFactory
 
@@ -17,7 +19,17 @@ static Observable<EstateDataSource> *datasource = nil;
 {
     if (datasource == nil)
     {
-        datasource = [[MockDataSource alloc] init];
+        NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+        
+        NSString* type = [prefs stringForKey:kDatasourceType];
+        if ([@"Dropbox" isEqualToString:type])
+        {
+            datasource = [[DropboxDataSource alloc] init];
+        }
+        else
+        {
+            datasource = [[LocalDataSource alloc] init];
+        }
     }
     return datasource;
 }

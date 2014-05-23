@@ -31,6 +31,8 @@
 #define kAttributeAccountName @"attrAccountName"
 #define kAttributeAccountValue @"attrAccountValue"
 
+#define kDatasourceType @"datasourceType"
+
 @interface ConstantDefinition : NSObject
 
 @end
