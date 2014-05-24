@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Observer.h"
 
-@interface Observable: NSObject
+@protocol Observable <NSObject>
 
 - (void)registerObserver:(id<Observer>)observer;
 - (void)deregisterObserver:(id<Observer>)observer;

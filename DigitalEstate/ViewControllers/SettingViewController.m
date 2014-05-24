@@ -90,4 +90,21 @@
 
 }
 
+- (IBAction)switchSyncButtonTouched:(id)sender
+{
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    if (_dropboxSyncSwitch.on)
+    {
+        [prefs setObject:@"Dropbox" forKey:kDatasourceType];
+        [prefs synchronize];
+    }
+    else
+    {
+        [prefs removeObjectForKey:kDatasourceType];
+        [prefs synchronize];
+    }
+    //todo: need to update datasource and table view.
+}
+
+
 @end

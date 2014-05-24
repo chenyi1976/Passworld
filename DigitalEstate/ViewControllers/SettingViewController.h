@@ -12,7 +12,9 @@
 
 @property IBOutlet UIButton* switchPasswordButton;
 @property IBOutlet UIButton* updatePasswordButton;
+@property IBOutlet UISwitch* dropboxSyncSwitch;
 
 - (IBAction)switchPasscodeButtonTouched:(id)sender;
+- (IBAction)switchSyncButtonTouched:(id)sender;
 
 @end

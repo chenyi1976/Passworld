@@ -15,14 +15,11 @@
 		811F6831192E026F00F27955 /* circle_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F6830192E026F00F27955 /* circle_ok@2x.png */; };
 		811F6833192E048E00F27955 /* circle_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F6832192E048E00F27955 /* circle_delete@2x.png */; };
 		811F6835192E13F300F27955 /* OPPS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F6834192E13F300F27955 /* OPPS@2x.png */; };
-		811F68381930024800F27955 /* DropboxDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 811F68361930024800F27955 /* DropboxDataSource.m */; };
-		811F683A1930043F00F27955 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F68391930043F00F27955 /* Dropbox.framework */; };
 		811F683C1930048E00F27955 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F683B1930048E00F27955 /* CFNetwork.framework */; };
 		811F683E1930049500F27955 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F683D1930049500F27955 /* Security.framework */; };
 		811F6840193004A900F27955 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F683F193004A900F27955 /* SystemConfiguration.framework */; };
 		811F6842193004B800F27955 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F6841193004B800F27955 /* QuartzCore.framework */; };
 		811F6844193004CE00F27955 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F6843193004CE00F27955 /* libc++.dylib */; };
-		812178761907A2B4002DA71A /* Observable.m in Sources */ = {isa = PBXBuildFile; fileRef = 812178751907A2B4002DA71A /* Observable.m */; };
 		8121787919087B03002DA71A /* SMSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787819087B03002DA71A /* SMSService.m */; };
 		8121787F19089686002DA71A /* CountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787E19089686002DA71A /* CountryViewController.m */; };
 		812178831908ABD5002DA71A /* DiallingCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 812178801908ABD5002DA71A /* DiallingCodes.plist */; };
@@ -53,7 +50,6 @@
 		813CCA6818FD0EF9002A98F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 813CCA6618FD0EF9002A98F2 /* InfoPlist.strings */; };
 		813CCA6A18FD0EF9002A98F2 /* DigitalEstateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA6918FD0EF9002A98F2 /* DigitalEstateTests.m */; };
 		813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7618FDDFF0002A98F2 /* DataSourceFactory.m */; };
-		813CCA7A18FDE096002A98F2 /* LocalDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7918FDE096002A98F2 /* LocalDataSource.m */; };
 		813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */; };
 		813CCA8218FDF193002A98F2 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA8118FDF193002A98F2 /* RegistrationViewController.m */; };
 		813CCA8918FDFC6B002A98F2 /* PersonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA8818FDFC6B002A98F2 /* PersonData.m */; };
@@ -82,6 +78,9 @@
 		8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D81018FE19950095F625 /* PasscodeViewController.m */; };
 		8180D81718FE48340095F625 /* on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D81518FE48340095F625 /* on@2x.png */; };
 		8180D81818FE48340095F625 /* off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D81618FE48340095F625 /* off@2x.png */; };
+		8193FD371930B321001FF9F2 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193FD361930B321001FF9F2 /* Dropbox.framework */; };
+		8193FD3E19315B5A001FF9F2 /* LocalDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */; };
+		8193FD4119315F2C001FF9F2 /* DropboxDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD4019315F2C001FF9F2 /* DropboxDataStrategy.m */; };
 		81AB97331921951100B0C917 /* passcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB97321921951100B0C917 /* passcode@2x.png */; };
 		81AB973619219B5000B0C917 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB973519219B5000B0C917 /* WelcomeViewController.m */; };
 		81AB97391921B76400B0C917 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB97381921B76400B0C917 /* AccountViewController.m */; };
@@ -98,6 +97,7 @@
 		81B18E4E1905FB9F005647AF /* Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E4C1905FB9F005647AF /* Tick@2x.png */; };
 		81B18E501905FC3A005647AF /* Delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E4F1905FC3A005647AF /* Delete@2x.png */; };
 		81B18E53190602DC005647AF /* EstateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B18E52190602DC005647AF /* EstateTableViewCell.m */; };
+		81C40A0619309FA80011BAEF /* EstateDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C40A0519309FA80011BAEF /* EstateDataSource.m */; };
 		81CCB89819008A010019A6E4 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB89719008A010019A6E4 /* NoteViewController.m */; };
 		81CD2A09192C4DDB00785134 /* PasscodeUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A08192C4DDB00785134 /* PasscodeUpdateViewController.m */; };
 		81CD2A0D192C52BE00785134 /* PasscodeSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A0C192C52BE00785134 /* PasscodeSecurityViewController.m */; };
@@ -129,17 +129,11 @@
 		811F6830192E026F00F27955 /* circle_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_ok@2x.png"; path = "Images/circle_ok@2x.png"; sourceTree = "<group>"; };
 		811F6832192E048E00F27955 /* circle_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_delete@2x.png"; path = "Images/circle_delete@2x.png"; sourceTree = "<group>"; };
 		811F6834192E13F300F27955 /* OPPS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OPPS@2x.png"; path = "Images/OPPS@2x.png"; sourceTree = "<group>"; };
-		811F68361930024800F27955 /* DropboxDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropboxDataSource.m; path = Datasource/DropboxDataSource.m; sourceTree = "<group>"; };
-		811F68371930024800F27955 /* DropboxDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropboxDataSource.h; path = Datasource/DropboxDataSource.h; sourceTree = "<group>"; };
-		811F68391930043F00F27955 /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dropbox.framework; sourceTree = "<group>"; };
 		811F683B1930048E00F27955 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		811F683D1930049500F27955 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		811F683F193004A900F27955 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		811F6841193004B800F27955 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		811F6843193004CE00F27955 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		812178721907A1B5002DA71A /* Observable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Observable.h; path = Datasource/Observable.h; sourceTree = "<group>"; };
-		812178731907A1F9002DA71A /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Observer.h; path = Datasource/Observer.h; sourceTree = "<group>"; };
-		812178751907A2B4002DA71A /* Observable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Observable.m; path = Datasource/Observable.m; sourceTree = "<group>"; };
 		8121787719087B03002DA71A /* SMSService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMSService.h; path = Util/SMSService.h; sourceTree = "<group>"; };
 		8121787819087B03002DA71A /* SMSService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMSService.m; path = Util/SMSService.m; sourceTree = "<group>"; };
 		8121787D19089686002DA71A /* CountryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryViewController.h; path = ViewControllers/CountryViewController.h; sourceTree = "<group>"; };
@@ -185,10 +179,8 @@
 		813CCA6518FD0EF9002A98F2 /* DigitalEstateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DigitalEstateTests-Info.plist"; sourceTree = "<group>"; };
 		813CCA6718FD0EF9002A98F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		813CCA6918FD0EF9002A98F2 /* DigitalEstateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalEstateTests.m; sourceTree = "<group>"; };
-		813CCA7418FDDFF0002A98F2 /* LocalDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalDataSource.h; path = Datasource/LocalDataSource.h; sourceTree = "<group>"; };
 		813CCA7518FDDFF0002A98F2 /* DataSourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSourceFactory.h; path = Datasource/DataSourceFactory.h; sourceTree = "<group>"; };
 		813CCA7618FDDFF0002A98F2 /* DataSourceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSourceFactory.m; path = Datasource/DataSourceFactory.m; sourceTree = "<group>"; };
-		813CCA7918FDE096002A98F2 /* LocalDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalDataSource.m; path = Datasource/LocalDataSource.m; sourceTree = "<group>"; };
 		813CCA7B18FDE0E1002A98F2 /* EstateDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateDataSource.h; path = Datasource/EstateDataSource.h; sourceTree = "<group>"; };
 		813CCA7C18FDEF8E002A98F2 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitialViewController.h; path = ViewControllers/InitialViewController.h; sourceTree = "<group>"; };
 		813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitialViewController.m; path = ViewControllers/InitialViewController.m; sourceTree = "<group>"; };
@@ -230,6 +222,12 @@
 		8180D81018FE19950095F625 /* PasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeViewController.m; path = ViewControllers/PasscodeViewController.m; sourceTree = "<group>"; };
 		8180D81518FE48340095F625 /* on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "on@2x.png"; path = "Images/on@2x.png"; sourceTree = "<group>"; };
 		8180D81618FE48340095F625 /* off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "off@2x.png"; path = "Images/off@2x.png"; sourceTree = "<group>"; };
+		8193FD361930B321001FF9F2 /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dropbox.framework; sourceTree = "<group>"; };
+		8193FD3B19315ADD001FF9F2 /* DataStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DataStrategy.h; path = Datasource/DataStrategy.h; sourceTree = "<group>"; };
+		8193FD3C19315B5A001FF9F2 /* LocalDataStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalDataStrategy.h; path = Datasource/LocalDataStrategy.h; sourceTree = "<group>"; };
+		8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalDataStrategy.m; path = Datasource/LocalDataStrategy.m; sourceTree = "<group>"; };
+		8193FD3F19315F2C001FF9F2 /* DropboxDataStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropboxDataStrategy.h; path = Datasource/DropboxDataStrategy.h; sourceTree = "<group>"; };
+		8193FD4019315F2C001FF9F2 /* DropboxDataStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropboxDataStrategy.m; path = Datasource/DropboxDataStrategy.m; sourceTree = "<group>"; };
 		81AB97321921951100B0C917 /* passcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "passcode@2x.png"; path = "Images/passcode@2x.png"; sourceTree = "<group>"; };
 		81AB973419219B5000B0C917 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeViewController.h; path = ViewControllers/WelcomeViewController.h; sourceTree = "<group>"; };
 		81AB973519219B5000B0C917 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeViewController.m; path = ViewControllers/WelcomeViewController.m; sourceTree = "<group>"; };
@@ -251,6 +249,9 @@
 		81B18E4F1905FC3A005647AF /* Delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Delete@2x.png"; path = "Images/Delete@2x.png"; sourceTree = "<group>"; };
 		81B18E51190602DC005647AF /* EstateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateTableViewCell.h; path = ViewControllers/EstateTableViewCell.h; sourceTree = "<group>"; };
 		81B18E52190602DC005647AF /* EstateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateTableViewCell.m; path = ViewControllers/EstateTableViewCell.m; sourceTree = "<group>"; };
+		81C40A0519309FA80011BAEF /* EstateDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateDataSource.m; path = Datasource/EstateDataSource.m; sourceTree = "<group>"; };
+		81C40A0A1930A5C20011BAEF /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observer.h; path = Datasource/Observer.h; sourceTree = "<group>"; };
+		81C40A0B1930ADB50011BAEF /* Observable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observable.h; path = Datasource/Observable.h; sourceTree = "<group>"; };
 		81CCB89619008A010019A6E4 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteViewController.h; path = ViewControllers/NoteViewController.h; sourceTree = "<group>"; };
 		81CCB89719008A010019A6E4 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteViewController.m; path = ViewControllers/NoteViewController.m; sourceTree = "<group>"; };
 		81CD2A08192C4DDB00785134 /* PasscodeUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeUpdateViewController.m; path = ViewControllers/PasscodeUpdateViewController.m; sourceTree = "<group>"; };
@@ -279,8 +280,8 @@
 				811F683C1930048E00F27955 /* CFNetwork.framework in Frameworks */,
 				813CCA3E18FD0EF9002A98F2 /* CoreGraphics.framework in Frameworks */,
 				813CCA4018FD0EF9002A98F2 /* UIKit.framework in Frameworks */,
+				8193FD371930B321001FF9F2 /* Dropbox.framework in Frameworks */,
 				813CCA3C18FD0EF9002A98F2 /* Foundation.framework in Frameworks */,
-				811F683A1930043F00F27955 /* Dropbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,12 +335,12 @@
 		813CCA3A18FD0EF9002A98F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8193FD361930B321001FF9F2 /* Dropbox.framework */,
 				811F6843193004CE00F27955 /* libc++.dylib */,
 				811F6841193004B800F27955 /* QuartzCore.framework */,
 				811F683F193004A900F27955 /* SystemConfiguration.framework */,
 				811F683D1930049500F27955 /* Security.framework */,
 				811F683B1930048E00F27955 /* CFNetwork.framework */,
-				811F68391930043F00F27955 /* Dropbox.framework */,
 				813CCA3B18FD0EF9002A98F2 /* Foundation.framework */,
 				813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */,
 				813CCA3F18FD0EF9002A98F2 /* UIKit.framework */,
@@ -401,16 +402,17 @@
 		813CCA7318FDDF33002A98F2 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				813CCA7B18FDE0E1002A98F2 /* EstateDataSource.h */,
-				813CCA7418FDDFF0002A98F2 /* LocalDataSource.h */,
-				813CCA7918FDE096002A98F2 /* LocalDataSource.m */,
-				811F68371930024800F27955 /* DropboxDataSource.h */,
-				811F68361930024800F27955 /* DropboxDataSource.m */,
 				813CCA7518FDDFF0002A98F2 /* DataSourceFactory.h */,
 				813CCA7618FDDFF0002A98F2 /* DataSourceFactory.m */,
-				812178721907A1B5002DA71A /* Observable.h */,
-				812178751907A2B4002DA71A /* Observable.m */,
-				812178731907A1F9002DA71A /* Observer.h */,
+				81C40A0B1930ADB50011BAEF /* Observable.h */,
+				81C40A0A1930A5C20011BAEF /* Observer.h */,
+				813CCA7B18FDE0E1002A98F2 /* EstateDataSource.h */,
+				81C40A0519309FA80011BAEF /* EstateDataSource.m */,
+				8193FD3B19315ADD001FF9F2 /* DataStrategy.h */,
+				8193FD3C19315B5A001FF9F2 /* LocalDataStrategy.h */,
+				8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */,
+				8193FD3F19315F2C001FF9F2 /* DropboxDataStrategy.h */,
+				8193FD4019315F2C001FF9F2 /* DropboxDataStrategy.m */,
 			);
 			name = DataSource;
 			sourceTree = "<group>";
@@ -714,14 +716,13 @@
 				81CD2A0D192C52BE00785134 /* PasscodeSecurityViewController.m in Sources */,
 				813664BB191075B600C0B76E /* HistoryData.m in Sources */,
 				81AB973619219B5000B0C917 /* WelcomeViewController.m in Sources */,
+				8193FD3E19315B5A001FF9F2 /* LocalDataStrategy.m in Sources */,
 				813CCA8218FDF193002A98F2 /* RegistrationViewController.m in Sources */,
 				813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */,
 				81AB97391921B76400B0C917 /* AccountViewController.m in Sources */,
 				813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */,
 				81AB9745192378B200B0C917 /* AccountTableViewCell.m in Sources */,
 				8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */,
-				811F68381930024800F27955 /* DropboxDataSource.m in Sources */,
-				813CCA7A18FDE096002A98F2 /* LocalDataSource.m in Sources */,
 				81CD2A1B192D568900785134 /* ViewUtil.m in Sources */,
 				8101497019249CED00765486 /* DetailViewController.m in Sources */,
 				813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */,
@@ -733,11 +734,12 @@
 				8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */,
 				813664B1190F4DC600C0B76E /* NSData+Base64.m in Sources */,
 				813CCA4818FD0EF9002A98F2 /* main.m in Sources */,
+				81C40A0619309FA80011BAEF /* EstateDataSource.m in Sources */,
 				8101496A192417A900765486 /* AttributeData.m in Sources */,
+				8193FD4119315F2C001FF9F2 /* DropboxDataStrategy.m in Sources */,
 				81CD2A18192CD95500785134 /* PasscodeRemoveViewController.m in Sources */,
 				81CCB89819008A010019A6E4 /* NoteViewController.m in Sources */,
 				812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */,
-				812178761907A2B4002DA71A /* Observable.m in Sources */,
 				8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */,
 				813664B8190F870D00C0B76E /* SettingViewController.m in Sources */,
 			);

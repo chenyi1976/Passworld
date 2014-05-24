@@ -8,8 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "EstateData.h"
+#import "Observable.h"
+#import "DataStrategy.h"
 
-@protocol EstateDataSource <NSObject>
+@interface EstateDataSource:NSObject<Observable>
+
+@property bool sortByLastUpdated;
+@property NSMutableArray* observers;
+@property NSMutableArray* estates;
+@property id<DataStrategy> dataStrategy;
 
 - (NSArray*)getEstates;
 
