@@ -72,7 +72,7 @@
         }
         else
         {
-            estates =[[DataSourceFactory getDataSource] getEstates];
+            estates =[[DataSourceFactory getDataSource] estates];
         }
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
@@ -100,7 +100,7 @@
             return 0;
         return [_searchResults count];
     }
-    return [[[DataSourceFactory getDataSource] getEstates] count];
+    return [[[DataSourceFactory getDataSource] estates] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -121,7 +121,7 @@
     }
     else
     {
-        estates =[[DataSourceFactory getDataSource] getEstates];
+        estates =[[DataSourceFactory getDataSource] estates];
     }
     
     if (estates && indexPath.row < [estates count])
@@ -161,7 +161,7 @@
     }
     else
     {
-        estates =[[DataSourceFactory getDataSource] getEstates];
+        estates =[[DataSourceFactory getDataSource] estates];
     }
     
     if (estates && indexPath.row < [estates count])
@@ -188,7 +188,7 @@
     }
     else
     {
-        estates =[[DataSourceFactory getDataSource] getEstates];
+        estates =[[DataSourceFactory getDataSource] estates];
     }
 
     EstateData* data = [estates objectAtIndex:indexPath.row];
@@ -268,7 +268,7 @@
 {
     NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"ANY %K.attrValue contains[c] %@ OR ANY %K.attrName contains[c] %@ OR content contains[c] %@ ", @"attributeValues", searchText, @"attributeValues", searchText, searchText];
     
-    NSArray* estates =[[DataSourceFactory getDataSource] getEstates];
+    NSArray* estates =[[DataSourceFactory getDataSource] estates];
     _searchResults = [estates filteredArrayUsingPredicate:resultPredicate];
 }
 

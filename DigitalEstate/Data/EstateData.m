@@ -13,13 +13,15 @@
 
 @implementation EstateData
 
-- (id) initWithName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableArray*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history
+- (id) initWithId:(NSString*)estateId withName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableArray*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history
 {
     if (self = [super init])
     {
+        _estateId = estateId;
         _name = name;
         _content = content;
         _lastUpdate = lastUpdate;
+        _recycled = false;
         if (history)
             _history = history;
         else
@@ -36,6 +38,7 @@
 
 - (void) encodeWithCoder:(NSCoder *)encoder
 {
+    [encoder encodeObject:_estateId forKey:kId];
     [encoder encodeObject:_name forKey:kName];
     [encoder encodeObject:_content forKey:kContent];
     [encoder encodeObject:_attributeValues forKey:kAttributeValues];
@@ -46,20 +49,21 @@
 
 - (id) initWithCoder:(NSCoder*)decoder
 {
+    NSString* estateId = [decoder decodeObjectForKey:kId];
     NSString* name = [decoder decodeObjectForKey:kName];
     NSString* content = [decoder decodeObjectForKey:kContent];
     NSMutableArray* attributeValues = [decoder decodeObjectForKey:kAttributeValues];
     NSDate* lastUpdate = [decoder decodeObjectForKey:kLastUpdate];
     NSMutableArray* history = [decoder decodeObjectForKey:kHistory];
     
-    return [self initWithName:name withContent:content withAttributeValues:attributeValues withLastUpdate:lastUpdate withHistory:history];
+    return [self initWithId:estateId withName:name withContent:content withAttributeValues:attributeValues withLastUpdate:lastUpdate withHistory:history];
 }
 
 #pragma mark NSCopying
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    return [[EstateData alloc] initWithName:self.name withContent:self.content withAttributeValues:self.attributeValues withLastUpdate:self.lastUpdate withHistory:self.history];
+    return [[EstateData alloc] initWithId:self.estateId withName:self.name withContent:self.content withAttributeValues:self.attributeValues withLastUpdate:self.lastUpdate withHistory:self.history];
 }
 
 #pragma mark Synthesize

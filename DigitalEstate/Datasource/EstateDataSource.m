@@ -23,11 +23,6 @@
     return self;
 }
 
-- (NSMutableArray*)getEstates
-{
-    return _estates;
-}
-
 - (void)loadEstatesWithCompletionHandler:(void (^)(NSError* error))completionHandler
 {
     _estates = [NSMutableArray arrayWithArray:[_dataStrategy loadEstateData]];
@@ -73,6 +68,23 @@
 - (NSUInteger)indexOfObject:(EstateData*)estate
 {
     return [_estates indexOfObject:estate];
+}
+
+#pragma mark setter
+
+- (void)setDataStrategy:(id<DataStrategy>)dataStrategy
+{
+    if (dataStrategy == nil)
+        return;
+    
+    if (_dataStrategy != nil)
+    {
+        //try to save data, if this is a data strategy switch (not first time init).
+        [dataStrategy saveEstateData:_estates];
+    }
+
+    _dataStrategy = dataStrategy;
+    
 }
 
 #pragma mark Observable protocal

@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "ConstantDefinition.h"
+#import "Dropbox/Dropbox.h"
 
 @interface SettingViewController ()
 
@@ -55,6 +56,9 @@
         _switchPasswordButton.titleLabel.text = @"Turn Security PIN Off";
         _updatePasswordButton.enabled = TRUE;
     }
+    
+    NSString* datasourceType = [prefs stringForKey:kDatasourceType];
+    _dropboxSyncSwitch.on = [@"Dropbox" isEqualToString:datasourceType];
 }
 
 
@@ -95,15 +99,30 @@
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     if (_dropboxSyncSwitch.on)
     {
-        [prefs setObject:@"Dropbox" forKey:kDatasourceType];
-        [prefs synchronize];
+        DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
+        if (account)
+        {
+            NSLog(@"App already linked");
+        }
+        else
+        {
+            [[DBAccountManager sharedManager] linkFromController:self];
+        }
+        if (account)
+        {
+            [prefs setObject:@"Dropbox" forKey:kDatasourceType];
+            [prefs synchronize];
+        }
+        else
+        {
+            _dropboxSyncSwitch.on = FALSE;
+        }
     }
     else
     {
         [prefs removeObjectForKey:kDatasourceType];
         [prefs synchronize];
     }
-    //todo: need to update datasource and table view.
 }
 
 

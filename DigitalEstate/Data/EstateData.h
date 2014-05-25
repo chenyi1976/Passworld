@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#define kId @"id"
 #define kName @"name"
 #define kContent @"content"
 #define kAttributeValues @"attributeValues"
@@ -18,12 +19,14 @@
 
 @interface EstateData : NSObject<NSCoding, NSCopying>
 
+@property(nonatomic) NSString* estateId;
 @property(nonatomic) NSString* name;
 @property(nonatomic) NSString* content;
 @property(nonatomic) NSMutableArray* attributeValues;
 @property(readonly) NSDate* lastUpdate;
 @property(readonly) NSMutableArray* history;
+@property BOOL recycled;
 
-- (id) initWithName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableArray*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history;
+- (id) initWithId:(NSString*)estateId withName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableArray*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history;
 
 @end

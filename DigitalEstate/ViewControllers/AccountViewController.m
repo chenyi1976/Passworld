@@ -58,6 +58,32 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void) dismissAnyKeyboard:(UIView*)view {
+	NSArray *subviews = [view subviews];
+	for (UIView *subview in subviews) {
+		if ([subview isKindOfClass: [UITextField class]]) {
+			UITextField *textfield = (UITextField *)subview;
+			if ([textfield isEditing]) {
+				[textfield resignFirstResponder];
+			}
+		}
+        else
+        {
+            [self dismissAnyKeyboard:subview];
+        }
+	}
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    if (![[touch view] isKindOfClass:[UITextField class]])
+    {
+        [self dismissAnyKeyboard:self.view];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
+
 #pragma mark Keyboard Observer
 
 -(void) keyboardWillShow:(NSNotification *)notification
@@ -119,9 +145,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    {
-        [textField resignFirstResponder];
-    }
+    [textField resignFirstResponder];
     return YES;
 }
 
@@ -144,6 +168,8 @@
 
 - (IBAction)okButtonTouched:(id)sender
 {
+    [self dismissAnyKeyboard:self.view];
+
     if (estateData)
     {
         NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:estateData];
@@ -153,7 +179,10 @@
     }
     else
     {
-        EstateData* data = [[EstateData alloc] initWithName:_nameTextField.text withContent:nil withAttributeValues:_tableData withLastUpdate:[NSDate date] withHistory:nil];
+        NSDate* date = [NSDate date];
+        NSString* estateId = [NSString stringWithFormat:@"%@", date];
+
+        EstateData* data = [[EstateData alloc] initWithId:estateId withName:_nameTextField.text withContent:nil withAttributeValues:_tableData withLastUpdate:[NSDate date] withHistory:nil];
         [[DataSourceFactory getDataSource] addObject:data];
     }
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];
@@ -161,6 +190,8 @@
 
 - (IBAction)backButtonTouched:(id)sender
 {
+    [self dismissAnyKeyboard:self.view];
+
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];
 }
 

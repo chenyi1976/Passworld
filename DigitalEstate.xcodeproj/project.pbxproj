@@ -106,6 +106,7 @@
 		81CD2A1B192D568900785134 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A1A192D568900785134 /* ViewUtil.m */; };
 		81CD2A1D192DD9C800785134 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 81CD2A1C192DD9C800785134 /* README.md */; };
 		81DDE8931904980D00EA886D /* red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81DDE8921904980D00EA886D /* red@2x.png */; };
+		81E66F321931A0D70090C453 /* DataEncryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E66F311931A0D70090C453 /* DataEncryptUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,6 +267,8 @@
 		81CD2A1A192D568900785134 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewUtil.m; path = Util/ViewUtil.m; sourceTree = "<group>"; };
 		81CD2A1C192DD9C800785134 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		81DDE8921904980D00EA886D /* red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "red@2x.png"; path = "Images/red@2x.png"; sourceTree = "<group>"; };
+		81E66F301931A0D70090C453 /* DataEncryptUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataEncryptUtil.h; path = Util/DataEncryptUtil.h; sourceTree = "<group>"; };
+		81E66F311931A0D70090C453 /* DataEncryptUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataEncryptUtil.m; path = Util/DataEncryptUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -492,6 +495,8 @@
 				81594119192045F200D6EB14 /* KeyChainUtil.m */,
 				81CD2A19192D568900785134 /* ViewUtil.h */,
 				81CD2A1A192D568900785134 /* ViewUtil.m */,
+				81E66F301931A0D70090C453 /* DataEncryptUtil.h */,
+				81E66F311931A0D70090C453 /* DataEncryptUtil.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -742,6 +747,7 @@
 				812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */,
 				8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */,
 				813664B8190F870D00C0B76E /* SettingViewController.m in Sources */,
+				81E66F321931A0D70090C453 /* DataEncryptUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

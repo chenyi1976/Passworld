@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "DataStrategy.h"
+#import "Dropbox/Dropbox.h"
 
 @interface DropboxDataStrategy : NSObject<DataStrategy>
+
+@property (retain) DBDatastore *store;
 
 @end

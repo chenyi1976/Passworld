@@ -43,7 +43,7 @@ static EstateDataSource *datasource = nil;
     return datasource;
 }
 
-- (void)defaultsChanged:(NSNotification *) notification
++ (void)defaultsChanged:(NSNotification *) notification
 {
     if (datasource)
     {

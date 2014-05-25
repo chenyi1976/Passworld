@@ -16,9 +16,8 @@
 @property bool sortByLastUpdated;
 @property NSMutableArray* observers;
 @property NSMutableArray* estates;
-@property id<DataStrategy> dataStrategy;
-
-- (NSArray*)getEstates;
+@property NSMutableArray* deletedEstates;
+@property(nonatomic) id<DataStrategy> dataStrategy;
 
 - (void)loadEstatesWithCompletionHandler:(void (^)(NSError* error))completionHandler;
 
