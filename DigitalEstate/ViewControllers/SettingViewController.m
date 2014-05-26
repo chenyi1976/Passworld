@@ -58,7 +58,8 @@
     }
     
     NSString* datasourceType = [prefs stringForKey:kDatasourceType];
-    _dropboxSyncSwitch.on = [@"Dropbox" isEqualToString:datasourceType];
+    DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
+    _dropboxSyncSwitch.on = [@"Dropbox" isEqualToString:datasourceType] && account != nil;
 }
 
 

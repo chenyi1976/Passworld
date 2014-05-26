@@ -25,48 +25,38 @@
     return self;
 }
 
-
 - (NSArray*)loadEstateData
 {
-    DBTable *estateTable = [self.store getTable:@"estate"];
-    NSArray *recordArray = [estateTable query:@{ @"deleted": @NO } error:nil];
+    DBTable *estateTable = [self.store getTable:@"estates"];
+    NSArray *recordArray = [estateTable query:@{} error:nil];
 
-    //todo: need to reorder the query result first
+    if (recordArray == nil || recordArray.count == 0)
+        return nil;
     
-    NSMutableArray* estateDataArray = [[NSMutableArray alloc] init];
-    for (DBRecord* record in recordArray)
-    {
-        NSData* data = record[@"data"];
-        EstateData* estateData = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-        [estateDataArray addObject:estateData];
-    }
-
-    NSArray* decryptEstates = [DataEncryptUtil encryptData:estateDataArray];
-    return decryptEstates;
+    DBRecord* record = [recordArray objectAtIndex:0];
+    NSData* data = record[@"data"];
+    NSArray* estateDatas = [DataEncryptUtil decryptData:data];
+    return estateDatas;
 }
 
 - (void)saveEstateData:(NSArray*) estateDataArray
 {
-    DBTable *estateTable = [self.store getTable:@"estate"];
+    DBTable *estateTable = [self.store getTable:@"estates"];
     
-    NSArray* encryptEstates = [DataEncryptUtil encryptData:estateDataArray];
+    NSData* encryptedData = [DataEncryptUtil encryptData:estateDataArray];
 
-    for (EstateData* estateData in encryptEstates)
+    NSArray *results = [estateTable query:@{} error:nil];
+    if (results != nil && results.count == 1)
     {
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:estateData];
-        
-        NSArray *results = [estateTable query:@{ @"id": estateData.estateId } error:nil];
-        if (results != nil && results.count == 1)
-        {
-            //already exist, then update it
-            DBRecord *firstResult = [results objectAtIndex:0];
-            firstResult[@"Data"] = data;
-        }
-        else
-        {
-            //not found, then create it.
-            [estateTable insert:@{ @"id":estateData.estateId, @"data": data, @"deleted": estateData.recycled ? @YES: @NO, @"lastUpdate" : estateData.lastUpdate }];
-        }
+        //already exist, then update it
+        DBRecord *firstResult = [results objectAtIndex:0];
+        firstResult[@"data"] = encryptedData;
+        firstResult[@"lastUpdate"] = [NSDate date];
+    }
+    else
+    {
+        //not found, then create it.
+        [estateTable insert:@{@"data": encryptedData, @"lastUpdate": [NSDate date]}];
     }
     [self.store sync:nil];
 }

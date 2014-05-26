@@ -35,10 +35,20 @@
 
 @implementation AESCrypt
 
++ (NSData *)encryptData:(NSData *)messageData password:(NSString *)password {
+    NSData *encryptedData = [messageData AES256EncryptedDataUsingKey:[[password dataUsingEncoding:NSUTF8StringEncoding] SHA256Hash] error:nil];
+    return encryptedData;
+}
+
 + (NSString *)encrypt:(NSString *)message password:(NSString *)password {
   NSData *encryptedData = [[message dataUsingEncoding:NSUTF8StringEncoding] AES256EncryptedDataUsingKey:[[password dataUsingEncoding:NSUTF8StringEncoding] SHA256Hash] error:nil];
   NSString *base64EncodedString = [NSString base64StringFromData:encryptedData length:[encryptedData length]];
   return base64EncodedString;
+}
+
++ (NSData *)decryptData:(NSData *)encryptedData password:(NSString *)password {
+    NSData *decryptedData = [encryptedData decryptedAES256DataUsingKey:[[password dataUsingEncoding:NSUTF8StringEncoding] SHA256Hash] error:nil];
+    return decryptedData;
 }
 
 + (NSString *)decrypt:(NSString *)base64EncodedString password:(NSString *)password {

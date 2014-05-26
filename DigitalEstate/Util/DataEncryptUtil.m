@@ -15,78 +15,45 @@
 
 @implementation DataEncryptUtil
 
-+ (NSArray*)encryptData:(NSArray*)data
++ (NSData*)encryptData:(NSArray*)estateDatas
 {
+    if (estateDatas == nil)
+        return nil;
+    
+    if ([estateDatas count] == 0)
+        return nil;
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:estateDatas];
+    
     NSString* encryptKey = [KeyChainUtil loadFromKeyChainForKey:kEncryptKey];
-    if (encryptKey == nil)
-        return data;
-    
-    if (data == nil)
-        return data;
-    
-    if ([data count] == 0)
-        return data;
-
-    NSArray* encryptEstates = [[NSArray alloc] initWithArray:data copyItems:TRUE];
-    for (EstateData* data in encryptEstates)
+    if (encryptKey != nil)
     {
-        NSString *encryptedData = [AESCrypt encrypt:data.content password:encryptKey];
-        data.content = encryptedData;
-        if (data.attributeValues)
-        {
-            NSMutableArray* newAttributeValues = [[NSMutableArray alloc] init];
-            for (AttributeData* attributeData in data.attributeValues)
-            {
-                if (attributeData)
-                {
-                    NSString *encryptedAttrName = [AESCrypt encrypt:attributeData.attrName password:encryptKey];
-                    NSString *encryptedAttrValue = [AESCrypt encrypt:attributeData.attrValue password:encryptKey];
-                    [newAttributeValues addObject:[[AttributeData alloc] initWithId:attributeData.attrId name:encryptedAttrName value:encryptedAttrValue]];
-                }
-            }
-            data.attributeValues = newAttributeValues;
-        }
-        
-    }
-
-    return encryptEstates;
-}
-
-+ (NSArray*)decryptData:(NSArray*)data
-{
-    NSString* encryptKey = [KeyChainUtil loadFromKeyChainForKey:kEncryptKey];
-    if (encryptKey == nil)
-        return data;
-    
-    if (data == nil)
-        return data;
-    
-    if ([data count] == 0)
-        return data;
-    
-    NSArray* decryptEstates = [[NSArray alloc] initWithArray:data copyItems:TRUE];
-    for (EstateData* data in decryptEstates)
-    {
-        NSString *encryptedData = [AESCrypt encrypt:data.content password:encryptKey];
-        data.content = encryptedData;
-        if (data.attributeValues)
-        {
-            NSMutableArray* newAttributeValues = [[NSMutableArray alloc] init];
-            for (AttributeData* attributeData in data.attributeValues)
-            {
-                if (attributeData)
-                {
-                    NSString *encryptedAttrName = [AESCrypt decrypt:attributeData.attrName password:encryptKey];
-                    NSString *encryptedAttrValue = [AESCrypt decrypt:attributeData.attrValue password:encryptKey];
-                    [newAttributeValues addObject:[[AttributeData alloc] initWithId:attributeData.attrId name:encryptedAttrName value:encryptedAttrValue]];
-                }
-            }
-            data.attributeValues = newAttributeValues;
-        }
-        
+        data = [AESCrypt encryptData:data password:encryptKey];
+//        data = [encryptedStr dataUsingEncoding:NSUTF8StringEncoding];
+//        NSString* decryptedStr = [AESCrypt decrypt:encryptedStr password:encryptKey];
+//        NSLog(@"%@\n%@", encryptedStr, decryptedStr);
     }
     
-    return decryptEstates;
+    return data;
 }
+
++ (NSArray*)decryptData:(NSData*)data
+{
+    if (data == nil)
+        return nil;
+    
+    NSString* encryptKey = [KeyChainUtil loadFromKeyChainForKey:kEncryptKey];
+    if (encryptKey != nil)
+    {
+        data = [AESCrypt decryptData:data password:encryptKey];
+//        data = [decryptedStr dataUsingEncoding:NSUTF8StringEncoding];
+    }
+    
+    NSArray* estateDataArray = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    return estateDataArray;
+}
+
+
 
 @end

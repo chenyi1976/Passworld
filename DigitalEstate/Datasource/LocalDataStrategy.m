@@ -19,7 +19,11 @@
 - (NSArray*)loadEstateData
 {
     NSArray* encryptEstates = [CacheManager loadFromCache:[NSArray arrayWithObject:kEstate] WithExpireTime:0];
-    NSArray* decryptEstates = [DataEncryptUtil decryptData:encryptEstates];
+    if (encryptEstates == nil || encryptEstates.count == 0)
+        return encryptEstates;
+
+    NSData* data = [encryptEstates objectAtIndex:0];
+    NSArray* decryptEstates = [DataEncryptUtil decryptData:data];
 
     return [NSMutableArray arrayWithArray:decryptEstates];
 }
@@ -27,8 +31,8 @@
 
 - (void)saveEstateData:(NSArray*) estateDataArray
 {
-    NSArray* encryptEstates = [DataEncryptUtil encryptData:estateDataArray];
-    [CacheManager saveToCache:encryptEstates withKey:[NSArray arrayWithObject:kEstate]];
+    NSData* data = [DataEncryptUtil encryptData:estateDataArray];
+    [CacheManager saveToCache:[NSArray arrayWithObject:data] withKey:[NSArray arrayWithObject:kEstate]];
 }
 
 

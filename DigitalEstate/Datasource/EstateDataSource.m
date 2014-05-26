@@ -8,6 +8,8 @@
 
 #import "EstateDataSource.h"
 #import "LocalDataStrategy.h"
+#import "DropboxDataStrategy.h"
+#import "ConstantDefinition.h"
 
 @implementation EstateDataSource
 
@@ -17,8 +19,20 @@
     {
 //        _sortByLastUpdated = false;
         _observers = [[NSMutableArray alloc] init];
+        
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        NSString* type = [prefs stringForKey:kDatasourceType];
+        DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
+
+        if ([@"Dropbox" isEqualToString:type] && account != nil)
+        {
+            _dataStrategy = [[DropboxDataStrategy alloc] init];
+        }
+        else
+        {
+            _dataStrategy = [[LocalDataStrategy alloc] init];
+        }
         [self loadEstatesWithCompletionHandler:nil];
-        _dataStrategy = [[LocalDataStrategy alloc] init];
     }
     return self;
 }

@@ -10,8 +10,8 @@
 
 @interface DataEncryptUtil : NSObject
 
-+ (NSArray*)encryptData:(NSArray*)data;
-+ (NSArray*)decryptData:(NSArray*)data;
++ (NSData*)encryptData:(NSArray*)estateDatas;
++ (NSArray*)decryptData:(NSData*)dataStr;
 
 
 @end

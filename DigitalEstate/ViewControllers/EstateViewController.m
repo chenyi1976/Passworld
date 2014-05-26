@@ -170,7 +170,7 @@
         int lineCount = data.attributeValues.count;
         if (data.content != nil && data.content.length > 0)
         {
-            lineCount = data.content.length / 22;
+            lineCount = data.content.length / 22 + 1;
             if (lineCount > 4)
                 lineCount = 4;
         }
