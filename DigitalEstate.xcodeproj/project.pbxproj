@@ -885,7 +885,7 @@
 				GCC_PREFIX_HEADER = "DigitalEstate/DigitalEstate-Prefix.pch";
 				INFOPLIST_FILE = "DigitalEstate/DigitalEstate-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "455E9A41-B6D3-4D5A-8E37-CD8DB63E7384";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -906,7 +906,7 @@
 				GCC_PREFIX_HEADER = "DigitalEstate/DigitalEstate-Prefix.pch";
 				INFOPLIST_FILE = "DigitalEstate/DigitalEstate-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "455E9A41-B6D3-4D5A-8E37-CD8DB63E7384";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

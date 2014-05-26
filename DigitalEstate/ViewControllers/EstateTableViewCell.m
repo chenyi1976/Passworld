@@ -101,7 +101,7 @@
     }
     else
     {
-        int lineCount = data.content.length / 22;
+        NSUInteger lineCount = data.content.length / 22 + 1;
         _contentLabel.numberOfLines = lineCount > 4? 4 : lineCount;
         _contentLabel.text =  data.content;
     }

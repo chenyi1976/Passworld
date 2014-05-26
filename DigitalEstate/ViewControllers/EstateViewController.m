@@ -36,8 +36,11 @@
     [[DataSourceFactory getDataSource] registerObserver:self];
     
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setBool:true forKey:kWelcomed];
-    [prefs synchronize];
+    if (![prefs boolForKey:kWelcomed])
+    {
+        [prefs setBool:true forKey:kWelcomed];
+        [prefs synchronize];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -167,7 +170,7 @@
     if (estates && indexPath.row < [estates count])
     {
         EstateData* data = [estates objectAtIndex:indexPath.row];
-        int lineCount = data.attributeValues.count;
+        NSUInteger lineCount = data.attributeValues.count;
         if (data.content != nil && data.content.length > 0)
         {
             lineCount = data.content.length / 22 + 1;

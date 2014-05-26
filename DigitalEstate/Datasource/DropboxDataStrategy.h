@@ -10,6 +10,8 @@
 #import "DataStrategy.h"
 #import "Dropbox/Dropbox.h"
 
+#define kEstateTable @"OPPS"
+
 @interface DropboxDataStrategy : NSObject<DataStrategy>
 
 @property (retain) DBDatastore *store;

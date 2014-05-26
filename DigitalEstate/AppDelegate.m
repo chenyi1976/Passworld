@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ConstantDefinition.h"
 #import "Dropbox/Dropbox.h"
+#import "DataSourceFactory.h"
 
 @implementation AppDelegate
 
@@ -72,6 +73,10 @@
 //        [app.window setRootViewController:screen];
 //
 //    }
+    
+    EstateDataSource* datasource = [DataSourceFactory getDataSource];
+    [datasource updateDataStrategy];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

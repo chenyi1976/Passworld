@@ -27,7 +27,7 @@
 
 - (NSArray*)loadEstateData
 {
-    DBTable *estateTable = [self.store getTable:@"estates"];
+    DBTable *estateTable = [self.store getTable:kEstateTable];
     NSArray *recordArray = [estateTable query:@{} error:nil];
 
     if (recordArray == nil || recordArray.count == 0)
@@ -41,7 +41,7 @@
 
 - (void)saveEstateData:(NSArray*) estateDataArray
 {
-    DBTable *estateTable = [self.store getTable:@"estates"];
+    DBTable *estateTable = [self.store getTable:kEstateTable];
     
     NSData* encryptedData = [DataEncryptUtil encryptData:estateDataArray];
 

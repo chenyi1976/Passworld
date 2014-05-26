@@ -33,4 +33,6 @@
 
 - (NSUInteger)indexOfObject:(EstateData*)estate;
 
+- (void)updateDataStrategy;
+
 @end

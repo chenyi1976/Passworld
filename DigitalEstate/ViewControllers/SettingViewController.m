@@ -9,6 +9,7 @@
 #import "SettingViewController.h"
 #import "ConstantDefinition.h"
 #import "Dropbox/Dropbox.h"
+#import "DataSourceFactory.h"
 
 @interface SettingViewController ()
 
@@ -107,22 +108,19 @@
         }
         else
         {
-            [[DBAccountManager sharedManager] linkFromController:self];
-        }
-        if (account)
-        {
             [prefs setObject:@"Dropbox" forKey:kDatasourceType];
             [prefs synchronize];
-        }
-        else
-        {
-            _dropboxSyncSwitch.on = FALSE;
+
+            [[DBAccountManager sharedManager] linkFromController:self];
+
+            [[DataSourceFactory getDataSource] updateDataStrategy];
         }
     }
     else
     {
         [prefs removeObjectForKey:kDatasourceType];
         [prefs synchronize];
+        [[DataSourceFactory getDataSource] updateDataStrategy];
     }
 }
 

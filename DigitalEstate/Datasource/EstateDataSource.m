@@ -20,18 +20,7 @@
 //        _sortByLastUpdated = false;
         _observers = [[NSMutableArray alloc] init];
         
-        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        NSString* type = [prefs stringForKey:kDatasourceType];
-        DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
-
-        if ([@"Dropbox" isEqualToString:type] && account != nil)
-        {
-            _dataStrategy = [[DropboxDataStrategy alloc] init];
-        }
-        else
-        {
-            _dataStrategy = [[LocalDataStrategy alloc] init];
-        }
+        [self updateDataStrategy];
         [self loadEstatesWithCompletionHandler:nil];
     }
     return self;
@@ -42,6 +31,8 @@
     _estates = [NSMutableArray arrayWithArray:[_dataStrategy loadEstateData]];
     if (completionHandler)
         completionHandler(nil);
+    else
+        [self fireDataChanged];
 }
 
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(EstateData*)estate
@@ -84,6 +75,28 @@
     return [_estates indexOfObject:estate];
 }
 
+- (void)updateDataStrategy
+{
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    
+    NSString* type = [prefs stringForKey:kDatasourceType];
+    
+    if ([@"Dropbox" isEqualToString:type])
+    {
+        if (![_dataStrategy isKindOfClass:[DropboxDataStrategy class]])
+        {
+            DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
+            if (account)
+                [self setDataStrategy:[[DropboxDataStrategy alloc] init]];
+        }
+    }
+    else
+    {
+        if (![_dataStrategy isKindOfClass:[LocalDataStrategy class]])
+            [self setDataStrategy:[[LocalDataStrategy alloc] init]];
+    }
+}
+
 #pragma mark setter
 
 - (void)setDataStrategy:(id<DataStrategy>)dataStrategy
@@ -93,7 +106,29 @@
     
     if (_dataStrategy != nil)
     {
-        //try to save data, if this is a data strategy switch (not first time init).
+        //merge the result;
+        NSArray* datasInNewStrategy = [dataStrategy loadEstateData];
+        if (datasInNewStrategy)
+            for (EstateData* data in datasInNewStrategy)
+            {
+                bool alreadyExist = false;
+                for (EstateData* data2 in _estates)
+                {
+                    if ([data2.estateId isEqualToString:data.estateId])
+                    {
+                        alreadyExist = TRUE;
+                        if (data2.lastUpdate < data.lastUpdate)
+                        {
+                            [_estates replaceObjectAtIndex:[_estates indexOfObject:data2] withObject:data];
+                        }
+                        break;
+                    }
+                }
+                if (!alreadyExist)
+                {
+                    [_estates addObject:data];
+                }
+            }
         [dataStrategy saveEstateData:_estates];
     }
 
