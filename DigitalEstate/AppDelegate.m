@@ -73,10 +73,6 @@
 //        [app.window setRootViewController:screen];
 //
 //    }
-    
-    EstateDataSource* datasource = [DataSourceFactory getDataSource];
-    [datasource updateDataStrategy];
-
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -87,6 +83,8 @@
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url sourceApplication:(NSString *)source annotation:(id)annotation {
     DBAccount *account = [[DBAccountManager sharedManager] handleOpenURL:url];
     if (account) {
+        EstateDataSource* datasource = [DataSourceFactory getDataSource];
+        [datasource updateDataStrategy];
         NSLog(@"App linked successfully!");
         return YES;
     }

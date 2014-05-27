@@ -112,21 +112,21 @@
             for (EstateData* data in datasInNewStrategy)
             {
                 bool alreadyExist = false;
-                for (EstateData* data2 in _estates)
+                for (EstateData* dataInView in _estates)
                 {
-                    if ([data2.estateId isEqualToString:data.estateId])
+                    if ([dataInView.estateId isEqualToString:data.estateId])
                     {
                         alreadyExist = TRUE;
-                        if (data2.lastUpdate < data.lastUpdate)
+                        if ([dataInView.lastUpdate compare:data.lastUpdate] == NSOrderedDescending)
                         {
-                            [_estates replaceObjectAtIndex:[_estates indexOfObject:data2] withObject:data];
+                            [self replaceObjectAtIndex:[_estates indexOfObject:dataInView] withObject:data];
                         }
                         break;
                     }
                 }
                 if (!alreadyExist)
                 {
-                    [_estates addObject:data];
+                    [self addObject:data];
                 }
             }
         [dataStrategy saveEstateData:_estates];

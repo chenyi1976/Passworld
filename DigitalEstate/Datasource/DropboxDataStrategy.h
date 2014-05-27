@@ -11,6 +11,8 @@
 #import "Dropbox/Dropbox.h"
 
 #define kEstateTable @"OPPS"
+#define kFieldData @"data"
+#define kFieldLastUpdate @"lastUpdated"
 
 @interface DropboxDataStrategy : NSObject<DataStrategy>
 

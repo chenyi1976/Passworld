@@ -27,14 +27,18 @@
 
 - (NSArray*)loadEstateData
 {
+    //have to sync first, otherwise query will return empty result even there is data.
+    [self.store sync:nil];
+
     DBTable *estateTable = [self.store getTable:kEstateTable];
-    NSArray *recordArray = [estateTable query:@{} error:nil];
+    
+    NSArray *recordArray = [estateTable query:nil error:nil];
 
     if (recordArray == nil || recordArray.count == 0)
         return nil;
     
     DBRecord* record = [recordArray objectAtIndex:0];
-    NSData* data = record[@"data"];
+    NSData* data = record[kFieldData];
     NSArray* estateDatas = [DataEncryptUtil decryptData:data];
     return estateDatas;
 }
@@ -45,18 +49,18 @@
     
     NSData* encryptedData = [DataEncryptUtil encryptData:estateDataArray];
 
-    NSArray *results = [estateTable query:@{} error:nil];
-    if (results != nil && results.count == 1)
+    NSArray *results = [estateTable query:nil error:nil];
+    if (results != nil && results.count != 0)
     {
         //already exist, then update it
         DBRecord *firstResult = [results objectAtIndex:0];
-        firstResult[@"data"] = encryptedData;
-        firstResult[@"lastUpdate"] = [NSDate date];
+        firstResult[kFieldData] = encryptedData;
+        firstResult[kFieldLastUpdate] = [NSDate date];
     }
     else
     {
         //not found, then create it.
-        [estateTable insert:@{@"data": encryptedData, @"lastUpdate": [NSDate date]}];
+        [estateTable insert:@{kFieldData: encryptedData, kFieldLastUpdate: [NSDate date]}];
     }
     [self.store sync:nil];
 }

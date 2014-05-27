@@ -105,6 +105,8 @@
         if (account)
         {
             NSLog(@"App already linked");
+
+            [[DataSourceFactory getDataSource] updateDataStrategy];
         }
         else
         {
@@ -113,7 +115,8 @@
 
             [[DBAccountManager sharedManager] linkFromController:self];
 
-            [[DataSourceFactory getDataSource] updateDataStrategy];
+            //comment following line, because this will happen in app delegate.
+//            [[DataSourceFactory getDataSource] updateDataStrategy];
         }
     }
     else
