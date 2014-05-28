@@ -15,27 +15,36 @@
 
 @implementation DropboxDataStrategy
 
-- (id) init
+- (id)initWithDataSource:(EstateDataSource*)datasource
 {
     if (self = [super init])
     {
+        
         DBAccount *account = [[DBAccountManager sharedManager] linkedAccount];
         _store = [DBDatastore openDefaultStoreForAccount:account error:nil];
+        _datasource = datasource;
+        
+        __weak typeof(self) weakSelf = self;
+        [_store addObserver:self block:^{
+            NSLog(@"store status: %lu", (unsigned long)weakSelf.store.status);
+            if (weakSelf.store.status & (DBDatastoreIncoming | DBDatastoreOutgoing)) {
+                [weakSelf.store sync:nil];
+            }
+            if (weakSelf.store.status == DBDatastoreConnected)
+            {
+                NSArray* loadedData = [weakSelf loadDropboxDatastore];
+                [weakSelf.datasource estateDataLoaded:loadedData];
+            }
+        }];
     }
     return self;
 }
 
-- (NSArray*)loadEstateData
+- (NSArray*)loadDropboxDatastore
 {
-    //have to sync first, otherwise query will return empty result even there is data.
-    [self.store sync:nil];
-
-    DBTable *estateTable = [self.store getTable:kEstateTable];
+    DBTable *estateTable = [_store getTable:kEstateTable];
     
     NSArray *recordArray = [estateTable query:nil error:nil];
-
-    if (recordArray == nil || recordArray.count == 0)
-        return nil;
     
     DBRecord* record = [recordArray objectAtIndex:0];
     NSData* data = record[kFieldData];
@@ -43,11 +52,23 @@
     return estateDatas;
 }
 
+- (NSArray*)loadEstateData
+{
+    [_store sync:nil];
+    return [self loadDropboxDatastore];
+}
+
 - (void)saveEstateData:(NSArray*) estateDataArray
 {
     DBTable *estateTable = [self.store getTable:kEstateTable];
     
     NSData* encryptedData = [DataEncryptUtil encryptData:estateDataArray];
+    
+    if (encryptedData == nil)
+    {
+        NSLog(@"DropboxDataStrategy saveEstatateData: data is nil");
+        return;
+    }
 
     NSArray *results = [estateTable query:nil error:nil];
     if (results != nil && results.count != 0)
@@ -62,7 +83,6 @@
         //not found, then create it.
         [estateTable insert:@{kFieldData: encryptedData, kFieldLastUpdate: [NSDate date]}];
     }
-    [self.store sync:nil];
 }
 
 @end

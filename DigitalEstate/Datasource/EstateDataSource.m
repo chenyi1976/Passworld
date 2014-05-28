@@ -28,11 +28,16 @@
 
 - (void)loadEstatesWithCompletionHandler:(void (^)(NSError* error))completionHandler
 {
-    _estates = [NSMutableArray arrayWithArray:[_dataStrategy loadEstateData]];
-    if (completionHandler)
-        completionHandler(nil);
-    else
-        [self fireDataChanged];
+    NSArray* loadedData = [_dataStrategy loadEstateData];
+    
+    if (loadedData)
+    {
+        _estates = [NSMutableArray arrayWithArray:loadedData];
+        if (completionHandler)
+            completionHandler(nil);
+        else
+            [self fireDataChanged];
+    }
 }
 
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(EstateData*)estate
@@ -97,6 +102,34 @@
     }
 }
 
+- (void)estateDataLoaded:(NSArray*)datas
+{
+    if (datas == nil)
+        return;
+    
+    //merge the data;
+    for (EstateData* data in datas)
+    {
+        bool alreadyExist = false;
+        for (EstateData* dataInView in _estates)
+        {
+            if ([dataInView.estateId isEqualToString:data.estateId])
+            {
+                alreadyExist = TRUE;
+                if ([dataInView.lastUpdate compare:data.lastUpdate] == NSOrderedDescending)
+                {
+                    [self replaceObjectAtIndex:[_estates indexOfObject:dataInView] withObject:data];
+                }
+                break;
+            }
+        }
+        if (!alreadyExist)
+        {
+            [self addObject:data];
+        }
+    }
+}
+
 #pragma mark setter
 
 - (void)setDataStrategy:(id<DataStrategy>)dataStrategy
@@ -104,36 +137,40 @@
     if (dataStrategy == nil)
         return;
     
-    if (_dataStrategy != nil)
-    {
-        //merge the result;
-        NSArray* datasInNewStrategy = [dataStrategy loadEstateData];
-        if (datasInNewStrategy)
-            for (EstateData* data in datasInNewStrategy)
-            {
-                bool alreadyExist = false;
-                for (EstateData* dataInView in _estates)
-                {
-                    if ([dataInView.estateId isEqualToString:data.estateId])
-                    {
-                        alreadyExist = TRUE;
-                        if ([dataInView.lastUpdate compare:data.lastUpdate] == NSOrderedDescending)
-                        {
-                            [self replaceObjectAtIndex:[_estates indexOfObject:dataInView] withObject:data];
-                        }
-                        break;
-                    }
-                }
-                if (!alreadyExist)
-                {
-                    [self addObject:data];
-                }
-            }
-        [dataStrategy saveEstateData:_estates];
-    }
+//    if (_dataStrategy != nil)
+//    {
+//        //try to merge, this takes a while
+//            NSArray* datasInNewStrategy = [dataStrategy loadEstateData];
+//            if (datasInNewStrategy)
+//                for (EstateData* data in datasInNewStrategy)
+//                {
+//                    bool alreadyExist = false;
+//                    for (EstateData* dataInView in _estates)
+//                    {
+//                        if ([dataInView.estateId isEqualToString:data.estateId])
+//                        {
+//                            alreadyExist = TRUE;
+//                            if ([dataInView.lastUpdate compare:data.lastUpdate] == NSOrderedDescending)
+//                            {
+//                                [self replaceObjectAtIndex:[_estates indexOfObject:dataInView] withObject:data];
+//                            }
+//                            break;
+//                        }
+//                    }
+//                    if (!alreadyExist)
+//                    {
+//                        [self addObject:data];
+//                    }
+//                }
+//            [dataStrategy saveEstateData:_estates];
+//        });
+//    }
 
     _dataStrategy = dataStrategy;
     
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self loadEstatesWithCompletionHandler:nil];
+    });
 }
 
 #pragma mark Observable protocal

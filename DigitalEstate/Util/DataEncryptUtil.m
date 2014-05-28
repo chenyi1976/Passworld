@@ -49,9 +49,19 @@
 //        data = [decryptedStr dataUsingEncoding:NSUTF8StringEncoding];
     }
     
-    NSArray* estateDataArray = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    if (data == nil)
+        return nil;
     
-    return estateDataArray;
+    @try {
+        NSArray* estateDataArray = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        return estateDataArray;
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@", exception);
+    }
+    @finally {
+    }
+    return nil;
 }
 
 

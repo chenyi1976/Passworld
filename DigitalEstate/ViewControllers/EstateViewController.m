@@ -220,7 +220,9 @@
 
 - (void)dataChanged
 {
-    [_tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        [_tableView reloadData];
+    });
 }
 
 #pragma mark - IBAction

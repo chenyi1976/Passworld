@@ -24,22 +24,28 @@
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     
     long pass1 = [prefs integerForKey:kPassword1];
     long pass2 = [prefs integerForKey:kPassword2];
     long pass3 = [prefs integerForKey:kPassword3];
     long pass4 = [prefs integerForKey:kPassword4];
-    if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
+    bool isLinkingDropbox = [prefs boolForKey:kIsLinkingDropbox];
+    if (!isLinkingDropbox)
     {
-        UIViewController* rootViewController = [[self window] rootViewController];
-        UIViewController *screen = [rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SecurityPassViewController"];
-        
-        AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        [app.window setRootViewController:screen];
-        
+        if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
+        {
+            UIViewController* rootViewController = [[self window] rootViewController];
+            UIViewController *screen = [rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SecurityPassViewController"];
+            
+            AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [app.window setRootViewController:screen];
+        }
+    }
+    else
+    {
+        [prefs removeObjectForKey:kIsLinkingDropbox];
+        [prefs synchronize];
     }
 }
 
@@ -81,6 +87,14 @@
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url sourceApplication:(NSString *)source annotation:(id)annotation {
+    
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    if (![prefs boolForKey:kIsLinkingDropbox])
+    {
+        [prefs setBool:true forKey:kIsLinkingDropbox];
+        [prefs synchronize];
+    }
+
     DBAccount *account = [[DBAccountManager sharedManager] handleOpenURL:url];
     if (account) {
         EstateDataSource* datasource = [DataSourceFactory getDataSource];

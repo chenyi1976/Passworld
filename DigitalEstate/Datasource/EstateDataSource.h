@@ -35,4 +35,6 @@
 
 - (void)updateDataStrategy;
 
+- (void)estateDataLoaded:(NSArray*)datas;
+
 @end

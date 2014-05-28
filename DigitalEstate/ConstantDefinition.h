@@ -26,6 +26,7 @@
 #define kEstate @"estate"
 
 #define kWelcomed @"welcomed"
+#define kIsLinkingDropbox @"isLinkingDropbox"
 
 #define kAttrContent @"attrContent"
 #define kAttributeAccountName @"attrAccountName"

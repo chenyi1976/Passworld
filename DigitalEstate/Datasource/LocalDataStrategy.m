@@ -24,14 +24,19 @@
 
     NSData* data = [encryptEstates objectAtIndex:0];
     NSArray* decryptEstates = [DataEncryptUtil decryptData:data];
-
-    return [NSMutableArray arrayWithArray:decryptEstates];
+    
+    return decryptEstates;
 }
 
 
 - (void)saveEstateData:(NSArray*) estateDataArray
 {
     NSData* data = [DataEncryptUtil encryptData:estateDataArray];
+    if (data == nil)
+    {
+        NSLog(@"LocalDataStrategy saveEstatateData: data is nil");
+        return;
+    }
     [CacheManager saveToCache:[NSArray arrayWithObject:data] withKey:[NSArray arrayWithObject:kEstate]];
 }
 
