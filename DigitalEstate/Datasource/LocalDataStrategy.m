@@ -34,7 +34,7 @@
     NSData* data = [DataEncryptUtil encryptData:estateDataArray];
     if (data == nil)
     {
-        NSLog(@"LocalDataStrategy saveEstatateData: data is nil");
+        NSLog(@"LocalDataStrategy saveEstatateData: data is nil after encryption");
         return;
     }
     [CacheManager saveToCache:[NSArray arrayWithObject:data] withKey:[NSArray arrayWithObject:kEstate]];

@@ -19,6 +19,7 @@
     {
 //        _sortByLastUpdated = false;
         _observers = [[NSMutableArray alloc] init];
+        _estates = [[NSMutableArray alloc] init];
         
         [self updateDataStrategy];
         [self loadEstatesWithCompletionHandler:nil];
@@ -30,14 +31,11 @@
 {
     NSArray* loadedData = [_dataStrategy loadEstateData];
     
-    if (loadedData)
-    {
-        _estates = [NSMutableArray arrayWithArray:loadedData];
-        if (completionHandler)
-            completionHandler(nil);
-        else
-            [self fireDataChanged];
-    }
+    [self estateDataLoaded:loadedData];
+    if (completionHandler)
+        completionHandler(nil);
+    else
+        [self fireDataChanged];
 }
 
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(EstateData*)estate
@@ -92,7 +90,7 @@
         {
             DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
             if (account)
-                [self setDataStrategy:[[DropboxDataStrategy alloc] init]];
+                [self setDataStrategy:[[DropboxDataStrategy alloc] initWithDataSource:self]];
         }
     }
     else
@@ -104,29 +102,52 @@
 
 - (void)estateDataLoaded:(NSArray*)datas
 {
+    //if loaded datas is nil, then try to see if we need to save existing data.
     if (datas == nil)
+    {
+        if (_estates != nil && [_estates count] > 0)
+        {
+            [_dataStrategy saveEstateData:_estates];
+        }
         return;
+    }
     
-    //merge the data;
+    //merge the data
+    bool changed = false;
     for (EstateData* data in datas)
     {
+        //if _estates has a new version of the loaded data, then no need to update _estates with the loaded data.
         bool alreadyExist = false;
         for (EstateData* dataInView in _estates)
         {
             if ([dataInView.estateId isEqualToString:data.estateId])
             {
-                alreadyExist = TRUE;
+                alreadyExist = true;
                 if ([dataInView.lastUpdate compare:data.lastUpdate] == NSOrderedDescending)
                 {
-                    [self replaceObjectAtIndex:[_estates indexOfObject:dataInView] withObject:data];
+                    [_estates replaceObjectAtIndex:[_estates indexOfObject:dataInView] withObject:data];
+                    changed = true;
                 }
                 break;
             }
         }
         if (!alreadyExist)
         {
-            [self addObject:data];
+            [_estates addObject:data];
+            changed = true;
         }
+    }
+    
+    //if merged result is different with the loaded data, then save it back.
+    if (![_estates isEqualToArray:datas])
+    {
+        [_dataStrategy saveEstateData:_estates];
+    }
+    
+    //if merged result changed _estates, then refresh UITableView
+    if (changed)
+    {
+        [self fireDataChanged];
     }
 }
 
@@ -136,38 +157,10 @@
 {
     if (dataStrategy == nil)
         return;
-    
-//    if (_dataStrategy != nil)
-//    {
-//        //try to merge, this takes a while
-//            NSArray* datasInNewStrategy = [dataStrategy loadEstateData];
-//            if (datasInNewStrategy)
-//                for (EstateData* data in datasInNewStrategy)
-//                {
-//                    bool alreadyExist = false;
-//                    for (EstateData* dataInView in _estates)
-//                    {
-//                        if ([dataInView.estateId isEqualToString:data.estateId])
-//                        {
-//                            alreadyExist = TRUE;
-//                            if ([dataInView.lastUpdate compare:data.lastUpdate] == NSOrderedDescending)
-//                            {
-//                                [self replaceObjectAtIndex:[_estates indexOfObject:dataInView] withObject:data];
-//                            }
-//                            break;
-//                        }
-//                    }
-//                    if (!alreadyExist)
-//                    {
-//                        [self addObject:data];
-//                    }
-//                }
-//            [dataStrategy saveEstateData:_estates];
-//        });
-//    }
 
     _dataStrategy = dataStrategy;
     
+    //load data from new data strategy with a thread.
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self loadEstatesWithCompletionHandler:nil];
     });

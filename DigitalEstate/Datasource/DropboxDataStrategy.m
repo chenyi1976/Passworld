@@ -46,10 +46,17 @@
     
     NSArray *recordArray = [estateTable query:nil error:nil];
     
-    DBRecord* record = [recordArray objectAtIndex:0];
-    NSData* data = record[kFieldData];
-    NSArray* estateDatas = [DataEncryptUtil decryptData:data];
-    return estateDatas;
+    if (recordArray )
+    {
+        if ([recordArray count] > 0)
+        {
+            DBRecord* record = [recordArray objectAtIndex:0];
+            NSData* data = record[kFieldData];
+            NSArray* estateDatas = [DataEncryptUtil decryptData:data];
+            return estateDatas;
+        }
+    }
+    return nil;
 }
 
 - (NSArray*)loadEstateData
@@ -66,7 +73,7 @@
     
     if (encryptedData == nil)
     {
-        NSLog(@"DropboxDataStrategy saveEstatateData: data is nil");
+        NSLog(@"DropboxDataStrategy saveEstatateData: data is nil after encryption");
         return;
     }
 

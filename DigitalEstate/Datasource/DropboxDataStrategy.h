@@ -11,7 +11,7 @@
 #import "Dropbox/Dropbox.h"
 #import "EstateDataSource.h"
 
-#define kEstateTable @"OPPS"
+#define kEstateTable @"O_P_P_S"
 #define kFieldData @"data"
 #define kFieldLastUpdate @"lastUpdated"
 
