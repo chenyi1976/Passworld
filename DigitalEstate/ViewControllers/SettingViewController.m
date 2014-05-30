@@ -102,6 +102,10 @@
     if (_dropboxSyncSwitch.on)
     {
         DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
+
+        [prefs setObject:@"Dropbox" forKey:kDatasourceType];
+        [prefs synchronize];
+
         if (account)
         {
             NSLog(@"App already linked");
@@ -110,9 +114,6 @@
         }
         else
         {
-            [prefs setObject:@"Dropbox" forKey:kDatasourceType];
-            [prefs synchronize];
-
             [[DBAccountManager sharedManager] linkFromController:self];
 
             //comment following line, because this will happen in app delegate.

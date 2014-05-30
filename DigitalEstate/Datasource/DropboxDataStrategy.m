@@ -53,6 +53,10 @@
             DBRecord* record = [recordArray objectAtIndex:0];
             NSData* data = record[kFieldData];
             NSArray* estateDatas = [DataEncryptUtil decryptData:data];
+            for (EstateData* estateData in estateDatas)
+            {
+                [estateData setSynced:true];
+            }
             return estateDatas;
         }
     }
@@ -65,11 +69,11 @@
     return [self loadDropboxDatastore];
 }
 
-- (void)saveEstateData:(NSArray*) estateDataArray
+- (void)saveEstateData:(NSArray*)estateDatas withDeletedData:(NSArray*)deletedEstateDatas;
 {
-    DBTable *estateTable = [self.store getTable:kEstateTable];
-    
-    NSData* encryptedData = [DataEncryptUtil encryptData:estateDataArray];
+    NSMutableArray* allDatas = [[NSMutableArray alloc] initWithArray:estateDatas];
+    [allDatas addObjectsFromArray:deletedEstateDatas];
+    NSData* encryptedData = [DataEncryptUtil encryptData:allDatas];
     
     if (encryptedData == nil)
     {
@@ -77,6 +81,7 @@
         return;
     }
 
+    DBTable *estateTable = [self.store getTable:kEstateTable];    
     NSArray *results = [estateTable query:nil error:nil];
     if (results != nil && results.count != 0)
     {
@@ -90,6 +95,11 @@
         //not found, then create it.
         [estateTable insert:@{kFieldData: encryptedData, kFieldLastUpdate: [NSDate date]}];
     }
+}
+
+- (bool)isLocal
+{
+    return false;
 }
 
 @end

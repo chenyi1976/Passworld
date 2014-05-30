@@ -12,7 +12,7 @@
 @protocol DataStrategy <NSObject>
 
 - (NSArray*)loadEstateData;
-
-- (void)saveEstateData:(NSArray*) estateDataArray;
+- (void)saveEstateData:(NSArray*)estateDatas withDeletedData:(NSArray*)deletedEstateDatas;
+- (bool)isLocal;
 
 @end

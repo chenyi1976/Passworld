@@ -182,7 +182,7 @@
         NSDate* date = [NSDate date];
         NSString* estateId = [NSString stringWithFormat:@"%@", date];
 
-        EstateData* data = [[EstateData alloc] initWithId:estateId withName:_nameTextField.text withContent:nil withAttributeValues:_tableData withLastUpdate:[NSDate date] withHistory:nil];
+        EstateData* data = [[EstateData alloc] initWithId:estateId withName:_nameTextField.text withContent:nil withAttributeValues:_tableData withLastUpdate:[NSDate date] withHistory:nil withDeleted:false];
         [[DataSourceFactory getDataSource] addObject:data];
     }
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];

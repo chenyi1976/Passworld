@@ -29,9 +29,11 @@
 }
 
 
-- (void)saveEstateData:(NSArray*) estateDataArray
+- (void)saveEstateData:(NSArray*)estateDatas withDeletedData:(NSArray*)deletedEstateDatas;
 {
-    NSData* data = [DataEncryptUtil encryptData:estateDataArray];
+    NSMutableArray* allDatas = [[NSMutableArray alloc] initWithArray:estateDatas];
+    [allDatas addObjectsFromArray:deletedEstateDatas];
+    NSData* data = [DataEncryptUtil encryptData:allDatas];
     if (data == nil)
     {
         NSLog(@"LocalDataStrategy saveEstatateData: data is nil after encryption");
@@ -40,5 +42,9 @@
     [CacheManager saveToCache:[NSArray arrayWithObject:data] withKey:[NSArray arrayWithObject:kEstate]];
 }
 
+- (bool)isLocal
+{
+    return true;
+}
 
 @end

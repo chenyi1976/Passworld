@@ -79,7 +79,7 @@
         NSDate* date = [NSDate date];
         NSString* estateId = [NSString stringWithFormat:@"%@", date];
         
-        EstateData* data = [[EstateData alloc] initWithId:estateId withName:_nameTextView.text withContent:_estateTextView.text withAttributeValues:nil  withLastUpdate:[NSDate date] withHistory:nil];
+        EstateData* data = [[EstateData alloc] initWithId:estateId withName:_nameTextView.text withContent:_estateTextView.text withAttributeValues:nil  withLastUpdate:[NSDate date] withHistory:nil withDeleted:false];
         [[DataSourceFactory getDataSource] addObject:data];
     }
     else

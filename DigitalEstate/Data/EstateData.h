@@ -14,6 +14,7 @@
 #define kAttributeValues @"attributeValues"
 #define kLastUpdate @"lastUpdate"
 #define kHistory @"history"
+#define kDeleted @"deleted"
 
 #define historyCount 10
 
@@ -25,8 +26,12 @@
 @property(nonatomic) NSMutableArray* attributeValues;
 @property(readonly) NSDate* lastUpdate;
 @property(readonly) NSMutableArray* history;
-@property BOOL recycled;
+//whether in recycle bin or not
+@property BOOL deleted;
+//whether sync with cloud service or not, if stored locally, it should be false
+//this is a run time property, will not be saved.
+@property BOOL synced;
 
-- (id) initWithId:(NSString*)estateId withName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableArray*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history;
+- (id) initWithId:(NSString*)estateId withName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableArray*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history withDeleted:(BOOL)deleted;
 
 @end

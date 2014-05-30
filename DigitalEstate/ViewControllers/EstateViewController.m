@@ -271,7 +271,7 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"ANY %K.attrValue contains[c] %@ OR ANY %K.attrName contains[c] %@ OR content contains[c] %@ ", @"attributeValues", searchText, @"attributeValues", searchText, searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"ANY %K.attrValue contains[c] %@ OR ANY %K.attrName contains[c] %@ OR content contains[c] %@ OR name contains[c] %@", @"attributeValues", searchText, @"attributeValues", searchText, searchText, searchText];
     
     NSArray* estates =[[DataSourceFactory getDataSource] estates];
     _searchResults = [estates filteredArrayUsingPredicate:resultPredicate];
