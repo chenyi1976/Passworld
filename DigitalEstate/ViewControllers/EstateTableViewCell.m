@@ -74,7 +74,11 @@
                 }
                 isFirst = FALSE;
                 NSString * attrName = attributeData.attrName;
-                if (attrName.length > 23)
+                if (attrName == nil)
+                {
+                    attrName = @"";
+                }
+                else if (attrName.length > 23)
                 {
                     attrName = [NSString stringWithFormat:@"%@...", [attrName substringToIndex:20]];
                 }
@@ -84,11 +88,15 @@
                 [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
                 
                 NSString * attrValue = attributeData.attrValue;
-                if (attrValue.length > 23)
+                if (attrValue == nil)
+                {
+                    attrValue = @"";
+                }
+                else if (attrValue.length > 23)
                 {
                     attrValue = [NSString stringWithFormat:@"%@...", [attrValue substringToIndex:20]];
                 }
-                NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attributeData.attrValue attributes:@{NSForegroundColorAttributeName:lightBlueColor}];
+                NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attrValue attributes:@{NSForegroundColorAttributeName:lightBlueColor}];
                 [attributedText appendAttributedString:attrValueStr];
             }
             _contentLabel.attributedText = attributedText;
