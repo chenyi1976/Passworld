@@ -22,5 +22,6 @@
 - (IBAction)okButtonTouched:(id)sender;
 - (IBAction)addLineButtonTouched:(id)sender;
 - (IBAction)deleteButtonTouched:(id)sender;
+- (IBAction)tableCellTouched:(id)sender;
 
 @end

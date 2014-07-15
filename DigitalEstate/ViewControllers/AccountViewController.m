@@ -168,7 +168,8 @@
 
 - (IBAction)okButtonTouched:(id)sender
 {
-    [self dismissAnyKeyboard:self.view];
+//    [self dismissAnyKeyboard:self.view];
+    [[self view] endEditing:TRUE];
 
     if (estateData)
     {
@@ -190,7 +191,8 @@
 
 - (IBAction)backButtonTouched:(id)sender
 {
-    [self dismissAnyKeyboard:self.view];
+//    [self dismissAnyKeyboard:self.view];
+    [[self view] endEditing:TRUE];
 
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];
 }
@@ -214,11 +216,21 @@
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];
 }
 
+- (IBAction)tableCellTouched:(id)sender
+{
+    [[self view] endEditing:TRUE];
+}
+
 #pragma mark business logic
 
 - (void)setEstateData:(EstateData*)data
 {
     [super setEstateData:data];
+}
+
+- (BOOL)disablesAutomaticKeyboardDismissal
+{
+    return YES;
 }
 
 @end

@@ -34,21 +34,29 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    {
-        [textField resignFirstResponder];
-    }
+    NSLog(@"textFieldShouldReturn");
+    [textField resignFirstResponder];
     return YES;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    NSLog(@"textFieldDidEndEditing");
+    [self endEditing:TRUE];
+    [textField resignFirstResponder];
+
     if (_nameTextField == textField || _valueTextField == textField)
     {
         UITableView* tableView = (UITableView*)self.superview.superview;
+        [tableView endEditing:TRUE];
         AccountViewController* controller = (AccountViewController*)tableView.dataSource;
         NSIndexPath* indexPath = [controller.tableView indexPathForCell:self];
         [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleNone forRowAtIndexPath:indexPath];
     }
+}
+
+- (void) textFieldDidBeginEditing:(UITextField *)textField {
+    NSLog(@"textFieldDidBeginEditing");
 }
 
 #pragma mark - IBAction

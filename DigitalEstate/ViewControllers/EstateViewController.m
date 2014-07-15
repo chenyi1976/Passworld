@@ -148,8 +148,18 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [[DataSourceFactory getDataSource] removeObjectAtIndex:indexPath.row];
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        EstateData* data = [_searchResults objectAtIndex:indexPath.row];
+        if (editingStyle == UITableViewCellEditingStyleDelete) {
+            [[DataSourceFactory getDataSource] removeObject:data];
+        }
+   }
+    else
+    {
+        if (editingStyle == UITableViewCellEditingStyleDelete) {
+            [[DataSourceFactory getDataSource] removeObjectAtIndex:indexPath.row];
+        }
     }
 }
 
