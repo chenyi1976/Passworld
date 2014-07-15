@@ -16,6 +16,8 @@
 @property bool sortByLastUpdated;
 @property NSMutableArray* observers;
 @property NSMutableArray* estates;
+@property NSArray* estatesByName;
+@property NSArray* estatesByUpdate;
 @property NSMutableArray* deletedEstates;
 @property(nonatomic) id<DataStrategy> dataStrategy;
 

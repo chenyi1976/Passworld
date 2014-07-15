@@ -261,6 +261,10 @@
     //if merged result changed _estates, then refresh UITableView
     if (changed)
     {
+        NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+        _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
+        NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:YES];
+        _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
         [self fireDataChanged];
     }
 }
