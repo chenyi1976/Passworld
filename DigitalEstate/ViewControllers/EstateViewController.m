@@ -62,8 +62,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"ModifyNoteSegue"]
-        || [[segue identifier] isEqualToString:@"ModifyAccountSegue"])
+    if ([[segue identifier] isEqualToString:@"ModifyAccountSegue"])
     {
         // Get reference to the destination view controller
         DetailViewController *vc = [segue destinationViewController];
@@ -83,8 +82,7 @@
 
         [vc setEstateData:data];
     }
-    else if ([[segue identifier] isEqualToString:@"CreateAccountSegue"]
-             || [[segue identifier] isEqualToString:@"CreateNoteSegue"])
+    else if ([[segue identifier] isEqualToString:@"CreateAccountSegue"])
     {
         // Get reference to the destination view controller
         NoteViewController *vc = [segue destinationViewController];
@@ -198,31 +196,31 @@
     return 60.0f;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSArray* estates;
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-    {
-        estates = _searchResults;
-    }
-    else
-    {
-        estates =[[DataSourceFactory getDataSource] estatesByName];
-    }
-
-    EstateData* data = [estates objectAtIndex:indexPath.row];
-    if (data)
-    {
-//        NSMutableArray* attributeValues = [data attributeValues];
-//        if (attributeValues)
-//            if ([attributeValues count] > 0)
-//            {
-                [self performSegueWithIdentifier:@"ModifyAccountSegue" sender:tableView];
-//                return;
-//            }
-//        [self performSegueWithIdentifier:@"ModifyNoteSegue" sender:tableView];
-    }
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSArray* estates;
+//    if (tableView == self.searchDisplayController.searchResultsTableView)
+//    {
+//        estates = _searchResults;
+//    }
+//    else
+//    {
+//        estates =[[DataSourceFactory getDataSource] estatesByName];
+//    }
+//
+//    EstateData* data = [estates objectAtIndex:indexPath.row];
+//    if (data)
+//    {
+////        NSMutableArray* attributeValues = [data attributeValues];
+////        if (attributeValues)
+////            if ([attributeValues count] > 0)
+////            {
+//                [self performSegueWithIdentifier:@"ModifyAccountSegue" sender:tableView];
+////                return;
+////            }
+////        [self performSegueWithIdentifier:@"ModifyNoteSegue" sender:tableView];
+//    }
+//}
 
 
 #pragma mark - search display delegate

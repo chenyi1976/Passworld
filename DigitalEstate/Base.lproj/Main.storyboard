@@ -226,6 +226,7 @@
                                             <outlet property="contentLabel" destination="hzY-1R-Oxo" id="rhD-Gm-vf4"/>
                                             <outlet property="iconView" destination="vKg-kU-T9k" id="tas-OF-s3x"/>
                                             <outlet property="nameLabel" destination="sLk-Dy-x0a" id="KIk-IG-4M4"/>
+                                            <segue destination="ysJ-kx-Xj9" kind="modal" identifier="ModifyAccountSegue" id="9Mf-xv-PZj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -247,7 +248,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Add.png" id="oAq-i4-Hn2">
                             <connections>
-                                <segue destination="ysJ-kx-Xj9" kind="modal" identifier="ModifyAccountSegue" id="5o0-IG-UR1"/>
+                                <segue destination="ysJ-kx-Xj9" kind="modal" identifier="CreateAccountSeque" id="6CM-uQ-39w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2339,5 +2340,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="xuA-uL-Gg4"/>
+        <segue reference="9Mf-xv-PZj"/>
     </inferredMetricsTieBreakers>
 </document>
