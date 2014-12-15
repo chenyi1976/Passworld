@@ -15,6 +15,7 @@
 
 @interface EstateViewController ()
     @property NSArray* searchResults;
+    @property long selectedRow;
 @end
 
 @implementation EstateViewController
@@ -67,19 +68,20 @@
         // Get reference to the destination view controller
         DetailViewController *vc = [segue destinationViewController];
         
-        NSArray* estates;
-        if (sender == self.searchDisplayController.searchResultsTableView)
+        EstateData* data;
+        if (self.searchDisplayController.active == YES)
         {
-            estates = _searchResults;
+            NSArray* estates = _searchResults;
+            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForCell:sender];
+            data = [estates objectAtIndex:indexPath.row];
         }
         else
         {
-            estates =[[DataSourceFactory getDataSource] estatesByName];
+            NSArray* estates =[[DataSourceFactory getDataSource] estatesByName];
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+            data = [estates objectAtIndex:indexPath.row];
         }
         
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        EstateData* data = [estates objectAtIndex:indexPath.row];
-
         [vc setEstateData:data];
     }
     else if ([[segue identifier] isEqualToString:@"CreateAccountSegue"])
