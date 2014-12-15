@@ -198,17 +198,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="138"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLk-Dy-x0a">
-                                                    <rect key="frame" x="63" y="6" width="224" height="22"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLk-Dy-x0a">
+                                                    <rect key="frame" x="56" y="8" width="231" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="o64-Wr-Gg1"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-kU-T9k">
-                                                    <rect key="frame" x="15" y="12" width="40" height="40"/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="224" translatesAutoresizingMaskIntoConstraints="NO" id="hzY-1R-Oxo">
-                                                    <rect key="frame" x="63" y="28" width="224" height="98"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="224" translatesAutoresizingMaskIntoConstraints="NO" id="hzY-1R-Oxo">
+                                                    <rect key="frame" x="56" y="30" width="231" height="96"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Content">
                                                             <attributes>
@@ -220,7 +220,25 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-kU-T9k">
+                                                    <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="SWh-js-pjf"/>
+                                                        <constraint firstAttribute="height" constant="40" id="V10-G3-lgh"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sLk-Dy-x0a" firstAttribute="top" secondItem="cE2-IM-ari" secondAttribute="topMargin" id="5En-OI-ypt"/>
+                                                <constraint firstItem="vKg-kU-T9k" firstAttribute="top" secondItem="cE2-IM-ari" secondAttribute="topMargin" id="6Kx-3s-57j"/>
+                                                <constraint firstItem="vKg-kU-T9k" firstAttribute="leading" secondItem="cE2-IM-ari" secondAttribute="leadingMargin" id="BiO-Xq-KQD"/>
+                                                <constraint firstItem="hzY-1R-Oxo" firstAttribute="trailing" secondItem="sLk-Dy-x0a" secondAttribute="trailing" id="K08-hO-Tm1"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hzY-1R-Oxo" secondAttribute="bottom" constant="4" id="ODn-oI-OJO"/>
+                                                <constraint firstItem="sLk-Dy-x0a" firstAttribute="leading" secondItem="hzY-1R-Oxo" secondAttribute="leading" id="SKY-mi-8Zf"/>
+                                                <constraint firstItem="sLk-Dy-x0a" firstAttribute="leading" secondItem="vKg-kU-T9k" secondAttribute="trailing" constant="8" symbolic="YES" id="VPO-Oj-Hnc"/>
+                                                <constraint firstAttribute="trailing" secondItem="hzY-1R-Oxo" secondAttribute="trailing" id="Wfe-yz-AiS"/>
+                                                <constraint firstItem="hzY-1R-Oxo" firstAttribute="top" secondItem="sLk-Dy-x0a" secondAttribute="bottom" id="X8c-a9-bJC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="contentLabel" destination="hzY-1R-Oxo" id="rhD-Gm-vf4"/>
