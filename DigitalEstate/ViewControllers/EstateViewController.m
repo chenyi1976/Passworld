@@ -237,7 +237,19 @@
 - (void)dataChanged
 {
     dispatch_async(dispatch_get_main_queue(), ^(void){
-        [_tableView reloadData];
+        if (self.searchDisplayController.active == YES)
+        {
+            [self filterContentForSearchText:self.searchDisplayController.searchBar.text
+                                       scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                              objectAtIndex:[self.searchDisplayController.searchBar
+                                                             selectedScopeButtonIndex]]];
+
+            [self.searchDisplayController.searchResultsTableView reloadData];
+        }
+        else
+        {
+            [_tableView reloadData];
+        }
     });
 }
 
