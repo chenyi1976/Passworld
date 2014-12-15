@@ -38,22 +38,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     long pass1 = [prefs integerForKey:kPassword1];
     long pass2 = [prefs integerForKey:kPassword2];
     long pass3 = [prefs integerForKey:kPassword3];
     long pass4 = [prefs integerForKey:kPassword4];
-
+    
+    
     if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0)
     {
+        [self.tableView headerViewForSection:0].textLabel.text = @"Security PIN: OFF";
         _switchPasswordButton.titleLabel.text = @"Turn Security PIN On";
         _updatePasswordButton.enabled = FALSE;
     }
     else
     {
+        [self.tableView headerViewForSection:0].textLabel.text = @"Security PIN: ON";
         _switchPasswordButton.titleLabel.text = @"Turn Security PIN Off";
         _updatePasswordButton.enabled = TRUE;
     }
@@ -74,6 +76,31 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark Mail Delegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result) {
+        case MFMailComposeResultSent:
+            NSLog(@"You sent the email.");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"You saved a draft of this email");
+            break;
+        case MFMailComposeResultCancelled:
+            NSLog(@"You cancelled sending this email.");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail failed:  An error occurred when trying to compose this email");
+            break;
+        default:
+            NSLog(@"An error occurred when trying to compose this email");
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 
 #pragma mark IBAction
 
@@ -125,6 +152,27 @@
         [prefs removeObjectForKey:kDatasourceType];
         [prefs synchronize];
         [[DataSourceFactory getDataSource] updateDataStrategy];
+    }
+}
+
+- (IBAction)mailButtonTouched:(id)sender{
+    
+    if ([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
+        mail.mailComposeDelegate = self;
+        [mail setSubject:@"SafePass Support"];
+        [mail setToRecipients:@[@"safepassapp@chenyi.me"]];
+        
+        [self presentViewController:mail animated:YES completion:NULL];
+    }
+    else
+    {
+        
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Alert"  message:@"This device cannot send email" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+
+        NSLog(@"This device cannot send email");
     }
 }
 

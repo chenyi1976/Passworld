@@ -42,6 +42,11 @@
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(EstateData*)estate
 {
     [_estates replaceObjectAtIndex:index withObject:estate];    
+    NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
+    NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:YES];
+    _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
+
     [self fireDataChanged];
     [_dataStrategy saveEstateData:_estates withDeletedData:_deletedEstates];
 }
@@ -49,6 +54,11 @@
 - (void)removeObjectAtIndex:(NSUInteger)index
 {
     EstateData* estate = [_estates objectAtIndex:index];
+    NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
+    NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:YES];
+    _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
+
     estate.deleted = true;
     [_deletedEstates addObject:estate];
     [_estates removeObjectAtIndex:index];
@@ -59,6 +69,11 @@
 - (void)removeObject:(EstateData*)estate
 {
     [_estates removeObject:estate];
+    NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
+    NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:YES];
+    _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
+
     estate.deleted = true;
     [_deletedEstates addObject:estate];
     [self fireDataChanged];
@@ -68,6 +83,11 @@
 - (void)addObject:(EstateData*)estate
 {
     [_estates addObject:estate];
+    NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
+    NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:YES];
+    _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
+    
     [self fireDataChanged];
     [_dataStrategy saveEstateData:_estates withDeletedData:_deletedEstates];
 }
@@ -75,6 +95,11 @@
 - (void)insertObject:(EstateData*)estate atIndex:(NSUInteger)index
 {
     [_estates insertObject:estate atIndex:index];
+    NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
+    NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:YES];
+    _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
+
     [self fireDataChanged];
     [_dataStrategy saveEstateData:_estates withDeletedData:_deletedEstates];
 }

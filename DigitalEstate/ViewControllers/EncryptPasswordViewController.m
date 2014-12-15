@@ -75,7 +75,7 @@
     {
         //this is just an indicator says
         NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-        [prefs setObject:@"encryptedKeyConfigued" forKey:kEncryptKey];
+        [prefs setObject:pass1 forKey:kEncryptKey];
         [prefs synchronize];
 
         if (self.presentingViewController != nil)

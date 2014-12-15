@@ -46,7 +46,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    _topConstraint.constant = 0;
+//    _topConstraint.constant = 0;
     
     [_tableView setNeedsUpdateConstraints];
     [_tableView layoutIfNeeded];
@@ -153,6 +153,12 @@
         EstateData* data = [_searchResults objectAtIndex:indexPath.row];
         if (editingStyle == UITableViewCellEditingStyleDelete) {
             [[DataSourceFactory getDataSource] removeObject:data];
+            NSMutableArray* newdata = [NSMutableArray arrayWithArray:_searchResults];
+            [newdata removeObject:data];
+            _searchResults = newdata;
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                [_tableView reloadData];
+            });
         }
    }
     else
@@ -207,14 +213,14 @@
     EstateData* data = [estates objectAtIndex:indexPath.row];
     if (data)
     {
-        NSMutableArray* attributeValues = [data attributeValues];
-        if (attributeValues)
-            if ([attributeValues count] > 0)
-            {
+//        NSMutableArray* attributeValues = [data attributeValues];
+//        if (attributeValues)
+//            if ([attributeValues count] > 0)
+//            {
                 [self performSegueWithIdentifier:@"ModifyAccountSegue" sender:tableView];
-                return;
-            }
-        [self performSegueWithIdentifier:@"ModifyNoteSegue" sender:tableView];
+//                return;
+//            }
+//        [self performSegueWithIdentifier:@"ModifyNoteSegue" sender:tableView];
     }
 }
 
@@ -237,45 +243,45 @@
 
 #pragma mark - IBAction
 
-- (IBAction)audioButtonTouched:(id)sender
-{
-    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Audio NOT implemented." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
-    alert.alertViewStyle=UIAlertViewStyleDefault;
-    [alert show];
-}
+//- (IBAction)audioButtonTouched:(id)sender
+//{
+//    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Audio NOT implemented." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
+//    alert.alertViewStyle=UIAlertViewStyleDefault;
+//    [alert show];
+//}
+//
+//- (IBAction)cameraButtonTouched:(id)sender
+//{
+//    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Photo NOT implemented." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
+//    alert.alertViewStyle=UIAlertViewStyleDefault;
+//    [alert show];
+//}
+//
+//- (IBAction)videoButtonTouched:(id)sender
+//{
+//    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Video NOT implemented." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
+//    alert.alertViewStyle=UIAlertViewStyleDefault;
+//    [alert show];
+//}
+//
+//- (IBAction)textButtonTouched:(id)sender
+//{
+//    
+//}
 
-- (IBAction)cameraButtonTouched:(id)sender
-{
-    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Photo NOT implemented." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
-    alert.alertViewStyle=UIAlertViewStyleDefault;
-    [alert show];
-}
-
-- (IBAction)videoButtonTouched:(id)sender
-{
-    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Video NOT implemented." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
-    alert.alertViewStyle=UIAlertViewStyleDefault;
-    [alert show];
-}
-
-- (IBAction)textButtonTouched:(id)sender
-{
-    
-}
-
-- (IBAction)switchButtonTouched:(id)sender
-{
-    if (_topConstraint.constant <= 0)
-        _topConstraint.constant = _buttonView.frame.size.height;
-    else
-        _topConstraint.constant = 0;
-    
-    [_tableView setNeedsUpdateConstraints];
-    [UIView animateWithDuration:0.5f animations:^(void){
-        [_tableView layoutIfNeeded];
-    } completion:^(BOOL finished){
-    }];
-}
+//- (IBAction)switchButtonTouched:(id)sender
+//{
+//    if (_topConstraint.constant <= 0)
+//        _topConstraint.constant = _buttonView.frame.size.height;
+//    else
+//        _topConstraint.constant = 0;
+//    
+//    [_tableView setNeedsUpdateConstraints];
+//    [UIView animateWithDuration:0.5f animations:^(void){
+//        [_tableView layoutIfNeeded];
+//    } completion:^(BOOL finished){
+//    }];
+//}
 
 #pragma mark - Search
 

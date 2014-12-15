@@ -9,6 +9,7 @@
 #import "PasscodeCreationViewController.h"
 #import "AppDelegate.h"
 #import "ConstantDefinition.h"
+#import "KeyChainUtil.h"
 
 @interface PasscodeCreationViewController ()
 @end
@@ -78,8 +79,29 @@
                     [prefs setInteger:passcode4 forKey:kPassword4];
                     [prefs synchronize];
                     
-                    [self performSegueWithIdentifier:@"EncryptPasswordSegue" sender:self];
-                                    }
+                    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss zzz"];
+                    
+                    NSString* encryptKey = [NSString stringWithFormat:@"%@%d%d%d%d", [NSDate new], passcode1, passcode2, passcode3, passcode4];
+                    
+                    bool saved = [KeyChainUtil saveToKeyChainForKey:kEncryptKey withValue:encryptKey];
+                    
+                    if (!saved)
+                    {
+                        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Message" message:@"Failed to save encryption key" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil,nil];
+                        alert.alertViewStyle=UIAlertViewStyleDefault;
+                        [alert show];
+                    }
+
+                    [prefs setObject:kEncryptKey forKey:kEncryptKey];
+                    [prefs synchronize];
+
+                    UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateNavigationController"];
+                    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                    [app.window setRootViewController:screen];
+
+//                    [self performSegueWithIdentifier:@"EncryptPasswordSegue" sender:self];
+                }
                 else
                 {
                     //todo: show the red image animation, then pop view.

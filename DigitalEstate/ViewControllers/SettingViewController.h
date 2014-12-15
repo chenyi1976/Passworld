@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface SettingViewController : UITableViewController<UITableViewDelegate>
+@interface SettingViewController : UITableViewController<UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property IBOutlet UIButton* switchPasswordButton;
 @property IBOutlet UIButton* updatePasswordButton;
@@ -16,5 +17,6 @@
 
 - (IBAction)switchPasscodeButtonTouched:(id)sender;
 - (IBAction)switchSyncButtonTouched:(id)sender;
+- (IBAction)mailButtonTouched:(id)sender;
 
 @end
