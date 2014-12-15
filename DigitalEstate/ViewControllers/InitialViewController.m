@@ -9,6 +9,7 @@
 #import "InitialViewController.h"
 #import "AppDelegate.h"
 #import "ConstantDefinition.h"
+#import "KeyChainUtil.h"
 
 @interface InitialViewController ()
 
@@ -36,7 +37,12 @@
     long pass3 = [prefs integerForKey:kPassword3];
     long pass4 = [prefs integerForKey:kPassword4];
     
-    NSString* encryptKey = [prefs objectForKey:kEncryptKey];
+    NSString* encryptKey = nil;//[prefs objectForKey:kEncryptKey];
+    
+    if (encryptKey == nil)
+    {
+        encryptKey = [KeyChainUtil loadFromKeyChainForKey:kEncryptKey];
+    }
     
     if (encryptKey != nil)
     {

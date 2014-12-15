@@ -93,7 +93,7 @@
                         [alert show];
                     }
 
-                    [prefs setObject:kEncryptKey forKey:kEncryptKey];
+                    [prefs setObject:encryptKey forKey:kEncryptKey];
                     [prefs synchronize];
 
                     UIViewController *screen = [self.storyboard instantiateViewControllerWithIdentifier:@"EstateNavigationController"];
