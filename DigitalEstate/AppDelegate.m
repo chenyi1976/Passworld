@@ -24,29 +24,11 @@
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    NSTimeInterval deactiveTime = [[NSDate date] timeIntervalSince1970];
     
-    long pass1 = [prefs integerForKey:kPassword1];
-    long pass2 = [prefs integerForKey:kPassword2];
-    long pass3 = [prefs integerForKey:kPassword3];
-    long pass4 = [prefs integerForKey:kPassword4];
-    bool isLinkingDropbox = [prefs boolForKey:kIsLinkingDropbox];
-    if (!isLinkingDropbox)
-    {
-        if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
-        {
-            UIViewController* rootViewController = [[self window] rootViewController];
-            UIViewController *screen = [rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SecurityPassViewController"];
-            
-            AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-            [app.window setRootViewController:screen];
-        }
-    }
-    else
-    {
-        [prefs removeObjectForKey:kIsLinkingDropbox];
-        [prefs synchronize];
-    }
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setDouble:deactiveTime forKey:kDeactiveTime];
+    [prefs synchronize];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -62,23 +44,27 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+
+    NSInteger pinThreshold = [prefs integerForKey:kPinThreshold];
+    double deactiveTime =  [prefs doubleForKey:kDeactiveTime];
+    NSTimeInterval activeTime = [[NSDate date] timeIntervalSince1970];
     
-//    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-//
-//    long pass1 = [prefs integerForKey:kPassword1];
-//    long pass2 = [prefs integerForKey:kPassword2];
-//    long pass3 = [prefs integerForKey:kPassword3];
-//    long pass4 = [prefs integerForKey:kPassword4];
-//    if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
-//    {
-//        UIViewController* rootViewController = [[self window] rootViewController];
-//        UIViewController *screen = [rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SecurityPassViewController"];
-//
-//        AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//        [app.window setRootViewController:screen];
-//
-//    }
+    if (activeTime - deactiveTime > pinThreshold)
+    {
+        long pass1 = [prefs integerForKey:kPassword1];
+        long pass2 = [prefs integerForKey:kPassword2];
+        long pass3 = [prefs integerForKey:kPassword3];
+        long pass4 = [prefs integerForKey:kPassword4];
+        if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
+        {
+            UIViewController* rootViewController = [[self window] rootViewController];
+            UIViewController *screen = [rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SecurityPassViewController"];
+            
+            AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [app.window setRootViewController:screen];
+        }
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

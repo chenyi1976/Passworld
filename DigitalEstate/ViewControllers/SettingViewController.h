@@ -9,14 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 
-@interface SettingViewController : UITableViewController<UITableViewDelegate, MFMailComposeViewControllerDelegate>
+@interface SettingViewController : UITableViewController<UITableViewDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate>
 
-@property IBOutlet UIButton* switchPasswordButton;
-@property IBOutlet UIButton* updatePasswordButton;
-@property IBOutlet UISwitch* dropboxSyncSwitch;
+@property (weak, nonatomic) IBOutlet UIButton* switchPasswordButton;
+@property (weak, nonatomic) IBOutlet UIButton* updatePasswordButton;
+@property (weak, nonatomic) IBOutlet UISwitch* dropboxSyncSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *pinThresholdButton;
 
 - (IBAction)switchPasscodeButtonTouched:(id)sender;
 - (IBAction)switchSyncButtonTouched:(id)sender;
 - (IBAction)mailButtonTouched:(id)sender;
+- (IBAction)pinThresholdButtonTouched:(id)sender;
 
 @end

@@ -45,19 +45,35 @@
     long pass2 = [prefs integerForKey:kPassword2];
     long pass3 = [prefs integerForKey:kPassword3];
     long pass4 = [prefs integerForKey:kPassword4];
+
+    long threshold = [prefs integerForKey:kPinThreshold];
     
+    if (threshold <= 0)
+    {
+        _pinThresholdButton.titleLabel.text = @"Auto Lock Immediately";
+    }
+    else if (threshold < 60)
+    {
+        _pinThresholdButton.titleLabel.text = [NSString stringWithFormat: @"Auto Lock After %ld Seconds", threshold];
+    }
+    else
+    {
+        _pinThresholdButton.titleLabel.text = [NSString stringWithFormat: @"Auto Lock After %ld Minutes", threshold / 60];
+    }
     
     if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0)
     {
         [self.tableView headerViewForSection:0].textLabel.text = @"Security PIN: OFF";
         _switchPasswordButton.titleLabel.text = @"Turn Security PIN On";
         _updatePasswordButton.enabled = FALSE;
+        _pinThresholdButton.enabled = FALSE;
     }
     else
     {
         [self.tableView headerViewForSection:0].textLabel.text = @"Security PIN: ON";
         _switchPasswordButton.titleLabel.text = @"Turn Security PIN Off";
         _updatePasswordButton.enabled = TRUE;
+        _pinThresholdButton.enabled = TRUE;
     }
     
     NSString* datasourceType = [prefs stringForKey:kDatasourceType];
@@ -100,6 +116,52 @@
     }
     
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex;
+{
+    
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    
+    long threshold = 0;
+    if (buttonIndex == 1)
+    {
+        threshold = 5;
+    }
+    else if (buttonIndex == 2)
+    {
+        threshold = 15;
+    }
+    else if (buttonIndex == 3)
+    {
+        threshold = 60;
+    }
+    else if (buttonIndex == 4)
+    {
+        threshold = 300;
+    }
+    else if (buttonIndex == 5)
+    {
+        threshold = 600;
+    }
+
+    [prefs setInteger:threshold forKey:kPinThreshold];
+    [prefs synchronize];
+
+    if (threshold <= 0)
+    {
+        _pinThresholdButton.titleLabel.text = @"Auto Lock Immediately";
+    }
+    else if (threshold < 60)
+    {
+        _pinThresholdButton.titleLabel.text = [NSString stringWithFormat: @"Auto Lock After %ld Seconds", threshold];
+    }
+    else
+    {
+        _pinThresholdButton.titleLabel.text = [NSString stringWithFormat: @"Auto Lock After %ld Minutes", threshold / 60];
+    }
 }
 
 #pragma mark IBAction
@@ -153,6 +215,16 @@
         [prefs synchronize];
         [[DataSourceFactory getDataSource] updateDataStrategy];
     }
+}
+
+- (IBAction)pinThresholdButtonTouched:(id)sender {
+    
+    UIActionSheet *sheet=[[UIActionSheet alloc] initWithTitle:@"Auto Lock"
+                                                     delegate:self
+                                            cancelButtonTitle:@"Cancel"
+                                       destructiveButtonTitle:@"Immediately"
+                                            otherButtonTitles:@"5 seconds", @"15 seconds", @"1 minutes", @"5 minutes", @"10 minutes", nil];
+    [sheet showInView:self.view];
 }
 
 - (IBAction)mailButtonTouched:(id)sender{

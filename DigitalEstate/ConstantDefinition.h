@@ -34,6 +34,9 @@
 
 #define kDatasourceType @"datasourceType"
 
+#define kPinThreshold @"kPinThreshold"
+#define kDeactiveTime @"kDeactiveTime"
+
 @interface ConstantDefinition : NSObject
 
 @end

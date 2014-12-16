@@ -337,29 +337,23 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Encryption Key" id="xTE-Gq-3Md">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="yrj-WC-kPn">
-                                        <rect key="frame" x="0.0" y="255" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="aBh-PD-Jal">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yrj-WC-kPn" id="vg5-7v-HOC">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aBh-PD-Jal" id="jK4-4H-fNz">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHD-0O-qDT">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B73-YM-h6d">
                                                     <rect key="frame" x="20" y="7" width="267" height="30"/>
-                                                    <state key="normal" title="Change Encryption Key">
+                                                    <state key="normal" title="Auto Lock Immediately         ">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="J7h-CG-56Q" kind="modal" id="tk0-LV-P84"/>
+                                                        <action selector="pinThresholdButtonTouched:" destination="Y8v-pJ-be2" eventType="touchUpInside" id="96R-wo-FVI"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="250" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -459,6 +453,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="b8E-eJ-no0"/>
                     <connections>
                         <outlet property="dropboxSyncSwitch" destination="PlE-HD-93b" id="QDi-Yi-HsM"/>
+                        <outlet property="pinThresholdButton" destination="B73-YM-h6d" id="euj-xL-lSR"/>
                         <outlet property="switchPasswordButton" destination="0eK-ZB-C1P" id="txE-0z-v8X"/>
                         <outlet property="updatePasswordButton" destination="xi1-3p-txS" id="sX2-Lc-a7f"/>
                         <segue destination="Pzn-8e-oca" kind="modal" identifier="TurnOffPasscodeSegue" id="GpF-hF-78E"/>
