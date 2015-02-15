@@ -79,7 +79,7 @@
 
 + (NSString*)loadFromKeyChainForKey:(NSString*) key
 {
-    NSString* service = [[NSBundle mainBundle] bundleIdentifier];
+    NSString* service = @"me.chenyi.DigitalEstate";//[[NSBundle mainBundle] bundleIdentifier];
     NSDictionary* query = @{
                               (__bridge id)kSecClass: (__bridge id)kSecClassGenericPassword,
                               (__bridge id)kSecAttrService: service,

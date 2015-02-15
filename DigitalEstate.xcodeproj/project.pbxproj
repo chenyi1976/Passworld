@@ -79,6 +79,14 @@
 		8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D81018FE19950095F625 /* PasscodeViewController.m */; };
 		8180D81718FE48340095F625 /* on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D81518FE48340095F625 /* on@2x.png */; };
 		8180D81818FE48340095F625 /* off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D81618FE48340095F625 /* off@2x.png */; };
+		818710C21A914F58000D0A2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710C11A914F58000D0A2C /* main.m */; };
+		818710C51A914F58000D0A2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710C41A914F58000D0A2C /* AppDelegate.m */; };
+		818710C81A914F58000D0A2C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710C71A914F58000D0A2C /* ViewController.m */; };
+		818710CB1A914F58000D0A2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818710C91A914F58000D0A2C /* Main.storyboard */; };
+		818710CD1A914F58000D0A2C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818710CC1A914F58000D0A2C /* Images.xcassets */; };
+		818710D01A914F58000D0A2C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 818710CE1A914F58000D0A2C /* LaunchScreen.xib */; };
+		818710DC1A914F58000D0A2C /* PasscodeRecoveryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710DB1A914F58000D0A2C /* PasscodeRecoveryTests.m */; };
+		818710E51A91513D000D0A2C /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710E41A91513D000D0A2C /* KeyChainUtil.m */; };
 		8193FD371930B321001FF9F2 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193FD361930B321001FF9F2 /* Dropbox.framework */; };
 		8193FD3E19315B5A001FF9F2 /* LocalDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */; };
 		8193FD4119315F2C001FF9F2 /* DropboxDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD4019315F2C001FF9F2 /* DropboxDataStrategy.m */; };
@@ -117,6 +125,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 813CCA3718FD0EF9002A98F2;
 			remoteInfo = DigitalEstate;
+		};
+		818710D61A914F58000D0A2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 813CCA3018FD0EF8002A98F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 818710BC1A914F58000D0A2C;
+			remoteInfo = PasscodeRecovery;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -225,6 +240,23 @@
 		8180D81018FE19950095F625 /* PasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeViewController.m; path = ViewControllers/PasscodeViewController.m; sourceTree = "<group>"; };
 		8180D81518FE48340095F625 /* on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "on@2x.png"; path = "Images/on@2x.png"; sourceTree = "<group>"; };
 		8180D81618FE48340095F625 /* off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "off@2x.png"; path = "Images/off@2x.png"; sourceTree = "<group>"; };
+		818710BD1A914F58000D0A2C /* PasscodeRecovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasscodeRecovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		818710C01A914F58000D0A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		818710C11A914F58000D0A2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		818710C31A914F58000D0A2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		818710C41A914F58000D0A2C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		818710C61A914F58000D0A2C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		818710C71A914F58000D0A2C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		818710CA1A914F58000D0A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		818710CC1A914F58000D0A2C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		818710CF1A914F58000D0A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		818710D51A914F58000D0A2C /* PasscodeRecoveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasscodeRecoveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		818710DA1A914F58000D0A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		818710DB1A914F58000D0A2C /* PasscodeRecoveryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasscodeRecoveryTests.m; sourceTree = "<group>"; };
+		818710E31A91513D000D0A2C /* KeyChainUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyChainUtil.h; path = DigitalEstate/Util/KeyChainUtil.h; sourceTree = SOURCE_ROOT; };
+		818710E41A91513D000D0A2C /* KeyChainUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyChainUtil.m; path = DigitalEstate/Util/KeyChainUtil.m; sourceTree = SOURCE_ROOT; };
+		818710E61A915159000D0A2C /* ConstantDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ConstantDefinition.h; path = DigitalEstate/ConstantDefinition.h; sourceTree = SOURCE_ROOT; };
+		818710E71A915590000D0A2C /* PasscodeRecovery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PasscodeRecovery.entitlements; sourceTree = "<group>"; };
 		8193FD361930B321001FF9F2 /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dropbox.framework; sourceTree = "<group>"; };
 		8193FD3B19315ADD001FF9F2 /* DataStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DataStrategy.h; path = Datasource/DataStrategy.h; sourceTree = "<group>"; };
 		8193FD3C19315B5A001FF9F2 /* LocalDataStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalDataStrategy.h; path = Datasource/LocalDataStrategy.h; sourceTree = "<group>"; };
@@ -300,6 +332,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		818710BA1A914F58000D0A2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		818710D21A914F58000D0A2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -323,6 +369,8 @@
 			children = (
 				813CCA4118FD0EF9002A98F2 /* DigitalEstate */,
 				813CCA6318FD0EF9002A98F2 /* DigitalEstateTests */,
+				818710BE1A914F58000D0A2C /* PasscodeRecovery */,
+				818710D81A914F58000D0A2C /* PasscodeRecoveryTests */,
 				813CCA3A18FD0EF9002A98F2 /* Frameworks */,
 				813CCA3918FD0EF9002A98F2 /* Products */,
 			);
@@ -333,6 +381,8 @@
 			children = (
 				813CCA3818FD0EF9002A98F2 /* DigitalEstate.app */,
 				813CCA5C18FD0EF9002A98F2 /* DigitalEstateTests.xctest */,
+				818710BD1A914F58000D0A2C /* PasscodeRecovery.app */,
+				818710D51A914F58000D0A2C /* PasscodeRecoveryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -550,6 +600,51 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		818710BE1A914F58000D0A2C /* PasscodeRecovery */ = {
+			isa = PBXGroup;
+			children = (
+				818710E71A915590000D0A2C /* PasscodeRecovery.entitlements */,
+				818710E61A915159000D0A2C /* ConstantDefinition.h */,
+				818710E31A91513D000D0A2C /* KeyChainUtil.h */,
+				818710E41A91513D000D0A2C /* KeyChainUtil.m */,
+				818710C31A914F58000D0A2C /* AppDelegate.h */,
+				818710C41A914F58000D0A2C /* AppDelegate.m */,
+				818710C61A914F58000D0A2C /* ViewController.h */,
+				818710C71A914F58000D0A2C /* ViewController.m */,
+				818710C91A914F58000D0A2C /* Main.storyboard */,
+				818710CC1A914F58000D0A2C /* Images.xcassets */,
+				818710CE1A914F58000D0A2C /* LaunchScreen.xib */,
+				818710BF1A914F58000D0A2C /* Supporting Files */,
+			);
+			path = PasscodeRecovery;
+			sourceTree = "<group>";
+		};
+		818710BF1A914F58000D0A2C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				818710C01A914F58000D0A2C /* Info.plist */,
+				818710C11A914F58000D0A2C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		818710D81A914F58000D0A2C /* PasscodeRecoveryTests */ = {
+			isa = PBXGroup;
+			children = (
+				818710DB1A914F58000D0A2C /* PasscodeRecoveryTests.m */,
+				818710D91A914F58000D0A2C /* Supporting Files */,
+			);
+			path = PasscodeRecoveryTests;
+			sourceTree = "<group>";
+		};
+		818710D91A914F58000D0A2C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				818710DA1A914F58000D0A2C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		81B18E54190602F8005647AF /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -601,6 +696,41 @@
 			productReference = 813CCA5C18FD0EF9002A98F2 /* DigitalEstateTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		818710BC1A914F58000D0A2C /* PasscodeRecovery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 818710E11A914F58000D0A2C /* Build configuration list for PBXNativeTarget "PasscodeRecovery" */;
+			buildPhases = (
+				818710B91A914F58000D0A2C /* Sources */,
+				818710BA1A914F58000D0A2C /* Frameworks */,
+				818710BB1A914F58000D0A2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PasscodeRecovery;
+			productName = PasscodeRecovery;
+			productReference = 818710BD1A914F58000D0A2C /* PasscodeRecovery.app */;
+			productType = "com.apple.product-type.application";
+		};
+		818710D41A914F58000D0A2C /* PasscodeRecoveryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 818710E21A914F58000D0A2C /* Build configuration list for PBXNativeTarget "PasscodeRecoveryTests" */;
+			buildPhases = (
+				818710D11A914F58000D0A2C /* Sources */,
+				818710D21A914F58000D0A2C /* Frameworks */,
+				818710D31A914F58000D0A2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				818710D71A914F58000D0A2C /* PBXTargetDependency */,
+			);
+			name = PasscodeRecoveryTests;
+			productName = PasscodeRecoveryTests;
+			productReference = 818710D51A914F58000D0A2C /* PasscodeRecoveryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -613,6 +743,12 @@
 					813CCA3718FD0EF9002A98F2 = {
 						DevelopmentTeam = V7WW63YU8C;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -620,6 +756,25 @@
 					};
 					813CCA5B18FD0EF9002A98F2 = {
 						TestTargetID = 813CCA3718FD0EF9002A98F2;
+					};
+					818710BC1A914F58000D0A2C = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = V7WW63YU8C;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					818710D41A914F58000D0A2C = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 818710BC1A914F58000D0A2C;
 					};
 				};
 			};
@@ -638,6 +793,8 @@
 			targets = (
 				813CCA3718FD0EF9002A98F2 /* DigitalEstate */,
 				813CCA5B18FD0EF9002A98F2 /* DigitalEstateTests */,
+				818710BC1A914F58000D0A2C /* PasscodeRecovery */,
+				818710D41A914F58000D0A2C /* PasscodeRecoveryTests */,
 			);
 		};
 /* End PBXProject section */
@@ -703,6 +860,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		818710BB1A914F58000D0A2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				818710CB1A914F58000D0A2C /* Main.storyboard in Resources */,
+				818710D01A914F58000D0A2C /* LaunchScreen.xib in Resources */,
+				818710CD1A914F58000D0A2C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		818710D31A914F58000D0A2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -763,6 +937,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		818710B91A914F58000D0A2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				818710C81A914F58000D0A2C /* ViewController.m in Sources */,
+				818710C51A914F58000D0A2C /* AppDelegate.m in Sources */,
+				818710C21A914F58000D0A2C /* main.m in Sources */,
+				818710E51A91513D000D0A2C /* KeyChainUtil.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		818710D11A914F58000D0A2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				818710DC1A914F58000D0A2C /* PasscodeRecoveryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -770,6 +963,11 @@
 			isa = PBXTargetDependency;
 			target = 813CCA3718FD0EF9002A98F2 /* DigitalEstate */;
 			targetProxy = 813CCA6118FD0EF9002A98F2 /* PBXContainerItemProxy */;
+		};
+		818710D71A914F58000D0A2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 818710BC1A914F58000D0A2C /* PasscodeRecovery */;
+			targetProxy = 818710D61A914F58000D0A2C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -796,6 +994,22 @@
 				813CCA6718FD0EF9002A98F2 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		818710C91A914F58000D0A2C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				818710CA1A914F58000D0A2C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		818710CE1A914F58000D0A2C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				818710CF1A914F58000D0A2C /* Base */,
+			);
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -955,6 +1169,88 @@
 			};
 			name = Release;
 		};
+		818710DD1A914F58000D0A2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = PasscodeRecovery/PasscodeRecovery.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PasscodeRecovery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		818710DE1A914F58000D0A2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = PasscodeRecovery/PasscodeRecovery.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = PasscodeRecovery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		818710DF1A914F58000D0A2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PasscodeRecoveryTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasscodeRecovery.app/PasscodeRecovery";
+			};
+			name = Debug;
+		};
+		818710E01A914F58000D0A2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PasscodeRecoveryTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasscodeRecovery.app/PasscodeRecovery";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -981,6 +1277,24 @@
 			buildConfigurations = (
 				813CCA7118FD0EF9002A98F2 /* Debug */,
 				813CCA7218FD0EF9002A98F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		818710E11A914F58000D0A2C /* Build configuration list for PBXNativeTarget "PasscodeRecovery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				818710DD1A914F58000D0A2C /* Debug */,
+				818710DE1A914F58000D0A2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		818710E21A914F58000D0A2C /* Build configuration list for PBXNativeTarget "PasscodeRecoveryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				818710DF1A914F58000D0A2C /* Debug */,
+				818710E01A914F58000D0A2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
