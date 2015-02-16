@@ -31,14 +31,12 @@ I will publish this app to Apple App Store very soon, it will be free. I will up
 If you are an iOS developer, you can build app by yourself in XCode.
 
 ### Screenshot ###
-* Main Screen:
-![iOS Simulator Screen shot 23 May 2014 1.23.44 pm.png](https://bitbucket.org/repo/K5gRyM/images/2985421828-iOS%20Simulator%20Screen%20shot%2023%20May%202014%201.23.44%20pm.png)
 
-* Edit account Detail:
-![iOS Simulator Screen shot 22 May 2014 4.52.51 pm.png](https://bitbucket.org/repo/K5gRyM/images/1515628137-iOS%20Simulator%20Screen%20shot%2022%20May%202014%204.52.51%20pm.png)
+* Pin Checking when open/activate app:
+* ![Screenshot_Pin](https://raw.githubusercontent.com/chenyi1976/Passworld/master/DigitalEstate/Screenshots/Screenshot_Pin.png)
 
-* Settings:
-![iOS Simulator Screen shot 22 May 2014 4.53.08 pm.png](https://bitbucket.org/repo/K5gRyM/images/668118503-iOS%20Simulator%20Screen%20shot%2022%20May%202014%204.53.08%20pm.png)
+* Create a new entry
+* ![Screenshot_New](https://raw.githubusercontent.com/chenyi1976/Passworld/master/DigitalEstate/Screenshots/Screenshot_New.png)
 
-* Add new note or new account information
-![iOS Simulator Screen shot 22 May 2014 4.49.53 pm.png](https://bitbucket.org/repo/K5gRyM/images/2590479594-iOS%20Simulator%20Screen%20shot%2022%20May%202014%204.49.53%20pm.png)
+* Main UI
+* ![Screenshot_Main](https://github.com/chenyi1976/Passworld/raw/master/DigitalEstate/Screenshots/Screenshot_Main.png)
