@@ -38,8 +38,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated{
+
+//- (void)viewWillDisappear:(BOOL)animated{
+//    NSLog(@"viewWillDisappear");
+//    [super viewWillDisappear:animated];
+//}
+//
+//- (void)viewDidDisappear:(BOOL)animated{
+//    NSLog(@"viewDidDisappear");
+//    [super viewDidDisappear:animated];
+//}
+
+
+- (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+        
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     long pass1 = [prefs integerForKey:kPassword1];
     long pass2 = [prefs integerForKey:kPassword2];
@@ -50,15 +63,15 @@
     
     if (threshold <= 0)
     {
-        _pinThresholdButton.titleLabel.text = @"Auto Lock Immediately";
+        [_pinThresholdButton setTitle:@"Auto Lock Immediately" forState:UIControlStateNormal];
     }
     else if (threshold < 60)
     {
-        _pinThresholdButton.titleLabel.text = [NSString stringWithFormat: @"Auto Lock After %ld Seconds", threshold];
+        [_pinThresholdButton setTitle:[NSString stringWithFormat: @"Auto Lock After %ld Seconds", threshold] forState:UIControlStateNormal];
     }
     else
     {
-        _pinThresholdButton.titleLabel.text = [NSString stringWithFormat: @"Auto Lock After %ld Minutes", threshold / 60];
+        [_pinThresholdButton setTitle:[NSString stringWithFormat: @"Auto Lock After %ld Minutes", threshold / 60] forState:UIControlStateNormal];
     }
     
     if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0)
@@ -122,11 +135,12 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex;
 {
-    
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    
-    long threshold = 0;
-    if (buttonIndex == 1)
+    long threshold = -1;
+    if (buttonIndex == 0)
+    {
+        threshold = 0;
+    }
+    else if (buttonIndex == 1)
     {
         threshold = 5;
     }
@@ -146,21 +160,27 @@
     {
         threshold = 600;
     }
+    else
+    {
+        //user cancelled
+        return;
+    }
 
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:threshold forKey:kPinThreshold];
     [prefs synchronize];
 
     if (threshold <= 0)
     {
-        _pinThresholdButton.titleLabel.text = @"Auto Lock Immediately";
+        [_pinThresholdButton setTitle:@"Auto Lock Immediately" forState:UIControlStateNormal];
     }
     else if (threshold < 60)
     {
-        _pinThresholdButton.titleLabel.text = [NSString stringWithFormat: @"Auto Lock After %ld Seconds", threshold];
+        [_pinThresholdButton setTitle:[NSString stringWithFormat: @"Auto Lock After %ld Seconds", threshold] forState:UIControlStateNormal];
     }
     else
     {
-        _pinThresholdButton.titleLabel.text = [NSString stringWithFormat: @"Auto Lock After %ld Minutes", threshold / 60];
+        [_pinThresholdButton setTitle:[NSString stringWithFormat: @"Auto Lock After %ld Minutes", threshold / 60] forState:UIControlStateNormal];
     }
 }
 
@@ -222,8 +242,8 @@
     UIActionSheet *sheet=[[UIActionSheet alloc] initWithTitle:@"Auto Lock"
                                                      delegate:self
                                             cancelButtonTitle:@"Cancel"
-                                       destructiveButtonTitle:@"Immediately"
-                                            otherButtonTitles:@"5 seconds", @"15 seconds", @"1 minutes", @"5 minutes", @"10 minutes", nil];
+                                       destructiveButtonTitle:nil
+                                            otherButtonTitles:@"Immediately", @"5 seconds", @"15 seconds", @"1 minutes", @"5 minutes", @"10 minutes", nil];
     [sheet showInView:self.view];
 }
 
