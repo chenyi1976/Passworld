@@ -106,6 +106,9 @@
 		81B18E4E1905FB9F005647AF /* Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E4C1905FB9F005647AF /* Tick@2x.png */; };
 		81B18E501905FC3A005647AF /* Delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E4F1905FC3A005647AF /* Delete@2x.png */; };
 		81B18E53190602DC005647AF /* EstateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B18E52190602DC005647AF /* EstateTableViewCell.m */; };
+		81BAF1B91A916FCC00817348 /* Screenshot_Main.png in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF1B61A916FCC00817348 /* Screenshot_Main.png */; };
+		81BAF1BA1A916FCC00817348 /* Screenshot_New.png in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF1B71A916FCC00817348 /* Screenshot_New.png */; };
+		81BAF1BB1A916FCC00817348 /* Screenshot_Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF1B81A916FCC00817348 /* Screenshot_Pin.png */; };
 		81C40A0619309FA80011BAEF /* EstateDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C40A0519309FA80011BAEF /* EstateDataSource.m */; };
 		81CCB89819008A010019A6E4 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB89719008A010019A6E4 /* NoteViewController.m */; };
 		81CD2A09192C4DDB00785134 /* PasscodeUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A08192C4DDB00785134 /* PasscodeUpdateViewController.m */; };
@@ -284,6 +287,9 @@
 		81B18E4F1905FC3A005647AF /* Delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Delete@2x.png"; path = "Images/Delete@2x.png"; sourceTree = "<group>"; };
 		81B18E51190602DC005647AF /* EstateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateTableViewCell.h; path = ViewControllers/EstateTableViewCell.h; sourceTree = "<group>"; };
 		81B18E52190602DC005647AF /* EstateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateTableViewCell.m; path = ViewControllers/EstateTableViewCell.m; sourceTree = "<group>"; };
+		81BAF1B61A916FCC00817348 /* Screenshot_Main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Screenshot_Main.png; path = Screenshots/Screenshot_Main.png; sourceTree = "<group>"; };
+		81BAF1B71A916FCC00817348 /* Screenshot_New.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Screenshot_New.png; path = Screenshots/Screenshot_New.png; sourceTree = "<group>"; };
+		81BAF1B81A916FCC00817348 /* Screenshot_Pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Screenshot_Pin.png; path = Screenshots/Screenshot_Pin.png; sourceTree = "<group>"; };
 		81C40A0519309FA80011BAEF /* EstateDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateDataSource.m; path = Datasource/EstateDataSource.m; sourceTree = "<group>"; };
 		81C40A0A1930A5C20011BAEF /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observer.h; path = Datasource/Observer.h; sourceTree = "<group>"; };
 		81C40A0B1930ADB50011BAEF /* Observable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observable.h; path = Datasource/Observable.h; sourceTree = "<group>"; };
@@ -407,6 +413,7 @@
 		813CCA4118FD0EF9002A98F2 /* DigitalEstate */ = {
 			isa = PBXGroup;
 			children = (
+				81BAF1B51A916F6600817348 /* Screenshots */,
 				81CD2A1C192DD9C800785134 /* README.md */,
 				81AB974219231E2400B0C917 /* DigitalEstate.entitlements */,
 				813664A7190F4DB900C0B76E /* AES */,
@@ -658,6 +665,16 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		81BAF1B51A916F6600817348 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				81BAF1B61A916FCC00817348 /* Screenshot_Main.png */,
+				81BAF1B71A916FCC00817348 /* Screenshot_New.png */,
+				81BAF1B81A916FCC00817348 /* Screenshot_Pin.png */,
+			);
+			name = Screenshots;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -813,6 +830,7 @@
 				811F6833192E048E00F27955 /* circle_delete@2x.png in Resources */,
 				8159411C19206D1000D6EB14 /* history@2x.png in Resources */,
 				811F6831192E026F00F27955 /* circle_ok@2x.png in Resources */,
+				81BAF1BB1A916FCC00817348 /* Screenshot_Pin.png in Resources */,
 				81B18E4A1905EAB1005647AF /* Camera@2x.png in Resources */,
 				8180D81718FE48340095F625 /* on@2x.png in Resources */,
 				81AB973C1922054900B0C917 /* Down@2x.png in Resources */,
@@ -835,6 +853,7 @@
 				81B18E501905FC3A005647AF /* Delete@2x.png in Resources */,
 				81B18E481905EAB1005647AF /* Video@2x.png in Resources */,
 				8180D80E18FE18720095F625 /* nil@2x.png in Resources */,
+				81BAF1BA1A916FCC00817348 /* Screenshot_New.png in Resources */,
 				812178831908ABD5002DA71A /* DiallingCodes.plist in Resources */,
 				8180D80518FE16A40095F625 /* 7@2x.png in Resources */,
 				8180D81818FE48340095F625 /* off@2x.png in Resources */,
@@ -844,6 +863,7 @@
 				8121788C190A114F002DA71A /* search@2x.png in Resources */,
 				8180D80418FE16A40095F625 /* 8@2x.png in Resources */,
 				81AB973D1922054900B0C917 /* Up@2x.png in Resources */,
+				81BAF1B91A916FCC00817348 /* Screenshot_Main.png in Resources */,
 				81AB97331921951100B0C917 /* passcode@2x.png in Resources */,
 				81B18E4D1905FB9F005647AF /* Back@2x.png in Resources */,
 				81B18E471905EAB1005647AF /* Mic@2x.png in Resources */,
