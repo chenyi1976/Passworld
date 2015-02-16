@@ -23,4 +23,51 @@
     [currentController dismissViewControllerAnimated:animated completion:completion];
 }
 
++ (void)popupMessage:(NSString*) message forView:(UIView*) view{
+    
+//    UIWindow* window = [UIApplication sharedApplication].keyWindow;
+//    if (!window) {
+//        window = [[UIApplication sharedApplication].windows objectAtIndex:0];
+//    }
+//    
+//    UIViewController* rootViewController = [window rootViewController];
+    
+    UIView *messageView = [[UIView alloc] initWithFrame:CGRectMake(80, 160, 160, 160)];
+    [messageView setTag:103];
+    [messageView setBackgroundColor:[UIColor blackColor]];
+    [messageView setAlpha:0.8];
+    
+    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 160.0f, 160.0f)];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    [label setTextColor:[UIColor whiteColor] ];
+    [label setText:message];
+    [messageView addSubview:label];
+    
+    [view addSubview:messageView];
+    
+    messageView.transform = CGAffineTransformMakeScale(0.0f, 0.0f);
+    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:.3f
+                         animations:^{
+                             messageView.transform = CGAffineTransformIdentity;
+                         }
+                         completion:^(BOOL cancelled){
+//                             dispatch_async(dispatch_get_main_queue(), ^{
+                                 [UIView animateWithDuration:.3f
+                                                       delay:0.7f
+                                                     options:UIViewAnimationOptionCurveEaseIn
+                                                  animations:^{
+                                                      messageView.transform = CGAffineTransformMakeScale(0.01f, 0.01f);
+                                                  }
+                                                  completion:^(BOOL cancelled){
+                                                      [messageView removeFromSuperview];
+                                                  }];
+//                             });
+                         }
+         ];
+//    });
+}
+
+
 @end

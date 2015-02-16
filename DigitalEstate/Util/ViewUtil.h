@@ -12,4 +12,6 @@
 
 +(void) dismissToRootViewController:(UIViewController*) currentController Animated:(BOOL)animated completion:(void (^)(void))completion;
 
++(void)popupMessage:(NSString*) message forView:(UIView*) view;
+
 @end

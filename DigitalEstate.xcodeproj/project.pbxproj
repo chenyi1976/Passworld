@@ -83,10 +83,12 @@
 		818710C51A914F58000D0A2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710C41A914F58000D0A2C /* AppDelegate.m */; };
 		818710C81A914F58000D0A2C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710C71A914F58000D0A2C /* ViewController.m */; };
 		818710CB1A914F58000D0A2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818710C91A914F58000D0A2C /* Main.storyboard */; };
-		818710CD1A914F58000D0A2C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818710CC1A914F58000D0A2C /* Images.xcassets */; };
+		818710CD1A914F58000D0A2C /* ImagesRecovery.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818710CC1A914F58000D0A2C /* ImagesRecovery.xcassets */; };
 		818710D01A914F58000D0A2C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 818710CE1A914F58000D0A2C /* LaunchScreen.xib */; };
 		818710DC1A914F58000D0A2C /* PasscodeRecoveryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710DB1A914F58000D0A2C /* PasscodeRecoveryTests.m */; };
 		818710E51A91513D000D0A2C /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710E41A91513D000D0A2C /* KeyChainUtil.m */; };
+		8192627C1A91A6DC00542719 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F6841193004B800F27955 /* QuartzCore.framework */; };
+		8192627D1A91A80500542719 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */; };
 		8193FD371930B321001FF9F2 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193FD361930B321001FF9F2 /* Dropbox.framework */; };
 		8193FD3E19315B5A001FF9F2 /* LocalDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */; };
 		8193FD4119315F2C001FF9F2 /* DropboxDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD4019315F2C001FF9F2 /* DropboxDataStrategy.m */; };
@@ -109,6 +111,8 @@
 		81BAF1B91A916FCC00817348 /* Screenshot_Main.png in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF1B61A916FCC00817348 /* Screenshot_Main.png */; };
 		81BAF1BA1A916FCC00817348 /* Screenshot_New.png in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF1B71A916FCC00817348 /* Screenshot_New.png */; };
 		81BAF1BB1A916FCC00817348 /* Screenshot_Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF1B81A916FCC00817348 /* Screenshot_Pin.png */; };
+		81BC47801A9189A000952164 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
+		81BC47811A9189A100952164 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
 		81C40A0619309FA80011BAEF /* EstateDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C40A0519309FA80011BAEF /* EstateDataSource.m */; };
 		81CCB89819008A010019A6E4 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB89719008A010019A6E4 /* NoteViewController.m */; };
 		81CD2A09192C4DDB00785134 /* PasscodeUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A08192C4DDB00785134 /* PasscodeUpdateViewController.m */; };
@@ -251,7 +255,7 @@
 		818710C61A914F58000D0A2C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		818710C71A914F58000D0A2C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		818710CA1A914F58000D0A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		818710CC1A914F58000D0A2C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		818710CC1A914F58000D0A2C /* ImagesRecovery.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImagesRecovery.xcassets; sourceTree = "<group>"; };
 		818710CF1A914F58000D0A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		818710D51A914F58000D0A2C /* PasscodeRecoveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasscodeRecoveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		818710DA1A914F58000D0A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -342,6 +346,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8192627D1A91A80500542719 /* CoreGraphics.framework in Frameworks */,
+				8192627C1A91A6DC00542719 /* QuartzCore.framework in Frameworks */,
+				81BC47801A9189A000952164 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +356,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BC47811A9189A100952164 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,7 +627,7 @@
 				818710C61A914F58000D0A2C /* ViewController.h */,
 				818710C71A914F58000D0A2C /* ViewController.m */,
 				818710C91A914F58000D0A2C /* Main.storyboard */,
-				818710CC1A914F58000D0A2C /* Images.xcassets */,
+				818710CC1A914F58000D0A2C /* ImagesRecovery.xcassets */,
 				818710CE1A914F58000D0A2C /* LaunchScreen.xib */,
 				818710BF1A914F58000D0A2C /* Supporting Files */,
 			);
@@ -886,7 +894,7 @@
 			files = (
 				818710CB1A914F58000D0A2C /* Main.storyboard in Resources */,
 				818710D01A914F58000D0A2C /* LaunchScreen.xib in Resources */,
-				818710CD1A914F58000D0A2C /* Images.xcassets in Resources */,
+				818710CD1A914F58000D0A2C /* ImagesRecovery.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1192,7 +1200,8 @@
 		818710DD1A914F58000D0A2C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconRecovery;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImageRecovery;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = PasscodeRecovery/PasscodeRecovery.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1203,7 +1212,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PasscodeRecovery/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1214,14 +1223,15 @@
 		818710DE1A914F58000D0A2C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconRecovery;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImageRecovery;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = PasscodeRecovery/PasscodeRecovery.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = PasscodeRecovery/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

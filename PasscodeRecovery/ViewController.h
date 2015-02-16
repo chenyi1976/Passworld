@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *passcodeLabel;
 
+- (IBAction)buttonTouched:(id)sender;
 @end
 

@@ -8,6 +8,7 @@
 
 #import "AccountTableViewCell.h"
 #import "AccountViewController.h"
+#import "ViewUtil.h"
 
 @implementation AccountTableViewCell
 
@@ -21,6 +22,19 @@
 
 - (void)awakeFromNib
 {
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+
+//    [_nameTextField setEnabled:editing];
+//    [_valueTextField setEnabled:editing];
+    if (!editing)
+    {
+        [_nameTextField resignFirstResponder];
+        [_valueTextField resignFirstResponder];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -55,9 +69,27 @@
     }
 }
 
-- (void) textFieldDidBeginEditing:(UITextField *)textField {
-    NSLog(@"textFieldDidBeginEditing");
+//- (void) textFieldDidBeginEditing:(UITextField *)textField {
+//    NSLog(@"textFieldDidBeginEditing");
+//    
+//    
+//    
+//}
+
+- (BOOL) textFieldShouldBeginEditing:(UITextField *)textField {
+    NSLog(@"valueFieldTouched");
+    if (![self isEditing])
+    {
+        UITableView* tableView = (UITableView*)self.superview.superview;
+        AccountViewController* controller = (AccountViewController*)tableView.dataSource;
+        [ViewUtil popupMessage:@"Value Copied!" forView:controller.view];
+        
+        [UIPasteboard generalPasteboard].string = [textField text];
+    }
+    
+    return [self isEditing];
 }
+
 
 #pragma mark - IBAction
 
@@ -67,6 +99,10 @@
     AccountViewController* controller = (AccountViewController*)tableView.dataSource;
     NSIndexPath* indexPath = [controller.tableView indexPathForCell:self];
     [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
+}
+
+- (IBAction)valueFieldTouched:(id)sender {
+    NSLog(@"valueFieldTouched");
 }
 
 - (void)configureAttributeData:(AttributeData*)data

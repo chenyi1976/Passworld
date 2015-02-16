@@ -10,11 +10,12 @@
 #import "EstateData.h"
 #import "DetailViewController.h"
 
-@interface AccountViewController : DetailViewController<UITableViewDataSource, UITextFieldDelegate>
+@interface AccountViewController : DetailViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
-@property IBOutlet UITextField* nameTextField;
-@property IBOutlet UITableView* tableView;
-@property IBOutlet UIButton* deleteButton;
+@property (weak, nonatomic) IBOutlet UITextField* nameTextField;
+@property (weak, nonatomic) IBOutlet UITableView* tableView;
+@property (weak, nonatomic) IBOutlet UIButton* deleteButton;
+@property (weak, nonatomic) IBOutlet UIButton *okButton;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableBottomConstraint;
 

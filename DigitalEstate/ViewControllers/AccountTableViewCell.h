@@ -15,6 +15,7 @@
 @property IBOutlet UITextField* valueTextField;
 
 - (IBAction)deleteButtonClicked:(id)sender;
+- (IBAction)valueFieldTouched:(id)sender;
 
 - (void)configureAttributeData:(AttributeData*)data;
 

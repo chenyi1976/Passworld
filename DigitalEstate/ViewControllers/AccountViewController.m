@@ -38,12 +38,15 @@
     {
         [_nameTextField setText:estateData.name];
         _tableData = [[NSMutableArray alloc] initWithArray:estateData.attributeValues copyItems:TRUE];
+        [_okButton setTitle:@"Edit" forState:UIControlStateNormal];
+        [_tableView setEditing:FALSE animated:FALSE];
+//        [_tableView setUserInteractionEnabled:FALSE];
     }
     else
     {
         [_nameTextField setText:@""];
-        AttributeData* accountNameData = [[AttributeData alloc] initWithId:kAttributeAccountName name:@"Account Name" value:@""];
-        AttributeData* accountValueData = [[AttributeData alloc] initWithId:kAttributeAccountValue name:@"Account Value" value:@""];
+        AttributeData* accountNameData = [[AttributeData alloc] initWithId:kAttributeAccountName name:@"Username" value:@""];
+        AttributeData* accountValueData = [[AttributeData alloc] initWithId:kAttributeAccountValue name:@"Password" value:@""];
         
         _tableData = [NSMutableArray arrayWithObjects:accountNameData, accountValueData, nil];
     }
@@ -95,6 +98,20 @@
 {
     _tableBottomConstraint.constant = 8;
 }
+
+
+#pragma mark UITableViewDataSource
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleNone;
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return FALSE;
+}
+
 
 #pragma mark UITableViewDataSource
 
@@ -169,24 +186,34 @@
 - (IBAction)okButtonTouched:(id)sender
 {
 //    [self dismissAnyKeyboard:self.view];
-    [[self view] endEditing:TRUE];
-
-    if (estateData)
+    NSString* okButtonTitle = [_okButton currentTitle];
+    if ([okButtonTitle isEqualToString:@"Edit"])
     {
-        NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:estateData];
-        [estateData setAttributeValues:_tableData];
-        [estateData setName:_nameTextField.text];
-        [[DataSourceFactory getDataSource] replaceObjectAtIndex:index withObject:estateData];
+        [_okButton setTitle:@"Save" forState:UIControlStateNormal];
+        [_tableView setEditing:TRUE animated:FALSE];
+//        [_tableView setUserInteractionEnabled:TRUE];
     }
     else
     {
-        NSDate* date = [NSDate date];
-        NSString* estateId = [NSString stringWithFormat:@"%@", date];
-
-        EstateData* data = [[EstateData alloc] initWithId:estateId withName:_nameTextField.text withContent:nil withAttributeValues:_tableData withLastUpdate:[NSDate date] withHistory:nil withDeleted:false];
-        [[DataSourceFactory getDataSource] addObject:data];
+        [[self view] endEditing:TRUE];
+        
+        if (estateData)
+        {
+            NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:estateData];
+            [estateData setAttributeValues:_tableData];
+            [estateData setName:_nameTextField.text];
+            [[DataSourceFactory getDataSource] replaceObjectAtIndex:index withObject:estateData];
+        }
+        else
+        {
+            NSDate* date = [NSDate date];
+            NSString* estateId = [NSString stringWithFormat:@"%@", date];
+            
+            EstateData* data = [[EstateData alloc] initWithId:estateId withName:_nameTextField.text withContent:nil withAttributeValues:_tableData withLastUpdate:[NSDate date] withHistory:nil withDeleted:false];
+            [[DataSourceFactory getDataSource] addObject:data];
+        }
+        [self dismissViewControllerAnimated:TRUE completion:^(void){}];
     }
-    [self dismissViewControllerAnimated:TRUE completion:^(void){}];
 }
 
 - (IBAction)backButtonTouched:(id)sender
