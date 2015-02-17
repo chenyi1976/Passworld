@@ -62,7 +62,8 @@
 
 - (IBAction)cancelButtonTouched:(id)sender
 {
-    [ViewUtil dismissToRootViewController:self Animated:TRUE completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+//    [ViewUtil dismissToRootViewController:self Animated:TRUE completion:nil];
 }
 
 @end

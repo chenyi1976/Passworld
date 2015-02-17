@@ -79,10 +79,13 @@
                     [prefs setInteger:passcode4 forKey:kPassword4];
                     [prefs synchronize];
                     
-                    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-                    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss zzz"];
-                    
-                    NSString* encryptKey = [NSString stringWithFormat:@"%@%d%d%d%d", [NSDate new], passcode1, passcode2, passcode3, passcode4];
+                    NSString *alphabet  = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY0123456789";
+                    NSMutableString *encryptKey = [NSMutableString stringWithCapacity:18];
+                    for (NSUInteger i = 0U; i < 18; i++) {
+                        u_int32_t r = arc4random() % [alphabet length];
+                        unichar c = [alphabet characterAtIndex:r];
+                        [encryptKey appendFormat:@"%C", c];
+                    }
                     
                     bool saved = [KeyChainUtil saveToKeyChainForKey:kEncryptKey withValue:encryptKey];
                     

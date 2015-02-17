@@ -23,6 +23,20 @@
     [currentController dismissViewControllerAnimated:animated completion:completion];
 }
 
++(void) dismissToViewController:(Class)viewControllerClass fromView:(UIViewController*) currentController Animated:(BOOL)animated completion:(void (^)(void))completion
+{
+    if (currentController == nil)
+        return;
+    
+    while (currentController.presentingViewController != nil
+           && ![currentController isKindOfClass:viewControllerClass])
+    {
+        currentController = currentController.presentingViewController;
+    }
+    
+    [currentController dismissViewControllerAnimated:animated completion:completion];
+}
+
 + (void)popupMessage:(NSString*) message forView:(UIView*) view{
     
 //    UIWindow* window = [UIApplication sharedApplication].keyWindow;

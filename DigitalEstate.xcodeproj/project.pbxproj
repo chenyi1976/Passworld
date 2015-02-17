@@ -34,7 +34,6 @@
 		813664B5190F850400C0B76E /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 813664B4190F850400C0B76E /* Add@2x.png */; };
 		813664B8190F870D00C0B76E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664B7190F870D00C0B76E /* SettingViewController.m */; };
 		813664BB191075B600C0B76E /* HistoryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664BA191075B600C0B76E /* HistoryData.m */; };
-		813664BE191200B900C0B76E /* EncryptPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664BD191200B900C0B76E /* EncryptPasswordViewController.m */; };
 		813664C119132F0700C0B76E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664C019132F0700C0B76E /* KeychainItemWrapper.m */; };
 		813CCA3C18FD0EF9002A98F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3B18FD0EF9002A98F2 /* Foundation.framework */; };
 		813CCA3E18FD0EF9002A98F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */; };
@@ -58,6 +57,7 @@
 		8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159411E1920736E00D6EB14 /* HistoryViewController.m */; };
 		815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815941211920762700D6EB14 /* HistoryTableViewCell.m */; };
 		81594126192192F000D6EB14 /* next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81594125192192F000D6EB14 /* next@2x.png */; };
+		8172A2D51A930EA600D0BAEC /* Passworld_logo_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8172A2D41A930EA600D0BAEC /* Passworld_logo_120.png */; };
 		817FB7A619393E7E00110586 /* circle_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 817FB7A519393E7E00110586 /* circle_add@2x.png */; };
 		8180D7C018FDFCC30095F625 /* EstateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7BF18FDFCC30095F625 /* EstateData.m */; };
 		8180D7C618FDFD7E0095F625 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7C318FDFD7E0095F625 /* DownloadManager.m */; };
@@ -100,7 +100,6 @@
 		81AB973F1922465800B0C917 /* Card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB973E1922465800B0C917 /* Card@2x.png */; };
 		81AB97411922493700B0C917 /* password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB97401922493700B0C917 /* password@2x.png */; };
 		81AB9745192378B200B0C917 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB9744192378B200B0C917 /* AccountTableViewCell.m */; };
-		81AEF0251A92B6C600634BD5 /* orange-shield-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81AEF0241A92B6C600634BD5 /* orange-shield-icon.jpg */; };
 		81B18E471905EAB1005647AF /* Mic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E431905EAB1005647AF /* Mic@2x.png */; };
 		81B18E481905EAB1005647AF /* Video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E441905EAB1005647AF /* Video@2x.png */; };
 		81B18E491905EAB1005647AF /* Page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E451905EAB1005647AF /* Page@2x.png */; };
@@ -183,8 +182,6 @@
 		813664B7190F870D00C0B76E /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = ViewControllers/SettingViewController.m; sourceTree = "<group>"; };
 		813664B9191075B600C0B76E /* HistoryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryData.h; path = Data/HistoryData.h; sourceTree = "<group>"; };
 		813664BA191075B600C0B76E /* HistoryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryData.m; path = Data/HistoryData.m; sourceTree = "<group>"; };
-		813664BC191200B900C0B76E /* EncryptPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EncryptPasswordViewController.h; path = ViewControllers/EncryptPasswordViewController.h; sourceTree = "<group>"; };
-		813664BD191200B900C0B76E /* EncryptPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EncryptPasswordViewController.m; path = ViewControllers/EncryptPasswordViewController.m; sourceTree = "<group>"; };
 		813664BF19132F0700C0B76E /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = Util/KeychainItemWrapper.h; sourceTree = "<group>"; };
 		813664C019132F0700C0B76E /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = Util/KeychainItemWrapper.m; sourceTree = "<group>"; };
 		813CCA3818FD0EF9002A98F2 /* DigitalEstate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalEstate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +218,7 @@
 		815941201920762700D6EB14 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryTableViewCell.h; path = ViewControllers/HistoryTableViewCell.h; sourceTree = "<group>"; };
 		815941211920762700D6EB14 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryTableViewCell.m; path = ViewControllers/HistoryTableViewCell.m; sourceTree = "<group>"; };
 		81594125192192F000D6EB14 /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "next@2x.png"; path = "Images/next@2x.png"; sourceTree = "<group>"; };
+		8172A2D41A930EA600D0BAEC /* Passworld_logo_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Passworld_logo_120.png; path = Images/Passworld_logo_120.png; sourceTree = "<group>"; };
 		817FB7A519393E7E00110586 /* circle_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_add@2x.png"; path = "Images/circle_add@2x.png"; sourceTree = "<group>"; };
 		8180D7BE18FDFCC30095F625 /* EstateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateData.h; path = Data/EstateData.h; sourceTree = "<group>"; };
 		8180D7BF18FDFCC30095F625 /* EstateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateData.m; path = Data/EstateData.m; sourceTree = "<group>"; };
@@ -283,7 +281,6 @@
 		81AB974219231E2400B0C917 /* DigitalEstate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DigitalEstate.entitlements; sourceTree = "<group>"; };
 		81AB9743192378B200B0C917 /* AccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountTableViewCell.h; path = ViewControllers/AccountTableViewCell.h; sourceTree = "<group>"; };
 		81AB9744192378B200B0C917 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountTableViewCell.m; path = ViewControllers/AccountTableViewCell.m; sourceTree = "<group>"; };
-		81AEF0241A92B6C600634BD5 /* orange-shield-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "orange-shield-icon.jpg"; path = "Images/orange-shield-icon.jpg"; sourceTree = "<group>"; };
 		81B18E431905EAB1005647AF /* Mic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Mic@2x.png"; path = "Images/Mic@2x.png"; sourceTree = "<group>"; };
 		81B18E441905EAB1005647AF /* Video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Video@2x.png"; path = "Images/Video@2x.png"; sourceTree = "<group>"; };
 		81B18E451905EAB1005647AF /* Page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Page@2x.png"; path = "Images/Page@2x.png"; sourceTree = "<group>"; };
@@ -518,8 +515,6 @@
 				8121787E19089686002DA71A /* CountryViewController.m */,
 				813664B6190F870D00C0B76E /* SettingViewController.h */,
 				813664B7190F870D00C0B76E /* SettingViewController.m */,
-				813664BC191200B900C0B76E /* EncryptPasswordViewController.h */,
-				813664BD191200B900C0B76E /* EncryptPasswordViewController.m */,
 				8159411D1920736E00D6EB14 /* HistoryViewController.h */,
 				8159411E1920736E00D6EB14 /* HistoryViewController.m */,
 				81AB973419219B5000B0C917 /* WelcomeViewController.h */,
@@ -573,7 +568,7 @@
 		8180D7E218FE153F0095F625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				81AEF0241A92B6C600634BD5 /* orange-shield-icon.jpg */,
+				8172A2D41A930EA600D0BAEC /* Passworld_logo_120.png */,
 				817FB7A519393E7E00110586 /* circle_add@2x.png */,
 				811F6834192E13F300F27955 /* OPPS@2x.png */,
 				811F6832192E048E00F27955 /* circle_delete@2x.png */,
@@ -848,6 +843,7 @@
 				81AB973F1922465800B0C917 /* Card@2x.png in Resources */,
 				81B18E491905EAB1005647AF /* Page@2x.png in Resources */,
 				81DDE8931904980D00EA886D /* red@2x.png in Resources */,
+				8172A2D51A930EA600D0BAEC /* Passworld_logo_120.png in Resources */,
 				8180D80818FE16A40095F625 /* 4@2x.png in Resources */,
 				81AB97411922493700B0C917 /* password@2x.png in Resources */,
 				810149781925F95F00765486 /* circle_close@2x.png in Resources */,
@@ -868,7 +864,6 @@
 				812178831908ABD5002DA71A /* DiallingCodes.plist in Resources */,
 				8180D80518FE16A40095F625 /* 7@2x.png in Resources */,
 				8180D81818FE48340095F625 /* off@2x.png in Resources */,
-				81AEF0251A92B6C600634BD5 /* orange-shield-icon.jpg in Resources */,
 				8180D7F818FE15A60095F625 /* 1@2x.png in Resources */,
 				81B18E4E1905FB9F005647AF /* Tick@2x.png in Resources */,
 				813CCA4F18FD0EF9002A98F2 /* Main.storyboard in Resources */,
@@ -922,7 +917,6 @@
 				8180D7C018FDFCC30095F625 /* EstateData.m in Sources */,
 				8180D7CD18FE06C70095F625 /* EstateViewController.m in Sources */,
 				81B18E53190602DC005647AF /* EstateTableViewCell.m in Sources */,
-				813664BE191200B900C0B76E /* EncryptPasswordViewController.m in Sources */,
 				8180D7C618FDFD7E0095F625 /* DownloadManager.m in Sources */,
 				8180D7CA18FDFE0A0095F625 /* WebsiteLinkEntry.m in Sources */,
 				813664B2190F4DC600C0B76E /* NSData+CommonCrypto.m in Sources */,
@@ -1080,7 +1074,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1113,7 +1107,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1216,7 +1210,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PasscodeRecovery/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1235,7 +1229,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = PasscodeRecovery/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

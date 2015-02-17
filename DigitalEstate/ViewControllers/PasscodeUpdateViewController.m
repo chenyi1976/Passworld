@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ConstantDefinition.h"
 #import "ViewUtil.h"
+#import "SettingViewController.h"
 
 @interface PasscodeUpdateViewController ()
 @end
@@ -93,7 +94,9 @@
 
 - (IBAction)cancelButtonTouched:(id)sender
 {
-    [ViewUtil dismissToRootViewController:self Animated:TRUE completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self.view removeFromSuperview];
+    [ViewUtil dismissToViewController:[SettingViewController class] fromView:self Animated:TRUE completion:nil];
 }
 
 
