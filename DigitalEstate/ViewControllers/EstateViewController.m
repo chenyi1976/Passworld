@@ -255,45 +255,6 @@
 
 #pragma mark - IBAction
 
-//- (IBAction)audioButtonTouched:(id)sender
-//{
-//    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Audio NOT implemented." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
-//    alert.alertViewStyle=UIAlertViewStyleDefault;
-//    [alert show];
-//}
-//
-//- (IBAction)cameraButtonTouched:(id)sender
-//{
-//    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Photo NOT implemented." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
-//    alert.alertViewStyle=UIAlertViewStyleDefault;
-//    [alert show];
-//}
-//
-//- (IBAction)videoButtonTouched:(id)sender
-//{
-//    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Video NOT implemented." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
-//    alert.alertViewStyle=UIAlertViewStyleDefault;
-//    [alert show];
-//}
-//
-//- (IBAction)textButtonTouched:(id)sender
-//{
-//    
-//}
-
-//- (IBAction)switchButtonTouched:(id)sender
-//{
-//    if (_topConstraint.constant <= 0)
-//        _topConstraint.constant = _buttonView.frame.size.height;
-//    else
-//        _topConstraint.constant = 0;
-//    
-//    [_tableView setNeedsUpdateConstraints];
-//    [UIView animateWithDuration:0.5f animations:^(void){
-//        [_tableView layoutIfNeeded];
-//    } completion:^(BOOL finished){
-//    }];
-//}
 
 #pragma mark - Search
 

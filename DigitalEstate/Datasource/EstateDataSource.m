@@ -51,21 +51,6 @@
     [_dataStrategy saveEstateData:_estates withDeletedData:_deletedEstates];
 }
 
-- (void)removeObjectAtIndex:(NSUInteger)index
-{
-    EstateData* estate = [_estates objectAtIndex:index];
-    NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
-    NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:YES];
-    _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
-
-    estate.deleted = true;
-    [_deletedEstates addObject:estate];
-    [_estates removeObjectAtIndex:index];
-    [self fireDataChanged];
-    [_dataStrategy saveEstateData:_estates withDeletedData:_deletedEstates];
-}
-
 - (void)removeObject:(EstateData*)estate
 {
     [_estates removeObject:estate];
@@ -78,6 +63,13 @@
     [_deletedEstates addObject:estate];
     [self fireDataChanged];
     [_dataStrategy saveEstateData:_estates withDeletedData:_deletedEstates];
+}
+
+- (void)removeObjectAtIndex:(NSUInteger)index
+{
+    EstateData* estate = [_estatesByName objectAtIndex:index];
+    
+    [self removeObject:estate];
 }
 
 - (void)addObject:(EstateData*)estate

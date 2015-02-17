@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITableView* tableView;
 @property (weak, nonatomic) IBOutlet UIButton* deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
+@property (weak, nonatomic) IBOutlet UIButton *addLineButton;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableBottomConstraint;
 

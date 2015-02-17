@@ -38,17 +38,23 @@
     {
         [_nameTextField setText:estateData.name];
         _tableData = [[NSMutableArray alloc] initWithArray:estateData.attributeValues copyItems:TRUE];
+
+        [_nameTextField setEnabled:FALSE];
+        [_addLineButton setEnabled:FALSE];
         [_okButton setTitle:@"Edit" forState:UIControlStateNormal];
         [_tableView setEditing:FALSE animated:FALSE];
-//        [_tableView setUserInteractionEnabled:FALSE];
     }
     else
     {
         [_nameTextField setText:@""];
         AttributeData* accountNameData = [[AttributeData alloc] initWithId:kAttributeAccountName name:@"Username" value:@""];
         AttributeData* accountValueData = [[AttributeData alloc] initWithId:kAttributeAccountValue name:@"Password" value:@""];
-        
         _tableData = [NSMutableArray arrayWithObjects:accountNameData, accountValueData, nil];
+        
+        [_nameTextField setEnabled:TRUE];
+        [_addLineButton setEnabled:TRUE];
+        [_okButton setTitle:@"Save" forState:UIControlStateNormal];
+        [_tableView setEditing:TRUE animated:FALSE];
     }
     [_tableView reloadData];
     
@@ -189,9 +195,11 @@
     NSString* okButtonTitle = [_okButton currentTitle];
     if ([okButtonTitle isEqualToString:@"Edit"])
     {
+        [_nameTextField setEnabled:TRUE];
+        [_addLineButton setEnabled:TRUE];
+
         [_okButton setTitle:@"Save" forState:UIControlStateNormal];
         [_tableView setEditing:TRUE animated:FALSE];
-//        [_tableView setUserInteractionEnabled:TRUE];
     }
     else
     {
