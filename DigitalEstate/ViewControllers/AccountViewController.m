@@ -41,6 +41,7 @@
 
         [_nameTextField setEnabled:FALSE];
         [_addLineButton setEnabled:FALSE];
+        [_addLineButton setBackgroundColor:[UIColor colorWithRed:0.85 green:0.85 blue:0.85 alpha:1]];
         [_okButton setTitle:@"Edit" forState:UIControlStateNormal];
         [_tableView setEditing:FALSE animated:FALSE];
     }
@@ -197,6 +198,7 @@
     {
         [_nameTextField setEnabled:TRUE];
         [_addLineButton setEnabled:TRUE];
+        [_addLineButton setBackgroundColor:[UIColor greenColor]];
 
         [_okButton setTitle:@"Save" forState:UIControlStateNormal];
         [_tableView setEditing:TRUE animated:FALSE];

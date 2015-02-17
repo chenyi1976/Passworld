@@ -28,12 +28,15 @@
 {
     [super setEditing:editing animated:animated];
 
-//    [_nameTextField setEnabled:editing];
-//    [_valueTextField setEnabled:editing];
     if (!editing)
     {
         [_nameTextField resignFirstResponder];
         [_valueTextField resignFirstResponder];
+        [self setBackgroundColor:[UIColor colorWithRed:0.85 green:0.85 blue:0.85 alpha:1]];
+    }
+    else
+    {
+        [self setBackgroundColor:[UIColor whiteColor]];
     }
 }
 
