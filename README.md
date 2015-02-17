@@ -1,8 +1,11 @@
 # README #
 
-### Open Source Password Safe ###
+### Passworld: Store your password safely ###
 
-* An OpenSource iPhone App for you to store your password safely.
+
++ Passworld is to help user to safely keep their password. 
++ Passworld is OPEN SOURCED, No Fishy, No Backdoor.
++ Passworld encrpt your data with MILITARY-GRADE ENCRYPTION.
 
 ### Why I make this? ###
 
