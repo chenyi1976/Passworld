@@ -39,13 +39,10 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
+    NSLog(@"applicationWillEnterForeground");
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-
+    
     NSInteger pinThreshold = [prefs integerForKey:kPinThreshold];
     double deactiveTime =  [prefs doubleForKey:kDeactiveTime];
     NSTimeInterval activeTime = [[NSDate date] timeIntervalSince1970];
@@ -65,6 +62,12 @@
             [app.window setRootViewController:screen];
         }
     }
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    NSLog(@"applicationDidBecomeActive");
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

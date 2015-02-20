@@ -10,4 +10,5 @@
 
 @interface InitialViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @end

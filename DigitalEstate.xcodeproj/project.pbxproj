@@ -100,6 +100,8 @@
 		81AB973F1922465800B0C917 /* Card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB973E1922465800B0C917 /* Card@2x.png */; };
 		81AB97411922493700B0C917 /* password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB97401922493700B0C917 /* password@2x.png */; };
 		81AB9745192378B200B0C917 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB9744192378B200B0C917 /* AccountTableViewCell.m */; };
+		81ABA5E81A973A9600BFEE9D /* Passworld_Logo_1024_Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 81ABA5E71A973A9600BFEE9D /* Passworld_Logo_1024_Transparent.png */; };
+		81ABA5EA1A97402700BFEE9D /* Passworld_Logo_40_Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 81ABA5E91A97402700BFEE9D /* Passworld_Logo_40_Transparent.png */; };
 		81B18E471905EAB1005647AF /* Mic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E431905EAB1005647AF /* Mic@2x.png */; };
 		81B18E481905EAB1005647AF /* Video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E441905EAB1005647AF /* Video@2x.png */; };
 		81B18E491905EAB1005647AF /* Page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B18E451905EAB1005647AF /* Page@2x.png */; };
@@ -281,6 +283,8 @@
 		81AB974219231E2400B0C917 /* DigitalEstate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DigitalEstate.entitlements; sourceTree = "<group>"; };
 		81AB9743192378B200B0C917 /* AccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountTableViewCell.h; path = ViewControllers/AccountTableViewCell.h; sourceTree = "<group>"; };
 		81AB9744192378B200B0C917 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountTableViewCell.m; path = ViewControllers/AccountTableViewCell.m; sourceTree = "<group>"; };
+		81ABA5E71A973A9600BFEE9D /* Passworld_Logo_1024_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Passworld_Logo_1024_Transparent.png; path = Images/Passworld_Logo_1024_Transparent.png; sourceTree = "<group>"; };
+		81ABA5E91A97402700BFEE9D /* Passworld_Logo_40_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Passworld_Logo_40_Transparent.png; path = Images/Passworld_Logo_40_Transparent.png; sourceTree = "<group>"; };
 		81B18E431905EAB1005647AF /* Mic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Mic@2x.png"; path = "Images/Mic@2x.png"; sourceTree = "<group>"; };
 		81B18E441905EAB1005647AF /* Video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Video@2x.png"; path = "Images/Video@2x.png"; sourceTree = "<group>"; };
 		81B18E451905EAB1005647AF /* Page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Page@2x.png"; path = "Images/Page@2x.png"; sourceTree = "<group>"; };
@@ -568,6 +572,8 @@
 		8180D7E218FE153F0095F625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				81ABA5E91A97402700BFEE9D /* Passworld_Logo_40_Transparent.png */,
+				81ABA5E71A973A9600BFEE9D /* Passworld_Logo_1024_Transparent.png */,
 				8172A2D41A930EA600D0BAEC /* Passworld_logo_120.png */,
 				817FB7A519393E7E00110586 /* circle_add@2x.png */,
 				811F6834192E13F300F27955 /* OPPS@2x.png */,
@@ -853,6 +859,7 @@
 				8180D80A18FE16A40095F625 /* 2@2x.png in Resources */,
 				810149721925EF1000765486 /* circle_text@2x.png in Resources */,
 				813664B5190F850400C0B76E /* Add@2x.png in Resources */,
+				81ABA5EA1A97402700BFEE9D /* Passworld_Logo_40_Transparent.png in Resources */,
 				813CCA4618FD0EF9002A98F2 /* InfoPlist.strings in Resources */,
 				8180D80218FE16A40095F625 /* 0@2x.png in Resources */,
 				817FB7A619393E7E00110586 /* circle_add@2x.png in Resources */,
@@ -861,6 +868,7 @@
 				81B18E481905EAB1005647AF /* Video@2x.png in Resources */,
 				8180D80E18FE18720095F625 /* nil@2x.png in Resources */,
 				81BAF1BA1A916FCC00817348 /* Screenshot_New.png in Resources */,
+				81ABA5E81A973A9600BFEE9D /* Passworld_Logo_1024_Transparent.png in Resources */,
 				812178831908ABD5002DA71A /* DiallingCodes.plist in Resources */,
 				8180D80518FE16A40095F625 /* 7@2x.png in Resources */,
 				8180D81818FE48340095F625 /* off@2x.png in Resources */,

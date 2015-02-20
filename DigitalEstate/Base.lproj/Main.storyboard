@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="H1R-05-TAP">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -153,15 +152,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This View is only for Place Holder, it will jump to other view based on settings in NSUserDefaults." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="BdF-NY-E6J">
-                                <rect key="frame" x="0.0" y="42" width="320" height="85"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passworld" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="BdF-NY-E6J">
+                                <rect key="frame" x="0.0" y="40" width="320" height="85"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Passworld_Logo_1024_Transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="TCN-ym-hRd">
+                                <rect key="frame" x="-165" y="-41" width="650" height="650"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="650" id="ifN-Ru-Hqz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BdF-NY-E6J" firstAttribute="leading" secondItem="3Ca-qS-gOy" secondAttribute="leading" id="9vJ-2U-JOd"/>
+                            <constraint firstItem="9B9-Td-s6P" firstAttribute="top" secondItem="BdF-NY-E6J" secondAttribute="bottom" constant="443" id="CuV-KJ-wDf"/>
+                            <constraint firstItem="TCN-ym-hRd" firstAttribute="centerY" secondItem="3Ca-qS-gOy" secondAttribute="centerY" id="HG2-6y-04O"/>
+                            <constraint firstItem="TCN-ym-hRd" firstAttribute="top" secondItem="3Ca-qS-gOy" secondAttribute="topMargin" constant="-41" id="T4P-8H-zDY"/>
+                            <constraint firstAttribute="trailing" secondItem="BdF-NY-E6J" secondAttribute="trailing" id="g65-v7-JvB"/>
+                            <constraint firstItem="BdF-NY-E6J" firstAttribute="top" secondItem="sXX-RV-3MZ" secondAttribute="bottom" constant="20" id="toh-kh-WJL"/>
+                            <constraint firstItem="TCN-ym-hRd" firstAttribute="centerX" secondItem="BdF-NY-E6J" secondAttribute="centerX" id="vIL-g2-qpR"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="logoImageView" destination="TCN-ym-hRd" id="sZr-wb-UV6"/>
                         <segue destination="PCJ-H2-D09" kind="modal" identifier="SecuritySegue" id="q8p-g3-dva"/>
                         <segue destination="2kh-hH-NW0" kind="modal" identifier="WelcomeSegue" id="Mgm-Gf-CEK"/>
                         <segue destination="DI1-9h-Kor" kind="modal" identifier="EstateNavigationSegue" id="EXN-um-WQX"/>
@@ -612,67 +627,56 @@
                                     <action selector="codeButtonTouched:" destination="PCJ-H2-D09" eventType="touchUpInside" id="kPz-Zg-epB"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Passworld_logo_120.png" translatesAutoresizingMaskIntoConstraints="NO" id="9if-GP-blz">
-                                <rect key="frame" x="120" y="17" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="4g2-w2-mNB"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passworld" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpJ-TK-IxN">
-                                <rect key="frame" x="20" y="105" width="280" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="zDv-Dh-VuW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passworld" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="o3t-kG-Bi7">
+                                <rect key="frame" x="0.0" y="40" width="320" height="85"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Passworld_Logo_40_Transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="9if-GP-blz">
+                                <rect key="frame" x="193" y="69" width="40" height="40"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.79088731749999996" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Hep-dL-1sM" firstAttribute="leading" secondItem="HZY-LL-gmg" secondAttribute="trailing" constant="14" id="06C-0B-GsT"/>
-                            <constraint firstItem="hpJ-TK-IxN" firstAttribute="centerX" secondItem="ctU-fk-DoF" secondAttribute="centerX" id="4jl-z5-d6b"/>
-                            <constraint firstItem="b0Q-IS-MWP" firstAttribute="leading" secondItem="MAM-kB-OsM" secondAttribute="leading" id="8KT-yY-Jpz"/>
-                            <constraint firstItem="hpJ-TK-IxN" firstAttribute="top" secondItem="9if-GP-blz" secondAttribute="bottom" constant="8" symbolic="YES" id="Abg-NZ-wEY"/>
-                            <constraint firstItem="92i-AT-H9R" firstAttribute="top" secondItem="MAM-kB-OsM" secondAttribute="top" id="B31-A1-jqD"/>
-                            <constraint firstItem="jsX-3T-uFC" firstAttribute="leading" secondItem="178-KD-eV6" secondAttribute="leading" id="CYf-6a-Bec"/>
-                            <constraint firstItem="vve-Z1-L1d" firstAttribute="top" secondItem="gCl-M1-Kka" secondAttribute="bottom" constant="97" id="D0k-fi-4N0"/>
-                            <constraint firstItem="LYu-vR-VtS" firstAttribute="leading" secondItem="cns-cN-dww" secondAttribute="trailing" constant="19" id="D9A-Yn-BIS"/>
-                            <constraint firstItem="HZY-LL-gmg" firstAttribute="top" secondItem="Hep-dL-1sM" secondAttribute="top" id="DcK-8K-JOC"/>
-                            <constraint firstItem="tTe-Ce-yUg" firstAttribute="bottom" secondItem="MAM-kB-OsM" secondAttribute="bottom" id="EVt-Lf-P15"/>
-                            <constraint firstItem="jsX-3T-uFC" firstAttribute="leading" secondItem="92i-AT-H9R" secondAttribute="leading" id="GCu-4t-sB2"/>
-                            <constraint firstItem="ULM-sc-DOv" firstAttribute="top" secondItem="ZVB-Nv-jlV" secondAttribute="top" id="Gtx-y5-IAh"/>
-                            <constraint firstItem="ULM-sc-DOv" firstAttribute="leading" secondItem="ZVB-Nv-jlV" secondAttribute="trailing" constant="14" id="IJO-rC-bBw"/>
-                            <constraint firstItem="jsX-3T-uFC" firstAttribute="top" secondItem="b0Q-IS-MWP" secondAttribute="top" id="JXf-7p-WHS"/>
-                            <constraint firstItem="EIb-cB-Ufe" firstAttribute="leading" secondItem="tTe-Ce-yUg" secondAttribute="leading" id="LMd-3N-RTp"/>
-                            <constraint firstItem="LYu-vR-VtS" firstAttribute="top" secondItem="cns-cN-dww" secondAttribute="top" id="Oq9-sV-wIU"/>
-                            <constraint firstItem="9if-GP-blz" firstAttribute="centerX" secondItem="hpJ-TK-IxN" secondAttribute="centerX" id="QQF-Ci-FVA"/>
-                            <constraint firstItem="gCl-M1-Kka" firstAttribute="top" secondItem="tTe-Ce-yUg" secondAttribute="bottom" constant="14" id="QaU-uv-kBf"/>
-                            <constraint firstItem="178-KD-eV6" firstAttribute="top" secondItem="LYu-vR-VtS" secondAttribute="top" id="QsT-zH-tiv"/>
-                            <constraint firstItem="gCl-M1-Kka" firstAttribute="leading" secondItem="tTe-Ce-yUg" secondAttribute="leading" id="Ruz-D5-HHe"/>
-                            <constraint firstItem="gCl-M1-Kka" firstAttribute="top" secondItem="wza-S6-CJu" secondAttribute="top" id="TK5-pP-OUw"/>
-                            <constraint firstItem="gN2-GU-mme" firstAttribute="top" secondItem="wza-S6-CJu" secondAttribute="top" id="Yxd-KD-OZm"/>
-                            <constraint firstItem="b0Q-IS-MWP" firstAttribute="leading" secondItem="LYu-vR-VtS" secondAttribute="leading" id="Z91-f3-8RZ"/>
-                            <constraint firstItem="178-KD-eV6" firstAttribute="leading" secondItem="LYu-vR-VtS" secondAttribute="trailing" constant="19" id="aYc-qw-lNy"/>
-                            <constraint firstItem="LYu-vR-VtS" firstAttribute="bottom" secondItem="cns-cN-dww" secondAttribute="bottom" id="aoZ-ZS-lQB"/>
-                            <constraint firstItem="EIb-cB-Ufe" firstAttribute="leading" secondItem="cns-cN-dww" secondAttribute="leading" id="bRH-ye-Pru"/>
-                            <constraint firstItem="gN2-GU-mme" firstAttribute="leading" secondItem="92i-AT-H9R" secondAttribute="leading" id="beS-hI-mpR"/>
-                            <constraint firstItem="EIb-cB-Ufe" firstAttribute="top" secondItem="b0Q-IS-MWP" secondAttribute="top" id="c5M-EU-npj"/>
-                            <constraint firstItem="EIb-cB-Ufe" firstAttribute="top" secondItem="cns-cN-dww" secondAttribute="bottom" constant="14" id="cOu-NJ-9Xu"/>
-                            <constraint firstItem="cns-cN-dww" firstAttribute="top" secondItem="HZY-LL-gmg" secondAttribute="bottom" constant="40" id="clv-Rk-BnA"/>
-                            <constraint firstItem="9if-GP-blz" firstAttribute="top" secondItem="ctU-fk-DoF" secondAttribute="topMargin" constant="17" id="dCn-zf-pam"/>
-                            <constraint firstItem="hpJ-TK-IxN" firstAttribute="leading" secondItem="ctU-fk-DoF" secondAttribute="leadingMargin" constant="4" id="eJY-kt-ILT"/>
-                            <constraint firstItem="LYu-vR-VtS" firstAttribute="centerX" secondItem="hpJ-TK-IxN" secondAttribute="centerX" id="emb-nx-d9Z"/>
-                            <constraint firstItem="wza-S6-CJu" firstAttribute="leading" secondItem="MAM-kB-OsM" secondAttribute="leading" id="hOD-tz-oPj"/>
-                            <constraint firstItem="Hep-dL-1sM" firstAttribute="bottom" secondItem="HZY-LL-gmg" secondAttribute="bottom" id="ios-fh-e7f"/>
-                            <constraint firstItem="HZY-LL-gmg" firstAttribute="leading" secondItem="hpJ-TK-IxN" secondAttribute="leading" id="mwo-df-URo"/>
-                            <constraint firstItem="wza-S6-CJu" firstAttribute="bottom" secondItem="gCl-M1-Kka" secondAttribute="bottom" id="sNv-LT-XCx"/>
-                            <constraint firstItem="MAM-kB-OsM" firstAttribute="top" secondItem="tTe-Ce-yUg" secondAttribute="top" id="uOA-WQ-sjD"/>
-                            <constraint firstItem="EIb-cB-Ufe" firstAttribute="bottom" secondItem="b0Q-IS-MWP" secondAttribute="bottom" id="uRl-v0-fFZ"/>
-                            <constraint firstItem="tTe-Ce-yUg" firstAttribute="top" secondItem="EIb-cB-Ufe" secondAttribute="bottom" constant="14" id="v9z-Qo-JsW"/>
-                            <constraint firstItem="ZVB-Nv-jlV" firstAttribute="leading" secondItem="Hep-dL-1sM" secondAttribute="trailing" constant="14" id="wJT-v7-NjU"/>
-                            <constraint firstItem="ZVB-Nv-jlV" firstAttribute="top" secondItem="Hep-dL-1sM" secondAttribute="top" id="xyo-EP-VDk"/>
-                            <constraint firstItem="HZY-LL-gmg" firstAttribute="top" secondItem="hpJ-TK-IxN" secondAttribute="bottom" constant="8" symbolic="YES" id="zxA-CU-6cu"/>
+                            <constraint firstItem="MAM-kB-OsM" firstAttribute="top" secondItem="tTe-Ce-yUg" secondAttribute="top" id="1ap-yq-RX6"/>
+                            <constraint firstItem="ULM-sc-DOv" firstAttribute="leading" secondItem="ZVB-Nv-jlV" secondAttribute="trailing" constant="14" id="2WW-Iq-VCS"/>
+                            <constraint firstItem="HZY-LL-gmg" firstAttribute="leading" secondItem="ctU-fk-DoF" secondAttribute="leadingMargin" constant="4" id="3yC-eB-mbw"/>
+                            <constraint firstItem="b0Q-IS-MWP" firstAttribute="leading" secondItem="LYu-vR-VtS" secondAttribute="leading" id="433-6H-lJE"/>
+                            <constraint firstItem="cns-cN-dww" firstAttribute="leading" secondItem="EIb-cB-Ufe" secondAttribute="leading" id="7Wh-lY-8FS"/>
+                            <constraint firstItem="o3t-kG-Bi7" firstAttribute="top" secondItem="uLT-za-W9X" secondAttribute="bottom" constant="20" id="BDB-ZZ-wTp"/>
+                            <constraint firstItem="jsX-3T-uFC" firstAttribute="leading" secondItem="178-KD-eV6" secondAttribute="leading" id="FLL-m9-bFc"/>
+                            <constraint firstItem="9if-GP-blz" firstAttribute="top" secondItem="uLT-za-W9X" secondAttribute="bottom" constant="49" id="FSQ-r9-pMH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9if-GP-blz" secondAttribute="trailing" constant="71" id="M2g-vQ-VDf"/>
+                            <constraint firstItem="178-KD-eV6" firstAttribute="leading" secondItem="LYu-vR-VtS" secondAttribute="trailing" constant="19" id="NdB-uQ-Klb"/>
+                            <constraint firstItem="LYu-vR-VtS" firstAttribute="top" secondItem="cns-cN-dww" secondAttribute="top" id="OSb-PE-MLD"/>
+                            <constraint firstItem="ZVB-Nv-jlV" firstAttribute="leading" secondItem="Hep-dL-1sM" secondAttribute="trailing" constant="14" id="Qap-ja-0mB"/>
+                            <constraint firstItem="ZVB-Nv-jlV" firstAttribute="top" secondItem="9if-GP-blz" secondAttribute="bottom" constant="25" id="RD2-qw-vtE"/>
+                            <constraint firstItem="EIb-cB-Ufe" firstAttribute="top" secondItem="cns-cN-dww" secondAttribute="bottom" constant="14" id="TkQ-y1-2gC"/>
+                            <constraint firstItem="EIb-cB-Ufe" firstAttribute="top" secondItem="b0Q-IS-MWP" secondAttribute="top" id="U7D-EG-dQc"/>
+                            <constraint firstItem="tTe-Ce-yUg" firstAttribute="top" secondItem="EIb-cB-Ufe" secondAttribute="bottom" constant="14" id="W93-aU-vcK"/>
+                            <constraint firstItem="b0Q-IS-MWP" firstAttribute="top" secondItem="jsX-3T-uFC" secondAttribute="top" id="aD0-rm-9xG"/>
+                            <constraint firstItem="wza-S6-CJu" firstAttribute="top" secondItem="gCl-M1-Kka" secondAttribute="top" id="cI8-Dl-Cl7"/>
+                            <constraint firstItem="ZVB-Nv-jlV" firstAttribute="top" secondItem="ULM-sc-DOv" secondAttribute="top" id="cgF-oe-OHA"/>
+                            <constraint firstItem="EIb-cB-Ufe" firstAttribute="leading" secondItem="tTe-Ce-yUg" secondAttribute="leading" id="ckw-Gl-I2A"/>
+                            <constraint firstItem="MAM-kB-OsM" firstAttribute="leading" secondItem="b0Q-IS-MWP" secondAttribute="leading" id="eNz-eT-Gus"/>
+                            <constraint firstItem="MAM-kB-OsM" firstAttribute="leading" secondItem="wza-S6-CJu" secondAttribute="leading" id="fRF-71-07t"/>
+                            <constraint firstAttribute="trailing" secondItem="o3t-kG-Bi7" secondAttribute="trailing" id="fg9-M7-XP3"/>
+                            <constraint firstItem="cns-cN-dww" firstAttribute="top" secondItem="HZY-LL-gmg" secondAttribute="bottom" constant="40" id="foI-RV-csx"/>
+                            <constraint firstItem="Hep-dL-1sM" firstAttribute="leading" secondItem="HZY-LL-gmg" secondAttribute="trailing" constant="14" id="hoX-5O-QI8"/>
+                            <constraint firstItem="tTe-Ce-yUg" firstAttribute="leading" secondItem="gCl-M1-Kka" secondAttribute="leading" id="jeR-6j-YqI"/>
+                            <constraint firstItem="HZY-LL-gmg" firstAttribute="top" secondItem="Hep-dL-1sM" secondAttribute="top" id="kKu-PN-vgN"/>
+                            <constraint firstItem="ZVB-Nv-jlV" firstAttribute="top" secondItem="Hep-dL-1sM" secondAttribute="top" id="m83-Gn-BHB"/>
+                            <constraint firstItem="92i-AT-H9R" firstAttribute="top" secondItem="MAM-kB-OsM" secondAttribute="top" id="mB7-fF-9Q3"/>
+                            <constraint firstItem="gCl-M1-Kka" firstAttribute="top" secondItem="tTe-Ce-yUg" secondAttribute="bottom" constant="14" id="mZ3-r8-6c2"/>
+                            <constraint firstItem="wza-S6-CJu" firstAttribute="top" secondItem="gN2-GU-mme" secondAttribute="top" id="pdP-y9-fCR"/>
+                            <constraint firstItem="jsX-3T-uFC" firstAttribute="leading" secondItem="92i-AT-H9R" secondAttribute="leading" id="pvE-PM-YRx"/>
+                            <constraint firstItem="o3t-kG-Bi7" firstAttribute="leading" secondItem="ctU-fk-DoF" secondAttribute="leading" id="rRj-zt-bBg"/>
+                            <constraint firstItem="LYu-vR-VtS" firstAttribute="centerX" secondItem="o3t-kG-Bi7" secondAttribute="centerX" id="tWf-7t-GRf"/>
+                            <constraint firstItem="gN2-GU-mme" firstAttribute="leading" secondItem="92i-AT-H9R" secondAttribute="leading" id="x4k-uz-5ey"/>
+                            <constraint firstItem="LYu-vR-VtS" firstAttribute="leading" secondItem="cns-cN-dww" secondAttribute="trailing" constant="19" id="xoj-Xu-TIR"/>
+                            <constraint firstItem="178-KD-eV6" firstAttribute="top" secondItem="LYu-vR-VtS" secondAttribute="top" id="ydy-HE-jm6"/>
+                            <constraint firstItem="HZY-LL-gmg" firstAttribute="top" secondItem="o3t-kG-Bi7" secondAttribute="bottom" constant="9" id="zse-w5-Nh3"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="5ee-bB-6so" appends="YES" id="1c1-yP-wGT"/>
@@ -2333,6 +2337,8 @@
         <image name="8.png" width="66" height="49"/>
         <image name="9.png" width="66" height="49"/>
         <image name="Add.png" width="25" height="25"/>
+        <image name="Passworld_Logo_1024_Transparent.png" width="1024" height="1024"/>
+        <image name="Passworld_Logo_40_Transparent.png" width="40" height="40"/>
         <image name="Passworld_logo_120.png" width="120" height="120"/>
         <image name="del.png" width="66" height="49"/>
         <image name="nil.png" width="66" height="49"/>

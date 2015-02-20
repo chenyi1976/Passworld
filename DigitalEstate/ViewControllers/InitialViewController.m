@@ -26,12 +26,9 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
+-(void)switchViewController{
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-
+    
     long pass1 = [prefs integerForKey:kPassword1];
     long pass2 = [prefs integerForKey:kPassword2];
     long pass3 = [prefs integerForKey:kPassword3];
@@ -60,14 +57,34 @@
         [self gotoScreen:@"WelcomeNavigationController"];
         return;
     }
-
+    
     //clear all setting before configuration
-//    [prefs removeObjectForKey:kPhoneNo];
-//    [prefs removeObjectForKey:kDiallingCode];
-//    [prefs removeObjectForKey:kCountryCode];
-//    [prefs synchronize];
+    //    [prefs removeObjectForKey:kPhoneNo];
+    //    [prefs removeObjectForKey:kDiallingCode];
+    //    [prefs removeObjectForKey:kCountryCode];
+    //    [prefs synchronize];
     
     [self gotoScreen:@"EstateNavigationController"];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+    NSLog(@"animationWithDuration Begin");
+    
+    [UIView animateWithDuration:.5f
+                     animations:^{
+                         _logoImageView.frame = CGRectMake(192, 67, 41, 41);
+                     }
+                     completion:^(BOOL cancelled){
+                         NSLog(@"animationWithDuration Finished");
+                         [self switchViewController];
+                     }
+     ];
+
+    });
 }
 
 - (void)didReceiveMemoryWarning
