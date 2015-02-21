@@ -16,13 +16,11 @@
 @property (weak, nonatomic) IBOutlet UITableView* tableView;
 @property (weak, nonatomic) IBOutlet UIButton* deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
-@property (weak, nonatomic) IBOutlet UIButton *addLineButton;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableBottomConstraint;
 
 - (IBAction)backButtonTouched:(id)sender;
 - (IBAction)okButtonTouched:(id)sender;
-- (IBAction)addLineButtonTouched:(id)sender;
 - (IBAction)deleteButtonTouched:(id)sender;
 - (IBAction)tableCellTouched:(id)sender;
 

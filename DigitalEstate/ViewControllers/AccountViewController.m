@@ -34,14 +34,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     if (estateData)
     {
         [_nameTextField setText:estateData.name];
         _tableData = [[NSMutableArray alloc] initWithArray:estateData.attributeValues copyItems:TRUE];
 
         [_nameTextField setEnabled:FALSE];
-        [_addLineButton setEnabled:FALSE];
-        [_addLineButton setBackgroundColor:[UIColor colorWithRed:0.85 green:0.85 blue:0.85 alpha:1]];
         [_okButton setTitle:@"Edit" forState:UIControlStateNormal];
         [_tableView setEditing:FALSE animated:FALSE];
     }
@@ -53,7 +54,6 @@
         _tableData = [NSMutableArray arrayWithObjects:accountNameData, accountValueData, nil];
         
         [_nameTextField setEnabled:TRUE];
-        [_addLineButton setEnabled:TRUE];
         [_okButton setTitle:@"Save" forState:UIControlStateNormal];
         [_tableView setEditing:TRUE animated:FALSE];
     }
@@ -124,6 +124,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if ([_tableView isEditing])
+        return [_tableData count] + 1;
+    
     return [_tableData count];
 }
 
@@ -138,10 +141,13 @@
                   reuseIdentifier:MyCellIdentifier];
     }
     
-    AttributeData* data = [_tableData objectAtIndex:indexPath.row];
-    if (data)
+    if (indexPath.row < _tableData.count)
     {
-        [result configureAttributeData:data];
+        AttributeData* data = [_tableData objectAtIndex:indexPath.row];
+        if (data)
+        {
+            [result configureAttributeData:data];
+        }
     }
     
     return result;
@@ -149,13 +155,34 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_tableData removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        if (indexPath.row < _tableData.count)
+        {
+            [_tableData removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
     }
     else if (editingStyle == UITableViewCellEditingStyleNone) {
+        AttributeData* data;
+        if (indexPath.row < _tableData.count)
+        {
+            data = [_tableData objectAtIndex:indexPath.row];
+        }
+        else
+        {
+            NSDate* date = [NSDate date];
+            NSString* attrId = [NSString stringWithFormat:@"%@", date];
+            
+            data = [[AttributeData alloc] init];
+            data.attrId = attrId;
+            
+            [_tableData addObject:data];
+        }
+
         AccountTableViewCell* cell = (AccountTableViewCell*)[_tableView cellForRowAtIndexPath:indexPath];
         
-        AttributeData* data = [[AttributeData alloc] initWithId:kAttributeAccountName name:cell.nameTextField.text value:cell.valueTextField.text];
+        data.attrName = cell.nameTextField.text;
+        data.attrValue = cell.valueTextField.text;
+        
         [_tableData replaceObjectAtIndex:indexPath.row withObject:data];
         [_tableView reloadData];
     }
@@ -197,8 +224,6 @@
     if ([okButtonTitle isEqualToString:@"Edit"])
     {
         [_nameTextField setEnabled:TRUE];
-        [_addLineButton setEnabled:TRUE];
-        [_addLineButton setBackgroundColor:[UIColor greenColor]];
 
         [_okButton setTitle:@"Save" forState:UIControlStateNormal];
         [_tableView setEditing:TRUE animated:FALSE];
@@ -224,6 +249,7 @@
         }
         [self dismissViewControllerAnimated:TRUE completion:^(void){}];
     }
+    [_tableView reloadData];
 }
 
 - (IBAction)backButtonTouched:(id)sender
@@ -232,16 +258,6 @@
     [[self view] endEditing:TRUE];
 
     [self dismissViewControllerAnimated:TRUE completion:^(void){}];
-}
-
-- (IBAction)addLineButtonTouched:(id)sender
-{
-    NSDate* date = [NSDate date];
-    NSString* attrId = [NSString stringWithFormat:@"%@", date];
-    AttributeData* newAttributeData = [[AttributeData alloc] initWithId:attrId name:@"Account Name" value:@""];
-
-    [_tableData addObject:newAttributeData];
-    [_tableView reloadData];
 }
 
 - (IBAction)deleteButtonTouched:(id)sender

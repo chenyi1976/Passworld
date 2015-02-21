@@ -1183,21 +1183,8 @@
                                     <outlet property="delegate" destination="ysJ-kx-Xj9" id="BdT-H2-RYf"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzc-tQ-XIS">
-                                <rect key="frame" x="203" y="94" width="97" height="34"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="UXn-ed-CGZ"/>
-                                </constraints>
-                                <state key="normal" title="Add Line">
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addLineButtonTouched:" destination="ysJ-kx-Xj9" eventType="touchUpInside" id="Lim-1F-Vui"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CJ5-4o-1OA">
-                                <rect key="frame" x="20" y="136" width="280" height="376"/>
+                                <rect key="frame" x="20" y="94" width="280" height="418"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <prototypes>
@@ -1208,15 +1195,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Attrname" placeholder="Attribute Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EpY-kW-E8m">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EpY-kW-E8m">
                                                     <rect key="frame" x="8" y="11" width="70" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="lvF-Me-KBJ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="jKc-3o-CeO" id="hqd-Hq-H5Y"/>
                                                     </connections>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Value" placeholder="Value" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBz-bl-cWZ">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBz-bl-cWZ">
                                                     <rect key="frame" x="86" y="11" width="186" height="30"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1227,6 +1217,15 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EpY-kW-E8m" firstAttribute="leading" secondItem="2SC-4d-8Gg" secondAttribute="leadingMargin" id="52g-7k-TV6"/>
+                                                <constraint firstItem="wBz-bl-cWZ" firstAttribute="top" secondItem="EpY-kW-E8m" secondAttribute="top" id="9dZ-7d-upp"/>
+                                                <constraint firstItem="EpY-kW-E8m" firstAttribute="top" secondItem="2SC-4d-8Gg" secondAttribute="topMargin" constant="3" id="B5A-bm-OGT"/>
+                                                <constraint firstItem="wBz-bl-cWZ" firstAttribute="bottom" secondItem="EpY-kW-E8m" secondAttribute="bottom" id="CZW-oM-RjF"/>
+                                                <constraint firstItem="wBz-bl-cWZ" firstAttribute="leading" secondItem="EpY-kW-E8m" secondAttribute="trailing" constant="8" symbolic="YES" id="FoP-n8-cIQ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EpY-kW-E8m" secondAttribute="bottom" constant="-2" id="qcR-C8-hj8"/>
+                                                <constraint firstItem="wBz-bl-cWZ" firstAttribute="trailing" secondItem="2SC-4d-8Gg" secondAttribute="trailingMargin" id="swN-Jr-PA5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameTextField" destination="EpY-kW-E8m" id="6gJ-sQ-a3t"/>
@@ -1242,12 +1241,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="CJ5-4o-1OA" firstAttribute="top" secondItem="FLJ-jA-bas" secondAttribute="bottom" constant="8" symbolic="YES" id="2z2-bX-IkP"/>
                             <constraint firstItem="Ouu-4c-N6o" firstAttribute="centerX" secondItem="CJ5-4o-1OA" secondAttribute="centerX" id="5jz-Gg-XSI"/>
-                            <constraint firstItem="FLJ-jA-bas" firstAttribute="trailing" secondItem="Vzc-tQ-XIS" secondAttribute="trailing" id="DyH-Pb-PTH"/>
                             <constraint firstItem="Ouu-4c-N6o" firstAttribute="top" secondItem="CJ5-4o-1OA" secondAttribute="bottom" constant="8" symbolic="YES" id="Ho1-tR-vCw"/>
                             <constraint firstItem="YO7-N2-dBF" firstAttribute="leading" secondItem="ffj-ma-7oh" secondAttribute="leadingMargin" constant="4" id="Hz1-9k-hUX"/>
-                            <constraint firstItem="Vzc-tQ-XIS" firstAttribute="top" secondItem="FLJ-jA-bas" secondAttribute="bottom" constant="8" symbolic="YES" id="IIt-89-Zpj"/>
-                            <constraint firstItem="CJ5-4o-1OA" firstAttribute="top" secondItem="Vzc-tQ-XIS" secondAttribute="bottom" constant="8" symbolic="YES" id="JAj-Im-TMW"/>
                             <constraint firstItem="CJ5-4o-1OA" firstAttribute="leading" secondItem="FLJ-jA-bas" secondAttribute="leading" id="PqH-97-vzG"/>
                             <constraint firstItem="FaX-dv-XHL" firstAttribute="trailing" secondItem="FLJ-jA-bas" secondAttribute="trailing" id="T6g-CD-Mbl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FaX-dv-XHL" secondAttribute="trailing" constant="4" id="UfT-97-uzM"/>
@@ -1255,15 +1252,14 @@
                             <constraint firstItem="FaX-dv-XHL" firstAttribute="top" secondItem="YO7-N2-dBF" secondAttribute="top" id="cdZ-2c-h7o"/>
                             <constraint firstItem="YO7-N2-dBF" firstAttribute="top" secondItem="9xd-Qb-ZAa" secondAttribute="bottom" id="dbX-K9-Uv6"/>
                             <constraint firstAttribute="bottom" secondItem="Ouu-4c-N6o" secondAttribute="bottom" constant="20" symbolic="YES" id="e0q-ky-vlF"/>
-                            <constraint firstItem="Vzc-tQ-XIS" firstAttribute="trailing" secondItem="CJ5-4o-1OA" secondAttribute="trailing" id="eNY-8N-Rko"/>
                             <constraint firstItem="FLJ-jA-bas" firstAttribute="top" secondItem="YO7-N2-dBF" secondAttribute="bottom" constant="8" symbolic="YES" id="fnt-bb-OYE"/>
                             <constraint firstItem="YO7-N2-dBF" firstAttribute="leading" secondItem="FLJ-jA-bas" secondAttribute="leading" id="nM3-vm-xGV"/>
+                            <constraint firstItem="CJ5-4o-1OA" firstAttribute="trailing" secondItem="FLJ-jA-bas" secondAttribute="trailing" id="pCG-UA-7hI"/>
                             <constraint firstItem="YO7-N2-dBF" firstAttribute="baseline" secondItem="FaX-dv-XHL" secondAttribute="firstBaseline" id="zfj-mu-eh5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3cd-8y-ZOF"/>
                     <connections>
-                        <outlet property="addLineButton" destination="Vzc-tQ-XIS" id="7R9-v4-e4g"/>
                         <outlet property="deleteButton" destination="Ouu-4c-N6o" id="ngy-f5-BxO"/>
                         <outlet property="nameTextField" destination="FLJ-jA-bas" id="ag9-Pn-7eH"/>
                         <outlet property="okButton" destination="FaX-dv-XHL" id="vQA-sU-RqD"/>
