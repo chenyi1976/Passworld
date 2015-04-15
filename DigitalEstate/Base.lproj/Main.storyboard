@@ -207,6 +207,9 @@
                                                     <state key="normal" title="Change Security Pin">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updatePasscodeButtonTouched:" destination="Y8v-pJ-be2" eventType="touchUpInside" id="LLN-Eb-Kkc"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -258,6 +261,29 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Pro" id="Pfv-5d-bCu">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e7e-nK-XDw">
+                                        <rect key="frame" x="0.0" y="439" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e7e-nK-XDw" id="qmV-bU-Lzy">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5W4-aH-4I7">
+                                                    <rect key="frame" x="20" y="7" width="267" height="30"/>
+                                                    <state key="normal" title="Upgrade to Pro / Restore Purchase">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="upgradeButtonTouched:" destination="Y8v-pJ-be2" eventType="touchUpInside" id="QYy-Nd-m48"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Support" id="8TG-Ue-b1W">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="EdF-2h-gIE">
@@ -279,27 +305,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="8mm-R7-eT0">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aT5-Np-pDa">
-                                        <rect key="frame" x="0.0" y="503" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aT5-Np-pDa" id="ZlA-nA-mk6">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Passworld" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qz-o6-imu">
-                                                    <rect key="frame" x="20" y="11" width="280" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="250" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="61" id="aVc-52-k4r">
                                         <rect key="frame" x="0.0" y="547" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -307,18 +312,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://github.com/chenyi1976/Passworld" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZP-Xq-Bjt">
-                                                    <rect key="frame" x="8" y="10" width="304" height="46"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="907-25-Bqi">
+                                                    <rect key="frame" x="8" y="8" width="304" height="22"/>
+                                                    <state key="normal" title="Find source code at: ">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="urlButtonTouched:" destination="Y8v-pJ-be2" eventType="touchUpInside" id="er9-hq-9p6"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcK-xY-clR">
+                                                    <rect key="frame" x="8" y="30" width="304" height="22"/>
+                                                    <state key="normal" title="http://github.com/chenyi1976/passworld">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="urlButtonTouched:" destination="Y8v-pJ-be2" eventType="touchUpInside" id="5lf-Kl-SYX"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="kZP-Xq-Bjt" firstAttribute="top" secondItem="xOM-YZ-SGI" secondAttribute="topMargin" constant="2" id="LbV-tl-2DI"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="kZP-Xq-Bjt" secondAttribute="bottom" constant="-4" id="dp7-dN-3vM"/>
-                                                <constraint firstItem="kZP-Xq-Bjt" firstAttribute="leading" secondItem="xOM-YZ-SGI" secondAttribute="leadingMargin" id="jn0-ap-BKd"/>
-                                                <constraint firstItem="kZP-Xq-Bjt" firstAttribute="trailing" secondItem="xOM-YZ-SGI" secondAttribute="trailingMargin" id="kYh-Pw-lnB"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="250" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>

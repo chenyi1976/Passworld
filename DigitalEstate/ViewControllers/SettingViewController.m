@@ -213,6 +213,12 @@
     }
 }
 
+- (IBAction)updatePasscodeButtonTouched:(id)sender {
+    if ([LTHPasscodeViewController doesPasscodeExist]) {
+        [[LTHPasscodeViewController sharedUser] showForChangingPasscodeInViewController:self asModal:NO];
+    }
+}
+
 - (IBAction)pinThresholdButtonTouched:(id)sender {
     
     UIActionSheet *sheet=[[UIActionSheet alloc] initWithTitle:@"Auto Lock"
@@ -223,14 +229,18 @@
     [sheet showInView:self.view];
 }
 
+- (IBAction)upgradeButtonTouched:(id)sender {
+    //todo: implement IAP here.
+}
+
 - (IBAction)mailButtonTouched:(id)sender{
     
     if ([MFMailComposeViewController canSendMail])
     {
         MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
         mail.mailComposeDelegate = self;
-        [mail setSubject:@"SafePass Support"];
-        [mail setToRecipients:@[@"safepassapp@chenyi.me"]];
+        [mail setSubject:@"Passworld Support"];
+        [mail setToRecipients:@[@"passworld@chenyi.me"]];
         
         [self presentViewController:mail animated:YES completion:NULL];
     }
@@ -242,6 +252,10 @@
 
         NSLog(@"This device cannot send email");
     }
+}
+
+- (IBAction)urlButtonTouched:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://github.com/chenyi1976/Passworld/"]];
 }
 
 

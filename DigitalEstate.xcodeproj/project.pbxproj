@@ -49,6 +49,8 @@
 		813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7618FDDFF0002A98F2 /* DataSourceFactory.m */; };
 		813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */; };
 		813CCA8918FDFC6B002A98F2 /* PersonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA8818FDFC6B002A98F2 /* PersonData.m */; };
+		814868061ADE53230051F544 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 814868051ADE53230051F544 /* IAPHelper.m */; };
+		814868091ADE54880051F544 /* PassworldIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 814868081ADE54880051F544 /* PassworldIAPHelper.m */; };
 		8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81594119192045F200D6EB14 /* KeyChainUtil.m */; };
 		8159411C19206D1000D6EB14 /* history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8159411B19206D1000D6EB14 /* history@2x.png */; };
 		8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159411E1920736E00D6EB14 /* HistoryViewController.m */; };
@@ -185,6 +187,10 @@
 		813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitialViewController.m; path = ViewControllers/InitialViewController.m; sourceTree = "<group>"; };
 		813CCA8718FDFC6B002A98F2 /* PersonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonData.h; path = Data/PersonData.h; sourceTree = "<group>"; };
 		813CCA8818FDFC6B002A98F2 /* PersonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonData.m; path = Data/PersonData.m; sourceTree = "<group>"; };
+		814868041ADE53230051F544 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAPHelper.h; path = IAPHelper/IAPHelper.h; sourceTree = "<group>"; };
+		814868051ADE53230051F544 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = IAPHelper/IAPHelper.m; sourceTree = "<group>"; };
+		814868071ADE54880051F544 /* PassworldIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PassworldIAPHelper.h; path = IAPHelper/PassworldIAPHelper.h; sourceTree = "<group>"; };
+		814868081ADE54880051F544 /* PassworldIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PassworldIAPHelper.m; path = IAPHelper/PassworldIAPHelper.m; sourceTree = "<group>"; };
 		81594118192045F200D6EB14 /* KeyChainUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyChainUtil.h; path = Util/KeyChainUtil.h; sourceTree = "<group>"; };
 		81594119192045F200D6EB14 /* KeyChainUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyChainUtil.m; path = Util/KeyChainUtil.m; sourceTree = "<group>"; };
 		8159411B19206D1000D6EB14 /* history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "history@2x.png"; path = "Images/history@2x.png"; sourceTree = "<group>"; };
@@ -374,6 +380,7 @@
 		813CCA4118FD0EF9002A98F2 /* DigitalEstate */ = {
 			isa = PBXGroup;
 			children = (
+				814868031ADE52E70051F544 /* IAPHelper */,
 				816B69CC1ADE25FE001B0CCE /* LTHPasscodeViewController */,
 				816B69C81ADE2598001B0CCE /* iToast */,
 				81BAF1B51A916F6600817348 /* Screenshots */,
@@ -476,6 +483,17 @@
 				81014969192417A900765486 /* AttributeData.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		814868031ADE52E70051F544 /* IAPHelper */ = {
+			isa = PBXGroup;
+			children = (
+				814868041ADE53230051F544 /* IAPHelper.h */,
+				814868051ADE53230051F544 /* IAPHelper.m */,
+				814868071ADE54880051F544 /* PassworldIAPHelper.h */,
+				814868081ADE54880051F544 /* PassworldIAPHelper.m */,
+			);
+			name = IAPHelper;
 			sourceTree = "<group>";
 		};
 		816B69C81ADE2598001B0CCE /* iToast */ = {
@@ -857,12 +875,14 @@
 				81AB97391921B76400B0C917 /* AccountViewController.m in Sources */,
 				813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */,
 				81AB9745192378B200B0C917 /* AccountTableViewCell.m in Sources */,
+				814868061ADE53230051F544 /* IAPHelper.m in Sources */,
 				8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */,
 				81CD2A1B192D568900785134 /* ViewUtil.m in Sources */,
 				816B69D21ADE2649001B0CCE /* LTHPasscodeViewController.m in Sources */,
 				8101497019249CED00765486 /* DetailViewController.m in Sources */,
 				813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */,
 				813664C119132F0700C0B76E /* KeychainItemWrapper.m in Sources */,
+				814868091ADE54880051F544 /* PassworldIAPHelper.m in Sources */,
 				816B69D11ADE2649001B0CCE /* LTHKeychainUtils.m in Sources */,
 				8121787919087B03002DA71A /* SMSService.m in Sources */,
 				815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */,
