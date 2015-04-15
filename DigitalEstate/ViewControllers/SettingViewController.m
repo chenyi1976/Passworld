@@ -10,6 +10,7 @@
 #import "ConstantDefinition.h"
 #import "Dropbox/Dropbox.h"
 #import "DataSourceFactory.h"
+#import "LTHPasscodeViewController.h"
 
 @interface SettingViewController ()
 
@@ -38,28 +39,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-//- (void)viewWillDisappear:(BOOL)animated{
-//    NSLog(@"viewWillDisappear");
-//    [super viewWillDisappear:animated];
-//}
-//
-//- (void)viewDidDisappear:(BOOL)animated{
-//    NSLog(@"viewDidDisappear");
-//    [super viewDidDisappear:animated];
-//}
-
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
         
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    long pass1 = [prefs integerForKey:kPassword1];
-    long pass2 = [prefs integerForKey:kPassword2];
-    long pass3 = [prefs integerForKey:kPassword3];
-    long pass4 = [prefs integerForKey:kPassword4];
-
-    long threshold = [prefs integerForKey:kPinThreshold];
+    NSTimeInterval threshold = [LTHPasscodeViewController timerDuration];
     
     if (threshold <= 0)
     {
@@ -67,14 +50,14 @@
     }
     else if (threshold < 60)
     {
-        [_pinThresholdButton setTitle:[NSString stringWithFormat: @"Auto Lock After %ld Seconds", threshold] forState:UIControlStateNormal];
+        [_pinThresholdButton setTitle:[NSString stringWithFormat: @"Auto Lock After %f Seconds", threshold] forState:UIControlStateNormal];
     }
     else
     {
-        [_pinThresholdButton setTitle:[NSString stringWithFormat: @"Auto Lock After %ld Minutes", threshold / 60] forState:UIControlStateNormal];
+        [_pinThresholdButton setTitle:[NSString stringWithFormat: @"Auto Lock After %f Minutes", threshold / 60] forState:UIControlStateNormal];
     }
     
-    if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0)
+    if (![LTHPasscodeViewController doesPasscodeExist])
     {
         [self.tableView headerViewForSection:0].textLabel.text = @"Security PIN: OFF";
         _switchPasswordButton.titleLabel.text = @"Turn Security PIN On";
@@ -89,6 +72,7 @@
         _pinThresholdButton.enabled = TRUE;
     }
     
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     NSString* datasourceType = [prefs stringForKey:kDatasourceType];
     DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
     _dropboxSyncSwitch.on = [@"Dropbox" isEqualToString:datasourceType] && account != nil;
@@ -166,9 +150,10 @@
         return;
     }
 
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setInteger:threshold forKey:kPinThreshold];
-    [prefs synchronize];
+    [LTHPasscodeViewController saveTimerDuration:threshold];
+//    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+//    [prefs setInteger:threshold forKey:kPinThreshold];
+//    [prefs synchronize];
 
     if (threshold <= 0)
     {
@@ -188,21 +173,12 @@
 
 - (IBAction)switchPasscodeButtonTouched:(id)sender
 {
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    long pass1 = [prefs integerForKey:kPassword1];
-    long pass2 = [prefs integerForKey:kPassword2];
-    long pass3 = [prefs integerForKey:kPassword3];
-    long pass4 = [prefs integerForKey:kPassword4];
-    
-    if (pass1 == 0 && pass2 == 0 && pass3 == 0 && pass4 ==0)
-    {
-        [self performSegueWithIdentifier:@"TurnOnPasscodeSegue" sender:self];
+    if ([LTHPasscodeViewController doesPasscodeExist]) {
+        [[LTHPasscodeViewController sharedUser] showForDisablingPasscodeInViewController:self asModal:NO];
     }
-    else
-    {
-        [self performSegueWithIdentifier:@"TurnOffPasscodeSegue" sender:self];
+    else {
+        [[LTHPasscodeViewController sharedUser] showForEnablingPasscodeInViewController:self asModal:NO];
     }
-
 }
 
 - (IBAction)switchSyncButtonTouched:(id)sender

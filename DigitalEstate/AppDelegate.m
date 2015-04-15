@@ -37,37 +37,33 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    NSLog(@"applicationWillEnterForeground");
-
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    
-    NSInteger pinThreshold = [prefs integerForKey:kPinThreshold];
-    double deactiveTime =  [prefs doubleForKey:kDeactiveTime];
-    NSTimeInterval activeTime = [[NSDate date] timeIntervalSince1970];
-    
-    if (activeTime - deactiveTime > pinThreshold)
-    {
-        long pass1 = [prefs integerForKey:kPassword1];
-        long pass2 = [prefs integerForKey:kPassword2];
-        long pass3 = [prefs integerForKey:kPassword3];
-        long pass4 = [prefs integerForKey:kPassword4];
-        if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
-        {
-            UIViewController* rootViewController = [[self window] rootViewController];
-            UIViewController *screen = [rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SecurityPassViewController"];
-            
-            AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-            [app.window setRootViewController:screen];
-        }
-    }
-}
-
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    NSLog(@"applicationDidBecomeActive");
-    
+//    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+//    
+//    NSInteger pinThreshold = [prefs integerForKey:kPinThreshold];
+//    double deactiveTime =  [prefs doubleForKey:kDeactiveTime];
+//    NSTimeInterval activeTime = [[NSDate date] timeIntervalSince1970];
+//    
+//    if (activeTime - deactiveTime > pinThreshold)
+//    {
+//        long pass1 = [prefs integerForKey:kPassword1];
+//        long pass2 = [prefs integerForKey:kPassword2];
+//        long pass3 = [prefs integerForKey:kPassword3];
+//        long pass4 = [prefs integerForKey:kPassword4];
+//        if (pass1 != 0 || pass2 != 0 || pass3 != 0 || pass4 != 0)
+//        {
+//            UIViewController* rootViewController = [[self window] rootViewController];
+//            UIViewController *screen = [rootViewController.storyboard instantiateViewControllerWithIdentifier:@"SecurityPassViewController"];
+//            
+//            
+////            [UIView ]
+////            AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//            
+////            [app.window setRootViewController:screen];
+//        }
+//    }
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

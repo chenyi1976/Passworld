@@ -8,10 +8,12 @@
 
 #import "EstateViewController.h"
 #import "DataSourceFactory.h"
-#import "NoteViewController.h"
 #import "EstateTableViewCell.h"
 #import "ConstantDefinition.h"
 #import "AttributeData.h"
+#import "LTHPasscodeViewController.h"
+#import "KeyChainUtil.h"
+#import "DetailViewController.h"
 
 @interface EstateViewController ()
     @property NSArray* searchResults;
@@ -37,10 +39,34 @@
     [[DataSourceFactory getDataSource] registerObserver:self];
     
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    if (![prefs boolForKey:kWelcomed])
-    {
+    if (![prefs boolForKey:kWelcomed]) {
         [prefs setBool:true forKey:kWelcomed];
         [prefs synchronize];
+        
+        NSString* encryptKey = [KeyChainUtil loadFromKeyChainForKey:kEncryptKey];
+        
+        if (encryptKey == nil)
+        {
+            NSString *alphabet  = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY0123456789";
+            NSMutableString *encryptKey = [NSMutableString stringWithCapacity:18];
+            for (NSUInteger i = 0U; i < 18; i++) {
+                u_int32_t r = arc4random() % [alphabet length];
+                unichar c = [alphabet characterAtIndex:r];
+                [encryptKey appendFormat:@"%C", c];
+            }
+            
+            [KeyChainUtil saveToKeyChainForKey:kEncryptKey withValue:encryptKey];
+        }
+        
+        [[LTHPasscodeViewController sharedUser] showForEnablingPasscodeInViewController:self asModal:NO];
+    }
+    else{
+        if ([LTHPasscodeViewController doesPasscodeExist]) {
+            if ([LTHPasscodeViewController didPasscodeTimerEnd])
+                [[LTHPasscodeViewController sharedUser] showLockScreenWithAnimation:NO
+                                                                         withLogout:NO
+                                                                     andLogoutTitle:nil];
+        }
     }
 }
 
@@ -87,7 +113,7 @@
     else if ([[segue identifier] isEqualToString:@"CreateAccountSegue"])
     {
         // Get reference to the destination view controller
-        NoteViewController *vc = [segue destinationViewController];
+        DetailViewController *vc = [segue destinationViewController];
         
         [vc setEstateData:nil];
     }

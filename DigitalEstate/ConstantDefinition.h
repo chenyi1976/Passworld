@@ -12,14 +12,14 @@
 #define kDiallingCode @"diallingCode"
 #define kPhoneNo @"phoneNo"
 
-#define kPassword1 @"password1"
-#define kPassword2 @"password2"
-#define kPassword3 @"password3"
-#define kPassword4 @"password4"
-#define kTemppass1 @"temppass1"
-#define kTemppass2 @"temppass2"
-#define kTemppass3 @"temppass3"
-#define kTemppass4 @"temppass4"
+//#define kPassword1 @"password1"
+//#define kPassword2 @"password2"
+//#define kPassword3 @"password3"
+//#define kPassword4 @"password4"
+//#define kTemppass1 @"temppass1"
+//#define kTemppass2 @"temppass2"
+//#define kTemppass3 @"temppass3"
+//#define kTemppass4 @"temppass4"
 
 #define kEncryptKey @"encryptKey"
 

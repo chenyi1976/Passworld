@@ -14,14 +14,12 @@
 		810149781925F95F00765486 /* circle_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149761925F95F00765486 /* circle_close@2x.png */; };
 		811F6831192E026F00F27955 /* circle_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F6830192E026F00F27955 /* circle_ok@2x.png */; };
 		811F6833192E048E00F27955 /* circle_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F6832192E048E00F27955 /* circle_delete@2x.png */; };
-		811F6835192E13F300F27955 /* OPPS@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F6834192E13F300F27955 /* OPPS@2x.png */; };
 		811F683C1930048E00F27955 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F683B1930048E00F27955 /* CFNetwork.framework */; };
 		811F683E1930049500F27955 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F683D1930049500F27955 /* Security.framework */; };
 		811F6840193004A900F27955 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F683F193004A900F27955 /* SystemConfiguration.framework */; };
 		811F6842193004B800F27955 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F6841193004B800F27955 /* QuartzCore.framework */; };
 		811F6844193004CE00F27955 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F6843193004CE00F27955 /* libc++.dylib */; };
 		8121787919087B03002DA71A /* SMSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787819087B03002DA71A /* SMSService.m */; };
-		8121787F19089686002DA71A /* CountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787E19089686002DA71A /* CountryViewController.m */; };
 		812178831908ABD5002DA71A /* DiallingCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 812178801908ABD5002DA71A /* DiallingCodes.plist */; };
 		812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 812178821908ABD5002DA71A /* DiallingCodesUtil.m */; };
 		8121788B190A114F002DA71A /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81217888190A114F002DA71A /* edit@2x.png */; };
@@ -50,13 +48,15 @@
 		813CCA6A18FD0EF9002A98F2 /* DigitalEstateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA6918FD0EF9002A98F2 /* DigitalEstateTests.m */; };
 		813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7618FDDFF0002A98F2 /* DataSourceFactory.m */; };
 		813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */; };
-		813CCA8218FDF193002A98F2 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA8118FDF193002A98F2 /* RegistrationViewController.m */; };
 		813CCA8918FDFC6B002A98F2 /* PersonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA8818FDFC6B002A98F2 /* PersonData.m */; };
 		8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81594119192045F200D6EB14 /* KeyChainUtil.m */; };
 		8159411C19206D1000D6EB14 /* history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8159411B19206D1000D6EB14 /* history@2x.png */; };
 		8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159411E1920736E00D6EB14 /* HistoryViewController.m */; };
 		815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815941211920762700D6EB14 /* HistoryTableViewCell.m */; };
 		81594126192192F000D6EB14 /* next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81594125192192F000D6EB14 /* next@2x.png */; };
+		816B69CB1ADE25F7001B0CCE /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 816B69CA1ADE25F7001B0CCE /* iToast.m */; };
+		816B69D11ADE2649001B0CCE /* LTHKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 816B69CE1ADE2649001B0CCE /* LTHKeychainUtils.m */; };
+		816B69D21ADE2649001B0CCE /* LTHPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816B69D01ADE2649001B0CCE /* LTHPasscodeViewController.m */; };
 		8172A2D51A930EA600D0BAEC /* Passworld_logo_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8172A2D41A930EA600D0BAEC /* Passworld_logo_120.png */; };
 		817FB7A619393E7E00110586 /* circle_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 817FB7A519393E7E00110586 /* circle_add@2x.png */; };
 		8180D7C018FDFCC30095F625 /* EstateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7BF18FDFCC30095F625 /* EstateData.m */; };
@@ -64,21 +64,6 @@
 		8180D7C718FDFD7E0095F625 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7C518FDFD7E0095F625 /* CacheManager.m */; };
 		8180D7CA18FDFE0A0095F625 /* WebsiteLinkEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7C918FDFE0A0095F625 /* WebsiteLinkEntry.m */; };
 		8180D7CD18FE06C70095F625 /* EstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7CC18FE06C70095F625 /* EstateViewController.m */; };
-		8180D7F818FE15A60095F625 /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D7F718FE15A60095F625 /* 1@2x.png */; };
-		8180D80218FE16A40095F625 /* 0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D7F918FE16A40095F625 /* 0@2x.png */; };
-		8180D80318FE16A40095F625 /* 9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D7FA18FE16A40095F625 /* 9@2x.png */; };
-		8180D80418FE16A40095F625 /* 8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D7FB18FE16A40095F625 /* 8@2x.png */; };
-		8180D80518FE16A40095F625 /* 7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D7FC18FE16A40095F625 /* 7@2x.png */; };
-		8180D80618FE16A40095F625 /* 6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D7FD18FE16A40095F625 /* 6@2x.png */; };
-		8180D80718FE16A40095F625 /* 5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D7FE18FE16A40095F625 /* 5@2x.png */; };
-		8180D80818FE16A40095F625 /* 4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D7FF18FE16A40095F625 /* 4@2x.png */; };
-		8180D80918FE16A40095F625 /* 3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D80018FE16A40095F625 /* 3@2x.png */; };
-		8180D80A18FE16A40095F625 /* 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D80118FE16A40095F625 /* 2@2x.png */; };
-		8180D80C18FE17FA0095F625 /* del@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D80B18FE17FA0095F625 /* del@2x.png */; };
-		8180D80E18FE18720095F625 /* nil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D80D18FE18720095F625 /* nil@2x.png */; };
-		8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D81018FE19950095F625 /* PasscodeViewController.m */; };
-		8180D81718FE48340095F625 /* on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D81518FE48340095F625 /* on@2x.png */; };
-		8180D81818FE48340095F625 /* off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8180D81618FE48340095F625 /* off@2x.png */; };
 		818710C21A914F58000D0A2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710C11A914F58000D0A2C /* main.m */; };
 		818710C51A914F58000D0A2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710C41A914F58000D0A2C /* AppDelegate.m */; };
 		818710C81A914F58000D0A2C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710C71A914F58000D0A2C /* ViewController.m */; };
@@ -93,7 +78,6 @@
 		8193FD3E19315B5A001FF9F2 /* LocalDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */; };
 		8193FD4119315F2C001FF9F2 /* DropboxDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD4019315F2C001FF9F2 /* DropboxDataStrategy.m */; };
 		81AB97331921951100B0C917 /* passcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB97321921951100B0C917 /* passcode@2x.png */; };
-		81AB973619219B5000B0C917 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB973519219B5000B0C917 /* WelcomeViewController.m */; };
 		81AB97391921B76400B0C917 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB97381921B76400B0C917 /* AccountViewController.m */; };
 		81AB973C1922054900B0C917 /* Down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB973A1922054900B0C917 /* Down@2x.png */; };
 		81AB973D1922054900B0C917 /* Up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB973B1922054900B0C917 /* Up@2x.png */; };
@@ -116,14 +100,8 @@
 		81BC47801A9189A000952164 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
 		81BC47811A9189A100952164 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
 		81C40A0619309FA80011BAEF /* EstateDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C40A0519309FA80011BAEF /* EstateDataSource.m */; };
-		81CCB89819008A010019A6E4 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB89719008A010019A6E4 /* NoteViewController.m */; };
-		81CD2A09192C4DDB00785134 /* PasscodeUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A08192C4DDB00785134 /* PasscodeUpdateViewController.m */; };
-		81CD2A0D192C52BE00785134 /* PasscodeSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A0C192C52BE00785134 /* PasscodeSecurityViewController.m */; };
-		81CD2A15192CD81C00785134 /* PasscodeCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A13192CD81C00785134 /* PasscodeCreationViewController.m */; };
-		81CD2A18192CD95500785134 /* PasscodeRemoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A16192CD95500785134 /* PasscodeRemoveViewController.m */; };
 		81CD2A1B192D568900785134 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A1A192D568900785134 /* ViewUtil.m */; };
 		81CD2A1D192DD9C800785134 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 81CD2A1C192DD9C800785134 /* README.md */; };
-		81DDE8931904980D00EA886D /* red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81DDE8921904980D00EA886D /* red@2x.png */; };
 		81E66F321931A0D70090C453 /* DataEncryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E66F311931A0D70090C453 /* DataEncryptUtil.m */; };
 /* End PBXBuildFile section */
 
@@ -154,7 +132,6 @@
 		810149761925F95F00765486 /* circle_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_close@2x.png"; path = "Images/circle_close@2x.png"; sourceTree = "<group>"; };
 		811F6830192E026F00F27955 /* circle_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_ok@2x.png"; path = "Images/circle_ok@2x.png"; sourceTree = "<group>"; };
 		811F6832192E048E00F27955 /* circle_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_delete@2x.png"; path = "Images/circle_delete@2x.png"; sourceTree = "<group>"; };
-		811F6834192E13F300F27955 /* OPPS@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OPPS@2x.png"; path = "Images/OPPS@2x.png"; sourceTree = "<group>"; };
 		811F683B1930048E00F27955 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		811F683D1930049500F27955 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		811F683F193004A900F27955 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -162,8 +139,6 @@
 		811F6843193004CE00F27955 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		8121787719087B03002DA71A /* SMSService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMSService.h; path = Util/SMSService.h; sourceTree = "<group>"; };
 		8121787819087B03002DA71A /* SMSService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMSService.m; path = Util/SMSService.m; sourceTree = "<group>"; };
-		8121787D19089686002DA71A /* CountryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryViewController.h; path = ViewControllers/CountryViewController.h; sourceTree = "<group>"; };
-		8121787E19089686002DA71A /* CountryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryViewController.m; path = ViewControllers/CountryViewController.m; sourceTree = "<group>"; };
 		812178801908ABD5002DA71A /* DiallingCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = DiallingCodes.plist; path = Util/DiallingCodes.plist; sourceTree = "<group>"; };
 		812178811908ABD5002DA71A /* DiallingCodesUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiallingCodesUtil.h; path = Util/DiallingCodesUtil.h; sourceTree = "<group>"; };
 		812178821908ABD5002DA71A /* DiallingCodesUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiallingCodesUtil.m; path = Util/DiallingCodesUtil.m; sourceTree = "<group>"; };
@@ -208,8 +183,6 @@
 		813CCA7B18FDE0E1002A98F2 /* EstateDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateDataSource.h; path = Datasource/EstateDataSource.h; sourceTree = "<group>"; };
 		813CCA7C18FDEF8E002A98F2 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitialViewController.h; path = ViewControllers/InitialViewController.h; sourceTree = "<group>"; };
 		813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitialViewController.m; path = ViewControllers/InitialViewController.m; sourceTree = "<group>"; };
-		813CCA8018FDF193002A98F2 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationViewController.h; path = ViewControllers/RegistrationViewController.h; sourceTree = "<group>"; };
-		813CCA8118FDF193002A98F2 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationViewController.m; path = ViewControllers/RegistrationViewController.m; sourceTree = "<group>"; };
 		813CCA8718FDFC6B002A98F2 /* PersonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonData.h; path = Data/PersonData.h; sourceTree = "<group>"; };
 		813CCA8818FDFC6B002A98F2 /* PersonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonData.m; path = Data/PersonData.m; sourceTree = "<group>"; };
 		81594118192045F200D6EB14 /* KeyChainUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyChainUtil.h; path = Util/KeyChainUtil.h; sourceTree = "<group>"; };
@@ -220,6 +193,12 @@
 		815941201920762700D6EB14 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryTableViewCell.h; path = ViewControllers/HistoryTableViewCell.h; sourceTree = "<group>"; };
 		815941211920762700D6EB14 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryTableViewCell.m; path = ViewControllers/HistoryTableViewCell.m; sourceTree = "<group>"; };
 		81594125192192F000D6EB14 /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "next@2x.png"; path = "Images/next@2x.png"; sourceTree = "<group>"; };
+		816B69C91ADE25F7001B0CCE /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iToast.h; path = iToast/iToast.h; sourceTree = "<group>"; };
+		816B69CA1ADE25F7001B0CCE /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iToast.m; path = iToast/iToast.m; sourceTree = "<group>"; };
+		816B69CD1ADE2649001B0CCE /* LTHKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTHKeychainUtils.h; path = LTHPasscodeViewController/LTHKeychainUtils.h; sourceTree = "<group>"; };
+		816B69CE1ADE2649001B0CCE /* LTHKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTHKeychainUtils.m; path = LTHPasscodeViewController/LTHKeychainUtils.m; sourceTree = "<group>"; };
+		816B69CF1ADE2649001B0CCE /* LTHPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTHPasscodeViewController.h; path = LTHPasscodeViewController/LTHPasscodeViewController.h; sourceTree = "<group>"; };
+		816B69D01ADE2649001B0CCE /* LTHPasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTHPasscodeViewController.m; path = LTHPasscodeViewController/LTHPasscodeViewController.m; sourceTree = "<group>"; };
 		8172A2D41A930EA600D0BAEC /* Passworld_logo_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Passworld_logo_120.png; path = Images/Passworld_logo_120.png; sourceTree = "<group>"; };
 		817FB7A519393E7E00110586 /* circle_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_add@2x.png"; path = "Images/circle_add@2x.png"; sourceTree = "<group>"; };
 		8180D7BE18FDFCC30095F625 /* EstateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateData.h; path = Data/EstateData.h; sourceTree = "<group>"; };
@@ -232,22 +211,6 @@
 		8180D7C918FDFE0A0095F625 /* WebsiteLinkEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebsiteLinkEntry.m; path = Data/WebsiteLinkEntry.m; sourceTree = "<group>"; };
 		8180D7CB18FE06C70095F625 /* EstateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateViewController.h; path = ViewControllers/EstateViewController.h; sourceTree = "<group>"; };
 		8180D7CC18FE06C70095F625 /* EstateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateViewController.m; path = ViewControllers/EstateViewController.m; sourceTree = "<group>"; };
-		8180D7F718FE15A60095F625 /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1@2x.png"; path = "Images/1@2x.png"; sourceTree = "<group>"; };
-		8180D7F918FE16A40095F625 /* 0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "0@2x.png"; path = "Images/0@2x.png"; sourceTree = "<group>"; };
-		8180D7FA18FE16A40095F625 /* 9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "9@2x.png"; path = "Images/9@2x.png"; sourceTree = "<group>"; };
-		8180D7FB18FE16A40095F625 /* 8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "8@2x.png"; path = "Images/8@2x.png"; sourceTree = "<group>"; };
-		8180D7FC18FE16A40095F625 /* 7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "7@2x.png"; path = "Images/7@2x.png"; sourceTree = "<group>"; };
-		8180D7FD18FE16A40095F625 /* 6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "6@2x.png"; path = "Images/6@2x.png"; sourceTree = "<group>"; };
-		8180D7FE18FE16A40095F625 /* 5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "5@2x.png"; path = "Images/5@2x.png"; sourceTree = "<group>"; };
-		8180D7FF18FE16A40095F625 /* 4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "4@2x.png"; path = "Images/4@2x.png"; sourceTree = "<group>"; };
-		8180D80018FE16A40095F625 /* 3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "3@2x.png"; path = "Images/3@2x.png"; sourceTree = "<group>"; };
-		8180D80118FE16A40095F625 /* 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "2@2x.png"; path = "Images/2@2x.png"; sourceTree = "<group>"; };
-		8180D80B18FE17FA0095F625 /* del@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "del@2x.png"; path = "Images/del@2x.png"; sourceTree = "<group>"; };
-		8180D80D18FE18720095F625 /* nil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nil@2x.png"; path = "Images/nil@2x.png"; sourceTree = "<group>"; };
-		8180D80F18FE19950095F625 /* PasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasscodeViewController.h; path = ViewControllers/PasscodeViewController.h; sourceTree = "<group>"; };
-		8180D81018FE19950095F625 /* PasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeViewController.m; path = ViewControllers/PasscodeViewController.m; sourceTree = "<group>"; };
-		8180D81518FE48340095F625 /* on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "on@2x.png"; path = "Images/on@2x.png"; sourceTree = "<group>"; };
-		8180D81618FE48340095F625 /* off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "off@2x.png"; path = "Images/off@2x.png"; sourceTree = "<group>"; };
 		818710BD1A914F58000D0A2C /* PasscodeRecovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasscodeRecovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		818710C01A914F58000D0A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		818710C11A914F58000D0A2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -272,8 +235,6 @@
 		8193FD3F19315F2C001FF9F2 /* DropboxDataStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropboxDataStrategy.h; path = Datasource/DropboxDataStrategy.h; sourceTree = "<group>"; };
 		8193FD4019315F2C001FF9F2 /* DropboxDataStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropboxDataStrategy.m; path = Datasource/DropboxDataStrategy.m; sourceTree = "<group>"; };
 		81AB97321921951100B0C917 /* passcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "passcode@2x.png"; path = "Images/passcode@2x.png"; sourceTree = "<group>"; };
-		81AB973419219B5000B0C917 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeViewController.h; path = ViewControllers/WelcomeViewController.h; sourceTree = "<group>"; };
-		81AB973519219B5000B0C917 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeViewController.m; path = ViewControllers/WelcomeViewController.m; sourceTree = "<group>"; };
 		81AB97371921B76400B0C917 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountViewController.h; path = ViewControllers/AccountViewController.h; sourceTree = "<group>"; };
 		81AB97381921B76400B0C917 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountViewController.m; path = ViewControllers/AccountViewController.m; sourceTree = "<group>"; };
 		81AB973A1922054900B0C917 /* Down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Down@2x.png"; path = "Images/Down@2x.png"; sourceTree = "<group>"; };
@@ -300,20 +261,9 @@
 		81C40A0519309FA80011BAEF /* EstateDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateDataSource.m; path = Datasource/EstateDataSource.m; sourceTree = "<group>"; };
 		81C40A0A1930A5C20011BAEF /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observer.h; path = Datasource/Observer.h; sourceTree = "<group>"; };
 		81C40A0B1930ADB50011BAEF /* Observable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observable.h; path = Datasource/Observable.h; sourceTree = "<group>"; };
-		81CCB89619008A010019A6E4 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteViewController.h; path = ViewControllers/NoteViewController.h; sourceTree = "<group>"; };
-		81CCB89719008A010019A6E4 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteViewController.m; path = ViewControllers/NoteViewController.m; sourceTree = "<group>"; };
-		81CD2A08192C4DDB00785134 /* PasscodeUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeUpdateViewController.m; path = ViewControllers/PasscodeUpdateViewController.m; sourceTree = "<group>"; };
-		81CD2A0A192C4DE700785134 /* PasscodeUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasscodeUpdateViewController.h; path = ViewControllers/PasscodeUpdateViewController.h; sourceTree = "<group>"; };
-		81CD2A0B192C52BE00785134 /* PasscodeSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasscodeSecurityViewController.h; path = ViewControllers/PasscodeSecurityViewController.h; sourceTree = "<group>"; };
-		81CD2A0C192C52BE00785134 /* PasscodeSecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeSecurityViewController.m; path = ViewControllers/PasscodeSecurityViewController.m; sourceTree = "<group>"; };
-		81CD2A13192CD81C00785134 /* PasscodeCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeCreationViewController.m; path = ViewControllers/PasscodeCreationViewController.m; sourceTree = "<group>"; };
-		81CD2A14192CD81C00785134 /* PasscodeCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasscodeCreationViewController.h; path = ViewControllers/PasscodeCreationViewController.h; sourceTree = "<group>"; };
-		81CD2A16192CD95500785134 /* PasscodeRemoveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeRemoveViewController.m; path = ViewControllers/PasscodeRemoveViewController.m; sourceTree = "<group>"; };
-		81CD2A17192CD95500785134 /* PasscodeRemoveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasscodeRemoveViewController.h; path = ViewControllers/PasscodeRemoveViewController.h; sourceTree = "<group>"; };
 		81CD2A19192D568900785134 /* ViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewUtil.h; path = Util/ViewUtil.h; sourceTree = "<group>"; };
 		81CD2A1A192D568900785134 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewUtil.m; path = Util/ViewUtil.m; sourceTree = "<group>"; };
 		81CD2A1C192DD9C800785134 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		81DDE8921904980D00EA886D /* red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "red@2x.png"; path = "Images/red@2x.png"; sourceTree = "<group>"; };
 		81E66F301931A0D70090C453 /* DataEncryptUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataEncryptUtil.h; path = Util/DataEncryptUtil.h; sourceTree = "<group>"; };
 		81E66F311931A0D70090C453 /* DataEncryptUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataEncryptUtil.m; path = Util/DataEncryptUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -424,6 +374,8 @@
 		813CCA4118FD0EF9002A98F2 /* DigitalEstate */ = {
 			isa = PBXGroup;
 			children = (
+				816B69CC1ADE25FE001B0CCE /* LTHPasscodeViewController */,
+				816B69C81ADE2598001B0CCE /* iToast */,
 				81BAF1B51A916F6600817348 /* Screenshots */,
 				81CD2A1C192DD9C800785134 /* README.md */,
 				81AB974219231E2400B0C917 /* DigitalEstate.entitlements */,
@@ -495,34 +447,16 @@
 			children = (
 				813CCA7C18FDEF8E002A98F2 /* InitialViewController.h */,
 				813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */,
-				813CCA8018FDF193002A98F2 /* RegistrationViewController.h */,
-				813CCA8118FDF193002A98F2 /* RegistrationViewController.m */,
-				8180D80F18FE19950095F625 /* PasscodeViewController.h */,
-				8180D81018FE19950095F625 /* PasscodeViewController.m */,
-				81CD2A14192CD81C00785134 /* PasscodeCreationViewController.h */,
-				81CD2A13192CD81C00785134 /* PasscodeCreationViewController.m */,
-				81CD2A0A192C4DE700785134 /* PasscodeUpdateViewController.h */,
-				81CD2A08192C4DDB00785134 /* PasscodeUpdateViewController.m */,
-				81CD2A17192CD95500785134 /* PasscodeRemoveViewController.h */,
-				81CD2A16192CD95500785134 /* PasscodeRemoveViewController.m */,
-				81CD2A0B192C52BE00785134 /* PasscodeSecurityViewController.h */,
-				81CD2A0C192C52BE00785134 /* PasscodeSecurityViewController.m */,
 				8180D7CB18FE06C70095F625 /* EstateViewController.h */,
 				8180D7CC18FE06C70095F625 /* EstateViewController.m */,
 				8101496E19249CED00765486 /* DetailViewController.h */,
 				8101496F19249CED00765486 /* DetailViewController.m */,
 				81AB97371921B76400B0C917 /* AccountViewController.h */,
 				81AB97381921B76400B0C917 /* AccountViewController.m */,
-				81CCB89619008A010019A6E4 /* NoteViewController.h */,
-				81CCB89719008A010019A6E4 /* NoteViewController.m */,
-				8121787D19089686002DA71A /* CountryViewController.h */,
-				8121787E19089686002DA71A /* CountryViewController.m */,
 				813664B6190F870D00C0B76E /* SettingViewController.h */,
 				813664B7190F870D00C0B76E /* SettingViewController.m */,
 				8159411D1920736E00D6EB14 /* HistoryViewController.h */,
 				8159411E1920736E00D6EB14 /* HistoryViewController.m */,
-				81AB973419219B5000B0C917 /* WelcomeViewController.h */,
-				81AB973519219B5000B0C917 /* WelcomeViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -542,6 +476,26 @@
 				81014969192417A900765486 /* AttributeData.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		816B69C81ADE2598001B0CCE /* iToast */ = {
+			isa = PBXGroup;
+			children = (
+				816B69C91ADE25F7001B0CCE /* iToast.h */,
+				816B69CA1ADE25F7001B0CCE /* iToast.m */,
+			);
+			name = iToast;
+			sourceTree = "<group>";
+		};
+		816B69CC1ADE25FE001B0CCE /* LTHPasscodeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				816B69CD1ADE2649001B0CCE /* LTHKeychainUtils.h */,
+				816B69CE1ADE2649001B0CCE /* LTHKeychainUtils.m */,
+				816B69CF1ADE2649001B0CCE /* LTHPasscodeViewController.h */,
+				816B69D01ADE2649001B0CCE /* LTHPasscodeViewController.m */,
+			);
+			name = LTHPasscodeViewController;
 			sourceTree = "<group>";
 		};
 		8180D7C118FDFCE50095F625 /* Util */ = {
@@ -576,7 +530,6 @@
 				81ABA5E71A973A9600BFEE9D /* Passworld_Logo_1024_Transparent.png */,
 				8172A2D41A930EA600D0BAEC /* Passworld_logo_120.png */,
 				817FB7A519393E7E00110586 /* circle_add@2x.png */,
-				811F6834192E13F300F27955 /* OPPS@2x.png */,
 				811F6832192E048E00F27955 /* circle_delete@2x.png */,
 				811F6830192E026F00F27955 /* circle_ok@2x.png */,
 				810149751925F95F00765486 /* circle_back@2x.png */,
@@ -600,21 +553,6 @@
 				81B18E441905EAB1005647AF /* Video@2x.png */,
 				81B18E451905EAB1005647AF /* Page@2x.png */,
 				81B18E461905EAB1005647AF /* Camera@2x.png */,
-				81DDE8921904980D00EA886D /* red@2x.png */,
-				8180D81518FE48340095F625 /* on@2x.png */,
-				8180D81618FE48340095F625 /* off@2x.png */,
-				8180D80D18FE18720095F625 /* nil@2x.png */,
-				8180D80B18FE17FA0095F625 /* del@2x.png */,
-				8180D7F918FE16A40095F625 /* 0@2x.png */,
-				8180D7FA18FE16A40095F625 /* 9@2x.png */,
-				8180D7FB18FE16A40095F625 /* 8@2x.png */,
-				8180D7FC18FE16A40095F625 /* 7@2x.png */,
-				8180D7FD18FE16A40095F625 /* 6@2x.png */,
-				8180D7FE18FE16A40095F625 /* 5@2x.png */,
-				8180D7FF18FE16A40095F625 /* 4@2x.png */,
-				8180D80018FE16A40095F625 /* 3@2x.png */,
-				8180D80118FE16A40095F625 /* 2@2x.png */,
-				8180D7F718FE15A60095F625 /* 1@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -833,50 +771,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8180D80918FE16A40095F625 /* 3@2x.png in Resources */,
-				8180D80618FE16A40095F625 /* 6@2x.png in Resources */,
-				811F6835192E13F300F27955 /* OPPS@2x.png in Resources */,
 				8121788D190A114F002DA71A /* setting@2x.png in Resources */,
-				8180D80318FE16A40095F625 /* 9@2x.png in Resources */,
 				8121788B190A114F002DA71A /* edit@2x.png in Resources */,
 				811F6833192E048E00F27955 /* circle_delete@2x.png in Resources */,
 				8159411C19206D1000D6EB14 /* history@2x.png in Resources */,
 				811F6831192E026F00F27955 /* circle_ok@2x.png in Resources */,
 				81BAF1BB1A916FCC00817348 /* Screenshot_Pin.png in Resources */,
 				81B18E4A1905EAB1005647AF /* Camera@2x.png in Resources */,
-				8180D81718FE48340095F625 /* on@2x.png in Resources */,
 				81AB973C1922054900B0C917 /* Down@2x.png in Resources */,
 				81AB973F1922465800B0C917 /* Card@2x.png in Resources */,
 				81B18E491905EAB1005647AF /* Page@2x.png in Resources */,
-				81DDE8931904980D00EA886D /* red@2x.png in Resources */,
 				8172A2D51A930EA600D0BAEC /* Passworld_logo_120.png in Resources */,
-				8180D80818FE16A40095F625 /* 4@2x.png in Resources */,
 				81AB97411922493700B0C917 /* password@2x.png in Resources */,
 				810149781925F95F00765486 /* circle_close@2x.png in Resources */,
-				8180D80718FE16A40095F625 /* 5@2x.png in Resources */,
 				813CCA5718FD0EF9002A98F2 /* Images.xcassets in Resources */,
-				8180D80C18FE17FA0095F625 /* del@2x.png in Resources */,
-				8180D80A18FE16A40095F625 /* 2@2x.png in Resources */,
 				810149721925EF1000765486 /* circle_text@2x.png in Resources */,
 				813664B5190F850400C0B76E /* Add@2x.png in Resources */,
 				81ABA5EA1A97402700BFEE9D /* Passworld_Logo_40_Transparent.png in Resources */,
 				813CCA4618FD0EF9002A98F2 /* InfoPlist.strings in Resources */,
-				8180D80218FE16A40095F625 /* 0@2x.png in Resources */,
 				817FB7A619393E7E00110586 /* circle_add@2x.png in Resources */,
 				81CD2A1D192DD9C800785134 /* README.md in Resources */,
 				81B18E501905FC3A005647AF /* Delete@2x.png in Resources */,
 				81B18E481905EAB1005647AF /* Video@2x.png in Resources */,
-				8180D80E18FE18720095F625 /* nil@2x.png in Resources */,
 				81BAF1BA1A916FCC00817348 /* Screenshot_New.png in Resources */,
 				81ABA5E81A973A9600BFEE9D /* Passworld_Logo_1024_Transparent.png in Resources */,
 				812178831908ABD5002DA71A /* DiallingCodes.plist in Resources */,
-				8180D80518FE16A40095F625 /* 7@2x.png in Resources */,
-				8180D81818FE48340095F625 /* off@2x.png in Resources */,
-				8180D7F818FE15A60095F625 /* 1@2x.png in Resources */,
 				81B18E4E1905FB9F005647AF /* Tick@2x.png in Resources */,
 				813CCA4F18FD0EF9002A98F2 /* Main.storyboard in Resources */,
 				8121788C190A114F002DA71A /* search@2x.png in Resources */,
-				8180D80418FE16A40095F625 /* 8@2x.png in Resources */,
 				81AB973D1922054900B0C917 /* Up@2x.png in Resources */,
 				81BAF1B91A916FCC00817348 /* Screenshot_Main.png in Resources */,
 				81AB97331921951100B0C917 /* passcode@2x.png in Resources */,
@@ -920,42 +842,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				813CCA8918FDFC6B002A98F2 /* PersonData.m in Sources */,
-				81CD2A09192C4DDB00785134 /* PasscodeUpdateViewController.m in Sources */,
-				8121787F19089686002DA71A /* CountryViewController.m in Sources */,
 				8180D7C018FDFCC30095F625 /* EstateData.m in Sources */,
 				8180D7CD18FE06C70095F625 /* EstateViewController.m in Sources */,
 				81B18E53190602DC005647AF /* EstateTableViewCell.m in Sources */,
 				8180D7C618FDFD7E0095F625 /* DownloadManager.m in Sources */,
 				8180D7CA18FDFE0A0095F625 /* WebsiteLinkEntry.m in Sources */,
 				813664B2190F4DC600C0B76E /* NSData+CommonCrypto.m in Sources */,
+				816B69CB1ADE25F7001B0CCE /* iToast.m in Sources */,
 				813664B3190F4DC600C0B76E /* NSString+Base64.m in Sources */,
 				8180D7C718FDFD7E0095F625 /* CacheManager.m in Sources */,
-				81CD2A0D192C52BE00785134 /* PasscodeSecurityViewController.m in Sources */,
 				813664BB191075B600C0B76E /* HistoryData.m in Sources */,
-				81AB973619219B5000B0C917 /* WelcomeViewController.m in Sources */,
 				8193FD3E19315B5A001FF9F2 /* LocalDataStrategy.m in Sources */,
-				813CCA8218FDF193002A98F2 /* RegistrationViewController.m in Sources */,
 				813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */,
 				81AB97391921B76400B0C917 /* AccountViewController.m in Sources */,
 				813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */,
 				81AB9745192378B200B0C917 /* AccountTableViewCell.m in Sources */,
 				8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */,
 				81CD2A1B192D568900785134 /* ViewUtil.m in Sources */,
+				816B69D21ADE2649001B0CCE /* LTHPasscodeViewController.m in Sources */,
 				8101497019249CED00765486 /* DetailViewController.m in Sources */,
 				813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */,
 				813664C119132F0700C0B76E /* KeychainItemWrapper.m in Sources */,
+				816B69D11ADE2649001B0CCE /* LTHKeychainUtils.m in Sources */,
 				8121787919087B03002DA71A /* SMSService.m in Sources */,
 				815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */,
 				813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */,
-				81CD2A15192CD81C00785134 /* PasscodeCreationViewController.m in Sources */,
-				8180D81118FE19950095F625 /* PasscodeViewController.m in Sources */,
 				813664B1190F4DC600C0B76E /* NSData+Base64.m in Sources */,
 				813CCA4818FD0EF9002A98F2 /* main.m in Sources */,
 				81C40A0619309FA80011BAEF /* EstateDataSource.m in Sources */,
 				8101496A192417A900765486 /* AttributeData.m in Sources */,
 				8193FD4119315F2C001FF9F2 /* DropboxDataStrategy.m in Sources */,
-				81CD2A18192CD95500785134 /* PasscodeRemoveViewController.m in Sources */,
-				81CCB89819008A010019A6E4 /* NoteViewController.m in Sources */,
 				812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */,
 				8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */,
 				813664B8190F870D00C0B76E /* SettingViewController.m in Sources */,
@@ -1082,7 +998,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1115,7 +1031,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
