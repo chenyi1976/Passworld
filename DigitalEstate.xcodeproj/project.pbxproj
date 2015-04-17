@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8101496A192417A900765486 /* AttributeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 81014969192417A900765486 /* AttributeData.m */; };
-		8101497019249CED00765486 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8101496F19249CED00765486 /* DetailViewController.m */; };
 		810149721925EF1000765486 /* circle_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149711925EF1000765486 /* circle_text@2x.png */; };
 		810149771925F95F00765486 /* circle_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149751925F95F00765486 /* circle_back@2x.png */; };
 		810149781925F95F00765486 /* circle_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149761925F95F00765486 /* circle_close@2x.png */; };
@@ -51,6 +50,8 @@
 		813CCA8918FDFC6B002A98F2 /* PersonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA8818FDFC6B002A98F2 /* PersonData.m */; };
 		814868061ADE53230051F544 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 814868051ADE53230051F544 /* IAPHelper.m */; };
 		814868091ADE54880051F544 /* PassworldIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 814868081ADE54880051F544 /* PassworldIAPHelper.m */; };
+		814A3D051AE0A7A6006E26C0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814A3D041AE0A7A6006E26C0 /* StoreKit.framework */; };
+		814A3D081AE0AD07006E26C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 814A3D0A1AE0AD07006E26C0 /* Localizable.strings */; };
 		8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81594119192045F200D6EB14 /* KeyChainUtil.m */; };
 		8159411C19206D1000D6EB14 /* history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8159411B19206D1000D6EB14 /* history@2x.png */; };
 		8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159411E1920736E00D6EB14 /* HistoryViewController.m */; };
@@ -127,8 +128,6 @@
 /* Begin PBXFileReference section */
 		81014968192417A900765486 /* AttributeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttributeData.h; path = Data/AttributeData.h; sourceTree = "<group>"; };
 		81014969192417A900765486 /* AttributeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AttributeData.m; path = Data/AttributeData.m; sourceTree = "<group>"; };
-		8101496E19249CED00765486 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ViewControllers/DetailViewController.h; sourceTree = "<group>"; };
-		8101496F19249CED00765486 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ViewControllers/DetailViewController.m; sourceTree = "<group>"; };
 		810149711925EF1000765486 /* circle_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_text@2x.png"; path = "Images/circle_text@2x.png"; sourceTree = "<group>"; };
 		810149751925F95F00765486 /* circle_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_back@2x.png"; path = "Images/circle_back@2x.png"; sourceTree = "<group>"; };
 		810149761925F95F00765486 /* circle_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_close@2x.png"; path = "Images/circle_close@2x.png"; sourceTree = "<group>"; };
@@ -148,6 +147,11 @@
 		81217888190A114F002DA71A /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "edit@2x.png"; path = "Images/edit@2x.png"; sourceTree = "<group>"; };
 		81217889190A114F002DA71A /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search@2x.png"; path = "Images/search@2x.png"; sourceTree = "<group>"; };
 		8121788A190A114F002DA71A /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "Images/setting@2x.png"; sourceTree = "<group>"; };
+		812B047E1ADF9F4C00988885 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		812B047F1ADF9F4C00988885 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		812B04801ADF9F4C00988885 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		812B04811ADF9F4C00988885 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		812B04821ADF9F4C00988885 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		813664A8190F4DC600C0B76E /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AESCrypt.h; path = AES/AESCrypt.h; sourceTree = "<group>"; };
 		813664A9190F4DC600C0B76E /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AESCrypt.m; path = AES/AESCrypt.m; sourceTree = "<group>"; };
 		813664AA190F4DC600C0B76E /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "AES/NSData+Base64.h"; sourceTree = "<group>"; };
@@ -191,6 +195,10 @@
 		814868051ADE53230051F544 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = IAPHelper/IAPHelper.m; sourceTree = "<group>"; };
 		814868071ADE54880051F544 /* PassworldIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PassworldIAPHelper.h; path = IAPHelper/PassworldIAPHelper.h; sourceTree = "<group>"; };
 		814868081ADE54880051F544 /* PassworldIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PassworldIAPHelper.m; path = IAPHelper/PassworldIAPHelper.m; sourceTree = "<group>"; };
+		814A3D041AE0A7A6006E26C0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		814A3D091AE0AD07006E26C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		814A3D0B1AE0AD0C006E26C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		814A3D0C1AE0AD0D006E26C0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		81594118192045F200D6EB14 /* KeyChainUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyChainUtil.h; path = Util/KeyChainUtil.h; sourceTree = "<group>"; };
 		81594119192045F200D6EB14 /* KeyChainUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyChainUtil.m; path = Util/KeyChainUtil.m; sourceTree = "<group>"; };
 		8159411B19206D1000D6EB14 /* history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "history@2x.png"; path = "Images/history@2x.png"; sourceTree = "<group>"; };
@@ -279,6 +287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				814A3D051AE0A7A6006E26C0 /* StoreKit.framework in Frameworks */,
 				811F6844193004CE00F27955 /* libc++.dylib in Frameworks */,
 				811F6842193004B800F27955 /* QuartzCore.framework in Frameworks */,
 				811F6840193004A900F27955 /* SystemConfiguration.framework in Frameworks */,
@@ -363,6 +372,7 @@
 		813CCA3A18FD0EF9002A98F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				814A3D041AE0A7A6006E26C0 /* StoreKit.framework */,
 				8193FD361930B321001FF9F2 /* Dropbox.framework */,
 				811F6843193004CE00F27955 /* libc++.dylib */,
 				811F6841193004B800F27955 /* QuartzCore.framework */,
@@ -405,6 +415,7 @@
 		813CCA4218FD0EF9002A98F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				814A3D0A1AE0AD07006E26C0 /* Localizable.strings */,
 				813CCA4318FD0EF9002A98F2 /* DigitalEstate-Info.plist */,
 				813CCA4418FD0EF9002A98F2 /* InfoPlist.strings */,
 				813CCA4718FD0EF9002A98F2 /* main.m */,
@@ -456,8 +467,6 @@
 				813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */,
 				8180D7CB18FE06C70095F625 /* EstateViewController.h */,
 				8180D7CC18FE06C70095F625 /* EstateViewController.m */,
-				8101496E19249CED00765486 /* DetailViewController.h */,
-				8101496F19249CED00765486 /* DetailViewController.m */,
 				81AB97371921B76400B0C917 /* AccountViewController.h */,
 				81AB97381921B76400B0C917 /* AccountViewController.m */,
 				813664B6190F870D00C0B76E /* SettingViewController.h */,
@@ -770,6 +779,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 813CCA2F18FD0EF8002A98F2;
 			productRefGroup = 813CCA3918FD0EF9002A98F2 /* Products */;
@@ -802,6 +812,7 @@
 				8172A2D51A930EA600D0BAEC /* Passworld_logo_120.png in Resources */,
 				81AB97411922493700B0C917 /* password@2x.png in Resources */,
 				810149781925F95F00765486 /* circle_close@2x.png in Resources */,
+				814A3D081AE0AD07006E26C0 /* Localizable.strings in Resources */,
 				813CCA5718FD0EF9002A98F2 /* Images.xcassets in Resources */,
 				810149721925EF1000765486 /* circle_text@2x.png in Resources */,
 				813664B5190F850400C0B76E /* Add@2x.png in Resources */,
@@ -879,7 +890,6 @@
 				8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */,
 				81CD2A1B192D568900785134 /* ViewUtil.m in Sources */,
 				816B69D21ADE2649001B0CCE /* LTHPasscodeViewController.m in Sources */,
-				8101497019249CED00765486 /* DetailViewController.m in Sources */,
 				813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */,
 				813664C119132F0700C0B76E /* KeychainItemWrapper.m in Sources */,
 				814868091ADE54880051F544 /* PassworldIAPHelper.m in Sources */,
@@ -946,6 +956,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				813CCA4518FD0EF9002A98F2 /* en */,
+				812B04811ADF9F4C00988885 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -954,6 +965,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				813CCA4E18FD0EF9002A98F2 /* Base */,
+				812B047E1ADF9F4C00988885 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -962,14 +974,26 @@
 			isa = PBXVariantGroup;
 			children = (
 				813CCA6718FD0EF9002A98F2 /* en */,
+				812B04821ADF9F4C00988885 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		814A3D0A1AE0AD07006E26C0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				814A3D091AE0AD07006E26C0 /* Base */,
+				814A3D0B1AE0AD0C006E26C0 /* en */,
+				814A3D0C1AE0AD0D006E26C0 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		818710C91A914F58000D0A2C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				818710CA1A914F58000D0A2C /* Base */,
+				812B047F1ADF9F4C00988885 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -978,6 +1002,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				818710CF1A914F58000D0A2C /* Base */,
+				812B04801ADF9F4C00988885 /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

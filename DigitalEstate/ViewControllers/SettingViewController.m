@@ -11,6 +11,7 @@
 #import "Dropbox/Dropbox.h"
 #import "DataSourceFactory.h"
 #import "LTHPasscodeViewController.h"
+#import "AttributeData.h"
 
 @interface SettingViewController ()
 
@@ -46,15 +47,17 @@
     
     if (threshold <= 0)
     {
-        [_pinThresholdButton setTitle:@"Auto Lock Immediately" forState:UIControlStateNormal];
+        [_pinThresholdButton setTitle:NSLocalizedString(@"Auto Lock Immediately", @"") forState:UIControlStateNormal];
     }
     else if (threshold < 60)
     {
-        [_pinThresholdButton setTitle:[NSString stringWithFormat: @"Auto Lock After %f Seconds", threshold] forState:UIControlStateNormal];
+        NSString* title = [NSString stringWithFormat: @"Auto Lock After %f Seconds", threshold];
+        [_pinThresholdButton setTitle:NSLocalizedString(title, @"") forState:UIControlStateNormal];
     }
     else
     {
-        [_pinThresholdButton setTitle:[NSString stringWithFormat: @"Auto Lock After %f Minutes", threshold / 60] forState:UIControlStateNormal];
+        NSString* title = [NSString stringWithFormat: @"Auto Lock After %f Minutes", threshold / 60];
+        [_pinThresholdButton setTitle:NSLocalizedString(title, @"") forState:UIControlStateNormal];
     }
     
     if (![LTHPasscodeViewController doesPasscodeExist])
@@ -157,15 +160,17 @@
 
     if (threshold <= 0)
     {
-        [_pinThresholdButton setTitle:@"Auto Lock Immediately" forState:UIControlStateNormal];
+        [_pinThresholdButton setTitle:NSLocalizedString(@"Immediately", @"") forState:UIControlStateNormal];
     }
     else if (threshold < 60)
     {
-        [_pinThresholdButton setTitle:[NSString stringWithFormat: @"Auto Lock After %ld Seconds", threshold] forState:UIControlStateNormal];
+        NSString* title = [NSString stringWithFormat: @"Auto Lock After %ld Seconds", threshold];
+        [_pinThresholdButton setTitle:NSLocalizedString(title, @"") forState:UIControlStateNormal];
     }
     else
     {
-        [_pinThresholdButton setTitle:[NSString stringWithFormat: @"Auto Lock After %ld Minutes", threshold / 60] forState:UIControlStateNormal];
+        NSString* title = [NSString stringWithFormat: @"Auto Lock After %ld Minutes", threshold / 60];
+        [_pinThresholdButton setTitle:NSLocalizedString(title, @"") forState:UIControlStateNormal];
     }
 }
 
@@ -221,16 +226,54 @@
 
 - (IBAction)pinThresholdButtonTouched:(id)sender {
     
-    UIActionSheet *sheet=[[UIActionSheet alloc] initWithTitle:@"Auto Lock"
+    UIActionSheet *sheet=[[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Auto Lock", @"")
                                                      delegate:self
-                                            cancelButtonTitle:@"Cancel"
+                                            cancelButtonTitle:NSLocalizedString(@"Cancel", @"")
                                        destructiveButtonTitle:nil
-                                            otherButtonTitles:@"Immediately", @"5 seconds", @"15 seconds", @"1 minutes", @"5 minutes", @"10 minutes", nil];
+                                            otherButtonTitles:NSLocalizedString(@"Immediately", @""), NSLocalizedString(@"5 seconds", @""), NSLocalizedString(@"15 seconds", @""), NSLocalizedString(@"1 minute", @""), NSLocalizedString(@"5 minutes", @""), NSLocalizedString(@"10 minutes", @""), nil];
     [sheet showInView:self.view];
 }
 
 - (IBAction)upgradeButtonTouched:(id)sender {
     //todo: implement IAP here.
+}
+
+- (IBAction)exportButtonTouched:(id)sender {
+    
+    //for security reason, user have to enter passcode before export.
+    if ([LTHPasscodeViewController doesPasscodeExist]) 
+        if ([LTHPasscodeViewController didPasscodeTimerEnd])
+            [[LTHPasscodeViewController sharedUser] showLockScreenWithAnimation:NO
+                                                                     withLogout:NO
+                                                                 andLogoutTitle:nil];
+    
+    if ([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
+        mail.mailComposeDelegate = self;
+        [mail setSubject:@"Passworld Export"];
+//        [mail setToRecipients:@[@"passworld@chenyi.me"]];
+        
+        NSMutableString* message = [[NSMutableString alloc] init];
+        NSArray* estates = [DataSourceFactory getDataSource].estatesByName;
+        for (EstateData* data in estates){
+            [message appendString:[NSString stringWithFormat:@"Name:%@\n", data.name]];
+            for (AttributeData* attrData in data.attributeValues){
+                [message appendString:[NSString stringWithFormat:@"-----Name:%@, Value:%@\n", attrData.attrName, attrData.attrValue]];
+            }
+        }
+        [mail setMessageBody:message isHTML:FALSE];
+        
+        [self presentViewController:mail animated:YES completion:NULL];
+    }
+    else
+    {
+        
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Alert"  message:@"This device cannot send email" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        
+        NSLog(@"This device cannot send email");
+    }
 }
 
 - (IBAction)mailButtonTouched:(id)sender{

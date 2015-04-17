@@ -8,7 +8,7 @@
 
 #import "AccountTableViewCell.h"
 #import "AccountViewController.h"
-#import "ViewUtil.h"
+#import "iToast.h"
 
 @implementation AccountTableViewCell
 
@@ -83,11 +83,8 @@
     NSLog(@"valueFieldTouched");
     if (![self isEditing])
     {
-        UITableView* tableView = (UITableView*)self.superview.superview;
-        AccountViewController* controller = (AccountViewController*)tableView.dataSource;
-        [ViewUtil popupMessage:@"Value Copied!" forView:controller.view];
-        
         [UIPasteboard generalPasteboard].string = [textField text];
+        [[iToast makeText:NSLocalizedString(@"Value Copied!", @"")] show];
     }
     
     return [self isEditing];

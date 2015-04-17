@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "EstateData.h"
-#import "DetailViewController.h"
 
-@interface AccountViewController : DetailViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface AccountViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIActionSheetDelegate>
+
 
 @property (weak, nonatomic) IBOutlet UITextField* nameTextField;
 @property (weak, nonatomic) IBOutlet UITableView* tableView;
 @property (weak, nonatomic) IBOutlet UIButton* deleteButton;
-@property (weak, nonatomic) IBOutlet UIButton *okButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *okButton;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableBottomConstraint;
 
@@ -23,5 +23,8 @@
 - (IBAction)okButtonTouched:(id)sender;
 - (IBAction)deleteButtonTouched:(id)sender;
 - (IBAction)tableCellTouched:(id)sender;
+
+- (void)updateEstateData:(EstateData*)data;
+
 
 @end

@@ -1,0 +1,24 @@
+
+"Immediately" = "立刻";
+"5 seconds" = "5秒钟";
+"15 seconds" = "15秒钟";
+"1 minute" = "1分钟";
+"5 minutes" = "5分钟";
+"10 minutes" = "10分钟";
+"Auto Lock" = "自动锁定";
+"Cancel" = "取消";
+
+"Auto Lock Immediately"="立刻自动锁定";
+"Auto Lock After 5 Seconds" = "5秒后自动锁定";
+"Auto Lock After 15 Seconds" = "15秒后自动锁定";
+"Auto Lock After 1 Minutes" = "1分钟后自动锁定";
+"Auto Lock After 5 Minutes" = "5分钟后自动锁定";
+"Auto Lock After 10 Minutes" = "10分钟后自动锁定";
+
+"Value Copied!" = "已复制到系统剪贴板!";
+
+"Save" = "保存";
+"Edit" = "编辑";
+
+"Delete current entry？" = "确认删除？";
+"OK" = "确认";

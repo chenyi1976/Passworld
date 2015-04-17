@@ -13,7 +13,8 @@
 #import "AttributeData.h"
 #import "LTHPasscodeViewController.h"
 #import "KeyChainUtil.h"
-#import "DetailViewController.h"
+#import "iToast.h"
+#import "AccountViewController.h"
 
 @interface EstateViewController ()
     @property NSArray* searchResults;
@@ -35,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [[DataSourceFactory getDataSource] registerObserver:self];
     
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
@@ -92,7 +93,7 @@
     if ([[segue identifier] isEqualToString:@"ModifyAccountSegue"])
     {
         // Get reference to the destination view controller
-        DetailViewController *vc = [segue destinationViewController];
+        AccountViewController *vc = [segue destinationViewController];
         
         EstateData* data;
         if (self.searchDisplayController.active == YES)
@@ -108,14 +109,13 @@
             data = [estates objectAtIndex:indexPath.row];
         }
         
-        [vc setEstateData:data];
+        [vc updateEstateData:data];
     }
     else if ([[segue identifier] isEqualToString:@"CreateAccountSegue"])
     {
         // Get reference to the destination view controller
-        DetailViewController *vc = [segue destinationViewController];
-        
-        [vc setEstateData:nil];
+        AccountViewController *vc = [segue destinationViewController];
+        [vc updateEstateData:nil];
     }
 }
 
@@ -143,19 +143,8 @@
                   reuseIdentifier:MyCellIdentifier];
     }
     
-    NSArray* estates;
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-    {
-        estates = _searchResults;
-    }
-    else
-    {
-        estates =[[DataSourceFactory getDataSource] estatesByName];
-    }
-    
-    if (estates && indexPath.row < [estates count])
-    {
-        EstateData* data = [estates objectAtIndex:indexPath.row];
+    EstateData* data = [self getEstateDataByIndexPath:indexPath];
+    if (data){
         [result configureForEstateData:data];
     }
     else
@@ -279,6 +268,34 @@
     });
 }
 
+#pragma mark - Guesture
+
+- (IBAction)handleLongPresss:(id)sender {
+
+    UILongPressGestureRecognizer* gestureRecognizer = sender;
+    
+    CGPoint p = [gestureRecognizer locationInView:self.tableView];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+    if (indexPath == nil) {
+        NSLog(@"long press on table view but not on a row");
+    } else if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        EstateData* data = [self getEstateDataByIndexPath:indexPath];
+        if (data){
+            NSMutableString* message = [[NSMutableString alloc] init];
+            [message appendString:[NSString stringWithFormat:@"Name:%@\n", data.name]];
+            for (AttributeData* attrData in data.attributeValues){
+                [message appendString:[NSString stringWithFormat:@"-----Name:%@, Value:%@\n", attrData.attrName, attrData.attrValue]];
+            }
+            [UIPasteboard generalPasteboard].string = message;
+            [[iToast makeText:NSLocalizedString(@"Value Copied!", @"")] show];
+        }
+    } else {
+        NSLog(@"gestureRecognizer.state = %d", gestureRecognizer.state);
+    }
+}
+
+
 #pragma mark - IBAction
 
 
@@ -302,5 +319,23 @@
     return YES;
 }
 
+#pragma mark - Interface
+
+-(EstateData*)getEstateDataByIndexPath:(NSIndexPath*)indexPath{
+    NSArray* estates;
+    if (_tableView == self.searchDisplayController.searchResultsTableView){
+        estates = _searchResults;
+    }
+    else {
+        estates =[[DataSourceFactory getDataSource] estatesByName];
+    }
+    
+    if (estates && indexPath.row < [estates count])
+    {
+        EstateData* data = [estates objectAtIndex:indexPath.row];
+        return data;
+    }
+    return nil;
+}
 
 @end

@@ -74,12 +74,19 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:.5f
                          animations:^{
-                             _logoImageView.frame = CGRectMake(192, 67, 41, 41);
+                             NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
+                             NSLog(@"language: %@", language);
+                             if ([language isEqualToString:@"zh"]){
+                                 _logoImageView.frame = CGRectMake(190, 87, 41, 41);
+                             }
+                             else{
+                                 _logoImageView.frame = CGRectMake(192, 67, 41, 41);
+                             }
                          }
                          completion:^(BOOL cancelled){
                              [UIView animateWithDuration:.2f
                                               animations:^{
-//                                                  _logoImageView.frame = CGRectMake(192, 67, 41, 41);
+                                                  //                                                  _logoImageView.frame = CGRectMake(192, 67, 41, 41);
                                               }
                                               completion:^(BOOL cancelled){
                                                   [self performSegueWithIdentifier:@"EstateNavigationSegue" sender:self];

@@ -1,20 +1,26 @@
 //
 //  IAPHelper.m
-//  DigitalEstate
+//  In App Rage
 //
-//  Created by ChenYi on 15/04/2015.
-//  Copyright (c) 2015 Yi Chen. All rights reserved.
+//  Created by Ray Wenderlich on 9/5/12.
+//  Copyright (c) 2012 Razeware LLC. All rights reserved.
 //
 
+// 1
 #import "IAPHelper.h"
 #import <StoreKit/StoreKit.h>
 
-@interface IAPHelper () <SKProductsRequestDelegate>
+NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurchasedNotification";
+
+// 2
+@interface IAPHelper () <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 @end
 
+// 3
 @implementation IAPHelper {
     SKProductsRequest * _productsRequest;
     RequestProductsCompletionHandler _completionHandler;
+    
     NSSet * _productIdentifiers;
     NSMutableSet * _purchasedProductIdentifiers;
 }
@@ -38,17 +44,37 @@
             }
         }
         
+        // Add self as transaction observer
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+        
     }
     return self;
+    
 }
 
 - (void)requestProductsWithCompletionHandler:(RequestProductsCompletionHandler)completionHandler {
     
+    
+    // 1
     _completionHandler = [completionHandler copy];
     
+    // 2
     _productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:_productIdentifiers];
     _productsRequest.delegate = self;
     [_productsRequest start];
+    
+}
+
+- (BOOL)productPurchased:(NSString *)productIdentifier {
+    return [_purchasedProductIdentifiers containsObject:productIdentifier];
+}
+
+- (void)buyProduct:(SKProduct *)product {
+    
+    NSLog(@"Buying %@...", product.productIdentifier);
+    
+    SKPayment * payment = [SKPayment paymentWithProduct:product];
+    [[SKPaymentQueue defaultQueue] addPayment:payment];
     
 }
 
@@ -80,6 +106,65 @@
     _completionHandler(NO, nil);
     _completionHandler = nil;
     
+}
+
+#pragma mark SKPaymentTransactionOBserver
+
+- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
+{
+    for (SKPaymentTransaction * transaction in transactions) {
+        switch (transaction.transactionState)
+        {
+            case SKPaymentTransactionStatePurchased:
+                [self completeTransaction:transaction];
+                break;
+            case SKPaymentTransactionStateFailed:
+                [self failedTransaction:transaction];
+                break;
+            case SKPaymentTransactionStateRestored:
+                [self restoreTransaction:transaction];
+            default:
+                break;
+        }
+    };
+}
+
+- (void)completeTransaction:(SKPaymentTransaction *)transaction {
+    NSLog(@"completeTransaction...");
+    
+    [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
+    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+}
+
+- (void)restoreTransaction:(SKPaymentTransaction *)transaction {
+    NSLog(@"restoreTransaction...");
+    
+    [self provideContentForProductIdentifier:transaction.originalTransaction.payment.productIdentifier];
+    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+}
+
+- (void)failedTransaction:(SKPaymentTransaction *)transaction {
+    
+    NSLog(@"failedTransaction...");
+    if (transaction.error.code != SKErrorPaymentCancelled)
+    {
+        NSLog(@"Transaction error: %@", transaction.error.localizedDescription);
+    }
+    
+    [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+}
+
+- (void)provideContentForProductIdentifier:(NSString *)productIdentifier {
+    
+    [_purchasedProductIdentifiers addObject:productIdentifier];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:productIdentifier];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductPurchasedNotification object:productIdentifier userInfo:nil];
+    
+}
+
+- (void)restoreCompletedTransactions {
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 }
 
 @end

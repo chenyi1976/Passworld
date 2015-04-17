@@ -128,6 +128,7 @@
                                 <connections>
                                     <outlet property="dataSource" destination="i1S-3H-tXv" id="i3X-uT-o2i"/>
                                     <outlet property="delegate" destination="i1S-3H-tXv" id="DIx-b1-Ume"/>
+                                    <outletCollection property="gestureRecognizers" destination="bIY-aL-Mrh" appends="YES" id="zJt-M6-Lkw"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -143,7 +144,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Add.png" id="oAq-i4-Hn2">
                             <connections>
-                                <segue destination="ysJ-kx-Xj9" kind="push" identifier="CreateAccountSeque" id="6CM-uQ-39w"/>
+                                <segue destination="ysJ-kx-Xj9" kind="push" identifier="CreateAccountSegue" id="6CM-uQ-39w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -162,6 +163,11 @@
                         <outlet property="searchResultsDelegate" destination="i1S-3H-tXv" id="ihe-qL-4VW"/>
                     </connections>
                 </searchDisplayController>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="bIY-aL-Mrh">
+                    <connections>
+                        <action selector="handleLongPresss:" destination="i1S-3H-tXv" id="sp6-fc-e40"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="495" y="322"/>
         </scene>
@@ -172,7 +178,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="tAJ-1B-dmS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Security Pin Status" id="K7p-CQ-4hc">
                                 <cells>
@@ -258,6 +264,24 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="250" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="w1f-T1-njo">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w1f-T1-njo" id="Gbr-AV-rgH">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00b-ES-AlL">
+                                                    <rect key="frame" x="20" y="7" width="267" height="30"/>
+                                                    <state key="normal" title="Export to mail">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="exportButtonTouched:" destination="Y8v-pJ-be2" eventType="touchUpInside" id="2H4-Ee-hq5"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -468,6 +492,7 @@
                     <connections>
                         <outlet property="deleteButton" destination="Ouu-4c-N6o" id="ngy-f5-BxO"/>
                         <outlet property="nameTextField" destination="FLJ-jA-bas" id="ag9-Pn-7eH"/>
+                        <outlet property="okButton" destination="Sfh-H6-TC9" id="SbR-mk-LQf"/>
                         <outlet property="tableView" destination="CJ5-4o-1OA" id="WVb-Lf-gwJ"/>
                     </connections>
                 </viewController>

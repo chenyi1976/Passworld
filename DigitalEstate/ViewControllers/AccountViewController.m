@@ -16,7 +16,7 @@
 @interface AccountViewController ()
 
 @property NSMutableArray* tableData;
-//@property(nonatomic) EstateData* estateData;
+@property EstateData* estateData;
 
 @end
 
@@ -37,13 +37,13 @@
     
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    if (estateData)
+    if (_estateData)
     {
-        [_nameTextField setText:estateData.name];
-        _tableData = [[NSMutableArray alloc] initWithArray:estateData.attributeValues copyItems:TRUE];
+        [_nameTextField setText:_estateData.name];
+        _tableData = [[NSMutableArray alloc] initWithArray:_estateData.attributeValues copyItems:TRUE];
 
         [_nameTextField setEnabled:FALSE];
-        [_okButton setTitle:@"Edit" forState:UIControlStateNormal];
+        [_okButton setTitle:NSLocalizedString(@"Edit", @"")];
         [_tableView setEditing:FALSE animated:FALSE];
     }
     else
@@ -54,7 +54,7 @@
         _tableData = [NSMutableArray arrayWithObjects:accountNameData, accountValueData, nil];
         
         [_nameTextField setEnabled:TRUE];
-        [_okButton setTitle:@"Save" forState:UIControlStateNormal];
+        [_okButton setTitle:NSLocalizedString(@"Save", @"")];
         [_tableView setEditing:TRUE animated:FALSE];
     }
     [_tableView reloadData];
@@ -220,24 +220,24 @@
 - (IBAction)okButtonTouched:(id)sender
 {
 //    [self dismissAnyKeyboard:self.view];
-    NSString* okButtonTitle = [_okButton currentTitle];
-    if ([okButtonTitle isEqualToString:@"Edit"])
+    NSString* okButtonTitle = [_okButton title];
+    if ([okButtonTitle isEqualToString:NSLocalizedString(@"Save", @"")])
     {
         [_nameTextField setEnabled:TRUE];
 
-        [_okButton setTitle:@"Save" forState:UIControlStateNormal];
+        [_okButton setTitle:NSLocalizedString(@"Save", @"")];
         [_tableView setEditing:TRUE animated:FALSE];
     }
     else
     {
         [[self view] endEditing:TRUE];
         
-        if (estateData)
+        if (_estateData)
         {
-            NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:estateData];
-            [estateData setAttributeValues:_tableData];
-            [estateData setName:_nameTextField.text];
-            [[DataSourceFactory getDataSource] replaceObjectAtIndex:index withObject:estateData];
+            NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:_estateData];
+            [_estateData setAttributeValues:_tableData];
+            [_estateData setName:_nameTextField.text];
+            [[DataSourceFactory getDataSource] replaceObjectAtIndex:index withObject:_estateData];
         }
         else
         {
@@ -262,11 +262,13 @@
 
 - (IBAction)deleteButtonTouched:(id)sender
 {
-    if (estateData != nil)
-    {
-        [[DataSourceFactory getDataSource] removeObject:estateData];
-    }
-    [self dismissViewControllerAnimated:TRUE completion:^(void){}];
+    UIActionSheet *sheet=[[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Delete current entry？", @"")
+                                                     delegate:self
+                                            cancelButtonTitle:NSLocalizedString(@"Cancel", @"")
+                                       destructiveButtonTitle:NSLocalizedString(@"OK", @"")
+                                            otherButtonTitles: nil];
+    [sheet showInView:self.view];
+
 }
 
 - (IBAction)tableCellTouched:(id)sender
@@ -276,14 +278,27 @@
 
 #pragma mark business logic
 
-- (void)setEstateData:(EstateData*)data
+- (void)updateEstateData:(EstateData*)data
 {
-    [super setEstateData:data];
+    _estateData = data;
 }
 
 - (BOOL)disablesAutomaticKeyboardDismissal
 {
     return YES;
+}
+
+#pragma mark UIActionSheetDelegate
+
+-(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0){
+        if (_estateData != nil)
+        {
+            [[DataSourceFactory getDataSource] removeObject:_estateData];
+        }
+        [self dismissViewControllerAnimated:TRUE completion:^(void){}];
+    }
 }
 
 @end

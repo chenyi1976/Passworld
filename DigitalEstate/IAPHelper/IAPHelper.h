@@ -1,12 +1,14 @@
 //
 //  IAPHelper.h
-//  DigitalEstate
+//  In App Rage
 //
-//  Created by ChenYi on 15/04/2015.
-//  Copyright (c) 2015 Yi Chen. All rights reserved.
+//  Created by Ray Wenderlich on 9/5/12.
+//  Copyright (c) 2012 Razeware LLC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <StoreKit/StoreKit.h>
+
+UIKIT_EXTERN NSString *const IAPHelperProductPurchasedNotification;
 
 typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray * products);
 
@@ -14,5 +16,8 @@ typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray * product
 
 - (id)initWithProductIdentifiers:(NSSet *)productIdentifiers;
 - (void)requestProductsWithCompletionHandler:(RequestProductsCompletionHandler)completionHandler;
+- (void)buyProduct:(SKProduct *)product;
+- (BOOL)productPurchased:(NSString *)productIdentifier;
+- (void)restoreCompletedTransactions;
 
 @end
