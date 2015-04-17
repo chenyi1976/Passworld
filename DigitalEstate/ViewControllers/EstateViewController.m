@@ -15,6 +15,7 @@
 #import "KeyChainUtil.h"
 #import "iToast.h"
 #import "AccountViewController.h"
+#import "PassworldIAPHelper.h"
 
 @interface EstateViewController ()
     @property NSArray* searchResults;
@@ -69,6 +70,54 @@
                                                                      andLogoutTitle:nil];
         }
     }
+    
+    UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg-menuitem.png"];
+    UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg-menuitem-highlighted.png"];
+    
+    UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
+
+    
+    AwesomeMenuItem *starMenuItem1 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem4 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem5 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    
+    NSArray *menus = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, starMenuItem3, starMenuItem4, starMenuItem5, nil];
+    
+    AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg-addbutton.png"]
+                                                       highlightedImage:[UIImage imageNamed:@"bg-addbutton-highlighted.png"]
+                                                           ContentImage:[UIImage imageNamed:@"icon-plus.png"]
+                                                highlightedContentImage:[UIImage imageNamed:@"icon-plus-highlighted.png"]];
+    
+    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:self.view.bounds startItem:startItem menuItems:menus];
+    menu.delegate = self;
+    
+    menu.menuWholeAngle = M_PI_2;
+    menu.farRadius = 110.0f;
+    menu.endRadius = 100.0f;
+    menu.nearRadius = 90.0f;
+    menu.animationDuration = 0.3f;
+    menu.rotateAngle = - M_PI_2;
+    menu.startPoint = CGPointMake(self.view.frame.size.width - 50.0, self.view.frame.size.height - 100);
+    
+    [self.view addSubview:menu];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -86,7 +135,65 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - AwesomeMenuDelegate
+
+- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx{
+    NSLog(@"menu clicked: %d", idx);
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0){
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+        [view setTag:103];
+        [view setBackgroundColor:[UIColor blackColor]];
+        [view setAlpha:0.8];
+        [self.view addSubview:view];
+        
+        UIActivityIndicatorView* activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
+        [activityIndicator setCenter:view.center];
+        [activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
+        [view addSubview:activityIndicator];
+        
+        [activityIndicator startAnimating];
+        
+        [[PassworldIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+            [activityIndicator stopAnimating];
+            [activityIndicator removeFromSuperview];
+            UIView *view = (UIView *)[self.view viewWithTag:103];
+            [view removeFromSuperview];
+            
+            if (products == nil || [products count] > 0){
+                [[iToast makeText:NSLocalizedString(@"Error: IAP not avaiable, please retry.", @"")] show];
+            }
+            else{
+                [[PassworldIAPHelper sharedInstance] buyProduct:[products lastObject]];
+                if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
+                    [[iToast makeText:NSLocalizedString(@"Thanks for upgrading.", @"")] show];
+                }
+            }
+        }];
+    }
+}
+
 #pragma mark - Navigation
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"CreateAccountSegue"]){
+        if ([[[DataSourceFactory getDataSource] estatesByName] count] >= 12){
+            if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
+                return TRUE;
+            }
+            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Upgrade to Pro" message:@"Free version only support 12 entries. Upgrade to Pro?" delegate:self cancelButtonTitle:@"YES" otherButtonTitles:@"NO",nil];
+            alert.alertViewStyle=UIAlertViewStyleDefault;
+            [alert show];
+
+            return [[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro];
+        }
+    }
+    return  TRUE;
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

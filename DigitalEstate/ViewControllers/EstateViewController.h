@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "EstateDataSource.h"
 #import "Observer.h"
+#import "AwesomeMenuItem.h"
+#import "AwesomeMenu.h"
 
-@interface EstateViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, Observer>
+
+@interface EstateViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, AwesomeMenuDelegate, Observer, UIAlertViewDelegate>
 
 @property IBOutlet UITableView * tableView;
 

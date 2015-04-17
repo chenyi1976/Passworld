@@ -12,6 +12,8 @@
 #import "DataSourceFactory.h"
 #import "LTHPasscodeViewController.h"
 #import "AttributeData.h"
+#import "PassworldIAPHelper.h"
+#import "iToast.h"
 
 @interface SettingViewController ()
 
@@ -79,6 +81,10 @@
     NSString* datasourceType = [prefs stringForKey:kDatasourceType];
     DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
     _dropboxSyncSwitch.on = [@"Dropbox" isEqualToString:datasourceType] && account != nil;
+    
+    if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
+        [_updatePasswordButton setTitle:@"Pro User" forState:UIControlStateNormal];
+    }
 }
 
 
@@ -235,7 +241,43 @@
 }
 
 - (IBAction)upgradeButtonTouched:(id)sender {
-    //todo: implement IAP here.
+    
+    if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
+        [_updatePasswordButton setTitle:@"Pro User" forState:UIControlStateNormal];
+        return;
+    }
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    [view setTag:103];
+    [view setBackgroundColor:[UIColor blackColor]];
+    [view setAlpha:0.8];
+    [self.view addSubview:view];
+    
+    UIActivityIndicatorView* activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
+    [activityIndicator setCenter:view.center];
+    [activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
+    [view addSubview:activityIndicator];
+    
+    [activityIndicator startAnimating];
+
+    [[PassworldIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        [activityIndicator stopAnimating];
+        [activityIndicator removeFromSuperview];
+        UIView *view = (UIView *)[self.view viewWithTag:103];
+        [view removeFromSuperview];
+
+        if (products == nil || [products count] > 0){
+            [[iToast makeText:NSLocalizedString(@"Error: IAP not avaiable, please retry.", @"")] show];
+        }
+        else{
+            [[PassworldIAPHelper sharedInstance] buyProduct:[products lastObject]];
+            if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
+                [[iToast makeText:NSLocalizedString(@"Thanks for upgrading", @"")] show];
+                //todo: update UI
+            }
+                
+        }
+    }];
 }
 
 - (IBAction)exportButtonTouched:(id)sender {

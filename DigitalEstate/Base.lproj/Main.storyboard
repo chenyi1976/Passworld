@@ -372,6 +372,7 @@
                         <outlet property="pinThresholdButton" destination="B73-YM-h6d" id="euj-xL-lSR"/>
                         <outlet property="switchPasswordButton" destination="0eK-ZB-C1P" id="txE-0z-v8X"/>
                         <outlet property="updatePasswordButton" destination="xi1-3p-txS" id="sX2-Lc-a7f"/>
+                        <outlet property="upgradeButton" destination="5W4-aH-4I7" id="W0k-f6-8pD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fs-YH-u7y" userLabel="First Responder" sceneMemberID="firstResponder"/>

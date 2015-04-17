@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton* updatePasswordButton;
 @property (weak, nonatomic) IBOutlet UISwitch* dropboxSyncSwitch;
 @property (weak, nonatomic) IBOutlet UIButton *pinThresholdButton;
+@property (weak, nonatomic) IBOutlet UIButton *upgradeButton;
 
 - (IBAction)switchPasscodeButtonTouched:(id)sender;
 - (IBAction)switchSyncButtonTouched:(id)sender;

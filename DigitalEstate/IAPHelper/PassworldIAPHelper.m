@@ -7,6 +7,7 @@
 //
 
 #import "PassworldIAPHelper.h"
+#import "ConstantDefinition.h"
 
 @implementation PassworldIAPHelper
 
@@ -15,7 +16,7 @@
     static PassworldIAPHelper * sharedInstance;
     dispatch_once(&once, ^{
         NSSet * productIdentifiers = [NSSet setWithObjects:
-                                      @"me.chenyi.passworld.pro",
+                                      iap_id_pro,
                                       nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });

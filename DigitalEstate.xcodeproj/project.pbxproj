@@ -57,6 +57,18 @@
 		8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159411E1920736E00D6EB14 /* HistoryViewController.m */; };
 		815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815941211920762700D6EB14 /* HistoryTableViewCell.m */; };
 		81594126192192F000D6EB14 /* next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81594125192192F000D6EB14 /* next@2x.png */; };
+		81697B2F1AE0DBB8002CADBB /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 81697B2C1AE0DBB8002CADBB /* AwesomeMenu.m */; };
+		81697B301AE0DBB8002CADBB /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 81697B2E1AE0DBB8002CADBB /* AwesomeMenuItem.m */; };
+		81697B3C1AE0DC56002CADBB /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B321AE0DC56002CADBB /* bg-addbutton-highlighted.png */; };
+		81697B3D1AE0DC56002CADBB /* bg-addbutton-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B331AE0DC56002CADBB /* bg-addbutton-highlighted@2x.png */; };
+		81697B3E1AE0DC56002CADBB /* bg-addbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B341AE0DC56002CADBB /* bg-addbutton.png */; };
+		81697B3F1AE0DC56002CADBB /* bg-addbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B351AE0DC56002CADBB /* bg-addbutton@2x.png */; };
+		81697B401AE0DC56002CADBB /* bg-menuitem-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B361AE0DC56002CADBB /* bg-menuitem-highlighted.png */; };
+		81697B411AE0DC56002CADBB /* bg-menuitem-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B371AE0DC56002CADBB /* bg-menuitem-highlighted@2x.png */; };
+		81697B421AE0DC56002CADBB /* bg-menuitem.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B381AE0DC56002CADBB /* bg-menuitem.png */; };
+		81697B431AE0DC56002CADBB /* bg-menuitem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B391AE0DC56002CADBB /* bg-menuitem@2x.png */; };
+		81697B441AE0DC56002CADBB /* icon-plus-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B3A1AE0DC56002CADBB /* icon-plus-highlighted.png */; };
+		81697B451AE0DC56002CADBB /* icon-plus-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B3B1AE0DC56002CADBB /* icon-plus-highlighted@2x.png */; };
 		816B69CB1ADE25F7001B0CCE /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 816B69CA1ADE25F7001B0CCE /* iToast.m */; };
 		816B69D11ADE2649001B0CCE /* LTHKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 816B69CE1ADE2649001B0CCE /* LTHKeychainUtils.m */; };
 		816B69D21ADE2649001B0CCE /* LTHPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816B69D01ADE2649001B0CCE /* LTHPasscodeViewController.m */; };
@@ -207,6 +219,20 @@
 		815941201920762700D6EB14 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryTableViewCell.h; path = ViewControllers/HistoryTableViewCell.h; sourceTree = "<group>"; };
 		815941211920762700D6EB14 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryTableViewCell.m; path = ViewControllers/HistoryTableViewCell.m; sourceTree = "<group>"; };
 		81594125192192F000D6EB14 /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "next@2x.png"; path = "Images/next@2x.png"; sourceTree = "<group>"; };
+		81697B2B1AE0DBB8002CADBB /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AwesomeMenu.h; path = AwesomeMenu/AwesomeMenu.h; sourceTree = "<group>"; };
+		81697B2C1AE0DBB8002CADBB /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AwesomeMenu.m; path = AwesomeMenu/AwesomeMenu.m; sourceTree = "<group>"; };
+		81697B2D1AE0DBB8002CADBB /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AwesomeMenuItem.h; path = AwesomeMenu/AwesomeMenuItem.h; sourceTree = "<group>"; };
+		81697B2E1AE0DBB8002CADBB /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AwesomeMenuItem.m; path = AwesomeMenu/AwesomeMenuItem.m; sourceTree = "<group>"; };
+		81697B321AE0DC56002CADBB /* bg-addbutton-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-addbutton-highlighted.png"; path = "AwesomeMenu/images/bg-addbutton-highlighted.png"; sourceTree = "<group>"; };
+		81697B331AE0DC56002CADBB /* bg-addbutton-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-addbutton-highlighted@2x.png"; path = "AwesomeMenu/images/bg-addbutton-highlighted@2x.png"; sourceTree = "<group>"; };
+		81697B341AE0DC56002CADBB /* bg-addbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-addbutton.png"; path = "AwesomeMenu/images/bg-addbutton.png"; sourceTree = "<group>"; };
+		81697B351AE0DC56002CADBB /* bg-addbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-addbutton@2x.png"; path = "AwesomeMenu/images/bg-addbutton@2x.png"; sourceTree = "<group>"; };
+		81697B361AE0DC56002CADBB /* bg-menuitem-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-menuitem-highlighted.png"; path = "AwesomeMenu/images/bg-menuitem-highlighted.png"; sourceTree = "<group>"; };
+		81697B371AE0DC56002CADBB /* bg-menuitem-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-menuitem-highlighted@2x.png"; path = "AwesomeMenu/images/bg-menuitem-highlighted@2x.png"; sourceTree = "<group>"; };
+		81697B381AE0DC56002CADBB /* bg-menuitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-menuitem.png"; path = "AwesomeMenu/images/bg-menuitem.png"; sourceTree = "<group>"; };
+		81697B391AE0DC56002CADBB /* bg-menuitem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-menuitem@2x.png"; path = "AwesomeMenu/images/bg-menuitem@2x.png"; sourceTree = "<group>"; };
+		81697B3A1AE0DC56002CADBB /* icon-plus-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-plus-highlighted.png"; path = "AwesomeMenu/images/icon-plus-highlighted.png"; sourceTree = "<group>"; };
+		81697B3B1AE0DC56002CADBB /* icon-plus-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-plus-highlighted@2x.png"; path = "AwesomeMenu/images/icon-plus-highlighted@2x.png"; sourceTree = "<group>"; };
 		816B69C91ADE25F7001B0CCE /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iToast.h; path = iToast/iToast.h; sourceTree = "<group>"; };
 		816B69CA1ADE25F7001B0CCE /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iToast.m; path = iToast/iToast.m; sourceTree = "<group>"; };
 		816B69CD1ADE2649001B0CCE /* LTHKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTHKeychainUtils.h; path = LTHPasscodeViewController/LTHKeychainUtils.h; sourceTree = "<group>"; };
@@ -390,6 +416,7 @@
 		813CCA4118FD0EF9002A98F2 /* DigitalEstate */ = {
 			isa = PBXGroup;
 			children = (
+				81697B2A1AE0DBA3002CADBB /* AwesomeMenu */,
 				814868031ADE52E70051F544 /* IAPHelper */,
 				816B69CC1ADE25FE001B0CCE /* LTHPasscodeViewController */,
 				816B69C81ADE2598001B0CCE /* iToast */,
@@ -503,6 +530,35 @@
 				814868081ADE54880051F544 /* PassworldIAPHelper.m */,
 			);
 			name = IAPHelper;
+			sourceTree = "<group>";
+		};
+		81697B2A1AE0DBA3002CADBB /* AwesomeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				81697B311AE0DC4A002CADBB /* images */,
+				81697B2B1AE0DBB8002CADBB /* AwesomeMenu.h */,
+				81697B2C1AE0DBB8002CADBB /* AwesomeMenu.m */,
+				81697B2D1AE0DBB8002CADBB /* AwesomeMenuItem.h */,
+				81697B2E1AE0DBB8002CADBB /* AwesomeMenuItem.m */,
+			);
+			name = AwesomeMenu;
+			sourceTree = "<group>";
+		};
+		81697B311AE0DC4A002CADBB /* images */ = {
+			isa = PBXGroup;
+			children = (
+				81697B321AE0DC56002CADBB /* bg-addbutton-highlighted.png */,
+				81697B331AE0DC56002CADBB /* bg-addbutton-highlighted@2x.png */,
+				81697B341AE0DC56002CADBB /* bg-addbutton.png */,
+				81697B351AE0DC56002CADBB /* bg-addbutton@2x.png */,
+				81697B361AE0DC56002CADBB /* bg-menuitem-highlighted.png */,
+				81697B371AE0DC56002CADBB /* bg-menuitem-highlighted@2x.png */,
+				81697B381AE0DC56002CADBB /* bg-menuitem.png */,
+				81697B391AE0DC56002CADBB /* bg-menuitem@2x.png */,
+				81697B3A1AE0DC56002CADBB /* icon-plus-highlighted.png */,
+				81697B3B1AE0DC56002CADBB /* icon-plus-highlighted@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		816B69C81ADE2598001B0CCE /* iToast */ = {
@@ -802,21 +858,28 @@
 				8121788D190A114F002DA71A /* setting@2x.png in Resources */,
 				8121788B190A114F002DA71A /* edit@2x.png in Resources */,
 				811F6833192E048E00F27955 /* circle_delete@2x.png in Resources */,
+				81697B3D1AE0DC56002CADBB /* bg-addbutton-highlighted@2x.png in Resources */,
 				8159411C19206D1000D6EB14 /* history@2x.png in Resources */,
 				811F6831192E026F00F27955 /* circle_ok@2x.png in Resources */,
 				81BAF1BB1A916FCC00817348 /* Screenshot_Pin.png in Resources */,
+				81697B411AE0DC56002CADBB /* bg-menuitem-highlighted@2x.png in Resources */,
 				81B18E4A1905EAB1005647AF /* Camera@2x.png in Resources */,
 				81AB973C1922054900B0C917 /* Down@2x.png in Resources */,
 				81AB973F1922465800B0C917 /* Card@2x.png in Resources */,
 				81B18E491905EAB1005647AF /* Page@2x.png in Resources */,
 				8172A2D51A930EA600D0BAEC /* Passworld_logo_120.png in Resources */,
+				81697B3C1AE0DC56002CADBB /* bg-addbutton-highlighted.png in Resources */,
 				81AB97411922493700B0C917 /* password@2x.png in Resources */,
 				810149781925F95F00765486 /* circle_close@2x.png in Resources */,
 				814A3D081AE0AD07006E26C0 /* Localizable.strings in Resources */,
+				81697B431AE0DC56002CADBB /* bg-menuitem@2x.png in Resources */,
+				81697B401AE0DC56002CADBB /* bg-menuitem-highlighted.png in Resources */,
 				813CCA5718FD0EF9002A98F2 /* Images.xcassets in Resources */,
 				810149721925EF1000765486 /* circle_text@2x.png in Resources */,
 				813664B5190F850400C0B76E /* Add@2x.png in Resources */,
 				81ABA5EA1A97402700BFEE9D /* Passworld_Logo_40_Transparent.png in Resources */,
+				81697B451AE0DC56002CADBB /* icon-plus-highlighted@2x.png in Resources */,
+				81697B441AE0DC56002CADBB /* icon-plus-highlighted.png in Resources */,
 				813CCA4618FD0EF9002A98F2 /* InfoPlist.strings in Resources */,
 				817FB7A619393E7E00110586 /* circle_add@2x.png in Resources */,
 				81CD2A1D192DD9C800785134 /* README.md in Resources */,
@@ -824,14 +887,17 @@
 				81B18E481905EAB1005647AF /* Video@2x.png in Resources */,
 				81BAF1BA1A916FCC00817348 /* Screenshot_New.png in Resources */,
 				81ABA5E81A973A9600BFEE9D /* Passworld_Logo_1024_Transparent.png in Resources */,
+				81697B3F1AE0DC56002CADBB /* bg-addbutton@2x.png in Resources */,
 				812178831908ABD5002DA71A /* DiallingCodes.plist in Resources */,
 				81B18E4E1905FB9F005647AF /* Tick@2x.png in Resources */,
 				813CCA4F18FD0EF9002A98F2 /* Main.storyboard in Resources */,
+				81697B421AE0DC56002CADBB /* bg-menuitem.png in Resources */,
 				8121788C190A114F002DA71A /* search@2x.png in Resources */,
 				81AB973D1922054900B0C917 /* Up@2x.png in Resources */,
 				81BAF1B91A916FCC00817348 /* Screenshot_Main.png in Resources */,
 				81AB97331921951100B0C917 /* passcode@2x.png in Resources */,
 				81B18E4D1905FB9F005647AF /* Back@2x.png in Resources */,
+				81697B3E1AE0DC56002CADBB /* bg-addbutton.png in Resources */,
 				81B18E471905EAB1005647AF /* Mic@2x.png in Resources */,
 				81594126192192F000D6EB14 /* next@2x.png in Resources */,
 				810149771925F95F00765486 /* circle_back@2x.png in Resources */,
@@ -879,6 +945,7 @@
 				813664B2190F4DC600C0B76E /* NSData+CommonCrypto.m in Sources */,
 				816B69CB1ADE25F7001B0CCE /* iToast.m in Sources */,
 				813664B3190F4DC600C0B76E /* NSString+Base64.m in Sources */,
+				81697B301AE0DBB8002CADBB /* AwesomeMenuItem.m in Sources */,
 				8180D7C718FDFD7E0095F625 /* CacheManager.m in Sources */,
 				813664BB191075B600C0B76E /* HistoryData.m in Sources */,
 				8193FD3E19315B5A001FF9F2 /* LocalDataStrategy.m in Sources */,
@@ -895,6 +962,7 @@
 				814868091ADE54880051F544 /* PassworldIAPHelper.m in Sources */,
 				816B69D11ADE2649001B0CCE /* LTHKeychainUtils.m in Sources */,
 				8121787919087B03002DA71A /* SMSService.m in Sources */,
+				81697B2F1AE0DBB8002CADBB /* AwesomeMenu.m in Sources */,
 				815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */,
 				813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */,
 				813664B1190F4DC600C0B76E /* NSData+Base64.m in Sources */,
