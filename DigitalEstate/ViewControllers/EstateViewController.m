@@ -76,15 +76,18 @@
     
     UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
 
+    UIImage *sortByNameMenuImage = [UIImage imageNamed:@"icon-a.png"];
+    AwesomeMenuItem *sortByNameMenuItem = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:sortByNameMenuImage
+                                                    highlightedContentImage:nil];
     
-    AwesomeMenuItem *starMenuItem1 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+    UIImage *sortByDateMenuImage = [UIImage imageNamed:@"icon-clock.png"];
+    AwesomeMenuItem *sortByDateMenuItem = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
                                                            highlightedImage:storyMenuItemImagePressed
-                                                               ContentImage:starImage
+                                                               ContentImage:sortByDateMenuImage
                                                     highlightedContentImage:nil];
-    AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
-                                                           highlightedImage:storyMenuItemImagePressed
-                                                               ContentImage:starImage
-                                                    highlightedContentImage:nil];
+    
     AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
                                                            highlightedImage:storyMenuItemImagePressed
                                                                ContentImage:starImage
@@ -98,7 +101,7 @@
                                                                ContentImage:starImage
                                                     highlightedContentImage:nil];
     
-    NSArray *menus = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, starMenuItem3, starMenuItem4, starMenuItem5, nil];
+    NSArray *menus = [NSArray arrayWithObjects:sortByNameMenuItem, sortByDateMenuItem, starMenuItem3, starMenuItem4, starMenuItem5, nil];
     
     AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg-addbutton.png"]
                                                        highlightedImage:[UIImage imageNamed:@"bg-addbutton-highlighted.png"]
@@ -113,8 +116,9 @@
     menu.endRadius = 100.0f;
     menu.nearRadius = 90.0f;
     menu.animationDuration = 0.3f;
-    menu.rotateAngle = - M_PI_2;
-    menu.startPoint = CGPointMake(self.view.frame.size.width - 50.0, self.view.frame.size.height - 100);
+//    menu.rotateAngle = - M_PI_2;
+    
+    menu.startPoint = CGPointMake(50.0, [UIScreen mainScreen].bounds.size.height - 100);
     
     [self.view addSubview:menu];
 

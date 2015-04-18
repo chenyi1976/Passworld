@@ -24,11 +24,11 @@
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    NSTimeInterval deactiveTime = [[NSDate date] timeIntervalSince1970];
-    
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setDouble:deactiveTime forKey:kDeactiveTime];
-    [prefs synchronize];
+//    NSTimeInterval deactiveTime = [[NSDate date] timeIntervalSince1970];
+//    
+//    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+//    [prefs setDouble:deactiveTime forKey:kDeactiveTime];
+//    [prefs synchronize];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application

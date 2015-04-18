@@ -221,12 +221,13 @@
 {
 //    [self dismissAnyKeyboard:self.view];
     NSString* okButtonTitle = [_okButton title];
-    if ([okButtonTitle isEqualToString:NSLocalizedString(@"Save", @"")])
+    if ([okButtonTitle isEqualToString:NSLocalizedString(@"Edit", @"")])
     {
         [_nameTextField setEnabled:TRUE];
 
         [_okButton setTitle:NSLocalizedString(@"Save", @"")];
         [_tableView setEditing:TRUE animated:FALSE];
+        [_tableView reloadData];
     }
     else
     {
@@ -247,9 +248,9 @@
             EstateData* data = [[EstateData alloc] initWithId:estateId withName:_nameTextField.text withContent:nil withAttributeValues:_tableData withLastUpdate:[NSDate date] withHistory:nil withDeleted:false];
             [[DataSourceFactory getDataSource] addObject:data];
         }
-        [self dismissViewControllerAnimated:TRUE completion:^(void){}];
+//        [self dismissViewControllerAnimated:TRUE completion:^(void){}];
+        [[self navigationController] popViewControllerAnimated:YES];
     }
-    [_tableView reloadData];
 }
 
 - (IBAction)backButtonTouched:(id)sender
@@ -257,7 +258,8 @@
 //    [self dismissAnyKeyboard:self.view];
     [[self view] endEditing:TRUE];
 
-    [self dismissViewControllerAnimated:TRUE completion:^(void){}];
+    [[self navigationController] popViewControllerAnimated:YES];
+//    [self dismissViewControllerAnimated:TRUE completion:^(void){}];
 }
 
 - (IBAction)deleteButtonTouched:(id)sender

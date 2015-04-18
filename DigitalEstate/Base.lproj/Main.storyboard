@@ -31,7 +31,7 @@
                     </view>
                     <connections>
                         <outlet property="logoImageView" destination="TCN-ym-hRd" id="sZr-wb-UV6"/>
-                        <segue destination="DI1-9h-Kor" kind="modal" identifier="EstateNavigationSegue" modalTransitionStyle="crossDissolve" id="EXN-um-WQX"/>
+                        <segue destination="DI1-9h-Kor" kind="modal" identifier="EstateNavigationSegue" id="EXN-um-WQX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxc-sR-n0e" userLabel="First Responder" sceneMemberID="firstResponder"/>

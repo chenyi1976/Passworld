@@ -35,7 +35,7 @@
 #define kDatasourceType @"datasourceType"
 
 #define kPinThreshold @"kPinThreshold"
-#define kDeactiveTime @"kDeactiveTime"
+//#define kDeactiveTime @"kDeactiveTime"
 
 #define iap_id_pro @"me.chenyi.passworld.pro"
 
