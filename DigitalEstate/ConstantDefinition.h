@@ -36,8 +36,14 @@
 
 #define kPinThreshold @"kPinThreshold"
 //#define kDeactiveTime @"kDeactiveTime"
+#define kPinThreshold @"kPinThreshold"
 
 #define iap_id_pro @"me.chenyi.passworld.pro"
+
+#define sorting_by_name 1
+#define sorting_by_date 2
+
+#define kSortingBy @"kSortingBy"
 
 @interface ConstantDefinition : NSObject
 

@@ -19,7 +19,7 @@
 
 @interface EstateViewController ()
     @property NSArray* searchResults;
-    @property long selectedRow;
+    @property long sortingType;
 @end
 
 @implementation EstateViewController
@@ -38,9 +38,13 @@
 {
     [super viewDidLoad];
     
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    _sortingType = [prefs integerForKey:kSortingBy];
+    if (_sortingType <= 0)
+        _sortingType = sorting_by_name;
+    
     [[DataSourceFactory getDataSource] registerObserver:self];
     
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     if (![prefs boolForKey:kWelcomed]) {
         [prefs setBool:true forKey:kWelcomed];
         [prefs synchronize];
@@ -142,7 +146,22 @@
 #pragma mark - AwesomeMenuDelegate
 
 - (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx{
-    NSLog(@"menu clicked: %d", idx);
+    switch (idx) {
+        case 0:
+            _sortingType = sorting_by_name;
+            break;
+        case 1:
+            _sortingType = sorting_by_date;
+            break;
+            
+        default:
+            break;
+    }
+    
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setInteger:_sortingType forKey:kSortingBy];
+    [prefs synchronize];
+    [_tableView reloadData];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -185,7 +204,7 @@
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     if ([identifier isEqualToString:@"CreateAccountSegue"]){
-        if ([[[DataSourceFactory getDataSource] estatesByName] count] >= 12){
+        if ([[self getEstateDatas] count] >= 12){
             if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
                 return TRUE;
             }
@@ -215,7 +234,7 @@
         }
         else
         {
-            NSArray* estates =[[DataSourceFactory getDataSource] estatesByName];
+            NSArray* estates =[self getEstateDatas];
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             data = [estates objectAtIndex:indexPath.row];
         }
@@ -240,7 +259,7 @@
             return 0;
         return [_searchResults count];
     }
-    return [[[DataSourceFactory getDataSource] estatesByName] count];
+    return [[self getEstateDatas] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -306,7 +325,7 @@
     }
     else
     {
-        estates =[[DataSourceFactory getDataSource] estatesByName];
+        estates =[self getEstateDatas];
     }
     
     if (estates && indexPath.row < [estates count])
@@ -416,7 +435,7 @@
 {
     NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"ANY %K.attrValue contains[c] %@ OR ANY %K.attrName contains[c] %@ OR content contains[c] %@ OR name contains[c] %@", @"attributeValues", searchText, @"attributeValues", searchText, searchText, searchText];
     
-    NSArray* estates =[[DataSourceFactory getDataSource] estatesByName];
+    NSArray* estates = [self getEstateDatas];
     _searchResults = [estates filteredArrayUsingPredicate:resultPredicate];
 }
 
@@ -432,15 +451,31 @@
 
 #pragma mark - Interface
 
--(EstateData*)getEstateDataByIndexPath:(NSIndexPath*)indexPath{
+-(NSArray*)getEstateDatas{
     NSArray* estates;
     if (_tableView == self.searchDisplayController.searchResultsTableView){
         estates = _searchResults;
     }
     else {
-        estates =[[DataSourceFactory getDataSource] estatesByName];
+        switch (_sortingType) {
+            case sorting_by_name:
+                estates =[[DataSourceFactory getDataSource] estatesByName];
+                break;
+            case sorting_by_date:
+                estates =[[DataSourceFactory getDataSource] estatesByUpdate];
+                break;
+                
+            default:
+                estates =[[DataSourceFactory getDataSource] estatesByName];
+                break;
+        }
     }
-    
+    return estates;
+}
+
+
+-(EstateData*)getEstateDataByIndexPath:(NSIndexPath*)indexPath{
+    NSArray* estates = [self getEstateDatas];
     if (estates && indexPath.row < [estates count])
     {
         EstateData* data = [estates objectAtIndex:indexPath.row];
