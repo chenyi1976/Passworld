@@ -41,14 +41,7 @@
     
     if (data.name == nil || [data.name length] == 0)
     {
-        if ([data.attributeValues count] > 0)
-        {
-            _nameLabel.text = @"Account";
-        }
-        else
-        {
-            _nameLabel.text = @"Note";
-        }
+        _nameLabel.text = @"Account";
     }
     else
     {
@@ -61,7 +54,8 @@
             _contentLabel.numberOfLines = [data.attributeValues count] * 2;
             
             NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] init];
-            UIFont* smallFont = [UIFont systemFontOfSize:12.f];
+            UIFont* attrNameFont = [UIFont fontWithName:@"Courier" size:14.f];
+            UIFont* attrValueFont = [UIFont fontWithName:@"Courier" size:14.f];
             UIColor* lightBlueColor = [UIColor colorWithRed:0x22/255.0f green:0x22/255.0f blue:0x99/255.0f alpha:1];
             
             bool isFirst = TRUE;
@@ -78,25 +72,35 @@
                 {
                     attrName = @"";
                 }
-                else if (attrName.length > 23)
+                
+                if (attrName.length > 15)
                 {
-                    attrName = [NSString stringWithFormat:@"%@...", [attrName substringToIndex:20]];
+                    attrName = [NSString stringWithFormat:@"%@... ", [attrName substringToIndex:12]];
                 }
-                NSAttributedString* attrNameStr = [[NSAttributedString alloc] initWithString:attrName attributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:smallFont}];
+                else{
+                    attrName = [attrName stringByPaddingToLength:16 withString:@" " startingAtIndex:0];
+                }
+                
+                NSAttributedString* attrNameStr = [[NSAttributedString alloc] initWithString:attrName attributes:@{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName:attrNameFont}];
                 [attributedText appendAttributedString:attrNameStr];
                 
-                [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
+//                [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
                 
                 NSString * attrValue = attributeData.attrValue;
                 if (attrValue == nil)
                 {
                     attrValue = @"";
                 }
-                else if (attrValue.length > 23)
+                
+                if (attrValue.length > 18)
                 {
-                    attrValue = [NSString stringWithFormat:@"%@...", [attrValue substringToIndex:20]];
+                    attrValue = [NSString stringWithFormat:@"%@... ", [attrValue substringToIndex:15]];
                 }
-                NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attrValue attributes:@{NSForegroundColorAttributeName:lightBlueColor}];
+                else{
+                    attrValue = [attrValue stringByPaddingToLength:19 withString:@" " startingAtIndex:0];
+                }
+
+                NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attrValue attributes:@{NSForegroundColorAttributeName:lightBlueColor, NSFontAttributeName:attrValueFont}];
                 [attributedText appendAttributedString:attrValueStr];
             }
             _contentLabel.attributedText = attributedText;

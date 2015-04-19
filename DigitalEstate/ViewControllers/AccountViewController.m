@@ -107,7 +107,7 @@
 }
 
 
-#pragma mark UITableViewDataSource
+#pragma mark UITableViewDelegate
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -283,8 +283,11 @@
 - (void)updateEstateData:(EstateData*)data
 {
     _estateData = data;
-    if (data)
+    if (data){
         data.lastVisit = [NSDate date];
+        NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:_estateData];
+        [[DataSourceFactory getDataSource] replaceObjectAtIndex:index withObject:data];
+    }
 }
 
 - (BOOL)disablesAutomaticKeyboardDismissal
