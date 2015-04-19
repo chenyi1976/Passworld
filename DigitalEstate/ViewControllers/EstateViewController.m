@@ -165,19 +165,19 @@
     
     switch (_sortingType) {
         case sorting_by_name:
-            [[iToast makeText:NSLocalizedString(@"Sorting by name.", @"")] show];
+            [[iToast makeText:NSLocalizedString(@"Sort by name from A to Z.", @"")] show];
             [[_startItem contentImageView] setImage:[UIImage imageNamed:@"icon-a.png"]];
             break;
         case sorting_by_name_rev:
-            [[iToast makeText:NSLocalizedString(@"Sorting by name reversely.", @"")] show];
+            [[iToast makeText:NSLocalizedString(@"Sort by name from Z to A", @"")] show];
             [[_startItem contentImageView] setImage:[UIImage imageNamed:@"icon-z.png"]];
             break;
         case sorting_by_update:
-            [[iToast makeText:NSLocalizedString(@"Sorting by modification.", @"")] show];
+            [[iToast makeText:NSLocalizedString(@"Last updated entry stay on top.", @"")] show];
             [[_startItem contentImageView] setImage:[UIImage imageNamed:@"icon-clock.png"]];
             break;
         case sorting_by_visit:
-            [[iToast makeText:NSLocalizedString(@"Sorting by visiting.", @"")] show];
+            [[iToast makeText:NSLocalizedString(@"Last visited entry stay on top.", @"")] show];
             [[_startItem contentImageView] setImage:[UIImage imageNamed:@"icon-quicklook.png"]];
             break;
             
@@ -451,7 +451,7 @@
             [[iToast makeText:NSLocalizedString(@"Value Copied!", @"")] show];
         }
     } else {
-        NSLog(@"gestureRecognizer.state = %d", gestureRecognizer.state);
+        NSLog(@"gestureRecognizer.state = %ld", (long)gestureRecognizer.state);
     }
 }
 

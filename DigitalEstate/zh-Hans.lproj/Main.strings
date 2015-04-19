@@ -1,26 +1,29 @@
 
-/* Class = "UIButton"; normalTitle = "Enable/Disable Security PIN"; ObjectID = "0eK-ZB-C1P"; */
+/* Class = "UIButton"; normalTitle = "导出为邮件"; ObjectID = "00b-ES-AlL"; */
+"00b-ES-AlL.normalTitle" = "导出为邮件";
+
+/* Class = "UIButton"; normalTitle = "启用或禁用安全码"; ObjectID = "0eK-ZB-C1P"; */
 "0eK-ZB-C1P.normalTitle" = "启用或禁用安全码";
 
-/* Class = "UIButton"; normalTitle = "Sync with Dropbox"; ObjectID = "2nm-cE-S12"; */
+/* Class = "UIButton"; normalTitle = "使用Dropbox同步"; ObjectID = "2nm-cE-S12"; */
 "2nm-cE-S12.normalTitle" = "使用Dropbox同步";
 
-/* Class = "UITableViewSection"; headerTitle = "SYNC"; ObjectID = "3Q5-Es-NWb"; */
+/* Class = "UITableViewSection"; headerTitle = "同步"; ObjectID = "3Q5-Es-NWb"; */
 "3Q5-Es-NWb.headerTitle" = "同步";
 
-/* Class = "UIButton"; normalTitle = "Upgrade to Pro / Restore Purchase"; ObjectID = "5W4-aH-4I7"; */
+/* Class = "UIButton"; normalTitle = "升级到高级用户或恢复已购项目"; ObjectID = "5W4-aH-4I7"; */
 "5W4-aH-4I7.normalTitle" = "升级到高级用户或恢复已购项目";
 
-/* Class = "UITableViewSection"; headerTitle = "Support"; ObjectID = "8TG-Ue-b1W"; */
+/* Class = "UITableViewSection"; headerTitle = "支持"; ObjectID = "8TG-Ue-b1W"; */
 "8TG-Ue-b1W.headerTitle" = "支持";
 
-/* Class = "UIButton"; normalTitle = "Find source code at: "; ObjectID = "907-25-Bqi"; */
+/* Class = "UIButton"; normalTitle = "您可以在以下网址找到源码："; ObjectID = "907-25-Bqi"; */
 "907-25-Bqi.normalTitle" = "您可以在以下网址找到源码：";
 
-/* Class = "UIButton"; normalTitle = "Auto Lock         "; ObjectID = "B73-YM-h6d"; */
+/* Class = "UIButton"; normalTitle = "自动锁定         "; ObjectID = "B73-YM-h6d"; */
 "B73-YM-h6d.normalTitle" = "自动锁定         ";
 
-/* Class = "UILabel"; text = "Passworld"; ObjectID = "BdF-NY-E6J"; */
+/* Class = "UILabel"; text = "密码盾牌"; ObjectID = "BdF-NY-E6J"; */
 "BdF-NY-E6J.text" = "密码盾牌";
 
 /* Class = "UIButton"; normalTitle = "http://github.com/chenyi1976/passworld"; ObjectID = "EcK-xY-clR"; */
@@ -32,32 +35,32 @@
 /* Class = "UITextField"; placeholder = "Entry name"; ObjectID = "FLJ-jA-bas"; */
 "FLJ-jA-bas.placeholder" = "Entry name";
 
-/* Class = "UINavigationItem"; title = "Passworld"; ObjectID = "HgB-PW-2Ei"; */
+/* Class = "UINavigationItem"; title = "密码盾牌"; ObjectID = "HgB-PW-2Ei"; */
 "HgB-PW-2Ei.title" = "密码盾牌";
 
-/* Class = "UITableViewSection"; headerTitle = "Security Pin Status"; ObjectID = "K7p-CQ-4hc"; */
+/* Class = "UITableViewSection"; headerTitle = "安全码状态"; ObjectID = "K7p-CQ-4hc"; */
 "K7p-CQ-4hc.headerTitle" = "安全码状态";
 
-/* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "Ouu-4c-N6o"; */
+/* Class = "UIButton"; normalTitle = "删除"; ObjectID = "Ouu-4c-N6o"; */
 "Ouu-4c-N6o.normalTitle" = "删除";
 
-/* Class = "UITableViewSection"; headerTitle = "Pro"; ObjectID = "Pfv-5d-bCu"; */
+/* Class = "UITableViewSection"; headerTitle = "高级用户"; ObjectID = "Pfv-5d-bCu"; */
 "Pfv-5d-bCu.headerTitle" = "高级用户";
 
-/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "Sfh-H6-TC9"; */
+/* Class = "UIBarButtonItem"; title = "编辑"; ObjectID = "Sfh-H6-TC9"; */
 "Sfh-H6-TC9.title" = "编辑";
 
-/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "b8E-eJ-no0"; */
+/* Class = "UINavigationItem"; title = "设置"; ObjectID = "b8E-eJ-no0"; */
 "b8E-eJ-no0.title" = "设置";
 
-/* Class = "UIButton"; normalTitle = "Email Us"; ObjectID = "ptp-Kw-liD"; */
+/* Class = "UIButton"; normalTitle = "邮件支持"; ObjectID = "ptp-Kw-liD"; */
 "ptp-Kw-liD.normalTitle" = "邮件支持";
 
-/* Class = "UILabel"; text = "Name"; ObjectID = "sLk-Dy-x0a"; */
+/* Class = "UILabel"; text = "名称"; ObjectID = "sLk-Dy-x0a"; */
 "sLk-Dy-x0a.text" = "名称";
 
-/* Class = "UITextField"; placeholder = "Value"; ObjectID = "wBz-bl-cWZ"; */
+/* Class = "UITextField"; placeholder = "值"; ObjectID = "wBz-bl-cWZ"; */
 "wBz-bl-cWZ.placeholder" = "值";
 
-/* Class = "UIButton"; normalTitle = "Change Security Pin"; ObjectID = "xi1-3p-txS"; */
+/* Class = "UIButton"; normalTitle = "修改安全码"; ObjectID = "xi1-3p-txS"; */
 "xi1-3p-txS.normalTitle" = "修改安全码";

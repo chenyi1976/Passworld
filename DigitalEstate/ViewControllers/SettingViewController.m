@@ -282,13 +282,6 @@
 
 - (IBAction)exportButtonTouched:(id)sender {
     
-    //for security reason, user have to enter passcode before export.
-    if ([LTHPasscodeViewController doesPasscodeExist]) 
-        if ([LTHPasscodeViewController didPasscodeTimerEnd])
-            [[LTHPasscodeViewController sharedUser] showLockScreenWithAnimation:NO
-                                                                     withLogout:NO
-                                                                 andLogoutTitle:nil];
-    
     if ([MFMailComposeViewController canSendMail])
     {
         MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
@@ -307,6 +300,14 @@
         [mail setMessageBody:message isHTML:FALSE];
         
         [self presentViewController:mail animated:YES completion:NULL];
+
+        //for security reason, user have to enter passcode before export.
+        if ([LTHPasscodeViewController doesPasscodeExist])
+            if ([LTHPasscodeViewController didPasscodeTimerEnd])
+                [[LTHPasscodeViewController sharedUser] showLockScreenWithAnimation:NO
+                                                                         withLogout:NO
+                                                                     andLogoutTitle:nil];
+        
     }
     else
     {

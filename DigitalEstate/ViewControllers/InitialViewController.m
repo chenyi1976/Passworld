@@ -76,8 +76,8 @@
                          animations:^{
                              NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
                              NSLog(@"language: %@", language);
-                             if ([language isEqualToString:@"zh"]){
-                                 _logoImageView.frame = CGRectMake(190, 87, 41, 41);
+                             if ([language hasPrefix:@"zh"]){
+                                 _logoImageView.frame = CGRectMake(175, 75, 41, 41);
                              }
                              else{
                                  _logoImageView.frame = CGRectMake(192, 67, 41, 41);
