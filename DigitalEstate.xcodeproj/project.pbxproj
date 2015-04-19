@@ -55,7 +55,6 @@
 		813CCA6A18FD0EF9002A98F2 /* DigitalEstateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA6918FD0EF9002A98F2 /* DigitalEstateTests.m */; };
 		813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7618FDDFF0002A98F2 /* DataSourceFactory.m */; };
 		813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */; };
-		813CCA8918FDFC6B002A98F2 /* PersonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA8818FDFC6B002A98F2 /* PersonData.m */; };
 		814868061ADE53230051F544 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 814868051ADE53230051F544 /* IAPHelper.m */; };
 		814868091ADE54880051F544 /* PassworldIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 814868081ADE54880051F544 /* PassworldIAPHelper.m */; };
 		814A3D051AE0A7A6006E26C0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814A3D041AE0A7A6006E26C0 /* StoreKit.framework */; };
@@ -100,6 +99,10 @@
 		8193FD371930B321001FF9F2 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193FD361930B321001FF9F2 /* Dropbox.framework */; };
 		8193FD3E19315B5A001FF9F2 /* LocalDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */; };
 		8193FD4119315F2C001FF9F2 /* DropboxDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD4019315F2C001FF9F2 /* DropboxDataStrategy.m */; };
+		81A901821AE397A7001D36DE /* icon-quicklook.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A9017E1AE397A7001D36DE /* icon-quicklook.png */; };
+		81A901831AE397A7001D36DE /* icon-quicklook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A9017F1AE397A7001D36DE /* icon-quicklook@2x.png */; };
+		81A901841AE397A7001D36DE /* icon-z.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A901801AE397A7001D36DE /* icon-z.png */; };
+		81A901851AE397A7001D36DE /* icon-z@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A901811AE397A7001D36DE /* icon-z@2x.png */; };
 		81AB97331921951100B0C917 /* passcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB97321921951100B0C917 /* passcode@2x.png */; };
 		81AB97391921B76400B0C917 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB97381921B76400B0C917 /* AccountViewController.m */; };
 		81AB973C1922054900B0C917 /* Down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB973A1922054900B0C917 /* Down@2x.png */; };
@@ -123,7 +126,6 @@
 		81BC47801A9189A000952164 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
 		81BC47811A9189A100952164 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
 		81C40A0619309FA80011BAEF /* EstateDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C40A0519309FA80011BAEF /* EstateDataSource.m */; };
-		81CD2A1B192D568900785134 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD2A1A192D568900785134 /* ViewUtil.m */; };
 		81CD2A1D192DD9C800785134 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 81CD2A1C192DD9C800785134 /* README.md */; };
 		81E66F321931A0D70090C453 /* DataEncryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E66F311931A0D70090C453 /* DataEncryptUtil.m */; };
 /* End PBXBuildFile section */
@@ -217,8 +219,6 @@
 		813CCA7B18FDE0E1002A98F2 /* EstateDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateDataSource.h; path = Datasource/EstateDataSource.h; sourceTree = "<group>"; };
 		813CCA7C18FDEF8E002A98F2 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitialViewController.h; path = ViewControllers/InitialViewController.h; sourceTree = "<group>"; };
 		813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitialViewController.m; path = ViewControllers/InitialViewController.m; sourceTree = "<group>"; };
-		813CCA8718FDFC6B002A98F2 /* PersonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonData.h; path = Data/PersonData.h; sourceTree = "<group>"; };
-		813CCA8818FDFC6B002A98F2 /* PersonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonData.m; path = Data/PersonData.m; sourceTree = "<group>"; };
 		814868041ADE53230051F544 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAPHelper.h; path = IAPHelper/IAPHelper.h; sourceTree = "<group>"; };
 		814868051ADE53230051F544 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = IAPHelper/IAPHelper.m; sourceTree = "<group>"; };
 		814868071ADE54880051F544 /* PassworldIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PassworldIAPHelper.h; path = IAPHelper/PassworldIAPHelper.h; sourceTree = "<group>"; };
@@ -290,6 +290,10 @@
 		8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalDataStrategy.m; path = Datasource/LocalDataStrategy.m; sourceTree = "<group>"; };
 		8193FD3F19315F2C001FF9F2 /* DropboxDataStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropboxDataStrategy.h; path = Datasource/DropboxDataStrategy.h; sourceTree = "<group>"; };
 		8193FD4019315F2C001FF9F2 /* DropboxDataStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropboxDataStrategy.m; path = Datasource/DropboxDataStrategy.m; sourceTree = "<group>"; };
+		81A9017E1AE397A7001D36DE /* icon-quicklook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-quicklook.png"; path = "AwesomeMenu/images/icon-quicklook.png"; sourceTree = "<group>"; };
+		81A9017F1AE397A7001D36DE /* icon-quicklook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-quicklook@2x.png"; path = "AwesomeMenu/images/icon-quicklook@2x.png"; sourceTree = "<group>"; };
+		81A901801AE397A7001D36DE /* icon-z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-z.png"; path = "AwesomeMenu/images/icon-z.png"; sourceTree = "<group>"; };
+		81A901811AE397A7001D36DE /* icon-z@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-z@2x.png"; path = "AwesomeMenu/images/icon-z@2x.png"; sourceTree = "<group>"; };
 		81AB97321921951100B0C917 /* passcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "passcode@2x.png"; path = "Images/passcode@2x.png"; sourceTree = "<group>"; };
 		81AB97371921B76400B0C917 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountViewController.h; path = ViewControllers/AccountViewController.h; sourceTree = "<group>"; };
 		81AB97381921B76400B0C917 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountViewController.m; path = ViewControllers/AccountViewController.m; sourceTree = "<group>"; };
@@ -317,8 +321,6 @@
 		81C40A0519309FA80011BAEF /* EstateDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateDataSource.m; path = Datasource/EstateDataSource.m; sourceTree = "<group>"; };
 		81C40A0A1930A5C20011BAEF /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observer.h; path = Datasource/Observer.h; sourceTree = "<group>"; };
 		81C40A0B1930ADB50011BAEF /* Observable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observable.h; path = Datasource/Observable.h; sourceTree = "<group>"; };
-		81CD2A19192D568900785134 /* ViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewUtil.h; path = Util/ViewUtil.h; sourceTree = "<group>"; };
-		81CD2A1A192D568900785134 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewUtil.m; path = Util/ViewUtil.m; sourceTree = "<group>"; };
 		81CD2A1C192DD9C800785134 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		81E66F301931A0D70090C453 /* DataEncryptUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataEncryptUtil.h; path = Util/DataEncryptUtil.h; sourceTree = "<group>"; };
 		81E66F311931A0D70090C453 /* DataEncryptUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataEncryptUtil.m; path = Util/DataEncryptUtil.m; sourceTree = "<group>"; };
@@ -527,8 +529,6 @@
 				8180D7C918FDFE0A0095F625 /* WebsiteLinkEntry.m */,
 				8180D7BE18FDFCC30095F625 /* EstateData.h */,
 				8180D7BF18FDFCC30095F625 /* EstateData.m */,
-				813CCA8718FDFC6B002A98F2 /* PersonData.h */,
-				813CCA8818FDFC6B002A98F2 /* PersonData.m */,
 				813664B9191075B600C0B76E /* HistoryData.h */,
 				813664BA191075B600C0B76E /* HistoryData.m */,
 				81014968192417A900765486 /* AttributeData.h */,
@@ -563,6 +563,10 @@
 		81697B311AE0DC4A002CADBB /* images */ = {
 			isa = PBXGroup;
 			children = (
+				81A9017E1AE397A7001D36DE /* icon-quicklook.png */,
+				81A9017F1AE397A7001D36DE /* icon-quicklook@2x.png */,
+				81A901801AE397A7001D36DE /* icon-z.png */,
+				81A901811AE397A7001D36DE /* icon-z@2x.png */,
 				811CA32B1AE25835003241CD /* icon-clock.png */,
 				811CA3291AE2580F003241CD /* icon-clock@2x.png */,
 				811CA3251AE255C1003241CD /* icon-a.png */,
@@ -622,8 +626,6 @@
 				813664C019132F0700C0B76E /* KeychainItemWrapper.m */,
 				81594118192045F200D6EB14 /* KeyChainUtil.h */,
 				81594119192045F200D6EB14 /* KeyChainUtil.m */,
-				81CD2A19192D568900785134 /* ViewUtil.h */,
-				81CD2A1A192D568900785134 /* ViewUtil.m */,
 				81E66F301931A0D70090C453 /* DataEncryptUtil.h */,
 				81E66F311931A0D70090C453 /* DataEncryptUtil.m */,
 			);
@@ -889,6 +891,7 @@
 				81BAF1BB1A916FCC00817348 /* Screenshot_Pin.png in Resources */,
 				81697B411AE0DC56002CADBB /* bg-menuitem-highlighted@2x.png in Resources */,
 				81B18E4A1905EAB1005647AF /* Camera@2x.png in Resources */,
+				81A901851AE397A7001D36DE /* icon-z@2x.png in Resources */,
 				811CA3211AE24628003241CD /* icon-plus.png in Resources */,
 				81AB973C1922054900B0C917 /* Down@2x.png in Resources */,
 				81AB973F1922465800B0C917 /* Card@2x.png in Resources */,
@@ -904,6 +907,7 @@
 				81697B431AE0DC56002CADBB /* bg-menuitem@2x.png in Resources */,
 				81697B401AE0DC56002CADBB /* bg-menuitem-highlighted.png in Resources */,
 				813CCA5718FD0EF9002A98F2 /* Images.xcassets in Resources */,
+				81A901841AE397A7001D36DE /* icon-z.png in Resources */,
 				810149721925EF1000765486 /* circle_text@2x.png in Resources */,
 				813664B5190F850400C0B76E /* Add@2x.png in Resources */,
 				81ABA5EA1A97402700BFEE9D /* Passworld_Logo_40_Transparent.png in Resources */,
@@ -929,7 +933,9 @@
 				81AB97331921951100B0C917 /* passcode@2x.png in Resources */,
 				81B18E4D1905FB9F005647AF /* Back@2x.png in Resources */,
 				81697B3E1AE0DC56002CADBB /* bg-addbutton.png in Resources */,
+				81A901831AE397A7001D36DE /* icon-quicklook@2x.png in Resources */,
 				81B18E471905EAB1005647AF /* Mic@2x.png in Resources */,
+				81A901821AE397A7001D36DE /* icon-quicklook.png in Resources */,
 				81594126192192F000D6EB14 /* next@2x.png in Resources */,
 				811CA3231AE24628003241CD /* icon-star.png in Resources */,
 				810149771925F95F00765486 /* circle_back@2x.png in Resources */,
@@ -968,7 +974,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				813CCA8918FDFC6B002A98F2 /* PersonData.m in Sources */,
 				8180D7C018FDFCC30095F625 /* EstateData.m in Sources */,
 				8180D7CD18FE06C70095F625 /* EstateViewController.m in Sources */,
 				81B18E53190602DC005647AF /* EstateTableViewCell.m in Sources */,
@@ -987,7 +992,6 @@
 				81AB9745192378B200B0C917 /* AccountTableViewCell.m in Sources */,
 				814868061ADE53230051F544 /* IAPHelper.m in Sources */,
 				8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */,
-				81CD2A1B192D568900785134 /* ViewUtil.m in Sources */,
 				816B69D21ADE2649001B0CCE /* LTHPasscodeViewController.m in Sources */,
 				813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */,
 				813664C119132F0700C0B76E /* KeychainItemWrapper.m in Sources */,

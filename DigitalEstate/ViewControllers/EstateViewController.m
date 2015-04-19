@@ -20,6 +20,7 @@
 @interface EstateViewController ()
     @property NSArray* searchResults;
     @property long sortingType;
+    @property AwesomeMenuItem *startItem;
 @end
 
 @implementation EstateViewController
@@ -78,41 +79,55 @@
     UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg-menuitem.png"];
     UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg-menuitem-highlighted.png"];
     
-    UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
-
     UIImage *sortByNameMenuImage = [UIImage imageNamed:@"icon-a.png"];
     AwesomeMenuItem *sortByNameMenuItem = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
                                                            highlightedImage:storyMenuItemImagePressed
                                                                ContentImage:sortByNameMenuImage
                                                     highlightedContentImage:nil];
+    UIImage *sortByNameRevMenuImage = [UIImage imageNamed:@"icon-z.png"];
+    AwesomeMenuItem *sortByNameRevMenuItem = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                                highlightedImage:storyMenuItemImagePressed
+                                                                    ContentImage:sortByNameRevMenuImage
+                                                         highlightedContentImage:nil];
     
-    UIImage *sortByDateMenuImage = [UIImage imageNamed:@"icon-clock.png"];
-    AwesomeMenuItem *sortByDateMenuItem = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+    UIImage *sortByUpdateMenuImage = [UIImage imageNamed:@"icon-clock.png"];
+    AwesomeMenuItem *sortByUpdateMenuItem = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
                                                            highlightedImage:storyMenuItemImagePressed
-                                                               ContentImage:sortByDateMenuImage
+                                                               ContentImage:sortByUpdateMenuImage
                                                     highlightedContentImage:nil];
     
-    AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+    UIImage *sortByVisitMenuImage = [UIImage imageNamed:@"icon-quicklook.png"];
+    AwesomeMenuItem *sortByVistMenuItem = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
                                                            highlightedImage:storyMenuItemImagePressed
-                                                               ContentImage:starImage
-                                                    highlightedContentImage:nil];
-    AwesomeMenuItem *starMenuItem4 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
-                                                           highlightedImage:storyMenuItemImagePressed
-                                                               ContentImage:starImage
-                                                    highlightedContentImage:nil];
-    AwesomeMenuItem *starMenuItem5 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
-                                                           highlightedImage:storyMenuItemImagePressed
-                                                               ContentImage:starImage
+                                                               ContentImage:sortByVisitMenuImage
                                                     highlightedContentImage:nil];
     
-    NSArray *menus = [NSArray arrayWithObjects:sortByNameMenuItem, sortByDateMenuItem, starMenuItem3, starMenuItem4, starMenuItem5, nil];
+    NSArray *menus = [NSArray arrayWithObjects:sortByNameMenuItem, sortByNameRevMenuItem, sortByUpdateMenuItem, sortByVistMenuItem, nil];
     
-    AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg-addbutton.png"]
+    _startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg-addbutton.png"]
                                                        highlightedImage:[UIImage imageNamed:@"bg-addbutton-highlighted.png"]
                                                            ContentImage:[UIImage imageNamed:@"icon-plus.png"]
                                                 highlightedContentImage:[UIImage imageNamed:@"icon-plus-highlighted.png"]];
     
-    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:self.view.bounds startItem:startItem menuItems:menus];
+    switch (_sortingType) {
+        case sorting_by_name:
+            [[_startItem contentImageView] setImage:sortByNameMenuImage];
+            break;
+        case sorting_by_name_rev:
+            [[_startItem contentImageView] setImage:sortByNameRevMenuImage];
+            break;
+        case sorting_by_update:
+            [[_startItem contentImageView] setImage:sortByUpdateMenuImage];
+            break;
+        case sorting_by_visit:
+            [[_startItem contentImageView] setImage:sortByVisitMenuImage];
+            break;
+            
+        default:
+            break;
+    }
+    
+    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:self.view.bounds startItem:_startItem menuItems:menus];
     menu.delegate = self;
     
     menu.menuWholeAngle = M_PI_2;
@@ -146,21 +161,36 @@
 #pragma mark - AwesomeMenuDelegate
 
 - (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx{
-    switch (idx) {
-        case 0:
-            _sortingType = sorting_by_name;
+    _sortingType = idx;
+    
+    switch (_sortingType) {
+        case sorting_by_name:
+            [[iToast makeText:NSLocalizedString(@"Sorting by name.", @"")] show];
+            [[_startItem contentImageView] setImage:[UIImage imageNamed:@"icon-a.png"]];
             break;
-        case 1:
-            _sortingType = sorting_by_date;
+        case sorting_by_name_rev:
+            [[iToast makeText:NSLocalizedString(@"Sorting by name reversely.", @"")] show];
+            [[_startItem contentImageView] setImage:[UIImage imageNamed:@"icon-z.png"]];
+            break;
+        case sorting_by_update:
+            [[iToast makeText:NSLocalizedString(@"Sorting by modification.", @"")] show];
+            [[_startItem contentImageView] setImage:[UIImage imageNamed:@"icon-clock.png"]];
+            break;
+        case sorting_by_visit:
+            [[iToast makeText:NSLocalizedString(@"Sorting by visiting.", @"")] show];
+            [[_startItem contentImageView] setImage:[UIImage imageNamed:@"icon-quicklook.png"]];
             break;
             
         default:
             break;
     }
-    
+
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     [prefs setInteger:_sortingType forKey:kSortingBy];
     [prefs synchronize];
+    
+    
+    
     [_tableView reloadData];
 }
 
@@ -461,8 +491,14 @@
             case sorting_by_name:
                 estates =[[DataSourceFactory getDataSource] estatesByName];
                 break;
-            case sorting_by_date:
+            case sorting_by_name_rev:
+                estates =[[DataSourceFactory getDataSource] estatesByNameRev];
+                break;
+            case sorting_by_update:
                 estates =[[DataSourceFactory getDataSource] estatesByUpdate];
+                break;
+            case sorting_by_visit:
+                estates =[[DataSourceFactory getDataSource] estatesByVisit];
                 break;
                 
             default:

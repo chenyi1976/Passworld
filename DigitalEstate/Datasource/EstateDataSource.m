@@ -39,14 +39,23 @@
 //        [self fireDataChanged];
 }
 
+- (void)updateSortingArray{
+    NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
+    NSSortDescriptor* nameSortRev = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO];
+    _estatesByNameRev = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSortRev]];
+    NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:NO];
+    _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
+    NSSortDescriptor* visitSort = [NSSortDescriptor sortDescriptorWithKey:@"lastVisit" ascending:NO];
+    _estatesByVisit = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:visitSort]];
+}
+
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(EstateData*)estate
 {
     [_estates replaceObjectAtIndex:index withObject:estate];    
-    NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
-    NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:NO];
-    _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
 
+    [self updateSortingArray];
+    
     [self fireDataChanged];
     [_dataStrategy saveEstateData:_estates withDeletedData:_deletedEstates];
 }
@@ -54,10 +63,8 @@
 - (void)removeObject:(EstateData*)estate
 {
     [_estates removeObject:estate];
-    NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
-    NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:NO];
-    _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
+
+    [self updateSortingArray];
 
     estate.deleted = true;
     [_deletedEstates addObject:estate];
@@ -75,11 +82,9 @@
 - (void)addObject:(EstateData*)estate
 {
     [_estates addObject:estate];
-    NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
-    NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:NO];
-    _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
-    
+
+    [self updateSortingArray];
+
     [self fireDataChanged];
     [_dataStrategy saveEstateData:_estates withDeletedData:_deletedEstates];
 }
@@ -87,10 +92,8 @@
 - (void)insertObject:(EstateData*)estate atIndex:(NSUInteger)index
 {
     [_estates insertObject:estate atIndex:index];
-    NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
-    NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:NO];
-    _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
+
+    [self updateSortingArray];
 
     [self fireDataChanged];
     [_dataStrategy saveEstateData:_estates withDeletedData:_deletedEstates];
@@ -278,10 +281,7 @@
     //if merged result changed _estates, then refresh UITableView
     if (changed)
     {
-        NSSortDescriptor* nameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-        _estatesByName = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameSort]];
-        NSSortDescriptor* updateSort = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdate" ascending:NO];
-        _estatesByUpdate = [_estates sortedArrayUsingDescriptors:[NSArray arrayWithObject:updateSort]];
+        [self updateSortingArray];
         [self fireDataChanged];
     }
 }

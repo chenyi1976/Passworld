@@ -13,7 +13,7 @@
 
 @implementation EstateData
 
-- (id) initWithId:(NSString*)estateId withName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableArray*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history withDeleted:(BOOL)deleted
+- (id) initWithId:(NSString*)estateId withName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableArray*)attributeValues withLastUpdate:(NSDate*)lastUpdate withLastVisit:(NSDate*)lastVisit withHistory:(NSMutableArray*)history withDeleted:(BOOL)deleted
 {
     if (self = [super init])
     {
@@ -21,6 +21,7 @@
         _name = name;
         _content = content;
         _lastUpdate = lastUpdate;
+        _lastVisit = lastVisit;
         _deleted = deleted;
         _synced = false;
         if (history)
@@ -44,6 +45,7 @@
     [encoder encodeObject:_content forKey:kContent];
     [encoder encodeObject:_attributeValues forKey:kAttributeValues];
     [encoder encodeObject:_lastUpdate forKey:kLastUpdate];
+    [encoder encodeObject:_lastVisit forKey:kLastVisit];
     [encoder encodeObject:_history forKey:kHistory];
     [encoder encodeBool:_deleted forKey:kDeleted];
 }
@@ -56,17 +58,18 @@
     NSString* content = [decoder decodeObjectForKey:kContent];
     NSMutableArray* attributeValues = [decoder decodeObjectForKey:kAttributeValues];
     NSDate* lastUpdate = [decoder decodeObjectForKey:kLastUpdate];
+    NSDate* lastVisit = [decoder decodeObjectForKey:kLastVisit];
     NSMutableArray* history = [decoder decodeObjectForKey:kHistory];
     bool deleted = [decoder decodeBoolForKey:kDeleted];
     
-    return [self initWithId:estateId withName:name withContent:content withAttributeValues:attributeValues withLastUpdate:lastUpdate withHistory:history withDeleted:deleted];
+    return [self initWithId:estateId withName:name withContent:content withAttributeValues:attributeValues withLastUpdate:lastUpdate withLastVisit:lastVisit withHistory:history withDeleted:deleted];
 }
 
 #pragma mark NSCopying
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    return [[EstateData alloc] initWithId:self.estateId withName:self.name withContent:self.content withAttributeValues:self.attributeValues withLastUpdate:self.lastUpdate withHistory:self.history withDeleted:self.deleted];
+    return [[EstateData alloc] initWithId:self.estateId withName:self.name withContent:self.content withAttributeValues:self.attributeValues withLastUpdate:self.lastUpdate withLastVisit:self.lastVisit withHistory:self.history withDeleted:self.deleted];
 }
 
 #pragma mark Synthesize

@@ -17,7 +17,9 @@
 @property NSMutableArray* observers;
 @property NSMutableArray* estates;
 @property NSArray* estatesByName;
+@property NSArray* estatesByNameRev;
 @property NSArray* estatesByUpdate;
+@property NSArray* estatesByVisit;
 @property NSMutableArray* deletedEstates;
 @property(nonatomic) id<DataStrategy> dataStrategy;
 

@@ -40,8 +40,10 @@
 
 #define iap_id_pro @"me.chenyi.passworld.pro"
 
-#define sorting_by_name 1
-#define sorting_by_date 2
+#define sorting_by_name 0
+#define sorting_by_name_rev 1
+#define sorting_by_update 2
+#define sorting_by_visit 3
 
 #define kSortingBy @"kSortingBy"
 

@@ -13,6 +13,7 @@
 #define kContent @"content"
 #define kAttributeValues @"attributeValues"
 #define kLastUpdate @"lastUpdate"
+#define kLastVisit @"lastVisit"
 #define kHistory @"history"
 #define kDeleted @"deleted"
 
@@ -25,6 +26,7 @@
 @property(nonatomic) NSString* content;
 @property(nonatomic) NSMutableArray* attributeValues;
 @property(readonly) NSDate* lastUpdate;
+@property NSDate* lastVisit;
 @property(readonly) NSMutableArray* history;
 //whether in recycle bin or not
 @property BOOL deleted;
@@ -32,6 +34,6 @@
 //this is a run time property, will not be saved.
 @property BOOL synced;
 
-- (id) initWithId:(NSString*)estateId withName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableArray*)attributeValues withLastUpdate:(NSDate*)lastUpdate withHistory:(NSMutableArray*)history withDeleted:(BOOL)deleted;
+- (id) initWithId:(NSString*)estateId withName:(NSString*)name withContent:(NSString*)content withAttributeValues:(NSMutableArray*)attributeValues withLastUpdate:(NSDate*)lastUpdate withLastVisit:(NSDate*)lastVisit withHistory:(NSMutableArray*)history withDeleted:(BOOL)deleted;
 
 @end
