@@ -51,12 +51,11 @@
     {
         if ([data.attributeValues count] > 0)
         {
-            _contentLabel.numberOfLines = [data.attributeValues count] * 2;
+            _attrContentLabel.numberOfLines = [data.attributeValues count];
+            _valueContentLabel.numberOfLines = [data.attributeValues count];
             
-            NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] init];
-            UIFont* attrNameFont = [UIFont fontWithName:@"Courier" size:14.f];
-            UIFont* attrValueFont = [UIFont fontWithName:@"Courier" size:14.f];
-            UIColor* lightBlueColor = [UIColor colorWithRed:0x22/255.0f green:0x22/255.0f blue:0x99/255.0f alpha:1];
+            NSMutableString *attrText = [[NSMutableString alloc] init];
+            NSMutableString *valueText = [[NSMutableString alloc] init];
             
             bool isFirst = TRUE;
             
@@ -64,7 +63,8 @@
             {
                 if (!isFirst)
                 {
-                    [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
+                    [attrText appendString:@"\n"];
+                    [valueText appendString:@"\n"];
                 }
                 isFirst = FALSE;
                 NSString * attrName = attributeData.attrName;
@@ -81,8 +81,9 @@
                     attrName = [attrName stringByPaddingToLength:16 withString:@" " startingAtIndex:0];
                 }
                 
-                NSAttributedString* attrNameStr = [[NSAttributedString alloc] initWithString:attrName attributes:@{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName:attrNameFont}];
-                [attributedText appendAttributedString:attrNameStr];
+//                NSAttributedString* attrNameStr = [[NSAttributedString alloc] initWithString:attrName attributes:@{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName:attrNameFont}];
+//                [attributedText appendAttributedString:attrNameStr];
+                [attrText appendString:attrName];
                 
 //                [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
                 
@@ -100,22 +101,24 @@
                     attrValue = [attrValue stringByPaddingToLength:19 withString:@" " startingAtIndex:0];
                 }
 
-                NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attrValue attributes:@{NSForegroundColorAttributeName:lightBlueColor, NSFontAttributeName:attrValueFont}];
-                [attributedText appendAttributedString:attrValueStr];
+//                NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attrValue attributes:@{NSForegroundColorAttributeName:lightBlueColor, NSFontAttributeName:attrValueFont}];
+//                [attributedText appendAttributedString:attrValueStr];
+                [valueText appendString:attrValue];
             }
-            _contentLabel.attributedText = attributedText;
+            _attrContentLabel.text = attrText;
+            _valueContentLabel.text = valueText;
         }
         else
         {
-            _contentLabel.numberOfLines = 1;
-            _contentLabel.text =  @"";
+            _attrContentLabel.numberOfLines = 1;
+            _attrContentLabel.text =  @"";
         }
     }
     else
     {
         NSUInteger lineCount = data.content.length / 22 + 1;
-        _contentLabel.numberOfLines = lineCount > 4? 4 : lineCount;
-        _contentLabel.text =  data.content;
+        _attrContentLabel.numberOfLines = lineCount > 4? 4 : lineCount;
+        _attrContentLabel.text =  data.content;
     }
     [_iconView setImage: [data.attributeValues count] == 0 ? [UIImage imageNamed:@"circle_text.png"]: [UIImage imageNamed:@"password.png"] ];
    

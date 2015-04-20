@@ -309,9 +309,9 @@
     }
     else
     {
-        result.contentLabel.text = [NSString stringWithFormat:@"Section %ld, Cell %ld",
-                                    (long)indexPath.section,
-                                    (long)indexPath.row];
+//        result.contentLabel.text = [NSString stringWithFormat:@"Section %ld, Cell %ld",
+//                                    (long)indexPath.section,
+//                                    (long)indexPath.row];
     }
     result.accessoryType = UITableViewCellAccessoryNone;
 
