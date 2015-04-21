@@ -368,7 +368,7 @@
             if (lineCount > 4)
                 lineCount = 4;
         }
-        return lineCount * 18.0f + 48.0f;
+        return lineCount * 25.0f + 40.0f;
     }
     return 60.0f;
 }

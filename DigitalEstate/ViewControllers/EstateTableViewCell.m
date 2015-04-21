@@ -54,8 +54,15 @@
             _attrContentLabel.numberOfLines = [data.attributeValues count];
             _valueContentLabel.numberOfLines = [data.attributeValues count];
             
-            NSMutableString *attrText = [[NSMutableString alloc] init];
-            NSMutableString *valueText = [[NSMutableString alloc] init];
+            NSMutableAttributedString *attrText = [[NSMutableAttributedString alloc] init];
+            NSMutableAttributedString *valueText = [[NSMutableAttributedString alloc] init];
+            UIFont* attrNameFont = [UIFont systemFontOfSize:13.0];
+            UIFont* attrValueFont = [UIFont systemFontOfSize:17.0];
+            UIColor* lightBlueColor = [UIColor colorWithRed:0x22/255.0f green:0x22/255.0f blue:0x99/255.0f alpha:1];
+
+            NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+            paragraphStyle.minimumLineHeight = 25.f;
+            paragraphStyle.maximumLineHeight = 25.f;
             
             bool isFirst = TRUE;
             
@@ -63,8 +70,8 @@
             {
                 if (!isFirst)
                 {
-                    [attrText appendString:@"\n"];
-                    [valueText appendString:@"\n"];
+                    [attrText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
+                    [valueText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
                 }
                 isFirst = FALSE;
                 NSString * attrName = attributeData.attrName;
@@ -81,11 +88,9 @@
                     attrName = [attrName stringByPaddingToLength:16 withString:@" " startingAtIndex:0];
                 }
                 
-//                NSAttributedString* attrNameStr = [[NSAttributedString alloc] initWithString:attrName attributes:@{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName:attrNameFont}];
-//                [attributedText appendAttributedString:attrNameStr];
-                [attrText appendString:attrName];
+                NSAttributedString* attrNameStr = [[NSAttributedString alloc] initWithString:attrName attributes:@{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName:attrNameFont, NSParagraphStyleAttributeName : paragraphStyle}];
                 
-//                [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
+                [attrText appendAttributedString:attrNameStr];
                 
                 NSString * attrValue = attributeData.attrValue;
                 if (attrValue == nil)
@@ -101,12 +106,13 @@
                     attrValue = [attrValue stringByPaddingToLength:19 withString:@" " startingAtIndex:0];
                 }
 
-//                NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attrValue attributes:@{NSForegroundColorAttributeName:lightBlueColor, NSFontAttributeName:attrValueFont}];
-//                [attributedText appendAttributedString:attrValueStr];
-                [valueText appendString:attrValue];
+                NSAttributedString* attrValueStr = [[NSAttributedString alloc] initWithString:attrValue attributes:@{NSForegroundColorAttributeName:lightBlueColor, NSFontAttributeName:attrValueFont, NSParagraphStyleAttributeName : paragraphStyle}];
+                
+                [valueText appendAttributedString:attrValueStr];
+
             }
-            _attrContentLabel.text = attrText;
-            _valueContentLabel.text = valueText;
+            _attrContentLabel.attributedText = attrText;
+            _valueContentLabel.attributedText = valueText;
         }
         else
         {
