@@ -290,24 +290,25 @@
 //        [mail setToRecipients:@[@"passworld@chenyi.me"]];
         
         NSMutableString* message = [[NSMutableString alloc] init];
+        [message appendString:@"Passworld"];
         NSArray* estates = [DataSourceFactory getDataSource].estatesByName;
         for (EstateData* data in estates){
-            [message appendString:[NSString stringWithFormat:@"Name:%@\n", data.name]];
+            [message appendString:[NSString stringWithFormat:@"- %@\n", data.name]];
             for (AttributeData* attrData in data.attributeValues){
-                [message appendString:[NSString stringWithFormat:@"-----Name:%@, Value:%@\n", attrData.attrName, attrData.attrValue]];
+                [message appendString:[NSString stringWithFormat:@"+ Name:%@, Value:%@\n", attrData.attrName, attrData.attrValue]];
             }
+            [message appendString:@"---"];
         }
         [mail setMessageBody:message isHTML:FALSE];
         
-        [self presentViewController:mail animated:YES completion:NULL];
-
-        //for security reason, user have to enter passcode before export.
-        if ([LTHPasscodeViewController doesPasscodeExist])
-            if ([LTHPasscodeViewController didPasscodeTimerEnd])
-                [[LTHPasscodeViewController sharedUser] showLockScreenWithAnimation:NO
-                                                                         withLogout:NO
-                                                                     andLogoutTitle:nil];
-        
+        [self presentViewController:mail animated:NO completion:^(void){
+            //for security reason, user have to enter passcode before export.
+            if ([LTHPasscodeViewController doesPasscodeExist])
+                if ([LTHPasscodeViewController didPasscodeTimerEnd])
+                    [[LTHPasscodeViewController sharedUser] showLockScreenWithAnimation:NO
+                                                                             withLogout:NO
+                                                                         andLogoutTitle:nil];
+        }];
     }
     else
     {
