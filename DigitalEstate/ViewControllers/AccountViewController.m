@@ -111,7 +111,9 @@
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UITableViewCellEditingStyleNone;
+    if (indexPath.row == [tableView numberOfRowsInSection:0] - 1)
+        return UITableViewCellEditingStyleNone;
+    return UITableViewCellEditingStyleDelete;
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath

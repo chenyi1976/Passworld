@@ -290,14 +290,14 @@
 //        [mail setToRecipients:@[@"passworld@chenyi.me"]];
         
         NSMutableString* message = [[NSMutableString alloc] init];
-        [message appendString:@"Passworld"];
+        [message appendString:@"# Passworld\n"];
         NSArray* estates = [DataSourceFactory getDataSource].estatesByName;
         for (EstateData* data in estates){
             [message appendString:[NSString stringWithFormat:@"- %@\n", data.name]];
             for (AttributeData* attrData in data.attributeValues){
                 [message appendString:[NSString stringWithFormat:@"+ Name:%@, Value:%@\n", attrData.attrName, attrData.attrValue]];
             }
-            [message appendString:@"---"];
+            [message appendString:@"---\n"];
         }
         [mail setMessageBody:message isHTML:FALSE];
         
