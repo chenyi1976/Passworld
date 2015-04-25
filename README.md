@@ -43,3 +43,6 @@ If you are an iOS developer, you can build app by yourself in XCode.
 
 * Main UI
 * ![Screenshot_Main](https://github.com/chenyi1976/Passworld/raw/master/DigitalEstate/Screenshots/Screenshot_Main.png)
+
+* Setting
+* ![Screenshot_Setting](https://github.com/chenyi1976/Passworld/raw/master/DigitalEstate/Screenshots/Screenshot_Setting.png)
