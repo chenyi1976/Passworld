@@ -80,6 +80,7 @@
 		816B69D11ADE2649001B0CCE /* LTHKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 816B69CE1ADE2649001B0CCE /* LTHKeychainUtils.m */; };
 		816B69D21ADE2649001B0CCE /* LTHPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816B69D01ADE2649001B0CCE /* LTHPasscodeViewController.m */; };
 		8172A2D51A930EA600D0BAEC /* Passworld_logo_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8172A2D41A930EA600D0BAEC /* Passworld_logo_120.png */; };
+		817E9DDD1AEBC3A700CADC74 /* Screenshot_Setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 817E9DDC1AEBC3A700CADC74 /* Screenshot_Setting.png */; };
 		817FB7A619393E7E00110586 /* circle_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 817FB7A519393E7E00110586 /* circle_add@2x.png */; };
 		8180D7C018FDFCC30095F625 /* EstateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7BF18FDFCC30095F625 /* EstateData.m */; };
 		8180D7C618FDFD7E0095F625 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7C318FDFD7E0095F625 /* DownloadManager.m */; };
@@ -255,6 +256,7 @@
 		816B69CF1ADE2649001B0CCE /* LTHPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTHPasscodeViewController.h; path = LTHPasscodeViewController/LTHPasscodeViewController.h; sourceTree = "<group>"; };
 		816B69D01ADE2649001B0CCE /* LTHPasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTHPasscodeViewController.m; path = LTHPasscodeViewController/LTHPasscodeViewController.m; sourceTree = "<group>"; };
 		8172A2D41A930EA600D0BAEC /* Passworld_logo_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Passworld_logo_120.png; path = Images/Passworld_logo_120.png; sourceTree = "<group>"; };
+		817E9DDC1AEBC3A700CADC74 /* Screenshot_Setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Screenshot_Setting.png; path = Screenshots/Screenshot_Setting.png; sourceTree = "<group>"; };
 		817FB7A519393E7E00110586 /* circle_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_add@2x.png"; path = "Images/circle_add@2x.png"; sourceTree = "<group>"; };
 		8180D7BE18FDFCC30095F625 /* EstateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateData.h; path = Data/EstateData.h; sourceTree = "<group>"; };
 		8180D7BF18FDFCC30095F625 /* EstateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateData.m; path = Data/EstateData.m; sourceTree = "<group>"; };
@@ -727,6 +729,7 @@
 		81BAF1B51A916F6600817348 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				817E9DDC1AEBC3A700CADC74 /* Screenshot_Setting.png */,
 				81BAF1B61A916FCC00817348 /* Screenshot_Main.png */,
 				81BAF1B71A916FCC00817348 /* Screenshot_New.png */,
 				81BAF1B81A916FCC00817348 /* Screenshot_Pin.png */,
@@ -885,6 +888,7 @@
 				8121788B190A114F002DA71A /* edit@2x.png in Resources */,
 				811CA3271AE255C1003241CD /* icon-a.png in Resources */,
 				811F6833192E048E00F27955 /* circle_delete@2x.png in Resources */,
+				817E9DDD1AEBC3A700CADC74 /* Screenshot_Setting.png in Resources */,
 				81697B3D1AE0DC56002CADBB /* bg-addbutton-highlighted@2x.png in Resources */,
 				8159411C19206D1000D6EB14 /* history@2x.png in Resources */,
 				811F6831192E026F00F27955 /* circle_ok@2x.png in Resources */,
