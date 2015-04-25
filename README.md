@@ -35,14 +35,15 @@ If you are an iOS developer, you can build app by yourself in XCode.
 
 ### Screenshot ###
 
-* Pin Checking when open/activate app:
-* ![Screenshot_Pin](https://raw.githubusercontent.com/chenyi1976/Passworld/master/DigitalEstate/Screenshots/Screenshot_Pin.png)
+* Main UI
+ ![Screenshot_Main](https://github.com/chenyi1976/Passworld/raw/master/DigitalEstate/Screenshots/Screenshot_Main.png)
 
 * Create a new entry
-* ![Screenshot_New](https://raw.githubusercontent.com/chenyi1976/Passworld/master/DigitalEstate/Screenshots/Screenshot_New.png)
-
-* Main UI
-* ![Screenshot_Main](https://github.com/chenyi1976/Passworld/raw/master/DigitalEstate/Screenshots/Screenshot_Main.png)
+ ![Screenshot_New](https://raw.githubusercontent.com/chenyi1976/Passworld/master/DigitalEstate/Screenshots/Screenshot_New.png)
 
 * Setting
-* ![Screenshot_Setting](https://github.com/chenyi1976/Passworld/raw/master/DigitalEstate/Screenshots/Screenshot_Setting.png)
+ ![Screenshot_Setting](https://github.com/chenyi1976/Passworld/raw/master/DigitalEstate/Screenshots/Screenshot_Setting.png)
+
+* Pin Checking when open/activate app:
+ ![Screenshot_Pin](https://raw.githubusercontent.com/chenyi1976/Passworld/master/DigitalEstate/Screenshots/Screenshot_Pin.png)
+
