@@ -58,7 +58,7 @@
             NSMutableAttributedString *valueText = [[NSMutableAttributedString alloc] init];
             UIFont* attrNameFont = [UIFont systemFontOfSize:13.0];
             UIFont* attrValueFont = [UIFont systemFontOfSize:17.0];
-            UIColor* lightBlueColor = [UIColor colorWithRed:0x22/255.0f green:0x22/255.0f blue:0x99/255.0f alpha:1];
+            UIColor* lightBlueColor = [UIColor colorWithRed:0x33/255.0f green:0x66/255.0f blue:0xFF/255.0f alpha:1];
 
             NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
             paragraphStyle.minimumLineHeight = 25.f;
@@ -88,7 +88,7 @@
                     attrName = [attrName stringByPaddingToLength:16 withString:@" " startingAtIndex:0];
                 }
                 
-                NSAttributedString* attrNameStr = [[NSAttributedString alloc] initWithString:attrName attributes:@{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName:attrNameFont, NSParagraphStyleAttributeName : paragraphStyle}];
+                NSAttributedString* attrNameStr = [[NSAttributedString alloc] initWithString:attrName attributes:@{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName:attrNameFont, NSBaselineOffsetAttributeName : [NSNumber numberWithFloat:1.5], NSParagraphStyleAttributeName : paragraphStyle}];
                 
                 [attrText appendAttributedString:attrNameStr];
                 

@@ -16,12 +16,16 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        [[self contentView].layer setBorderWidth:3.0f];
+        [[self contentView].layer setBorderColor:[UIColor whiteColor].CGColor];
     }
     return self;
 }
 
 - (void)awakeFromNib
 {
+    [[self contentView].layer setBorderWidth:3.0f];
+    [[self contentView].layer setBorderColor:[UIColor whiteColor].CGColor];
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated
@@ -71,13 +75,6 @@
         [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleNone forRowAtIndexPath:indexPath];
     }
 }
-
-//- (void) textFieldDidBeginEditing:(UITextField *)textField {
-//    NSLog(@"textFieldDidBeginEditing");
-//    
-//    
-//    
-//}
 
 - (BOOL) textFieldShouldBeginEditing:(UITextField *)textField {
     NSLog(@"valueFieldTouched");
