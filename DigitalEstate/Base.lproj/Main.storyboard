@@ -115,7 +115,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="ValueContent ">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="17" name="HelveticaNeue"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -144,9 +144,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="attrContentLabel" destination="hzY-1R-Oxo" id="AqE-VF-UOD"/>
-                                            <outlet property="nameLabel" destination="sLk-Dy-x0a" id="KIk-IG-4M4"/>
-                                            <outlet property="valueContentLabel" destination="tIC-31-6dP" id="sEZ-H8-atb"/>
+                                            <outlet property="attrContentLabel" destination="hzY-1R-Oxo" id="21z-Y0-WYw"/>
+                                            <outlet property="nameLabel" destination="sLk-Dy-x0a" id="mjj-aq-nuh"/>
+                                            <outlet property="valueContentLabel" destination="tIC-31-6dP" id="RYJ-Ri-LT9"/>
                                             <segue destination="ysJ-kx-Xj9" kind="push" identifier="ModifyAccountSegue" id="tc2-DJ-wxI"/>
                                         </connections>
                                     </tableViewCell>

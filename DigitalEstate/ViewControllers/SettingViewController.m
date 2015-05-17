@@ -45,7 +45,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
         
-    NSTimeInterval threshold = [LTHPasscodeViewController timerDuration];
+    int threshold = (int)[LTHPasscodeViewController timerDuration];
     
     if (threshold <= 0)
     {
@@ -53,12 +53,12 @@
     }
     else if (threshold < 60)
     {
-        NSString* title = [NSString stringWithFormat: @"Auto Lock After %f Seconds", threshold];
+        NSString* title = [NSString stringWithFormat: @"Auto Lock After %d Seconds", threshold];
         [_pinThresholdButton setTitle:NSLocalizedString(title, @"") forState:UIControlStateNormal];
     }
     else
     {
-        NSString* title = [NSString stringWithFormat: @"Auto Lock After %f Minutes", threshold / 60];
+        NSString* title = [NSString stringWithFormat: @"Auto Lock After %d Minutes", threshold / 60];
         [_pinThresholdButton setTitle:NSLocalizedString(title, @"") forState:UIControlStateNormal];
     }
     
@@ -83,7 +83,7 @@
     _dropboxSyncSwitch.on = [@"Dropbox" isEqualToString:datasourceType] && account != nil;
     
     if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
-        [_updatePasswordButton setTitle:@"Pro User" forState:UIControlStateNormal];
+        [_upgradeButton setTitle:NSLocalizedString(@"Pro User", @"") forState:UIControlStateNormal];
     }
 }
 
@@ -243,7 +243,7 @@
 - (IBAction)upgradeButtonTouched:(id)sender {
     
     if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
-        [_updatePasswordButton setTitle:@"Pro User" forState:UIControlStateNormal];
+        [_upgradeButton setTitle:NSLocalizedString(@"Pro User", @"") forState:UIControlStateNormal];
         return;
     }
     
@@ -266,14 +266,14 @@
         UIView *view = (UIView *)[self.view viewWithTag:103];
         [view removeFromSuperview];
 
-        if (products == nil || [products count] > 0){
+        if (products == nil || [products count] == 0){
             [[iToast makeText:NSLocalizedString(@"Error: IAP not avaiable, please retry.", @"")] show];
         }
         else{
             [[PassworldIAPHelper sharedInstance] buyProduct:[products lastObject]];
             if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
                 [[iToast makeText:NSLocalizedString(@"Thanks for upgrading", @"")] show];
-                //todo: update UI
+                [_upgradeButton setTitle:NSLocalizedString(@"Pro User", @"") forState:UIControlStateNormal];
             }
                 
         }

@@ -53,7 +53,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *MyCellIdentifier = @"HistoryCell";
-    UITableViewCell* result = [self.tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
+    UITableViewCell* result = [self.tableView dequeueReusableCellWithIdentifier:MyCellIdentifier forIndexPath:indexPath];
 
     if (result == nil){
         result = [[UITableViewCell alloc]

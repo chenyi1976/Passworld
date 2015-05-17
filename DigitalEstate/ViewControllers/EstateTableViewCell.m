@@ -126,7 +126,7 @@
         _attrContentLabel.numberOfLines = lineCount > 4? 4 : lineCount;
         _attrContentLabel.text =  data.content;
     }
-    [_iconView setImage: [data.attributeValues count] == 0 ? [UIImage imageNamed:@"circle_text.png"]: [UIImage imageNamed:@"password.png"] ];
+//    [_iconView setImage: [data.attributeValues count] == 0 ? [UIImage imageNamed:@"circle_text.png"]: [UIImage imageNamed:@"password.png"] ];
    
 }
 

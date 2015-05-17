@@ -295,7 +295,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *MyCellIdentifier = @"EstateCell";
-    EstateTableViewCell* result = [self.tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
+    EstateTableViewCell* result = [self.tableView dequeueReusableCellWithIdentifier:MyCellIdentifier forIndexPath:indexPath];
     
     if (result == nil){
         result = [[EstateTableViewCell alloc]

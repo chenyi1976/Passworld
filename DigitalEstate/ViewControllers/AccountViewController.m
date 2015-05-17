@@ -135,7 +135,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *MyCellIdentifier = @"AccountCell";
-    AccountTableViewCell* result = [self.tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
+    AccountTableViewCell* result = [self.tableView dequeueReusableCellWithIdentifier:MyCellIdentifier forIndexPath:indexPath];
     
     if (result == nil){
         result = [[AccountTableViewCell alloc]

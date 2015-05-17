@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *attrContentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *valueContentLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+//@property (weak, nonatomic) IBOutlet UIImageView *iconView;
 
 - (void)configureForEstateData:(EstateData*)data;
 
