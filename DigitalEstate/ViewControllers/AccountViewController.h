@@ -17,8 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton* deleteButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *okButton;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableBottomConstraint;
-
 - (IBAction)backButtonTouched:(id)sender;
 - (IBAction)okButtonTouched:(id)sender;
 - (IBAction)deleteButtonTouched:(id)sender;
