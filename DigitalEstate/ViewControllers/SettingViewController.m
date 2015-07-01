@@ -85,6 +85,12 @@
     if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
         [_upgradeButton setTitle:NSLocalizedString(@"Pro User", @"") forState:UIControlStateNormal];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -247,37 +253,65 @@
         return;
     }
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-    [view setTag:103];
-    [view setBackgroundColor:[UIColor blackColor]];
-    [view setAlpha:0.8];
-    [self.view addSubview:view];
-    
-    UIActivityIndicatorView* activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
-    [activityIndicator setCenter:view.center];
-    [activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
-    [view addSubview:activityIndicator];
-    
-    [activityIndicator startAnimating];
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+//    [view setTag:103];
+//    [view setBackgroundColor:[UIColor blackColor]];
+//    [view setAlpha:0.8];
+//    [self.view addSubview:view];
+//    
+//    UIActivityIndicatorView* activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
+//    [activityIndicator setCenter:view.center];
+//    [activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
+//    [view addSubview:activityIndicator];
+//    
+//    [activityIndicator startAnimating];
 
     [[PassworldIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
-        [activityIndicator stopAnimating];
-        [activityIndicator removeFromSuperview];
-        UIView *view = (UIView *)[self.view viewWithTag:103];
-        [view removeFromSuperview];
+//        [activityIndicator stopAnimating];
+//        [activityIndicator removeFromSuperview];
+//        UIView *view = (UIView *)[self.view viewWithTag:103];
+//        [view removeFromSuperview];
 
         if (products == nil || [products count] == 0){
             [[iToast makeText:NSLocalizedString(@"Error: IAP not avaiable, please retry.", @"")] show];
         }
         else{
             [[PassworldIAPHelper sharedInstance] buyProduct:[products lastObject]];
-            if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
-                [[iToast makeText:NSLocalizedString(@"Thanks for upgrading", @"")] show];
-                [_upgradeButton setTitle:NSLocalizedString(@"Pro User", @"") forState:UIControlStateNormal];
-            }
-                
         }
     }];
+}
+
+- (IBAction)restoreButtonTouched:(id)sender {
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+//    [view setBackgroundColor:[UIColor blackColor]];
+//    [view setAlpha:0.8];
+//    [self.view addSubview:view];
+//    
+//    UIActivityIndicatorView* activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
+//    [activityIndicator setCenter:view.center];
+//    [activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
+//    [view addSubview:activityIndicator];
+//    
+//    [activityIndicator startAnimating];
+    
+    [[PassworldIAPHelper sharedInstance] restoreCompletedTransactions];
+
+//    [activityIndicator stopAnimating];
+//    [activityIndicator removeFromSuperview];
+//    [view removeFromSuperview];
+//
+//    if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
+//        [[iToast makeText:NSLocalizedString(@"Thanks for upgrading", @"")] show];
+//        [_upgradeButton setTitle:NSLocalizedString(@"Pro User", @"") forState:UIControlStateNormal];
+//        return;
+//    }
+}
+
+- (void)productPurchased:(NSNotification *)notification {
+    if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
+        [[iToast makeText:NSLocalizedString(@"Thanks for upgrading", @"")] show];
+        [_upgradeButton setTitle:NSLocalizedString(@"Pro User", @"") forState:UIControlStateNormal];
+    }
 }
 
 - (IBAction)exportButtonTouched:(id)sender {

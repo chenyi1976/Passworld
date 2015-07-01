@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="H1R-05-TAP">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -18,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Passworld" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="BdF-NY-E6J">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="密码盾牌" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="BdF-NY-E6J">
                                 <rect key="frame" x="0.0" y="40" width="320" height="85"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="highlightedColor"/>
@@ -53,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="111" y="322"/>
         </scene>
-        <!--Passworld-->
+        <!--密码盾牌-->
         <scene sceneID="F9A-u3-6XM">
             <objects>
                 <viewController storyboardIdentifier="EstateViewController" id="i1S-3H-tXv" customClass="EstateViewController" sceneMemberID="viewController">
@@ -85,7 +84,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="138"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLk-Dy-x0a">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLk-Dy-x0a">
                                                     <rect key="frame" x="8" y="8" width="279" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23" id="niL-mM-cqy"/>
@@ -162,7 +161,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Passworld" id="HgB-PW-2Ei">
+                    <navigationItem key="navigationItem" title="密码盾牌" id="HgB-PW-2Ei">
                         <barButtonItem key="leftBarButtonItem" image="setting.png" id="9rv-kp-TnB">
                             <connections>
                                 <segue destination="Y8v-pJ-be2" kind="push" id="NpW-Vm-4to"/>
@@ -197,7 +196,7 @@
             </objects>
             <point key="canvasLocation" x="495" y="322"/>
         </scene>
-        <!--Settings-->
+        <!--设置-->
         <scene sceneID="HBX-eM-1Mf">
             <objects>
                 <tableViewController id="Y8v-pJ-be2" customClass="SettingViewController" sceneMemberID="viewController">
@@ -206,7 +205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Security Pin Status" id="K7p-CQ-4hc">
+                            <tableViewSection headerTitle="安全码状态" id="K7p-CQ-4hc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mcV-oK-zjo">
                                         <rect key="frame" x="0.0" y="119" width="320" height="44"/>
@@ -217,7 +216,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eK-ZB-C1P">
                                                     <rect key="frame" x="20" y="7" width="267" height="30"/>
-                                                    <state key="normal" title="Enable/Disable Security PIN">
+                                                    <state key="normal" title="启用或禁用安全码">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -236,7 +235,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xi1-3p-txS">
                                                     <rect key="frame" x="20" y="7" width="267" height="30"/>
-                                                    <state key="normal" title="Change Security Pin">
+                                                    <state key="normal" title="修改安全码">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -254,7 +253,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B73-YM-h6d">
                                                     <rect key="frame" x="20" y="7" width="267" height="30"/>
-                                                    <state key="normal" title="Auto Lock         ">
+                                                    <state key="normal" title="自动锁定         ">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -266,7 +265,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="SYNC" id="3Q5-Es-NWb">
+                            <tableViewSection headerTitle="同步" id="3Q5-Es-NWb">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mxM-lk-L8A">
                                         <rect key="frame" x="0.0" y="347" width="320" height="44"/>
@@ -277,7 +276,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nm-cE-S12">
                                                     <rect key="frame" x="20" y="7" width="223" height="30"/>
-                                                    <state key="normal" title="Sync with Dropbox">
+                                                    <state key="normal" title="使用Dropbox同步">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -299,7 +298,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00b-ES-AlL">
                                                     <rect key="frame" x="20" y="7" width="267" height="30"/>
-                                                    <state key="normal" title="Export to mail">
+                                                    <state key="normal" title="导出为邮件">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -311,7 +310,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Pro" id="Pfv-5d-bCu">
+                            <tableViewSection headerTitle="高级用户" id="Pfv-5d-bCu">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e7e-nK-XDw">
                                         <rect key="frame" x="0.0" y="439" width="320" height="44"/>
@@ -322,7 +321,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5W4-aH-4I7">
                                                     <rect key="frame" x="20" y="7" width="267" height="30"/>
-                                                    <state key="normal" title="Upgrade to Pro">
+                                                    <state key="normal" title="升级到高级用户">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -340,7 +339,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbA-uZ-aSq">
                                                     <rect key="frame" x="20" y="7" width="277" height="30"/>
-                                                    <state key="normal" title="Restore Purchase">
+                                                    <state key="normal" title="如果您已经升级过高级用户，请点击恢复">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -352,7 +351,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Support" id="8TG-Ue-b1W">
+                            <tableViewSection headerTitle="支持" id="8TG-Ue-b1W">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="EdF-2h-gIE">
                                         <rect key="frame" x="0.0" y="439" width="320" height="44"/>
@@ -363,7 +362,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptp-Kw-liD">
                                                     <rect key="frame" x="20" y="7" width="267" height="30"/>
-                                                    <state key="normal" title="Email Us">
+                                                    <state key="normal" title="邮件支持">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -382,7 +381,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="907-25-Bqi">
                                                     <rect key="frame" x="8" y="8" width="304" height="22"/>
-                                                    <state key="normal" title="Find source code at: ">
+                                                    <state key="normal" title="您可以在以下网址找到源码：">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -410,7 +409,7 @@
                             <outlet property="delegate" destination="Y8v-pJ-be2" id="Baj-2a-Jcg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="b8E-eJ-no0"/>
+                    <navigationItem key="navigationItem" title="设置" id="b8E-eJ-no0"/>
                     <connections>
                         <outlet property="dropboxSyncSwitch" destination="PlE-HD-93b" id="QDi-Yi-HsM"/>
                         <outlet property="pinThresholdButton" destination="B73-YM-h6d" id="euj-xL-lSR"/>
@@ -441,7 +440,7 @@
                                     <constraint firstAttribute="height" constant="28" id="bQ8-oL-6e9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Delete">
+                                <state key="normal" title="删除">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -472,7 +471,7 @@
                                                         <outlet property="delegate" destination="jKc-3o-CeO" id="hqd-Hq-H5Y"/>
                                                     </connections>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBz-bl-cWZ">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="值" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBz-bl-cWZ">
                                                     <rect key="frame" x="86" y="11" width="186" height="30"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -528,7 +527,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3cd-8y-ZOF">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="Sfh-H6-TC9">
+                        <barButtonItem key="rightBarButtonItem" title="编辑" id="Sfh-H6-TC9">
                             <connections>
                                 <action selector="okButtonTouched:" destination="ysJ-kx-Xj9" id="Vvt-X7-41R"/>
                             </connections>
