@@ -105,7 +105,7 @@
 		81A901841AE397A7001D36DE /* icon-z.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A901801AE397A7001D36DE /* icon-z.png */; };
 		81A901851AE397A7001D36DE /* icon-z@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A901811AE397A7001D36DE /* icon-z@2x.png */; };
 		81AB97331921951100B0C917 /* passcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB97321921951100B0C917 /* passcode@2x.png */; };
-		81AB97391921B76400B0C917 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB97381921B76400B0C917 /* AccountViewController.m */; };
+		81AB97391921B76400B0C917 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB97381921B76400B0C917 /* DetailViewController.m */; };
 		81AB973C1922054900B0C917 /* Down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB973A1922054900B0C917 /* Down@2x.png */; };
 		81AB973D1922054900B0C917 /* Up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB973B1922054900B0C917 /* Up@2x.png */; };
 		81AB973F1922465800B0C917 /* Card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB973E1922465800B0C917 /* Card@2x.png */; };
@@ -296,8 +296,8 @@
 		81A901801AE397A7001D36DE /* icon-z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-z.png"; path = "AwesomeMenu/images/icon-z.png"; sourceTree = "<group>"; };
 		81A901811AE397A7001D36DE /* icon-z@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-z@2x.png"; path = "AwesomeMenu/images/icon-z@2x.png"; sourceTree = "<group>"; };
 		81AB97321921951100B0C917 /* passcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "passcode@2x.png"; path = "Images/passcode@2x.png"; sourceTree = "<group>"; };
-		81AB97371921B76400B0C917 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountViewController.h; path = ViewControllers/AccountViewController.h; sourceTree = "<group>"; };
-		81AB97381921B76400B0C917 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountViewController.m; path = ViewControllers/AccountViewController.m; sourceTree = "<group>"; };
+		81AB97371921B76400B0C917 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ViewControllers/DetailViewController.h; sourceTree = "<group>"; };
+		81AB97381921B76400B0C917 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ViewControllers/DetailViewController.m; sourceTree = "<group>"; };
 		81AB973A1922054900B0C917 /* Down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Down@2x.png"; path = "Images/Down@2x.png"; sourceTree = "<group>"; };
 		81AB973B1922054900B0C917 /* Up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Up@2x.png"; path = "Images/Up@2x.png"; sourceTree = "<group>"; };
 		81AB973E1922465800B0C917 /* Card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Card@2x.png"; path = "Images/Card@2x.png"; sourceTree = "<group>"; };
@@ -514,8 +514,8 @@
 				813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */,
 				8180D7CB18FE06C70095F625 /* EstateViewController.h */,
 				8180D7CC18FE06C70095F625 /* EstateViewController.m */,
-				81AB97371921B76400B0C917 /* AccountViewController.h */,
-				81AB97381921B76400B0C917 /* AccountViewController.m */,
+				81AB97371921B76400B0C917 /* DetailViewController.h */,
+				81AB97381921B76400B0C917 /* DetailViewController.m */,
 				813664B6190F870D00C0B76E /* SettingViewController.h */,
 				813664B7190F870D00C0B76E /* SettingViewController.m */,
 				8159411D1920736E00D6EB14 /* HistoryViewController.h */,
@@ -991,7 +991,7 @@
 				813664BB191075B600C0B76E /* HistoryData.m in Sources */,
 				8193FD3E19315B5A001FF9F2 /* LocalDataStrategy.m in Sources */,
 				813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */,
-				81AB97391921B76400B0C917 /* AccountViewController.m in Sources */,
+				81AB97391921B76400B0C917 /* DetailViewController.m in Sources */,
 				813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */,
 				81AB9745192378B200B0C917 /* AccountTableViewCell.m in Sources */,
 				814868061ADE53230051F544 /* IAPHelper.m in Sources */,

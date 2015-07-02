@@ -6,21 +6,21 @@
 //  Copyright (c) 2014 Yi Chen. All rights reserved.
 //
 
-#import "AccountViewController.h"
+#import "DetailViewController.h"
 #import "AccountTableViewCell.h"
 #import "EstateData.h"
 #import "ConstantDefinition.h"
 #import "AttributeData.h"
 #import "DataSourceFactory.h"
 
-@interface AccountViewController ()
+@interface DetailViewController ()
 
 @property NSMutableArray* tableData;
 @property EstateData* estateData;
 
 @end
 
-@implementation AccountViewController
+@implementation DetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

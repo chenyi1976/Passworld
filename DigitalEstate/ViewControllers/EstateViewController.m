@@ -14,7 +14,7 @@
 #import "LTHPasscodeViewController.h"
 #import "KeyChainUtil.h"
 #import "iToast.h"
-#import "AccountViewController.h"
+#import "DetailViewController.h"
 #import "PassworldIAPHelper.h"
 
 @interface EstateViewController ()
@@ -234,7 +234,7 @@
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     if ([identifier isEqualToString:@"CreateAccountSegue"]){
-        if ([[self getEstateDatas] count] >= 12){
+        if ([[[DataSourceFactory getDataSource] estatesByName] count] >= 12){
             if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
                 return TRUE;
             }
@@ -253,10 +253,10 @@
     if ([[segue identifier] isEqualToString:@"ModifyAccountSegue"])
     {
         // Get reference to the destination view controller
-        AccountViewController *vc = [segue destinationViewController];
+        DetailViewController *vc = [segue destinationViewController];
         
         EstateData* data;
-        if (self.searchDisplayController.active == YES)
+        if (self.searchDisplayController.active)
         {
             NSArray* estates = _searchResults;
             NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForCell:sender];
@@ -264,7 +264,7 @@
         }
         else
         {
-            NSArray* estates =[self getEstateDatas];
+            NSArray* estates =[self getSortedEstateDatas];
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             data = [estates objectAtIndex:indexPath.row];
         }
@@ -274,7 +274,7 @@
     else if ([[segue identifier] isEqualToString:@"CreateAccountSegue"])
     {
         // Get reference to the destination view controller
-        AccountViewController *vc = [segue destinationViewController];
+        DetailViewController *vc = [segue destinationViewController];
         [vc updateEstateData:nil];
     }
 }
@@ -289,7 +289,7 @@
             return 0;
         return [_searchResults count];
     }
-    return [[self getEstateDatas] count];
+    return [[self getSortedEstateDatas] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -306,12 +306,6 @@
     EstateData* data = [self getEstateDataByIndexPath:indexPath];
     if (data){
         [result configureForEstateData:data];
-    }
-    else
-    {
-//        result.contentLabel.text = [NSString stringWithFormat:@"Section %ld, Cell %ld",
-//                                    (long)indexPath.section,
-//                                    (long)indexPath.row];
     }
     result.accessoryType = UITableViewCellAccessoryNone;
 
@@ -355,7 +349,7 @@
     }
     else
     {
-        estates =[self getEstateDatas];
+        estates =[self getSortedEstateDatas];
     }
     
     if (estates && indexPath.row < [estates count])
@@ -465,7 +459,7 @@
 {
     NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"ANY %K.attrValue contains[c] %@ OR ANY %K.attrName contains[c] %@ OR content contains[c] %@ OR name contains[c] %@", @"attributeValues", searchText, @"attributeValues", searchText, searchText, searchText];
     
-    NSArray* estates = [self getEstateDatas];
+    NSArray* estates = [self getSortedEstateDatas];
     _searchResults = [estates filteredArrayUsingPredicate:resultPredicate];
 }
 
@@ -481,37 +475,39 @@
 
 #pragma mark - Interface
 
--(NSArray*)getEstateDatas{
+-(NSArray*)getSortedEstateDatas{
     NSArray* estates;
-    if (_tableView == self.searchDisplayController.searchResultsTableView){
-        estates = _searchResults;
-    }
-    else {
-        switch (_sortingType) {
-            case sorting_by_name:
-                estates =[[DataSourceFactory getDataSource] estatesByName];
-                break;
-            case sorting_by_name_rev:
-                estates =[[DataSourceFactory getDataSource] estatesByNameRev];
-                break;
-            case sorting_by_update:
-                estates =[[DataSourceFactory getDataSource] estatesByUpdate];
-                break;
-            case sorting_by_visit:
-                estates =[[DataSourceFactory getDataSource] estatesByVisit];
-                break;
-                
-            default:
-                estates =[[DataSourceFactory getDataSource] estatesByName];
-                break;
-        }
+    switch (_sortingType) {
+        case sorting_by_name:
+            estates =[[DataSourceFactory getDataSource] estatesByName];
+            break;
+        case sorting_by_name_rev:
+            estates =[[DataSourceFactory getDataSource] estatesByNameRev];
+            break;
+        case sorting_by_update:
+            estates =[[DataSourceFactory getDataSource] estatesByUpdate];
+            break;
+        case sorting_by_visit:
+            estates =[[DataSourceFactory getDataSource] estatesByVisit];
+            break;
+            
+        default:
+            estates =[[DataSourceFactory getDataSource] estatesByName];
+            break;
     }
     return estates;
 }
 
+-(NSArray*)getFilteredEstateDatas{
+    if (self.searchDisplayController.active){
+        return _searchResults;
+    }
+    return [self getSortedEstateDatas];
+}
+
 
 -(EstateData*)getEstateDataByIndexPath:(NSIndexPath*)indexPath{
-    NSArray* estates = [self getEstateDatas];
+    NSArray* estates = [self getFilteredEstateDatas];
     if (estates && indexPath.row < [estates count])
     {
         EstateData* data = [estates objectAtIndex:indexPath.row];

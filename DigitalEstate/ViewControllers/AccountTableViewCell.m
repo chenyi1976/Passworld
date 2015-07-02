@@ -7,7 +7,7 @@
 //
 
 #import "AccountTableViewCell.h"
-#import "AccountViewController.h"
+#import "DetailViewController.h"
 #import "iToast.h"
 
 @implementation AccountTableViewCell
@@ -70,7 +70,7 @@
     {
         UITableView* tableView = (UITableView*)self.superview.superview;
         [tableView endEditing:TRUE];
-        AccountViewController* controller = (AccountViewController*)tableView.dataSource;
+        DetailViewController* controller = (DetailViewController*)tableView.dataSource;
         NSIndexPath* indexPath = [controller.tableView indexPathForCell:self];
         [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleNone forRowAtIndexPath:indexPath];
     }
@@ -93,7 +93,7 @@
 - (IBAction)deleteButtonClicked:(id)sender
 {
     UITableView* tableView = (UITableView*)self.superview.superview;
-    AccountViewController* controller = (AccountViewController*)tableView.dataSource;
+    DetailViewController* controller = (DetailViewController*)tableView.dataSource;
     NSIndexPath* indexPath = [controller.tableView indexPathForCell:self];
     [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
 }

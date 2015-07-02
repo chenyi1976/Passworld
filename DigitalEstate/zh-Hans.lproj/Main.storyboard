@@ -422,10 +422,10 @@
             </objects>
             <point key="canvasLocation" x="495" y="1047"/>
         </scene>
-        <!--Account View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="XN3-hK-b4f">
             <objects>
-                <viewController id="ysJ-kx-Xj9" customClass="AccountViewController" sceneMemberID="viewController">
+                <viewController id="ysJ-kx-Xj9" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9xd-Qb-ZAa"/>
                         <viewControllerLayoutGuide type="bottom" id="Mgc-ye-F5z"/>

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EstateData.h"
 
-@interface AccountViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIActionSheetDelegate>
+@interface DetailViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIActionSheetDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextField* nameTextField;
