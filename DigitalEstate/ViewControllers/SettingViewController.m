@@ -64,15 +64,15 @@
     
     if (![LTHPasscodeViewController doesPasscodeExist])
     {
-        [self.tableView headerViewForSection:0].textLabel.text = @"Security PIN: OFF";
-        _switchPasswordButton.titleLabel.text = @"Turn Security PIN On";
+//        [[self.tableView headerViewForSection:0].textLabel setText:NSLocalizedString(@"Security PIN: OFF", @"")];
+        [_switchPasswordButton setTitle:NSLocalizedString(@"Turn Security PIN On", @"") forState:UIControlStateNormal];
         _updatePasswordButton.enabled = FALSE;
         _pinThresholdButton.enabled = FALSE;
     }
     else
     {
-        [self.tableView headerViewForSection:0].textLabel.text = @"Security PIN: ON";
-        _switchPasswordButton.titleLabel.text = @"Turn Security PIN Off";
+//        [[self.tableView headerViewForSection:0].textLabel setText:NSLocalizedString(@"Security PIN: ON", @"")];
+        [_switchPasswordButton setTitle:NSLocalizedString(@"Turn Security PIN Off", @"") forState:UIControlStateNormal];
         _updatePasswordButton.enabled = TRUE;
         _pinThresholdButton.enabled = TRUE;
     }
@@ -93,17 +93,23 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark - UITableViewDataSource
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if (section == 0){
+        if (![LTHPasscodeViewController doesPasscodeExist])
+        {
+            return NSLocalizedString(@"Security PIN: OFF", @"");
+        }
+        else
+        {
+            return NSLocalizedString(@"Security PIN: ON", @"");
+        }
+    }
+        
+    return [super tableView:tableView titleForHeaderInSection:section];
 }
-*/
 
 #pragma mark Mail Delegate
 

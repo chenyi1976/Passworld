@@ -307,6 +307,7 @@
 		81AB9744192378B200B0C917 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountTableViewCell.m; path = ViewControllers/AccountTableViewCell.m; sourceTree = "<group>"; };
 		81ABA5E71A973A9600BFEE9D /* Passworld_Logo_1024_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Passworld_Logo_1024_Transparent.png; path = Images/Passworld_Logo_1024_Transparent.png; sourceTree = "<group>"; };
 		81ABA5E91A97402700BFEE9D /* Passworld_Logo_40_Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Passworld_Logo_40_Transparent.png; path = Images/Passworld_Logo_40_Transparent.png; sourceTree = "<group>"; };
+		81ACBB751B45FA1E0035A9E3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		81B18E431905EAB1005647AF /* Mic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Mic@2x.png"; path = "Images/Mic@2x.png"; sourceTree = "<group>"; };
 		81B18E441905EAB1005647AF /* Video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Video@2x.png"; path = "Images/Video@2x.png"; sourceTree = "<group>"; };
 		81B18E451905EAB1005647AF /* Page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Page@2x.png"; path = "Images/Page@2x.png"; sourceTree = "<group>"; };
@@ -322,7 +323,6 @@
 		81C40A0519309FA80011BAEF /* EstateDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateDataSource.m; path = Datasource/EstateDataSource.m; sourceTree = "<group>"; };
 		81C40A0A1930A5C20011BAEF /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observer.h; path = Datasource/Observer.h; sourceTree = "<group>"; };
 		81C40A0B1930ADB50011BAEF /* Observable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observable.h; path = Datasource/Observable.h; sourceTree = "<group>"; };
-		81CD1A511B43F4F300676AEF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		81CD2A1C192DD9C800785134 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		81E66F301931A0D70090C453 /* DataEncryptUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataEncryptUtil.h; path = Util/DataEncryptUtil.h; sourceTree = "<group>"; };
 		81E66F311931A0D70090C453 /* DataEncryptUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataEncryptUtil.m; path = Util/DataEncryptUtil.m; sourceTree = "<group>"; };
@@ -1073,7 +1073,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				813CCA4E18FD0EF9002A98F2 /* Base */,
-				81CD1A511B43F4F300676AEF /* zh-Hans */,
+				81ACBB751B45FA1E0035A9E3 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

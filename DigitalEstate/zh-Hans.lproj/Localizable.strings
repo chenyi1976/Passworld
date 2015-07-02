@@ -23,4 +23,10 @@
 "Delete current entry？" = "确认删除？";
 "OK" = "确认";
 
-"Pro User" = "已升级高级用户";
+"Pro User" = "感谢您购买高级用户";
+
+"Security PIN: OFF" = "安全码状态：关闭";
+"Security PIN: ON" = "安全码状态：开启";
+
+"Turn Security PIN On" = "开启并设置安全码";
+"Turn Security PIN Off" = "关闭安全码";

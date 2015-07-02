@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 
-@interface SettingViewController : UITableViewController<UITableViewDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate>
+@interface SettingViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton* switchPasswordButton;
 @property (weak, nonatomic) IBOutlet UIButton* updatePasswordButton;
