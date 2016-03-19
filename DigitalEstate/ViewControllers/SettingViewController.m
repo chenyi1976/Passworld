@@ -8,7 +8,6 @@
 
 #import "SettingViewController.h"
 #import "ConstantDefinition.h"
-#import "Dropbox/Dropbox.h"
 #import "DataSourceFactory.h"
 #import "LTHPasscodeViewController.h"
 #import "AttributeData.h"
@@ -77,10 +76,10 @@
         _pinThresholdButton.enabled = TRUE;
     }
     
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    NSString* datasourceType = [prefs stringForKey:kDatasourceType];
-    DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
-    _dropboxSyncSwitch.on = [@"Dropbox" isEqualToString:datasourceType] && account != nil;
+//    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+//    NSString* datasourceType = [prefs stringForKey:kDatasourceType];
+//    DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
+//    _dropboxSyncSwitch.on = [@"Dropbox" isEqualToString:datasourceType] && account != nil;
     
     if ([[PassworldIAPHelper sharedInstance] productPurchased:iap_id_pro]){
         [_upgradeButton setTitle:NSLocalizedString(@"Pro User", @"") forState:UIControlStateNormal];
@@ -206,34 +205,34 @@
 
 - (IBAction)switchSyncButtonTouched:(id)sender
 {
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    if (_dropboxSyncSwitch.on)
-    {
-        DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
-
-        [prefs setObject:@"Dropbox" forKey:kDatasourceType];
-        [prefs synchronize];
-
-        if (account)
-        {
-            NSLog(@"App already linked");
-
-            [[DataSourceFactory getDataSource] updateDataStrategy];
-        }
-        else
-        {
-            [[DBAccountManager sharedManager] linkFromController:self];
-
-            //comment following line, because this will happen in app delegate.
+//    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+//    if (_dropboxSyncSwitch.on)
+//    {
+//        DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
+//
+//        [prefs setObject:@"Dropbox" forKey:kDatasourceType];
+//        [prefs synchronize];
+//
+//        if (account)
+//        {
+//            NSLog(@"App already linked");
+//
 //            [[DataSourceFactory getDataSource] updateDataStrategy];
-        }
-    }
-    else
-    {
-        [prefs removeObjectForKey:kDatasourceType];
-        [prefs synchronize];
-        [[DataSourceFactory getDataSource] updateDataStrategy];
-    }
+//        }
+//        else
+//        {
+//            [[DBAccountManager sharedManager] linkFromController:self];
+//
+//            //comment following line, because this will happen in app delegate.
+////            [[DataSourceFactory getDataSource] updateDataStrategy];
+//        }
+//    }
+//    else
+//    {
+//        [prefs removeObjectForKey:kDatasourceType];
+//        [prefs synchronize];
+//        [[DataSourceFactory getDataSource] updateDataStrategy];
+//    }
 }
 
 - (IBAction)updatePasscodeButtonTouched:(id)sender {

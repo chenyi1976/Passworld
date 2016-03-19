@@ -7,7 +7,6 @@
 //
 
 #import "HistoryData.h"
-#import "ConstantDefinition.h"
 
 @implementation HistoryData
 

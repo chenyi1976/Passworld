@@ -72,6 +72,18 @@
  @return The passcode.
  */
 - (NSString *)passcode;
+/**
+ @brief   Handle here the saving of the preference for allowing the use of TouchID.
+ @details Called if @c +useKeychain:NO was used, but falls back to the Keychain anyway if not implemented.
+ @param allowUnlockWithTouchID The boolean for the preference for allowing the use of TouchID.
+ */
+- (void)saveAllowUnlockWithTouchID:(BOOL)allowUnlockWithTouchID;
+/**
+ @brief   Retrieve here the saved preference for allowing the use of TouchID.
+ @details Called if @c +useKeychain:NO was used, but falls back to the Keychain anyway if not implemented.
+ @return allowUnlockWithTouchID boolean.
+ */
+- (BOOL)allowUnlockWithTouchID;
 @end
 
 @interface LTHPasscodeViewController : UIViewController
@@ -176,9 +188,17 @@
  */
 @property (nonatomic, strong) NSString  *keychainTimerDurationUsername;
 /**
+ @brief The string to be used as username for the "isSimple" in the Keychain.
+ */
+@property (nonatomic, strong) NSString  *keychainPasscodeIsSimpleUsername;
+/**
  @brief The string to be used as service name for all the Keychain entries.
  */
 @property (nonatomic, strong) NSString  *keychainServiceName;
+/**
+ @brief The string to be used as username for allow TouchID unlock in the Keychain.
+ */
+@property (nonatomic, strong) NSString  *keychainAllowUnlockWithTouchID;
 /**
  @brief The character for the passcode digit.
  */
@@ -224,7 +244,7 @@
  */
 @property (nonatomic, strong) NSString *reenterNewPasscodeString;
 /**
- @brief The string displayed while user unlocks with Touch ID.
+ @brief The string displayed while user unlocks with TouchID.
  */
 @property (nonatomic, strong) NSString *touchIDString;
 /**
@@ -251,8 +271,14 @@
  @brief A Boolean value that indicates whether the back bar button is hidden (@c YES) or not (@c NO). Default is @c YES.
  */
 @property (nonatomic, assign) BOOL hidesBackButton;
+
 /**
- @brief A Boolean value that indicates whether Touch ID can be used (@c YES) or not (@c NO). Default is @c YES.
+ @brief A Boolean value that indicates whether the right bar button is hidden (@c YES) or not (@c NO). Default is @c YES.
+ */
+@property (nonatomic, assign) BOOL hidesCancelButton;
+
+/**
+ @brief A Boolean value that indicates whether TouchID can be used (@c YES) or not (@c NO). Default is @c YES.
  */
 @property (nonatomic, assign) BOOL allowUnlockWithTouchID;
 
@@ -296,6 +322,10 @@
  @details               @c inViewController and @c asModal are needed because the delegate is of type id, and the passcode needs to be presented somewhere and with a specific style - modal or pushed.
  */
 - (void)setIsSimple:(BOOL)isSimple inViewController:(UIViewController *)viewController asModal:(BOOL)isModal;
+/**
+ @brief The passcode view will be shown by default when entering the app from background. This method disables this behavior by removing the observer for UIApplicationDidEnterBackgroundNotification and UIApplicationWillEnterForegroundNotification.
+ */
+- (void)disablePasscodeWhenApplicationEntersBackground;
 /**
  @brief  Returns a Boolean value that indicates whether a passcode exists (@c YES) or not (@c NO).
  @return @c YES if a passcode is enabled. This also means it is enabled, unless custom logic was added to the library.

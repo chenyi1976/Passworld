@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -87,19 +87,7 @@
 		8180D7C718FDFD7E0095F625 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7C518FDFD7E0095F625 /* CacheManager.m */; };
 		8180D7CA18FDFE0A0095F625 /* WebsiteLinkEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7C918FDFE0A0095F625 /* WebsiteLinkEntry.m */; };
 		8180D7CD18FE06C70095F625 /* EstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7CC18FE06C70095F625 /* EstateViewController.m */; };
-		818710C21A914F58000D0A2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710C11A914F58000D0A2C /* main.m */; };
-		818710C51A914F58000D0A2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710C41A914F58000D0A2C /* AppDelegate.m */; };
-		818710C81A914F58000D0A2C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710C71A914F58000D0A2C /* ViewController.m */; };
-		818710CB1A914F58000D0A2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818710C91A914F58000D0A2C /* Main.storyboard */; };
-		818710CD1A914F58000D0A2C /* ImagesRecovery.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818710CC1A914F58000D0A2C /* ImagesRecovery.xcassets */; };
-		818710D01A914F58000D0A2C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 818710CE1A914F58000D0A2C /* LaunchScreen.xib */; };
-		818710DC1A914F58000D0A2C /* PasscodeRecoveryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710DB1A914F58000D0A2C /* PasscodeRecoveryTests.m */; };
-		818710E51A91513D000D0A2C /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 818710E41A91513D000D0A2C /* KeyChainUtil.m */; };
-		8192627C1A91A6DC00542719 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F6841193004B800F27955 /* QuartzCore.framework */; };
-		8192627D1A91A80500542719 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */; };
-		8193FD371930B321001FF9F2 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193FD361930B321001FF9F2 /* Dropbox.framework */; };
 		8193FD3E19315B5A001FF9F2 /* LocalDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */; };
-		8193FD4119315F2C001FF9F2 /* DropboxDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD4019315F2C001FF9F2 /* DropboxDataStrategy.m */; };
 		81A901821AE397A7001D36DE /* icon-quicklook.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A9017E1AE397A7001D36DE /* icon-quicklook.png */; };
 		81A901831AE397A7001D36DE /* icon-quicklook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A9017F1AE397A7001D36DE /* icon-quicklook@2x.png */; };
 		81A901841AE397A7001D36DE /* icon-z.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A901801AE397A7001D36DE /* icon-z.png */; };
@@ -124,11 +112,10 @@
 		81BAF1B91A916FCC00817348 /* Screenshot_Main.png in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF1B61A916FCC00817348 /* Screenshot_Main.png */; };
 		81BAF1BA1A916FCC00817348 /* Screenshot_New.png in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF1B71A916FCC00817348 /* Screenshot_New.png */; };
 		81BAF1BB1A916FCC00817348 /* Screenshot_Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF1B81A916FCC00817348 /* Screenshot_Pin.png */; };
-		81BC47801A9189A000952164 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
-		81BC47811A9189A100952164 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
 		81C40A0619309FA80011BAEF /* EstateDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C40A0519309FA80011BAEF /* EstateDataSource.m */; };
 		81CD2A1D192DD9C800785134 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 81CD2A1C192DD9C800785134 /* README.md */; };
 		81E66F321931A0D70090C453 /* DataEncryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E66F311931A0D70090C453 /* DataEncryptUtil.m */; };
+		81FFC1551C9D011000526F60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81FFC1541C9D011000526F60 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,13 +125,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 813CCA3718FD0EF9002A98F2;
 			remoteInfo = DigitalEstate;
-		};
-		818710D61A914F58000D0A2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 813CCA3018FD0EF8002A98F2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 818710BC1A914F58000D0A2C;
-			remoteInfo = PasscodeRecovery;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -178,8 +158,6 @@
 		81217888190A114F002DA71A /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "edit@2x.png"; path = "Images/edit@2x.png"; sourceTree = "<group>"; };
 		81217889190A114F002DA71A /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search@2x.png"; path = "Images/search@2x.png"; sourceTree = "<group>"; };
 		8121788A190A114F002DA71A /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "Images/setting@2x.png"; sourceTree = "<group>"; };
-		812B047F1ADF9F4C00988885 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		812B04801ADF9F4C00988885 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		812B04811ADF9F4C00988885 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		812B04821ADF9F4C00988885 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		813664A8190F4DC600C0B76E /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AESCrypt.h; path = AES/AESCrypt.h; sourceTree = "<group>"; };
@@ -268,29 +246,9 @@
 		8180D7C918FDFE0A0095F625 /* WebsiteLinkEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebsiteLinkEntry.m; path = Data/WebsiteLinkEntry.m; sourceTree = "<group>"; };
 		8180D7CB18FE06C70095F625 /* EstateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateViewController.h; path = ViewControllers/EstateViewController.h; sourceTree = "<group>"; };
 		8180D7CC18FE06C70095F625 /* EstateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateViewController.m; path = ViewControllers/EstateViewController.m; sourceTree = "<group>"; };
-		818710BD1A914F58000D0A2C /* PasscodeRecovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasscodeRecovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		818710C01A914F58000D0A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		818710C11A914F58000D0A2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		818710C31A914F58000D0A2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		818710C41A914F58000D0A2C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		818710C61A914F58000D0A2C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		818710C71A914F58000D0A2C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		818710CA1A914F58000D0A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		818710CC1A914F58000D0A2C /* ImagesRecovery.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImagesRecovery.xcassets; sourceTree = "<group>"; };
-		818710CF1A914F58000D0A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		818710D51A914F58000D0A2C /* PasscodeRecoveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasscodeRecoveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		818710DA1A914F58000D0A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		818710DB1A914F58000D0A2C /* PasscodeRecoveryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasscodeRecoveryTests.m; sourceTree = "<group>"; };
-		818710E31A91513D000D0A2C /* KeyChainUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyChainUtil.h; path = DigitalEstate/Util/KeyChainUtil.h; sourceTree = SOURCE_ROOT; };
-		818710E41A91513D000D0A2C /* KeyChainUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyChainUtil.m; path = DigitalEstate/Util/KeyChainUtil.m; sourceTree = SOURCE_ROOT; };
-		818710E61A915159000D0A2C /* ConstantDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ConstantDefinition.h; path = DigitalEstate/ConstantDefinition.h; sourceTree = SOURCE_ROOT; };
-		818710E71A915590000D0A2C /* PasscodeRecovery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PasscodeRecovery.entitlements; sourceTree = "<group>"; };
-		8193FD361930B321001FF9F2 /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dropbox.framework; sourceTree = "<group>"; };
 		8193FD3B19315ADD001FF9F2 /* DataStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DataStrategy.h; path = Datasource/DataStrategy.h; sourceTree = "<group>"; };
 		8193FD3C19315B5A001FF9F2 /* LocalDataStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalDataStrategy.h; path = Datasource/LocalDataStrategy.h; sourceTree = "<group>"; };
 		8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalDataStrategy.m; path = Datasource/LocalDataStrategy.m; sourceTree = "<group>"; };
-		8193FD3F19315F2C001FF9F2 /* DropboxDataStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropboxDataStrategy.h; path = Datasource/DropboxDataStrategy.h; sourceTree = "<group>"; };
-		8193FD4019315F2C001FF9F2 /* DropboxDataStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropboxDataStrategy.m; path = Datasource/DropboxDataStrategy.m; sourceTree = "<group>"; };
 		81A9017E1AE397A7001D36DE /* icon-quicklook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-quicklook.png"; path = "AwesomeMenu/images/icon-quicklook.png"; sourceTree = "<group>"; };
 		81A9017F1AE397A7001D36DE /* icon-quicklook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-quicklook@2x.png"; path = "AwesomeMenu/images/icon-quicklook@2x.png"; sourceTree = "<group>"; };
 		81A901801AE397A7001D36DE /* icon-z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-z.png"; path = "AwesomeMenu/images/icon-z.png"; sourceTree = "<group>"; };
@@ -326,6 +284,7 @@
 		81CD2A1C192DD9C800785134 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		81E66F301931A0D70090C453 /* DataEncryptUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataEncryptUtil.h; path = Util/DataEncryptUtil.h; sourceTree = "<group>"; };
 		81E66F311931A0D70090C453 /* DataEncryptUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataEncryptUtil.m; path = Util/DataEncryptUtil.m; sourceTree = "<group>"; };
+		81FFC1541C9D011000526F60 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,7 +300,6 @@
 				811F683C1930048E00F27955 /* CFNetwork.framework in Frameworks */,
 				813CCA3E18FD0EF9002A98F2 /* CoreGraphics.framework in Frameworks */,
 				813CCA4018FD0EF9002A98F2 /* UIKit.framework in Frameworks */,
-				8193FD371930B321001FF9F2 /* Dropbox.framework in Frameworks */,
 				813CCA3C18FD0EF9002A98F2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,24 +311,6 @@
 				813CCA5E18FD0EF9002A98F2 /* XCTest.framework in Frameworks */,
 				813CCA6018FD0EF9002A98F2 /* UIKit.framework in Frameworks */,
 				813CCA5F18FD0EF9002A98F2 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		818710BA1A914F58000D0A2C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8192627D1A91A80500542719 /* CoreGraphics.framework in Frameworks */,
-				8192627C1A91A6DC00542719 /* QuartzCore.framework in Frameworks */,
-				81BC47801A9189A000952164 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		818710D21A914F58000D0A2C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81BC47811A9189A100952164 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,10 +335,9 @@
 		813CCA2F18FD0EF8002A98F2 = {
 			isa = PBXGroup;
 			children = (
+				81FFC1541C9D011000526F60 /* Default-568h@2x.png */,
 				813CCA4118FD0EF9002A98F2 /* DigitalEstate */,
 				813CCA6318FD0EF9002A98F2 /* DigitalEstateTests */,
-				818710BE1A914F58000D0A2C /* PasscodeRecovery */,
-				818710D81A914F58000D0A2C /* PasscodeRecoveryTests */,
 				813CCA3A18FD0EF9002A98F2 /* Frameworks */,
 				813CCA3918FD0EF9002A98F2 /* Products */,
 			);
@@ -409,8 +348,6 @@
 			children = (
 				813CCA3818FD0EF9002A98F2 /* DigitalEstate.app */,
 				813CCA5C18FD0EF9002A98F2 /* DigitalEstateTests.xctest */,
-				818710BD1A914F58000D0A2C /* PasscodeRecovery.app */,
-				818710D51A914F58000D0A2C /* PasscodeRecoveryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -419,7 +356,6 @@
 			isa = PBXGroup;
 			children = (
 				814A3D041AE0A7A6006E26C0 /* StoreKit.framework */,
-				8193FD361930B321001FF9F2 /* Dropbox.framework */,
 				811F6843193004CE00F27955 /* libc++.dylib */,
 				811F6841193004B800F27955 /* QuartzCore.framework */,
 				811F683F193004A900F27955 /* SystemConfiguration.framework */,
@@ -501,8 +437,6 @@
 				8193FD3B19315ADD001FF9F2 /* DataStrategy.h */,
 				8193FD3C19315B5A001FF9F2 /* LocalDataStrategy.h */,
 				8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */,
-				8193FD3F19315F2C001FF9F2 /* DropboxDataStrategy.h */,
-				8193FD4019315F2C001FF9F2 /* DropboxDataStrategy.m */,
 			);
 			name = DataSource;
 			sourceTree = "<group>";
@@ -668,51 +602,6 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		818710BE1A914F58000D0A2C /* PasscodeRecovery */ = {
-			isa = PBXGroup;
-			children = (
-				818710E71A915590000D0A2C /* PasscodeRecovery.entitlements */,
-				818710E61A915159000D0A2C /* ConstantDefinition.h */,
-				818710E31A91513D000D0A2C /* KeyChainUtil.h */,
-				818710E41A91513D000D0A2C /* KeyChainUtil.m */,
-				818710C31A914F58000D0A2C /* AppDelegate.h */,
-				818710C41A914F58000D0A2C /* AppDelegate.m */,
-				818710C61A914F58000D0A2C /* ViewController.h */,
-				818710C71A914F58000D0A2C /* ViewController.m */,
-				818710C91A914F58000D0A2C /* Main.storyboard */,
-				818710CC1A914F58000D0A2C /* ImagesRecovery.xcassets */,
-				818710CE1A914F58000D0A2C /* LaunchScreen.xib */,
-				818710BF1A914F58000D0A2C /* Supporting Files */,
-			);
-			path = PasscodeRecovery;
-			sourceTree = "<group>";
-		};
-		818710BF1A914F58000D0A2C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				818710C01A914F58000D0A2C /* Info.plist */,
-				818710C11A914F58000D0A2C /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		818710D81A914F58000D0A2C /* PasscodeRecoveryTests */ = {
-			isa = PBXGroup;
-			children = (
-				818710DB1A914F58000D0A2C /* PasscodeRecoveryTests.m */,
-				818710D91A914F58000D0A2C /* Supporting Files */,
-			);
-			path = PasscodeRecoveryTests;
-			sourceTree = "<group>";
-		};
-		818710D91A914F58000D0A2C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				818710DA1A914F58000D0A2C /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		81B18E54190602F8005647AF /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,48 +664,13 @@
 			productReference = 813CCA5C18FD0EF9002A98F2 /* DigitalEstateTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		818710BC1A914F58000D0A2C /* PasscodeRecovery */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 818710E11A914F58000D0A2C /* Build configuration list for PBXNativeTarget "PasscodeRecovery" */;
-			buildPhases = (
-				818710B91A914F58000D0A2C /* Sources */,
-				818710BA1A914F58000D0A2C /* Frameworks */,
-				818710BB1A914F58000D0A2C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PasscodeRecovery;
-			productName = PasscodeRecovery;
-			productReference = 818710BD1A914F58000D0A2C /* PasscodeRecovery.app */;
-			productType = "com.apple.product-type.application";
-		};
-		818710D41A914F58000D0A2C /* PasscodeRecoveryTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 818710E21A914F58000D0A2C /* Build configuration list for PBXNativeTarget "PasscodeRecoveryTests" */;
-			buildPhases = (
-				818710D11A914F58000D0A2C /* Sources */,
-				818710D21A914F58000D0A2C /* Frameworks */,
-				818710D31A914F58000D0A2C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				818710D71A914F58000D0A2C /* PBXTargetDependency */,
-			);
-			name = PasscodeRecoveryTests;
-			productName = PasscodeRecoveryTests;
-			productReference = 818710D51A914F58000D0A2C /* PasscodeRecoveryTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		813CCA3018FD0EF8002A98F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Yi Chen";
 				TargetAttributes = {
 					813CCA3718FD0EF9002A98F2 = {
@@ -836,29 +690,10 @@
 					813CCA5B18FD0EF9002A98F2 = {
 						TestTargetID = 813CCA3718FD0EF9002A98F2;
 					};
-					818710BC1A914F58000D0A2C = {
-						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = V7WW63YU8C;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
-							};
-							com.apple.Keychain = {
-								enabled = 1;
-							};
-							com.apple.iCloud = {
-								enabled = 1;
-							};
-						};
-					};
-					818710D41A914F58000D0A2C = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 818710BC1A914F58000D0A2C;
-					};
 				};
 			};
 			buildConfigurationList = 813CCA3318FD0EF8002A98F2 /* Build configuration list for PBXProject "DigitalEstate" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -873,8 +708,6 @@
 			targets = (
 				813CCA3718FD0EF9002A98F2 /* DigitalEstate */,
 				813CCA5B18FD0EF9002A98F2 /* DigitalEstateTests */,
-				818710BC1A914F58000D0A2C /* PasscodeRecovery */,
-				818710D41A914F58000D0A2C /* PasscodeRecoveryTests */,
 			);
 		};
 /* End PBXProject section */
@@ -937,6 +770,7 @@
 				81AB97331921951100B0C917 /* passcode@2x.png in Resources */,
 				81B18E4D1905FB9F005647AF /* Back@2x.png in Resources */,
 				81697B3E1AE0DC56002CADBB /* bg-addbutton.png in Resources */,
+				81FFC1551C9D011000526F60 /* Default-568h@2x.png in Resources */,
 				81A901831AE397A7001D36DE /* icon-quicklook@2x.png in Resources */,
 				81B18E471905EAB1005647AF /* Mic@2x.png in Resources */,
 				81A901821AE397A7001D36DE /* icon-quicklook.png in Resources */,
@@ -951,23 +785,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				813CCA6818FD0EF9002A98F2 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		818710BB1A914F58000D0A2C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				818710CB1A914F58000D0A2C /* Main.storyboard in Resources */,
-				818710D01A914F58000D0A2C /* LaunchScreen.xib in Resources */,
-				818710CD1A914F58000D0A2C /* ImagesRecovery.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		818710D31A914F58000D0A2C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,7 +826,6 @@
 				813CCA4818FD0EF9002A98F2 /* main.m in Sources */,
 				81C40A0619309FA80011BAEF /* EstateDataSource.m in Sources */,
 				8101496A192417A900765486 /* AttributeData.m in Sources */,
-				8193FD4119315F2C001FF9F2 /* DropboxDataStrategy.m in Sources */,
 				812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */,
 				8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */,
 				813664B8190F870D00C0B76E /* SettingViewController.m in Sources */,
@@ -1025,25 +841,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		818710B91A914F58000D0A2C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				818710C81A914F58000D0A2C /* ViewController.m in Sources */,
-				818710C51A914F58000D0A2C /* AppDelegate.m in Sources */,
-				818710C21A914F58000D0A2C /* main.m in Sources */,
-				818710E51A91513D000D0A2C /* KeyChainUtil.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		818710D11A914F58000D0A2C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				818710DC1A914F58000D0A2C /* PasscodeRecoveryTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1051,11 +848,6 @@
 			isa = PBXTargetDependency;
 			target = 813CCA3718FD0EF9002A98F2 /* DigitalEstate */;
 			targetProxy = 813CCA6118FD0EF9002A98F2 /* PBXContainerItemProxy */;
-		};
-		818710D71A914F58000D0A2C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 818710BC1A914F58000D0A2C /* PasscodeRecovery */;
-			targetProxy = 818710D61A914F58000D0A2C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1097,24 +889,6 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		818710C91A914F58000D0A2C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				818710CA1A914F58000D0A2C /* Base */,
-				812B047F1ADF9F4C00988885 /* zh-Hans */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		818710CE1A914F58000D0A2C /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				818710CF1A914F58000D0A2C /* Base */,
-				812B04801ADF9F4C00988885 /* zh-Hans */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1135,8 +909,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1173,8 +948,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1194,7 +969,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DigitalEstate/DigitalEstate.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1205,6 +979,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitalEstate/DigitalEstate-Prefix.pch";
 				INFOPLIST_FILE = "DigitalEstate/DigitalEstate-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.chenyi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1215,10 +990,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DigitalEstate/DigitalEstate.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1226,6 +1000,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitalEstate/DigitalEstate-Prefix.pch";
 				INFOPLIST_FILE = "DigitalEstate/DigitalEstate-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.chenyi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1248,6 +1023,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "DigitalEstateTests/DigitalEstateTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.chenyi.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -1266,93 +1042,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitalEstate/DigitalEstate-Prefix.pch";
 				INFOPLIST_FILE = "DigitalEstateTests/DigitalEstateTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.chenyi.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-		818710DD1A914F58000D0A2C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconRecovery;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImageRecovery;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = PasscodeRecovery/PasscodeRecovery.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PasscodeRecovery/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-			};
-			name = Debug;
-		};
-		818710DE1A914F58000D0A2C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconRecovery;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImageRecovery;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = PasscodeRecovery/PasscodeRecovery.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = PasscodeRecovery/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		818710DF1A914F58000D0A2C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PasscodeRecoveryTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasscodeRecovery.app/PasscodeRecovery";
-			};
-			name = Debug;
-		};
-		818710E01A914F58000D0A2C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PasscodeRecoveryTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasscodeRecovery.app/PasscodeRecovery";
 			};
 			name = Release;
 		};
@@ -1382,24 +1075,6 @@
 			buildConfigurations = (
 				813CCA7118FD0EF9002A98F2 /* Debug */,
 				813CCA7218FD0EF9002A98F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		818710E11A914F58000D0A2C /* Build configuration list for PBXNativeTarget "PasscodeRecovery" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				818710DD1A914F58000D0A2C /* Debug */,
-				818710DE1A914F58000D0A2C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		818710E21A914F58000D0A2C /* Build configuration list for PBXNativeTarget "PasscodeRecoveryTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				818710DF1A914F58000D0A2C /* Debug */,
-				818710E01A914F58000D0A2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

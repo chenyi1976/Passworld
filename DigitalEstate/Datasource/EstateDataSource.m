@@ -106,20 +106,19 @@
 
 - (void)updateDataStrategy
 {
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+//    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     
-    NSString* type = [prefs stringForKey:kDatasourceType];
+//    NSString* type = [prefs stringForKey:kDatasourceType];
     
-    if ([@"Dropbox" isEqualToString:type])
-    {
-        if (![_dataStrategy isKindOfClass:[DropboxDataStrategy class]])
-        {
-            DBAccount* account = [[DBAccountManager sharedManager] linkedAccount];
-            if (account)
-                [self setDataStrategy:[[DropboxDataStrategy alloc] initWithDataSource:self]];
-        }
-    }
-    else
+//    if ([@"Dropbox" isEqualToString:type])
+//    {
+//        if (![_dataStrategy isKindOfClass:[DropboxDataStrategy class]])
+//        {
+//            if ([[DBSession sharedSession] isLinked])
+//                [self setDataStrategy:[[DropboxDataStrategy alloc] initWithDataSource:self]];
+//        }
+//    }
+//    else
     {
         if (![_dataStrategy isKindOfClass:[LocalDataStrategy class]])
             [self setDataStrategy:[[LocalDataStrategy alloc] init]];

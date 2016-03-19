@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DataStrategy.h"
-#import "Dropbox/Dropbox.h"
+//#import <DropboxSDK/DropboxSDK.h>
 #import "EstateDataSource.h"
 
 #define kEstateTable @"O_P_P_S"
@@ -17,7 +17,7 @@
 
 @interface DropboxDataStrategy : NSObject<DataStrategy>
 
-@property (retain) DBDatastore *store;
+//@property (retain) DBSession *store;
 @property (retain) EstateDataSource *datasource;
 
 - (id)initWithDataSource:(EstateDataSource*)datasource;

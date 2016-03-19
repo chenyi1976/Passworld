@@ -8,15 +8,20 @@
 
 #import "AppDelegate.h"
 #import "ConstantDefinition.h"
-#import "Dropbox/Dropbox.h"
+//#import <DropboxSDK/DropboxSDK.h>
 #import "DataSourceFactory.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    DBAccountManager *accountManager = [[DBAccountManager alloc] initWithAppKey:@"ctbo82zuxohb4qu" secret:@"krbzzn155l7htre"];
-    [DBAccountManager setSharedManager:accountManager];
+//    DBSession *dbSession = [[DBSession alloc]
+//                            initWithAppKey:@"ctbo82zuxohb4qu"
+//                            appSecret:@"krbzzn155l7htre"
+//                            root:kDBRootAppFolder]; // either kDBRootAppFolder or kDBRootDropbox
+//    [DBSession setSharedSession:dbSession];
+//    DBAccountManager *accountManager = [[DBAccountManager alloc] initWithAppKey:@"ctbo82zuxohb4qu" secret:@"krbzzn155l7htre"];
+//    [DBAccountManager setSharedManager:accountManager];
 
     // Override point for customization after application launch.
     return YES;
@@ -73,20 +78,22 @@
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url sourceApplication:(NSString *)source annotation:(id)annotation {
     
-    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    if (![prefs boolForKey:kIsLinkingDropbox])
-    {
-        [prefs setBool:true forKey:kIsLinkingDropbox];
-        [prefs synchronize];
-    }
-
-    DBAccount *account = [[DBAccountManager sharedManager] handleOpenURL:url];
-    if (account) {
-        EstateDataSource* datasource = [DataSourceFactory getDataSource];
-        [datasource updateDataStrategy];
-        NSLog(@"App linked successfully!");
-        return YES;
-    }
+//    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+//    if (![prefs boolForKey:kIsLinkingDropbox])
+//    {
+//        [prefs setBool:true forKey:kIsLinkingDropbox];
+//        [prefs synchronize];
+//    }
+//
+//    
+//    if ([[DBSession sharedSession] handleOpenURL:url]) {
+//        if ([[DBSession sharedSession] isLinked]) {
+//            EstateDataSource* datasource = [DataSourceFactory getDataSource];
+//            [datasource updateDataStrategy];
+//            NSLog(@"App linked successfully!");
+//        }
+//        return YES;
+//    }
     return NO;
 }
 
