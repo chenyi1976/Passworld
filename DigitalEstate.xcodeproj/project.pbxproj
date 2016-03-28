@@ -11,52 +11,43 @@
 		810149721925EF1000765486 /* circle_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149711925EF1000765486 /* circle_text@2x.png */; };
 		810149771925F95F00765486 /* circle_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149751925F95F00765486 /* circle_back@2x.png */; };
 		810149781925F95F00765486 /* circle_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810149761925F95F00765486 /* circle_close@2x.png */; };
-		811CA3211AE24628003241CD /* icon-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 811CA31D1AE24628003241CD /* icon-plus.png */; };
-		811CA3221AE24628003241CD /* icon-plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811CA31E1AE24628003241CD /* icon-plus@2x.png */; };
-		811CA3231AE24628003241CD /* icon-star.png in Resources */ = {isa = PBXBuildFile; fileRef = 811CA31F1AE24628003241CD /* icon-star.png */; };
-		811CA3241AE24628003241CD /* icon-star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811CA3201AE24628003241CD /* icon-star@2x.png */; };
-		811CA3271AE255C1003241CD /* icon-a.png in Resources */ = {isa = PBXBuildFile; fileRef = 811CA3251AE255C1003241CD /* icon-a.png */; };
-		811CA3281AE255C1003241CD /* icon-a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811CA3261AE255C1003241CD /* icon-a@2x.png */; };
-		811CA32A1AE2580F003241CD /* icon-clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811CA3291AE2580F003241CD /* icon-clock@2x.png */; };
-		811CA32C1AE25835003241CD /* icon-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 811CA32B1AE25835003241CD /* icon-clock.png */; };
+		811728861C9D16D100DCC63B /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8117287F1C9D16D100DCC63B /* AESCrypt.m */; };
+		811728871C9D16D100DCC63B /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 811728811C9D16D100DCC63B /* NSData+Base64.m */; };
+		811728881C9D16D100DCC63B /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 811728831C9D16D100DCC63B /* NSData+CommonCrypto.m */; };
+		811728891C9D16D100DCC63B /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 811728851C9D16D100DCC63B /* NSString+Base64.m */; };
+		811728901C9D16EE00DCC63B /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8117288C1C9D16EE00DCC63B /* AwesomeMenu.m */; };
+		811728911C9D16EE00DCC63B /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8117288E1C9D16EE00DCC63B /* AwesomeMenuItem.m */; };
+		811728921C9D16EE00DCC63B /* images in Resources */ = {isa = PBXBuildFile; fileRef = 8117288F1C9D16EE00DCC63B /* images */; };
+		811728981C9D170E00DCC63B /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 811728951C9D170E00DCC63B /* IAPHelper.m */; };
+		811728991C9D170E00DCC63B /* PassworldIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 811728971C9D170E00DCC63B /* PassworldIAPHelper.m */; };
+		8117289D1C9D171E00DCC63B /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8117289C1C9D171E00DCC63B /* iToast.m */; };
+		811728E61C9D174700DCC63B /* LTHKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 811728E31C9D174700DCC63B /* LTHKeychainUtils.m */; };
+		811729681C9D18B600DCC63B /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 811729671C9D18B600DCC63B /* libxml2.2.tbd */; };
 		811F6831192E026F00F27955 /* circle_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F6830192E026F00F27955 /* circle_ok@2x.png */; };
 		811F6833192E048E00F27955 /* circle_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F6832192E048E00F27955 /* circle_delete@2x.png */; };
 		811F683C1930048E00F27955 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F683B1930048E00F27955 /* CFNetwork.framework */; };
 		811F683E1930049500F27955 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F683D1930049500F27955 /* Security.framework */; };
 		811F6840193004A900F27955 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F683F193004A900F27955 /* SystemConfiguration.framework */; };
 		811F6842193004B800F27955 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F6841193004B800F27955 /* QuartzCore.framework */; };
-		811F6844193004CE00F27955 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 811F6843193004CE00F27955 /* libc++.dylib */; };
 		8121787919087B03002DA71A /* SMSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8121787819087B03002DA71A /* SMSService.m */; };
 		812178831908ABD5002DA71A /* DiallingCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 812178801908ABD5002DA71A /* DiallingCodes.plist */; };
 		812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 812178821908ABD5002DA71A /* DiallingCodesUtil.m */; };
 		8121788B190A114F002DA71A /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81217888190A114F002DA71A /* edit@2x.png */; };
 		8121788C190A114F002DA71A /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81217889190A114F002DA71A /* search@2x.png */; };
 		8121788D190A114F002DA71A /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8121788A190A114F002DA71A /* setting@2x.png */; };
-		813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664A9190F4DC600C0B76E /* AESCrypt.m */; };
-		813664B1190F4DC600C0B76E /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664AB190F4DC600C0B76E /* NSData+Base64.m */; };
-		813664B2190F4DC600C0B76E /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664AD190F4DC600C0B76E /* NSData+CommonCrypto.m */; };
-		813664B3190F4DC600C0B76E /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664AF190F4DC600C0B76E /* NSString+Base64.m */; };
 		813664B5190F850400C0B76E /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 813664B4190F850400C0B76E /* Add@2x.png */; };
 		813664B8190F870D00C0B76E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664B7190F870D00C0B76E /* SettingViewController.m */; };
 		813664BB191075B600C0B76E /* HistoryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664BA191075B600C0B76E /* HistoryData.m */; };
 		813664C119132F0700C0B76E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 813664C019132F0700C0B76E /* KeychainItemWrapper.m */; };
-		813CCA3C18FD0EF9002A98F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3B18FD0EF9002A98F2 /* Foundation.framework */; };
-		813CCA3E18FD0EF9002A98F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */; };
-		813CCA4018FD0EF9002A98F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
 		813CCA4618FD0EF9002A98F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 813CCA4418FD0EF9002A98F2 /* InfoPlist.strings */; };
 		813CCA4818FD0EF9002A98F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA4718FD0EF9002A98F2 /* main.m */; };
 		813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA4B18FD0EF9002A98F2 /* AppDelegate.m */; };
 		813CCA4F18FD0EF9002A98F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813CCA4D18FD0EF9002A98F2 /* Main.storyboard */; };
 		813CCA5718FD0EF9002A98F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 813CCA5618FD0EF9002A98F2 /* Images.xcassets */; };
-		813CCA5E18FD0EF9002A98F2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA5D18FD0EF9002A98F2 /* XCTest.framework */; };
 		813CCA5F18FD0EF9002A98F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3B18FD0EF9002A98F2 /* Foundation.framework */; };
 		813CCA6018FD0EF9002A98F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
-		813CCA6818FD0EF9002A98F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 813CCA6618FD0EF9002A98F2 /* InfoPlist.strings */; };
-		813CCA6A18FD0EF9002A98F2 /* DigitalEstateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA6918FD0EF9002A98F2 /* DigitalEstateTests.m */; };
 		813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7618FDDFF0002A98F2 /* DataSourceFactory.m */; };
 		813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */; };
-		814868061ADE53230051F544 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 814868051ADE53230051F544 /* IAPHelper.m */; };
-		814868091ADE54880051F544 /* PassworldIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 814868081ADE54880051F544 /* PassworldIAPHelper.m */; };
 		814A3D051AE0A7A6006E26C0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814A3D041AE0A7A6006E26C0 /* StoreKit.framework */; };
 		814A3D081AE0AD07006E26C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 814A3D0A1AE0AD07006E26C0 /* Localizable.strings */; };
 		8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81594119192045F200D6EB14 /* KeyChainUtil.m */; };
@@ -64,21 +55,6 @@
 		8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159411E1920736E00D6EB14 /* HistoryViewController.m */; };
 		815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815941211920762700D6EB14 /* HistoryTableViewCell.m */; };
 		81594126192192F000D6EB14 /* next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81594125192192F000D6EB14 /* next@2x.png */; };
-		81697B2F1AE0DBB8002CADBB /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 81697B2C1AE0DBB8002CADBB /* AwesomeMenu.m */; };
-		81697B301AE0DBB8002CADBB /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 81697B2E1AE0DBB8002CADBB /* AwesomeMenuItem.m */; };
-		81697B3C1AE0DC56002CADBB /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B321AE0DC56002CADBB /* bg-addbutton-highlighted.png */; };
-		81697B3D1AE0DC56002CADBB /* bg-addbutton-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B331AE0DC56002CADBB /* bg-addbutton-highlighted@2x.png */; };
-		81697B3E1AE0DC56002CADBB /* bg-addbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B341AE0DC56002CADBB /* bg-addbutton.png */; };
-		81697B3F1AE0DC56002CADBB /* bg-addbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B351AE0DC56002CADBB /* bg-addbutton@2x.png */; };
-		81697B401AE0DC56002CADBB /* bg-menuitem-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B361AE0DC56002CADBB /* bg-menuitem-highlighted.png */; };
-		81697B411AE0DC56002CADBB /* bg-menuitem-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B371AE0DC56002CADBB /* bg-menuitem-highlighted@2x.png */; };
-		81697B421AE0DC56002CADBB /* bg-menuitem.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B381AE0DC56002CADBB /* bg-menuitem.png */; };
-		81697B431AE0DC56002CADBB /* bg-menuitem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B391AE0DC56002CADBB /* bg-menuitem@2x.png */; };
-		81697B441AE0DC56002CADBB /* icon-plus-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B3A1AE0DC56002CADBB /* icon-plus-highlighted.png */; };
-		81697B451AE0DC56002CADBB /* icon-plus-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81697B3B1AE0DC56002CADBB /* icon-plus-highlighted@2x.png */; };
-		816B69CB1ADE25F7001B0CCE /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 816B69CA1ADE25F7001B0CCE /* iToast.m */; };
-		816B69D11ADE2649001B0CCE /* LTHKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 816B69CE1ADE2649001B0CCE /* LTHKeychainUtils.m */; };
-		816B69D21ADE2649001B0CCE /* LTHPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816B69D01ADE2649001B0CCE /* LTHPasscodeViewController.m */; };
 		8172A2D51A930EA600D0BAEC /* Passworld_logo_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8172A2D41A930EA600D0BAEC /* Passworld_logo_120.png */; };
 		817E9DDD1AEBC3A700CADC74 /* Screenshot_Setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 817E9DDC1AEBC3A700CADC74 /* Screenshot_Setting.png */; };
 		817FB7A619393E7E00110586 /* circle_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 817FB7A519393E7E00110586 /* circle_add@2x.png */; };
@@ -88,10 +64,10 @@
 		8180D7CA18FDFE0A0095F625 /* WebsiteLinkEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7C918FDFE0A0095F625 /* WebsiteLinkEntry.m */; };
 		8180D7CD18FE06C70095F625 /* EstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8180D7CC18FE06C70095F625 /* EstateViewController.m */; };
 		8193FD3E19315B5A001FF9F2 /* LocalDataStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */; };
-		81A901821AE397A7001D36DE /* icon-quicklook.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A9017E1AE397A7001D36DE /* icon-quicklook.png */; };
-		81A901831AE397A7001D36DE /* icon-quicklook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A9017F1AE397A7001D36DE /* icon-quicklook@2x.png */; };
-		81A901841AE397A7001D36DE /* icon-z.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A901801AE397A7001D36DE /* icon-z.png */; };
-		81A901851AE397A7001D36DE /* icon-z@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A901811AE397A7001D36DE /* icon-z@2x.png */; };
+		81A8E1171CA8BAF100EF80D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */; };
+		81A8E1181CA8BAFC00EF80D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3B18FD0EF9002A98F2 /* Foundation.framework */; };
+		81A8E1191CA8BB0A00EF80D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813CCA3F18FD0EF9002A98F2 /* UIKit.framework */; };
+		81A8E11A1CA8BC1300EF80D0 /* LTHPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811728E51C9D174700DCC63B /* LTHPasscodeViewController.m */; };
 		81AB97331921951100B0C917 /* passcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB97321921951100B0C917 /* passcode@2x.png */; };
 		81AB97391921B76400B0C917 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AB97381921B76400B0C917 /* DetailViewController.m */; };
 		81AB973C1922054900B0C917 /* Down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81AB973A1922054900B0C917 /* Down@2x.png */; };
@@ -113,6 +89,7 @@
 		81BAF1BA1A916FCC00817348 /* Screenshot_New.png in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF1B71A916FCC00817348 /* Screenshot_New.png */; };
 		81BAF1BB1A916FCC00817348 /* Screenshot_Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF1B81A916FCC00817348 /* Screenshot_Pin.png */; };
 		81C40A0619309FA80011BAEF /* EstateDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C40A0519309FA80011BAEF /* EstateDataSource.m */; };
+		81C993101CA7E438001862D2 /* LTHPasscodeViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 81C9930F1CA7E438001862D2 /* LTHPasscodeViewController.bundle */; };
 		81CD2A1D192DD9C800785134 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 81CD2A1C192DD9C800785134 /* README.md */; };
 		81E66F321931A0D70090C453 /* DataEncryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E66F311931A0D70090C453 /* DataEncryptUtil.m */; };
 		81FFC1551C9D011000526F60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81FFC1541C9D011000526F60 /* Default-568h@2x.png */; };
@@ -134,21 +111,36 @@
 		810149711925EF1000765486 /* circle_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_text@2x.png"; path = "Images/circle_text@2x.png"; sourceTree = "<group>"; };
 		810149751925F95F00765486 /* circle_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_back@2x.png"; path = "Images/circle_back@2x.png"; sourceTree = "<group>"; };
 		810149761925F95F00765486 /* circle_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_close@2x.png"; path = "Images/circle_close@2x.png"; sourceTree = "<group>"; };
-		811CA31D1AE24628003241CD /* icon-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-plus.png"; path = "AwesomeMenu/images/icon-plus.png"; sourceTree = "<group>"; };
-		811CA31E1AE24628003241CD /* icon-plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-plus@2x.png"; path = "AwesomeMenu/images/icon-plus@2x.png"; sourceTree = "<group>"; };
-		811CA31F1AE24628003241CD /* icon-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-star.png"; path = "AwesomeMenu/images/icon-star.png"; sourceTree = "<group>"; };
-		811CA3201AE24628003241CD /* icon-star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-star@2x.png"; path = "AwesomeMenu/images/icon-star@2x.png"; sourceTree = "<group>"; };
-		811CA3251AE255C1003241CD /* icon-a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-a.png"; path = "AwesomeMenu/images/icon-a.png"; sourceTree = "<group>"; };
-		811CA3261AE255C1003241CD /* icon-a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-a@2x.png"; path = "AwesomeMenu/images/icon-a@2x.png"; sourceTree = "<group>"; };
-		811CA3291AE2580F003241CD /* icon-clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-clock@2x.png"; path = "AwesomeMenu/images/icon-clock@2x.png"; sourceTree = "<group>"; };
-		811CA32B1AE25835003241CD /* icon-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-clock.png"; path = "AwesomeMenu/images/icon-clock.png"; sourceTree = "<group>"; };
+		8117287E1C9D16D100DCC63B /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AESCrypt.h; path = Library/AES/AESCrypt.h; sourceTree = "<group>"; };
+		8117287F1C9D16D100DCC63B /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AESCrypt.m; path = Library/AES/AESCrypt.m; sourceTree = "<group>"; };
+		811728801C9D16D100DCC63B /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Library/AES/NSData+Base64.h"; sourceTree = "<group>"; };
+		811728811C9D16D100DCC63B /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "Library/AES/NSData+Base64.m"; sourceTree = "<group>"; };
+		811728821C9D16D100DCC63B /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+CommonCrypto.h"; path = "Library/AES/NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		811728831C9D16D100DCC63B /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+CommonCrypto.m"; path = "Library/AES/NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		811728841C9D16D100DCC63B /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Base64.h"; path = "Library/AES/NSString+Base64.h"; sourceTree = "<group>"; };
+		811728851C9D16D100DCC63B /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Base64.m"; path = "Library/AES/NSString+Base64.m"; sourceTree = "<group>"; };
+		8117288B1C9D16EE00DCC63B /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AwesomeMenu.h; path = Library/AwesomeMenu/AwesomeMenu.h; sourceTree = "<group>"; };
+		8117288C1C9D16EE00DCC63B /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AwesomeMenu.m; path = Library/AwesomeMenu/AwesomeMenu.m; sourceTree = "<group>"; };
+		8117288D1C9D16EE00DCC63B /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AwesomeMenuItem.h; path = Library/AwesomeMenu/AwesomeMenuItem.h; sourceTree = "<group>"; };
+		8117288E1C9D16EE00DCC63B /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AwesomeMenuItem.m; path = Library/AwesomeMenu/AwesomeMenuItem.m; sourceTree = "<group>"; };
+		8117288F1C9D16EE00DCC63B /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = Library/AwesomeMenu/images; sourceTree = "<group>"; };
+		811728941C9D170E00DCC63B /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAPHelper.h; path = Library/IAPHelper/IAPHelper.h; sourceTree = "<group>"; };
+		811728951C9D170E00DCC63B /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = Library/IAPHelper/IAPHelper.m; sourceTree = "<group>"; };
+		811728961C9D170E00DCC63B /* PassworldIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PassworldIAPHelper.h; path = Library/IAPHelper/PassworldIAPHelper.h; sourceTree = "<group>"; };
+		811728971C9D170E00DCC63B /* PassworldIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PassworldIAPHelper.m; path = Library/IAPHelper/PassworldIAPHelper.m; sourceTree = "<group>"; };
+		8117289B1C9D171E00DCC63B /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iToast.h; path = Library/iToast/iToast.h; sourceTree = "<group>"; };
+		8117289C1C9D171E00DCC63B /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iToast.m; path = Library/iToast/iToast.m; sourceTree = "<group>"; };
+		811728E21C9D174700DCC63B /* LTHKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTHKeychainUtils.h; path = Library/LTHPasscodeViewController/LTHKeychainUtils.h; sourceTree = "<group>"; };
+		811728E31C9D174700DCC63B /* LTHKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTHKeychainUtils.m; path = Library/LTHPasscodeViewController/LTHKeychainUtils.m; sourceTree = "<group>"; };
+		811728E41C9D174700DCC63B /* LTHPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTHPasscodeViewController.h; path = Library/LTHPasscodeViewController/LTHPasscodeViewController.h; sourceTree = "<group>"; };
+		811728E51C9D174700DCC63B /* LTHPasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTHPasscodeViewController.m; path = Library/LTHPasscodeViewController/LTHPasscodeViewController.m; sourceTree = "<group>"; };
+		811729671C9D18B600DCC63B /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		811F6830192E026F00F27955 /* circle_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_ok@2x.png"; path = "Images/circle_ok@2x.png"; sourceTree = "<group>"; };
 		811F6832192E048E00F27955 /* circle_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_delete@2x.png"; path = "Images/circle_delete@2x.png"; sourceTree = "<group>"; };
 		811F683B1930048E00F27955 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		811F683D1930049500F27955 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		811F683F193004A900F27955 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		811F6841193004B800F27955 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		811F6843193004CE00F27955 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		8121787719087B03002DA71A /* SMSService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMSService.h; path = Util/SMSService.h; sourceTree = "<group>"; };
 		8121787819087B03002DA71A /* SMSService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMSService.m; path = Util/SMSService.m; sourceTree = "<group>"; };
 		812178801908ABD5002DA71A /* DiallingCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = DiallingCodes.plist; path = Util/DiallingCodes.plist; sourceTree = "<group>"; };
@@ -159,15 +151,6 @@
 		81217889190A114F002DA71A /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search@2x.png"; path = "Images/search@2x.png"; sourceTree = "<group>"; };
 		8121788A190A114F002DA71A /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "Images/setting@2x.png"; sourceTree = "<group>"; };
 		812B04811ADF9F4C00988885 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		812B04821ADF9F4C00988885 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		813664A8190F4DC600C0B76E /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AESCrypt.h; path = AES/AESCrypt.h; sourceTree = "<group>"; };
-		813664A9190F4DC600C0B76E /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AESCrypt.m; path = AES/AESCrypt.m; sourceTree = "<group>"; };
-		813664AA190F4DC600C0B76E /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "AES/NSData+Base64.h"; sourceTree = "<group>"; };
-		813664AB190F4DC600C0B76E /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "AES/NSData+Base64.m"; sourceTree = "<group>"; };
-		813664AC190F4DC600C0B76E /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+CommonCrypto.h"; path = "AES/NSData+CommonCrypto.h"; sourceTree = "<group>"; };
-		813664AD190F4DC600C0B76E /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+CommonCrypto.m"; path = "AES/NSData+CommonCrypto.m"; sourceTree = "<group>"; };
-		813664AE190F4DC600C0B76E /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Base64.h"; path = "AES/NSString+Base64.h"; sourceTree = "<group>"; };
-		813664AF190F4DC600C0B76E /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Base64.m"; path = "AES/NSString+Base64.m"; sourceTree = "<group>"; };
 		813664B4190F850400C0B76E /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Add@2x.png"; path = "Images/Add@2x.png"; sourceTree = "<group>"; };
 		813664B6190F870D00C0B76E /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = ViewControllers/SettingViewController.h; sourceTree = "<group>"; };
 		813664B7190F870D00C0B76E /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = ViewControllers/SettingViewController.m; sourceTree = "<group>"; };
@@ -188,19 +171,11 @@
 		813CCA4E18FD0EF9002A98F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		813CCA5618FD0EF9002A98F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		813CCA5C18FD0EF9002A98F2 /* DigitalEstateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigitalEstateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		813CCA5D18FD0EF9002A98F2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		813CCA6518FD0EF9002A98F2 /* DigitalEstateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DigitalEstateTests-Info.plist"; sourceTree = "<group>"; };
-		813CCA6718FD0EF9002A98F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		813CCA6918FD0EF9002A98F2 /* DigitalEstateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalEstateTests.m; sourceTree = "<group>"; };
 		813CCA7518FDDFF0002A98F2 /* DataSourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSourceFactory.h; path = Datasource/DataSourceFactory.h; sourceTree = "<group>"; };
 		813CCA7618FDDFF0002A98F2 /* DataSourceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSourceFactory.m; path = Datasource/DataSourceFactory.m; sourceTree = "<group>"; };
 		813CCA7B18FDE0E1002A98F2 /* EstateDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstateDataSource.h; path = Datasource/EstateDataSource.h; sourceTree = "<group>"; };
 		813CCA7C18FDEF8E002A98F2 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitialViewController.h; path = ViewControllers/InitialViewController.h; sourceTree = "<group>"; };
 		813CCA7D18FDEF8E002A98F2 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitialViewController.m; path = ViewControllers/InitialViewController.m; sourceTree = "<group>"; };
-		814868041ADE53230051F544 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAPHelper.h; path = IAPHelper/IAPHelper.h; sourceTree = "<group>"; };
-		814868051ADE53230051F544 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = IAPHelper/IAPHelper.m; sourceTree = "<group>"; };
-		814868071ADE54880051F544 /* PassworldIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PassworldIAPHelper.h; path = IAPHelper/PassworldIAPHelper.h; sourceTree = "<group>"; };
-		814868081ADE54880051F544 /* PassworldIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PassworldIAPHelper.m; path = IAPHelper/PassworldIAPHelper.m; sourceTree = "<group>"; };
 		814A3D041AE0A7A6006E26C0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		814A3D091AE0AD07006E26C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		814A3D0B1AE0AD0C006E26C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -213,26 +188,6 @@
 		815941201920762700D6EB14 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryTableViewCell.h; path = ViewControllers/HistoryTableViewCell.h; sourceTree = "<group>"; };
 		815941211920762700D6EB14 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryTableViewCell.m; path = ViewControllers/HistoryTableViewCell.m; sourceTree = "<group>"; };
 		81594125192192F000D6EB14 /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "next@2x.png"; path = "Images/next@2x.png"; sourceTree = "<group>"; };
-		81697B2B1AE0DBB8002CADBB /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AwesomeMenu.h; path = AwesomeMenu/AwesomeMenu.h; sourceTree = "<group>"; };
-		81697B2C1AE0DBB8002CADBB /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AwesomeMenu.m; path = AwesomeMenu/AwesomeMenu.m; sourceTree = "<group>"; };
-		81697B2D1AE0DBB8002CADBB /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AwesomeMenuItem.h; path = AwesomeMenu/AwesomeMenuItem.h; sourceTree = "<group>"; };
-		81697B2E1AE0DBB8002CADBB /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AwesomeMenuItem.m; path = AwesomeMenu/AwesomeMenuItem.m; sourceTree = "<group>"; };
-		81697B321AE0DC56002CADBB /* bg-addbutton-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-addbutton-highlighted.png"; path = "AwesomeMenu/images/bg-addbutton-highlighted.png"; sourceTree = "<group>"; };
-		81697B331AE0DC56002CADBB /* bg-addbutton-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-addbutton-highlighted@2x.png"; path = "AwesomeMenu/images/bg-addbutton-highlighted@2x.png"; sourceTree = "<group>"; };
-		81697B341AE0DC56002CADBB /* bg-addbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-addbutton.png"; path = "AwesomeMenu/images/bg-addbutton.png"; sourceTree = "<group>"; };
-		81697B351AE0DC56002CADBB /* bg-addbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-addbutton@2x.png"; path = "AwesomeMenu/images/bg-addbutton@2x.png"; sourceTree = "<group>"; };
-		81697B361AE0DC56002CADBB /* bg-menuitem-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-menuitem-highlighted.png"; path = "AwesomeMenu/images/bg-menuitem-highlighted.png"; sourceTree = "<group>"; };
-		81697B371AE0DC56002CADBB /* bg-menuitem-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-menuitem-highlighted@2x.png"; path = "AwesomeMenu/images/bg-menuitem-highlighted@2x.png"; sourceTree = "<group>"; };
-		81697B381AE0DC56002CADBB /* bg-menuitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-menuitem.png"; path = "AwesomeMenu/images/bg-menuitem.png"; sourceTree = "<group>"; };
-		81697B391AE0DC56002CADBB /* bg-menuitem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-menuitem@2x.png"; path = "AwesomeMenu/images/bg-menuitem@2x.png"; sourceTree = "<group>"; };
-		81697B3A1AE0DC56002CADBB /* icon-plus-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-plus-highlighted.png"; path = "AwesomeMenu/images/icon-plus-highlighted.png"; sourceTree = "<group>"; };
-		81697B3B1AE0DC56002CADBB /* icon-plus-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-plus-highlighted@2x.png"; path = "AwesomeMenu/images/icon-plus-highlighted@2x.png"; sourceTree = "<group>"; };
-		816B69C91ADE25F7001B0CCE /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iToast.h; path = iToast/iToast.h; sourceTree = "<group>"; };
-		816B69CA1ADE25F7001B0CCE /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iToast.m; path = iToast/iToast.m; sourceTree = "<group>"; };
-		816B69CD1ADE2649001B0CCE /* LTHKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTHKeychainUtils.h; path = LTHPasscodeViewController/LTHKeychainUtils.h; sourceTree = "<group>"; };
-		816B69CE1ADE2649001B0CCE /* LTHKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTHKeychainUtils.m; path = LTHPasscodeViewController/LTHKeychainUtils.m; sourceTree = "<group>"; };
-		816B69CF1ADE2649001B0CCE /* LTHPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTHPasscodeViewController.h; path = LTHPasscodeViewController/LTHPasscodeViewController.h; sourceTree = "<group>"; };
-		816B69D01ADE2649001B0CCE /* LTHPasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTHPasscodeViewController.m; path = LTHPasscodeViewController/LTHPasscodeViewController.m; sourceTree = "<group>"; };
 		8172A2D41A930EA600D0BAEC /* Passworld_logo_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Passworld_logo_120.png; path = Images/Passworld_logo_120.png; sourceTree = "<group>"; };
 		817E9DDC1AEBC3A700CADC74 /* Screenshot_Setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Screenshot_Setting.png; path = Screenshots/Screenshot_Setting.png; sourceTree = "<group>"; };
 		817FB7A519393E7E00110586 /* circle_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "circle_add@2x.png"; path = "Images/circle_add@2x.png"; sourceTree = "<group>"; };
@@ -249,10 +204,6 @@
 		8193FD3B19315ADD001FF9F2 /* DataStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DataStrategy.h; path = Datasource/DataStrategy.h; sourceTree = "<group>"; };
 		8193FD3C19315B5A001FF9F2 /* LocalDataStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalDataStrategy.h; path = Datasource/LocalDataStrategy.h; sourceTree = "<group>"; };
 		8193FD3D19315B5A001FF9F2 /* LocalDataStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalDataStrategy.m; path = Datasource/LocalDataStrategy.m; sourceTree = "<group>"; };
-		81A9017E1AE397A7001D36DE /* icon-quicklook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-quicklook.png"; path = "AwesomeMenu/images/icon-quicklook.png"; sourceTree = "<group>"; };
-		81A9017F1AE397A7001D36DE /* icon-quicklook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-quicklook@2x.png"; path = "AwesomeMenu/images/icon-quicklook@2x.png"; sourceTree = "<group>"; };
-		81A901801AE397A7001D36DE /* icon-z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-z.png"; path = "AwesomeMenu/images/icon-z.png"; sourceTree = "<group>"; };
-		81A901811AE397A7001D36DE /* icon-z@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-z@2x.png"; path = "AwesomeMenu/images/icon-z@2x.png"; sourceTree = "<group>"; };
 		81AB97321921951100B0C917 /* passcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "passcode@2x.png"; path = "Images/passcode@2x.png"; sourceTree = "<group>"; };
 		81AB97371921B76400B0C917 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ViewControllers/DetailViewController.h; sourceTree = "<group>"; };
 		81AB97381921B76400B0C917 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ViewControllers/DetailViewController.m; sourceTree = "<group>"; };
@@ -281,10 +232,11 @@
 		81C40A0519309FA80011BAEF /* EstateDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstateDataSource.m; path = Datasource/EstateDataSource.m; sourceTree = "<group>"; };
 		81C40A0A1930A5C20011BAEF /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observer.h; path = Datasource/Observer.h; sourceTree = "<group>"; };
 		81C40A0B1930ADB50011BAEF /* Observable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Observable.h; path = Datasource/Observable.h; sourceTree = "<group>"; };
+		81C9930F1CA7E438001862D2 /* LTHPasscodeViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = LTHPasscodeViewController.bundle; path = Library/LTHPasscodeViewController/LTHPasscodeViewController.bundle; sourceTree = "<group>"; };
 		81CD2A1C192DD9C800785134 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		81E66F301931A0D70090C453 /* DataEncryptUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataEncryptUtil.h; path = Util/DataEncryptUtil.h; sourceTree = "<group>"; };
 		81E66F311931A0D70090C453 /* DataEncryptUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataEncryptUtil.m; path = Util/DataEncryptUtil.m; sourceTree = "<group>"; };
-		81FFC1541C9D011000526F60 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		81FFC1541C9D011000526F60 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,15 +244,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81A8E1191CA8BB0A00EF80D0 /* UIKit.framework in Frameworks */,
+				81A8E1181CA8BAFC00EF80D0 /* Foundation.framework in Frameworks */,
+				81A8E1171CA8BAF100EF80D0 /* CoreGraphics.framework in Frameworks */,
+				811729681C9D18B600DCC63B /* libxml2.2.tbd in Frameworks */,
 				814A3D051AE0A7A6006E26C0 /* StoreKit.framework in Frameworks */,
-				811F6844193004CE00F27955 /* libc++.dylib in Frameworks */,
 				811F6842193004B800F27955 /* QuartzCore.framework in Frameworks */,
 				811F6840193004A900F27955 /* SystemConfiguration.framework in Frameworks */,
 				811F683E1930049500F27955 /* Security.framework in Frameworks */,
 				811F683C1930048E00F27955 /* CFNetwork.framework in Frameworks */,
-				813CCA3E18FD0EF9002A98F2 /* CoreGraphics.framework in Frameworks */,
-				813CCA4018FD0EF9002A98F2 /* UIKit.framework in Frameworks */,
-				813CCA3C18FD0EF9002A98F2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +260,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				813CCA5E18FD0EF9002A98F2 /* XCTest.framework in Frameworks */,
 				813CCA6018FD0EF9002A98F2 /* UIKit.framework in Frameworks */,
 				813CCA5F18FD0EF9002A98F2 /* Foundation.framework in Frameworks */,
 			);
@@ -317,27 +268,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		813664A7190F4DB900C0B76E /* AES */ = {
+		811728671C9D153F00DCC63B /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				813664A8190F4DC600C0B76E /* AESCrypt.h */,
-				813664A9190F4DC600C0B76E /* AESCrypt.m */,
-				813664AA190F4DC600C0B76E /* NSData+Base64.h */,
-				813664AB190F4DC600C0B76E /* NSData+Base64.m */,
-				813664AC190F4DC600C0B76E /* NSData+CommonCrypto.h */,
-				813664AD190F4DC600C0B76E /* NSData+CommonCrypto.m */,
-				813664AE190F4DC600C0B76E /* NSString+Base64.h */,
-				813664AF190F4DC600C0B76E /* NSString+Base64.m */,
+				811728E11C9D173300DCC63B /* LTHPasswordViewController */,
+				8117289A1C9D171200DCC63B /* iToast */,
+				811728931C9D170000DCC63B /* IAPHelper */,
+				8117288A1C9D16D600DCC63B /* AwesomeMenu */,
+				8117287D1C9D16C100DCC63B /* AES */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		8117287D1C9D16C100DCC63B /* AES */ = {
+			isa = PBXGroup;
+			children = (
+				8117287E1C9D16D100DCC63B /* AESCrypt.h */,
+				8117287F1C9D16D100DCC63B /* AESCrypt.m */,
+				811728801C9D16D100DCC63B /* NSData+Base64.h */,
+				811728811C9D16D100DCC63B /* NSData+Base64.m */,
+				811728821C9D16D100DCC63B /* NSData+CommonCrypto.h */,
+				811728831C9D16D100DCC63B /* NSData+CommonCrypto.m */,
+				811728841C9D16D100DCC63B /* NSString+Base64.h */,
+				811728851C9D16D100DCC63B /* NSString+Base64.m */,
 			);
 			name = AES;
+			sourceTree = "<group>";
+		};
+		8117288A1C9D16D600DCC63B /* AwesomeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8117288B1C9D16EE00DCC63B /* AwesomeMenu.h */,
+				8117288C1C9D16EE00DCC63B /* AwesomeMenu.m */,
+				8117288D1C9D16EE00DCC63B /* AwesomeMenuItem.h */,
+				8117288E1C9D16EE00DCC63B /* AwesomeMenuItem.m */,
+				8117288F1C9D16EE00DCC63B /* images */,
+			);
+			name = AwesomeMenu;
+			sourceTree = "<group>";
+		};
+		811728931C9D170000DCC63B /* IAPHelper */ = {
+			isa = PBXGroup;
+			children = (
+				811728941C9D170E00DCC63B /* IAPHelper.h */,
+				811728951C9D170E00DCC63B /* IAPHelper.m */,
+				811728961C9D170E00DCC63B /* PassworldIAPHelper.h */,
+				811728971C9D170E00DCC63B /* PassworldIAPHelper.m */,
+			);
+			name = IAPHelper;
+			sourceTree = "<group>";
+		};
+		8117289A1C9D171200DCC63B /* iToast */ = {
+			isa = PBXGroup;
+			children = (
+				8117289B1C9D171E00DCC63B /* iToast.h */,
+				8117289C1C9D171E00DCC63B /* iToast.m */,
+			);
+			name = iToast;
+			sourceTree = "<group>";
+		};
+		811728E11C9D173300DCC63B /* LTHPasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				81C9930F1CA7E438001862D2 /* LTHPasscodeViewController.bundle */,
+				811728E21C9D174700DCC63B /* LTHKeychainUtils.h */,
+				811728E31C9D174700DCC63B /* LTHKeychainUtils.m */,
+				811728E41C9D174700DCC63B /* LTHPasscodeViewController.h */,
+				811728E51C9D174700DCC63B /* LTHPasscodeViewController.m */,
+			);
+			name = LTHPasswordViewController;
 			sourceTree = "<group>";
 		};
 		813CCA2F18FD0EF8002A98F2 = {
 			isa = PBXGroup;
 			children = (
-				81FFC1541C9D011000526F60 /* Default-568h@2x.png */,
 				813CCA4118FD0EF9002A98F2 /* DigitalEstate */,
-				813CCA6318FD0EF9002A98F2 /* DigitalEstateTests */,
 				813CCA3A18FD0EF9002A98F2 /* Frameworks */,
 				813CCA3918FD0EF9002A98F2 /* Products */,
 			);
@@ -355,8 +360,8 @@
 		813CCA3A18FD0EF9002A98F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				811729671C9D18B600DCC63B /* libxml2.2.tbd */,
 				814A3D041AE0A7A6006E26C0 /* StoreKit.framework */,
-				811F6843193004CE00F27955 /* libc++.dylib */,
 				811F6841193004B800F27955 /* QuartzCore.framework */,
 				811F683F193004A900F27955 /* SystemConfiguration.framework */,
 				811F683D1930049500F27955 /* Security.framework */,
@@ -364,7 +369,6 @@
 				813CCA3B18FD0EF9002A98F2 /* Foundation.framework */,
 				813CCA3D18FD0EF9002A98F2 /* CoreGraphics.framework */,
 				813CCA3F18FD0EF9002A98F2 /* UIKit.framework */,
-				813CCA5D18FD0EF9002A98F2 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -372,14 +376,10 @@
 		813CCA4118FD0EF9002A98F2 /* DigitalEstate */ = {
 			isa = PBXGroup;
 			children = (
-				81697B2A1AE0DBA3002CADBB /* AwesomeMenu */,
-				814868031ADE52E70051F544 /* IAPHelper */,
-				816B69CC1ADE25FE001B0CCE /* LTHPasscodeViewController */,
-				816B69C81ADE2598001B0CCE /* iToast */,
+				811728671C9D153F00DCC63B /* Library */,
 				81BAF1B51A916F6600817348 /* Screenshots */,
 				81CD2A1C192DD9C800785134 /* README.md */,
 				81AB974219231E2400B0C917 /* DigitalEstate.entitlements */,
-				813664A7190F4DB900C0B76E /* AES */,
 				81B18E54190602F8005647AF /* Views */,
 				8180D7C118FDFCE50095F625 /* Util */,
 				813CCA8318FDFC15002A98F2 /* Data */,
@@ -403,24 +403,6 @@
 				813CCA4418FD0EF9002A98F2 /* InfoPlist.strings */,
 				813CCA4718FD0EF9002A98F2 /* main.m */,
 				813CCA4918FD0EF9002A98F2 /* DigitalEstate-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		813CCA6318FD0EF9002A98F2 /* DigitalEstateTests */ = {
-			isa = PBXGroup;
-			children = (
-				813CCA6918FD0EF9002A98F2 /* DigitalEstateTests.m */,
-				813CCA6418FD0EF9002A98F2 /* Supporting Files */,
-			);
-			path = DigitalEstateTests;
-			sourceTree = "<group>";
-		};
-		813CCA6418FD0EF9002A98F2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				813CCA6518FD0EF9002A98F2 /* DigitalEstateTests-Info.plist */,
-				813CCA6618FD0EF9002A98F2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -473,78 +455,6 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		814868031ADE52E70051F544 /* IAPHelper */ = {
-			isa = PBXGroup;
-			children = (
-				814868041ADE53230051F544 /* IAPHelper.h */,
-				814868051ADE53230051F544 /* IAPHelper.m */,
-				814868071ADE54880051F544 /* PassworldIAPHelper.h */,
-				814868081ADE54880051F544 /* PassworldIAPHelper.m */,
-			);
-			name = IAPHelper;
-			sourceTree = "<group>";
-		};
-		81697B2A1AE0DBA3002CADBB /* AwesomeMenu */ = {
-			isa = PBXGroup;
-			children = (
-				81697B311AE0DC4A002CADBB /* images */,
-				81697B2B1AE0DBB8002CADBB /* AwesomeMenu.h */,
-				81697B2C1AE0DBB8002CADBB /* AwesomeMenu.m */,
-				81697B2D1AE0DBB8002CADBB /* AwesomeMenuItem.h */,
-				81697B2E1AE0DBB8002CADBB /* AwesomeMenuItem.m */,
-			);
-			name = AwesomeMenu;
-			sourceTree = "<group>";
-		};
-		81697B311AE0DC4A002CADBB /* images */ = {
-			isa = PBXGroup;
-			children = (
-				81A9017E1AE397A7001D36DE /* icon-quicklook.png */,
-				81A9017F1AE397A7001D36DE /* icon-quicklook@2x.png */,
-				81A901801AE397A7001D36DE /* icon-z.png */,
-				81A901811AE397A7001D36DE /* icon-z@2x.png */,
-				811CA32B1AE25835003241CD /* icon-clock.png */,
-				811CA3291AE2580F003241CD /* icon-clock@2x.png */,
-				811CA3251AE255C1003241CD /* icon-a.png */,
-				811CA3261AE255C1003241CD /* icon-a@2x.png */,
-				811CA31D1AE24628003241CD /* icon-plus.png */,
-				811CA31E1AE24628003241CD /* icon-plus@2x.png */,
-				811CA31F1AE24628003241CD /* icon-star.png */,
-				811CA3201AE24628003241CD /* icon-star@2x.png */,
-				81697B321AE0DC56002CADBB /* bg-addbutton-highlighted.png */,
-				81697B331AE0DC56002CADBB /* bg-addbutton-highlighted@2x.png */,
-				81697B341AE0DC56002CADBB /* bg-addbutton.png */,
-				81697B351AE0DC56002CADBB /* bg-addbutton@2x.png */,
-				81697B361AE0DC56002CADBB /* bg-menuitem-highlighted.png */,
-				81697B371AE0DC56002CADBB /* bg-menuitem-highlighted@2x.png */,
-				81697B381AE0DC56002CADBB /* bg-menuitem.png */,
-				81697B391AE0DC56002CADBB /* bg-menuitem@2x.png */,
-				81697B3A1AE0DC56002CADBB /* icon-plus-highlighted.png */,
-				81697B3B1AE0DC56002CADBB /* icon-plus-highlighted@2x.png */,
-			);
-			name = images;
-			sourceTree = "<group>";
-		};
-		816B69C81ADE2598001B0CCE /* iToast */ = {
-			isa = PBXGroup;
-			children = (
-				816B69C91ADE25F7001B0CCE /* iToast.h */,
-				816B69CA1ADE25F7001B0CCE /* iToast.m */,
-			);
-			name = iToast;
-			sourceTree = "<group>";
-		};
-		816B69CC1ADE25FE001B0CCE /* LTHPasscodeViewController */ = {
-			isa = PBXGroup;
-			children = (
-				816B69CD1ADE2649001B0CCE /* LTHKeychainUtils.h */,
-				816B69CE1ADE2649001B0CCE /* LTHKeychainUtils.m */,
-				816B69CF1ADE2649001B0CCE /* LTHPasscodeViewController.h */,
-				816B69D01ADE2649001B0CCE /* LTHPasscodeViewController.m */,
-			);
-			name = LTHPasscodeViewController;
-			sourceTree = "<group>";
-		};
 		8180D7C118FDFCE50095F625 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +481,7 @@
 		8180D7E218FE153F0095F625 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				81FFC1541C9D011000526F60 /* Default-568h@2x.png */,
 				81ABA5E91A97402700BFEE9D /* Passworld_Logo_40_Transparent.png */,
 				81ABA5E71A973A9600BFEE9D /* Passworld_Logo_1024_Transparent.png */,
 				8172A2D41A930EA600D0BAEC /* Passworld_logo_120.png */,
@@ -719,63 +630,43 @@
 			files = (
 				8121788D190A114F002DA71A /* setting@2x.png in Resources */,
 				8121788B190A114F002DA71A /* edit@2x.png in Resources */,
-				811CA3271AE255C1003241CD /* icon-a.png in Resources */,
 				811F6833192E048E00F27955 /* circle_delete@2x.png in Resources */,
 				817E9DDD1AEBC3A700CADC74 /* Screenshot_Setting.png in Resources */,
-				81697B3D1AE0DC56002CADBB /* bg-addbutton-highlighted@2x.png in Resources */,
 				8159411C19206D1000D6EB14 /* history@2x.png in Resources */,
 				811F6831192E026F00F27955 /* circle_ok@2x.png in Resources */,
 				81BAF1BB1A916FCC00817348 /* Screenshot_Pin.png in Resources */,
-				81697B411AE0DC56002CADBB /* bg-menuitem-highlighted@2x.png in Resources */,
 				81B18E4A1905EAB1005647AF /* Camera@2x.png in Resources */,
-				81A901851AE397A7001D36DE /* icon-z@2x.png in Resources */,
-				811CA3211AE24628003241CD /* icon-plus.png in Resources */,
 				81AB973C1922054900B0C917 /* Down@2x.png in Resources */,
 				81AB973F1922465800B0C917 /* Card@2x.png in Resources */,
 				81B18E491905EAB1005647AF /* Page@2x.png in Resources */,
+				811728921C9D16EE00DCC63B /* images in Resources */,
 				8172A2D51A930EA600D0BAEC /* Passworld_logo_120.png in Resources */,
-				81697B3C1AE0DC56002CADBB /* bg-addbutton-highlighted.png in Resources */,
 				81AB97411922493700B0C917 /* password@2x.png in Resources */,
-				811CA32A1AE2580F003241CD /* icon-clock@2x.png in Resources */,
 				810149781925F95F00765486 /* circle_close@2x.png in Resources */,
-				811CA3241AE24628003241CD /* icon-star@2x.png in Resources */,
 				814A3D081AE0AD07006E26C0 /* Localizable.strings in Resources */,
-				811CA32C1AE25835003241CD /* icon-clock.png in Resources */,
-				81697B431AE0DC56002CADBB /* bg-menuitem@2x.png in Resources */,
-				81697B401AE0DC56002CADBB /* bg-menuitem-highlighted.png in Resources */,
 				813CCA5718FD0EF9002A98F2 /* Images.xcassets in Resources */,
-				81A901841AE397A7001D36DE /* icon-z.png in Resources */,
 				810149721925EF1000765486 /* circle_text@2x.png in Resources */,
 				813664B5190F850400C0B76E /* Add@2x.png in Resources */,
 				81ABA5EA1A97402700BFEE9D /* Passworld_Logo_40_Transparent.png in Resources */,
-				81697B451AE0DC56002CADBB /* icon-plus-highlighted@2x.png in Resources */,
-				81697B441AE0DC56002CADBB /* icon-plus-highlighted.png in Resources */,
 				813CCA4618FD0EF9002A98F2 /* InfoPlist.strings in Resources */,
 				817FB7A619393E7E00110586 /* circle_add@2x.png in Resources */,
 				81CD2A1D192DD9C800785134 /* README.md in Resources */,
 				81B18E501905FC3A005647AF /* Delete@2x.png in Resources */,
 				81B18E481905EAB1005647AF /* Video@2x.png in Resources */,
-				811CA3281AE255C1003241CD /* icon-a@2x.png in Resources */,
 				81BAF1BA1A916FCC00817348 /* Screenshot_New.png in Resources */,
 				81ABA5E81A973A9600BFEE9D /* Passworld_Logo_1024_Transparent.png in Resources */,
-				81697B3F1AE0DC56002CADBB /* bg-addbutton@2x.png in Resources */,
 				812178831908ABD5002DA71A /* DiallingCodes.plist in Resources */,
 				81B18E4E1905FB9F005647AF /* Tick@2x.png in Resources */,
 				813CCA4F18FD0EF9002A98F2 /* Main.storyboard in Resources */,
-				81697B421AE0DC56002CADBB /* bg-menuitem.png in Resources */,
 				8121788C190A114F002DA71A /* search@2x.png in Resources */,
-				811CA3221AE24628003241CD /* icon-plus@2x.png in Resources */,
 				81AB973D1922054900B0C917 /* Up@2x.png in Resources */,
 				81BAF1B91A916FCC00817348 /* Screenshot_Main.png in Resources */,
 				81AB97331921951100B0C917 /* passcode@2x.png in Resources */,
+				81C993101CA7E438001862D2 /* LTHPasscodeViewController.bundle in Resources */,
 				81B18E4D1905FB9F005647AF /* Back@2x.png in Resources */,
-				81697B3E1AE0DC56002CADBB /* bg-addbutton.png in Resources */,
 				81FFC1551C9D011000526F60 /* Default-568h@2x.png in Resources */,
-				81A901831AE397A7001D36DE /* icon-quicklook@2x.png in Resources */,
 				81B18E471905EAB1005647AF /* Mic@2x.png in Resources */,
-				81A901821AE397A7001D36DE /* icon-quicklook.png in Resources */,
 				81594126192192F000D6EB14 /* next@2x.png in Resources */,
-				811CA3231AE24628003241CD /* icon-star.png in Resources */,
 				810149771925F95F00765486 /* circle_back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -784,7 +675,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				813CCA6818FD0EF9002A98F2 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,40 +685,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81A8E11A1CA8BC1300EF80D0 /* LTHPasscodeViewController.m in Sources */,
+				811728991C9D170E00DCC63B /* PassworldIAPHelper.m in Sources */,
+				811728981C9D170E00DCC63B /* IAPHelper.m in Sources */,
 				8180D7C018FDFCC30095F625 /* EstateData.m in Sources */,
+				811728891C9D16D100DCC63B /* NSString+Base64.m in Sources */,
 				8180D7CD18FE06C70095F625 /* EstateViewController.m in Sources */,
 				81B18E53190602DC005647AF /* EstateTableViewCell.m in Sources */,
 				8180D7C618FDFD7E0095F625 /* DownloadManager.m in Sources */,
 				8180D7CA18FDFE0A0095F625 /* WebsiteLinkEntry.m in Sources */,
-				813664B2190F4DC600C0B76E /* NSData+CommonCrypto.m in Sources */,
-				816B69CB1ADE25F7001B0CCE /* iToast.m in Sources */,
-				813664B3190F4DC600C0B76E /* NSString+Base64.m in Sources */,
-				81697B301AE0DBB8002CADBB /* AwesomeMenuItem.m in Sources */,
 				8180D7C718FDFD7E0095F625 /* CacheManager.m in Sources */,
 				813664BB191075B600C0B76E /* HistoryData.m in Sources */,
 				8193FD3E19315B5A001FF9F2 /* LocalDataStrategy.m in Sources */,
 				813CCA7818FDDFF0002A98F2 /* DataSourceFactory.m in Sources */,
 				81AB97391921B76400B0C917 /* DetailViewController.m in Sources */,
+				811728901C9D16EE00DCC63B /* AwesomeMenu.m in Sources */,
 				813CCA4C18FD0EF9002A98F2 /* AppDelegate.m in Sources */,
 				81AB9745192378B200B0C917 /* AccountTableViewCell.m in Sources */,
-				814868061ADE53230051F544 /* IAPHelper.m in Sources */,
 				8159411A192045F200D6EB14 /* KeyChainUtil.m in Sources */,
-				816B69D21ADE2649001B0CCE /* LTHPasscodeViewController.m in Sources */,
-				813664B0190F4DC600C0B76E /* AESCrypt.m in Sources */,
+				811728861C9D16D100DCC63B /* AESCrypt.m in Sources */,
 				813664C119132F0700C0B76E /* KeychainItemWrapper.m in Sources */,
-				814868091ADE54880051F544 /* PassworldIAPHelper.m in Sources */,
-				816B69D11ADE2649001B0CCE /* LTHKeychainUtils.m in Sources */,
 				8121787919087B03002DA71A /* SMSService.m in Sources */,
-				81697B2F1AE0DBB8002CADBB /* AwesomeMenu.m in Sources */,
+				811728871C9D16D100DCC63B /* NSData+Base64.m in Sources */,
 				815941221920762700D6EB14 /* HistoryTableViewCell.m in Sources */,
+				8117289D1C9D171E00DCC63B /* iToast.m in Sources */,
 				813CCA7E18FDEF8E002A98F2 /* InitialViewController.m in Sources */,
-				813664B1190F4DC600C0B76E /* NSData+Base64.m in Sources */,
+				811728881C9D16D100DCC63B /* NSData+CommonCrypto.m in Sources */,
 				813CCA4818FD0EF9002A98F2 /* main.m in Sources */,
 				81C40A0619309FA80011BAEF /* EstateDataSource.m in Sources */,
 				8101496A192417A900765486 /* AttributeData.m in Sources */,
 				812178841908ABD5002DA71A /* DiallingCodesUtil.m in Sources */,
 				8159411F1920736F00D6EB14 /* HistoryViewController.m in Sources */,
+				811728E61C9D174700DCC63B /* LTHKeychainUtils.m in Sources */,
 				813664B8190F870D00C0B76E /* SettingViewController.m in Sources */,
+				811728911C9D16EE00DCC63B /* AwesomeMenuItem.m in Sources */,
 				81E66F321931A0D70090C453 /* DataEncryptUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -837,7 +727,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				813CCA6A18FD0EF9002A98F2 /* DigitalEstateTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,15 +757,6 @@
 				81ACBB751B45FA1E0035A9E3 /* zh-Hans */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		813CCA6618FD0EF9002A98F2 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				813CCA6718FD0EF9002A98F2 /* en */,
-				812B04821ADF9F4C00988885 /* zh-Hans */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		814A3D0A1AE0AD07006E26C0 /* Localizable.strings */ = {
