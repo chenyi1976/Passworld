@@ -489,7 +489,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                                     <connections>
-                                                        <outlet property="delegate" destination="jKc-3o-CeO" id="hqd-Hq-H5Y"/>
+                                                        <outlet property="delegate" destination="ysJ-kx-Xj9" id="bE3-sI-OLS"/>
                                                     </connections>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBz-bl-cWZ">
@@ -499,7 +499,7 @@
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                     <connections>
                                                         <action selector="valueFieldTouched:" destination="jKc-3o-CeO" eventType="touchUpInside" id="mDE-Sd-fmw"/>
-                                                        <outlet property="delegate" destination="jKc-3o-CeO" id="Q5T-4U-SRP"/>
+                                                        <outlet property="delegate" destination="ysJ-kx-Xj9" id="uoR-vX-Hes"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>

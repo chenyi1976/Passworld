@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AttributeData.h"
 
-@interface AccountTableViewCell : UITableViewCell<UITextFieldDelegate>
+@interface AccountTableViewCell : UITableViewCell
 
 @property IBOutlet UITextField* nameTextField;
 @property IBOutlet UITextField* valueTextField;

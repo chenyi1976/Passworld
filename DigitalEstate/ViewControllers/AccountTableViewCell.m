@@ -8,7 +8,6 @@
 
 #import "AccountTableViewCell.h"
 #import "DetailViewController.h"
-#import "iToast.h"
 
 @implementation AccountTableViewCell
 
@@ -50,43 +49,6 @@
 
     // Configure the view for the selected state
 }
-
-#pragma mark - UITextFieldDelegate
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    NSLog(@"textFieldShouldReturn");
-    [textField resignFirstResponder];
-    return YES;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    NSLog(@"textFieldDidEndEditing");
-    [self endEditing:TRUE];
-    [textField resignFirstResponder];
-
-    if (_nameTextField == textField || _valueTextField == textField)
-    {
-        UITableView* tableView = (UITableView*)self.superview.superview;
-        [tableView endEditing:TRUE];
-        DetailViewController* controller = (DetailViewController*)tableView.dataSource;
-        NSIndexPath* indexPath = [controller.tableView indexPathForCell:self];
-        [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleNone forRowAtIndexPath:indexPath];
-    }
-}
-
-- (BOOL) textFieldShouldBeginEditing:(UITextField *)textField {
-    NSLog(@"valueFieldTouched");
-    if (![self isEditing])
-    {
-        [UIPasteboard generalPasteboard].string = [textField text];
-        [[iToast makeText:NSLocalizedString(@"Value Copied!", @"")] show];
-    }
-    
-    return [self isEditing];
-}
-
 
 #pragma mark - IBAction
 

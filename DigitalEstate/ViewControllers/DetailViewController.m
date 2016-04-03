@@ -12,6 +12,7 @@
 #import "ConstantDefinition.h"
 #import "AttributeData.h"
 #import "DataSourceFactory.h"
+#import "iToast.h"
 
 @interface DetailViewController ()
 
@@ -212,25 +213,70 @@
 
 #pragma mark - UITextFieldDelegate
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
 }
 
-- (void) textFieldDidBeginEditing:(UITextField *)textField {
-    UITableViewCell *cell;
-    
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        // Load resources for iOS 6.1 or earlier
-        cell = (UITableViewCell *) textField.superview.superview;
-        
-    } else {
-        // Load resources for iOS 7 or later
-        cell = (UITableViewCell *) textField.superview.superview.superview;
-        // TextField -> UITableVieCellContentView -> (in iOS 7!)ScrollView -> Cell!
-    }
+- (BOOL) textFieldShouldBeginEditing:(UITextField *)textField {
+    UITableViewCell *cell = (UITableViewCell *) textField.superview.superview;
     [_tableView scrollToRowAtIndexPath:[_tableView indexPathForCell:cell] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    
+    if (![cell isEditing])
+    {
+        [UIPasteboard generalPasteboard].string = [textField text];
+        [[iToast makeText:NSLocalizedString(@"Value Copied!", @"")] show];
+    }
+    
+    return [cell isEditing];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [textField endEditing:TRUE];
+    [textField resignFirstResponder];
+    
+    UITableViewCell* cell = (UITableViewCell*)textField.superview.superview;
+    
+    NSIndexPath* indexPath = [self.tableView indexPathForCell:cell];
+    [self tableView:_tableView commitEditingStyle:UITableViewCellEditingStyleNone forRowAtIndexPath:indexPath];
+    
+    [self saveEstateData];
+}
+
+- (bool)isTableEmpty{
+    if ([_tableData count] == 0)
+        return true;
+    
+    for (AttributeData* data in _tableData){
+        if (data.attrValue != nil)
+            if ([data.attrValue length] > 0)
+                return false;
+    }
+    
+    return true;
+}
+
+- (void)saveEstateData{
+    if ([self isTableEmpty])
+        return;
+    
+    if (_estateData)
+    {
+        NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:_estateData];
+        [_estateData setAttributeValues:_tableData];
+        [_estateData setName:_nameTextField.text];
+        [[DataSourceFactory getDataSource] replaceObjectAtIndex:index withObject:_estateData];
+    }
+    else
+    {
+        NSDate* date = [NSDate date];
+        NSString* estateId = [NSString stringWithFormat:@"%@", date];
+        
+        EstateData* data = [[EstateData alloc] initWithId:estateId withName:_nameTextField.text withContent:nil withAttributeValues:_tableData withLastUpdate:[NSDate date]  withLastVisit:[NSDate date] withHistory:nil withDeleted:false];
+        [[DataSourceFactory getDataSource] addObject:data];
+        
+        _estateData = data;
+    }
 }
 
 #pragma mark IBAction
@@ -250,22 +296,8 @@
     else
     {
         [[self view] endEditing:TRUE];
-        
-        if (_estateData)
-        {
-            NSUInteger index = [[DataSourceFactory getDataSource] indexOfObject:_estateData];
-            [_estateData setAttributeValues:_tableData];
-            [_estateData setName:_nameTextField.text];
-            [[DataSourceFactory getDataSource] replaceObjectAtIndex:index withObject:_estateData];
-        }
-        else
-        {
-            NSDate* date = [NSDate date];
-            NSString* estateId = [NSString stringWithFormat:@"%@", date];
-            
-            EstateData* data = [[EstateData alloc] initWithId:estateId withName:_nameTextField.text withContent:nil withAttributeValues:_tableData withLastUpdate:[NSDate date]  withLastVisit:[NSDate date] withHistory:nil withDeleted:false];
-            [[DataSourceFactory getDataSource] addObject:data];
-        }
+        [self saveEstateData];
+
 //        [self dismissViewControllerAnimated:TRUE completion:^(void){}];
         [[self navigationController] popViewControllerAnimated:YES];
     }
@@ -276,7 +308,10 @@
 //    [self dismissAnyKeyboard:self.view];
     [[self view] endEditing:TRUE];
 
+    [self saveEstateData];
+    
     [[self navigationController] popViewControllerAnimated:YES];
+    
 //    [self dismissViewControllerAnimated:TRUE completion:^(void){}];
 }
 
